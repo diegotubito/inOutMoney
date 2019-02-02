@@ -8,13 +8,13 @@
 
 import UIKit
 
-class IOLoginViewController: UIViewController {
+class IOLoginUsuarioViewController: UIViewController {
     override func viewDidLoad() {
         super .viewDidLoad()
         
         
     }
-    @IBAction func goHomePressed(_ sender: Any) {
-        performSegue(withIdentifier: "segue_to_home", sender: nil)
+    @IBAction func siguientePressed(_ sender: Any) {
+        performSegue(withIdentifier: "segue_to_login_contraseña", sender: nil)
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840268492205F31000EF6070 /* IOLoginContraseñaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840268482205F31000EF6070 /* IOLoginContraseñaViewController.swift */; };
 		842227587AA8719C417032C5 /* Pods_InOutMoneyFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */; };
 		84594EE721DC64650019C9B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84594EE621DC64650019C9B9 /* AppDelegate.swift */; };
 		84594EE921DC64650019C9B9 /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84594EE821DC64650019C9B9 /* homeViewController.swift */; };
@@ -15,11 +16,12 @@
 		84594EF121DC64670019C9B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84594EF021DC64670019C9B9 /* Assets.xcassets */; };
 		84594EF421DC64670019C9B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84594EF221DC64670019C9B9 /* LaunchScreen.storyboard */; };
 		84FD53842203F37500DC102A /* StoryboardLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FD53832203F37500DC102A /* StoryboardLogin.storyboard */; };
-		84FD53892203F52400DC102A /* IOLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FD53882203F52400DC102A /* IOLoginViewController.swift */; };
+		84FD53892203F52400DC102A /* IOLoginUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FD53882203F52400DC102A /* IOLoginUsuarioViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		62FCF3664AC9F81697006D71 /* Pods-InOutMoneyFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InOutMoneyFirebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase.debug.xcconfig"; sourceTree = "<group>"; };
+		840268482205F31000EF6070 /* IOLoginContraseñaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IOLoginContraseñaViewController.swift"; sourceTree = "<group>"; };
 		84594EE321DC64650019C9B9 /* InOutMoneyFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InOutMoneyFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84594EE621DC64650019C9B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84594EE821DC64650019C9B9 /* homeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
@@ -29,7 +31,7 @@
 		84594EF321DC64670019C9B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84594EF521DC64670019C9B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84FD53832203F37500DC102A /* StoryboardLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardLogin.storyboard; sourceTree = "<group>"; };
-		84FD53882203F52400DC102A /* IOLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginViewController.swift; sourceTree = "<group>"; };
+		84FD53882203F52400DC102A /* IOLoginUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginUsuarioViewController.swift; sourceTree = "<group>"; };
 		D3C6A17853DDA48318A6E934 /* Pods-InOutMoneyFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InOutMoneyFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InOutMoneyFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -61,6 +63,49 @@
 				DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		840268432205F2D100EF6070 /* Usuario */ = {
+			isa = PBXGroup;
+			children = (
+				84FD53872203F51200DC102A /* Model */,
+				84FD53862203F50C00DC102A /* ViewModel */,
+				84FD53852203F50400DC102A /* View */,
+			);
+			path = Usuario;
+			sourceTree = "<group>";
+		};
+		840268442205F2DE00EF6070 /* Contraseña */ = {
+			isa = PBXGroup;
+			children = (
+				840268472205F2F500EF6070 /* Model */,
+				840268462205F2F000EF6070 /* ViewModel */,
+				840268452205F2E900EF6070 /* View */,
+			);
+			name = "Contraseña";
+			path = "Contraseña";
+			sourceTree = "<group>";
+		};
+		840268452205F2E900EF6070 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				840268482205F31000EF6070 /* IOLoginContraseñaViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		840268462205F2F000EF6070 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		840268472205F2F500EF6070 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		84594EDA21DC64650019C9B9 = {
@@ -116,9 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				84FD53832203F37500DC102A /* StoryboardLogin.storyboard */,
-				84FD53872203F51200DC102A /* Model */,
-				84FD53862203F50C00DC102A /* ViewModel */,
-				84FD53852203F50400DC102A /* View */,
+				840268432205F2D100EF6070 /* Usuario */,
+				840268442205F2DE00EF6070 /* Contraseña */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -126,7 +170,7 @@
 		84FD53852203F50400DC102A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				84FD53882203F52400DC102A /* IOLoginViewController.swift */,
+				84FD53882203F52400DC102A /* IOLoginUsuarioViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -266,7 +310,8 @@
 			files = (
 				84594EE921DC64650019C9B9 /* homeViewController.swift in Sources */,
 				84594EEF21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld in Sources */,
-				84FD53892203F52400DC102A /* IOLoginViewController.swift in Sources */,
+				840268492205F31000EF6070 /* IOLoginContraseñaViewController.swift in Sources */,
+				84FD53892203F52400DC102A /* IOLoginUsuarioViewController.swift in Sources */,
 				84594EE721DC64650019C9B9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
