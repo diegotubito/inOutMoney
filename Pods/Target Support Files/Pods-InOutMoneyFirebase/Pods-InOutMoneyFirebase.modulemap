@@ -1,0 +1,6 @@
+framework module Pods_InOutMoneyFirebase {
+  umbrella header "Pods-InOutMoneyFirebase-umbrella.h"
+
+  export *
+  module * { export * }
+}

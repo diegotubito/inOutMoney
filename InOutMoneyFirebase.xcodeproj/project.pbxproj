@@ -7,23 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842227587AA8719C417032C5 /* Pods_InOutMoneyFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */; };
 		84594EE721DC64650019C9B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84594EE621DC64650019C9B9 /* AppDelegate.swift */; };
-		84594EE921DC64650019C9B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84594EE821DC64650019C9B9 /* ViewController.swift */; };
+		84594EE921DC64650019C9B9 /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84594EE821DC64650019C9B9 /* homeViewController.swift */; };
 		84594EEC21DC64650019C9B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84594EEA21DC64650019C9B9 /* Main.storyboard */; };
 		84594EEF21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84594EED21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld */; };
 		84594EF121DC64670019C9B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84594EF021DC64670019C9B9 /* Assets.xcassets */; };
 		84594EF421DC64670019C9B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84594EF221DC64670019C9B9 /* LaunchScreen.storyboard */; };
+		84FD53842203F37500DC102A /* StoryboardLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FD53832203F37500DC102A /* StoryboardLogin.storyboard */; };
+		84FD53892203F52400DC102A /* IOLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FD53882203F52400DC102A /* IOLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		62FCF3664AC9F81697006D71 /* Pods-InOutMoneyFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InOutMoneyFirebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 		84594EE321DC64650019C9B9 /* InOutMoneyFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InOutMoneyFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84594EE621DC64650019C9B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84594EE821DC64650019C9B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84594EE821DC64650019C9B9 /* homeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
 		84594EEB21DC64650019C9B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84594EEE21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InOutMoneyFirebase.xcdatamodel; sourceTree = "<group>"; };
 		84594EF021DC64670019C9B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84594EF321DC64670019C9B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84594EF521DC64670019C9B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84FD53832203F37500DC102A /* StoryboardLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardLogin.storyboard; sourceTree = "<group>"; };
+		84FD53882203F52400DC102A /* IOLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginViewController.swift; sourceTree = "<group>"; };
+		D3C6A17853DDA48318A6E934 /* Pods-InOutMoneyFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InOutMoneyFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase.release.xcconfig"; sourceTree = "<group>"; };
+		DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InOutMoneyFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842227587AA8719C417032C5 /* Pods_InOutMoneyFirebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F7BDD530237C7E314E1F4C3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				62FCF3664AC9F81697006D71 /* Pods-InOutMoneyFirebase.debug.xcconfig */,
+				D3C6A17853DDA48318A6E934 /* Pods-InOutMoneyFirebase.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7091CE198096826F44C20E94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		84594EDA21DC64650019C9B9 = {
 			isa = PBXGroup;
 			children = (
 				84594EE521DC64650019C9B9 /* InOutMoneyFirebase */,
 				84594EE421DC64650019C9B9 /* Products */,
+				2F7BDD530237C7E314E1F4C3 /* Pods */,
+				7091CE198096826F44C20E94 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +85,64 @@
 			isa = PBXGroup;
 			children = (
 				84594EE621DC64650019C9B9 /* AppDelegate.swift */,
-				84594EE821DC64650019C9B9 /* ViewController.swift */,
-				84594EEA21DC64650019C9B9 /* Main.storyboard */,
+				84FD53802203F2EB00DC102A /* Sources */,
 				84594EF021DC64670019C9B9 /* Assets.xcassets */,
 				84594EF221DC64670019C9B9 /* LaunchScreen.storyboard */,
 				84594EF521DC64670019C9B9 /* Info.plist */,
 				84594EED21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld */,
 			);
 			path = InOutMoneyFirebase;
+			sourceTree = "<group>";
+		};
+		84FD53802203F2EB00DC102A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				84FD53822203F35000DC102A /* Login */,
+				84FD53812203F2F800DC102A /* Home */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		84FD53812203F2F800DC102A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				84594EEA21DC64650019C9B9 /* Main.storyboard */,
+				84594EE821DC64650019C9B9 /* homeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		84FD53822203F35000DC102A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				84FD53832203F37500DC102A /* StoryboardLogin.storyboard */,
+				84FD53872203F51200DC102A /* Model */,
+				84FD53862203F50C00DC102A /* ViewModel */,
+				84FD53852203F50400DC102A /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		84FD53852203F50400DC102A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84FD53882203F52400DC102A /* IOLoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84FD53862203F50C00DC102A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84FD53872203F51200DC102A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +152,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84594EF821DC64670019C9B9 /* Build configuration list for PBXNativeTarget "InOutMoneyFirebase" */;
 			buildPhases = (
+				D167874E553E8B40F84D03B1 /* [CP] Check Pods Manifest.lock */,
 				84594EDF21DC64650019C9B9 /* Sources */,
 				84594EE021DC64650019C9B9 /* Frameworks */,
 				84594EE121DC64650019C9B9 /* Resources */,
+				5EDDD2626750D03A2750EF72 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,18 +208,65 @@
 				84594EF421DC64670019C9B9 /* LaunchScreen.storyboard in Resources */,
 				84594EF121DC64670019C9B9 /* Assets.xcassets in Resources */,
 				84594EEC21DC64650019C9B9 /* Main.storyboard in Resources */,
+				84FD53842203F37500DC102A /* StoryboardLogin.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5EDDD2626750D03A2750EF72 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D167874E553E8B40F84D03B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InOutMoneyFirebase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84594EDF21DC64650019C9B9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84594EE921DC64650019C9B9 /* ViewController.swift in Sources */,
+				84594EE921DC64650019C9B9 /* homeViewController.swift in Sources */,
 				84594EEF21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld in Sources */,
+				84FD53892203F52400DC102A /* IOLoginViewController.swift in Sources */,
 				84594EE721DC64650019C9B9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +411,7 @@
 		};
 		84594EF921DC64670019C9B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62FCF3664AC9F81697006D71 /* Pods-InOutMoneyFirebase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +430,7 @@
 		};
 		84594EFA21DC64670019C9B9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3C6A17853DDA48318A6E934 /* Pods-InOutMoneyFirebase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
