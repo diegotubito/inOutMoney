@@ -46,7 +46,7 @@
                         <viewLayoutGuide key="safeArea" id="U1X-UP-TbK"/>
                     </view>
                     <connections>
-                        <segue destination="7la-QV-wb7" kind="show" identifier="segue_to_login" id="k46-9T-Gg8"/>
+                        <segue destination="7la-QV-wb7" kind="show" identifier="segue_to_login" animates="NO" id="k46-9T-Gg8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

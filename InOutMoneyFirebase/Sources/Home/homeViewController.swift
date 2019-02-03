@@ -19,5 +19,11 @@ class IOHomeViewController: UIViewController {
         performSegue(withIdentifier: "segue_to_login", sender: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? IOLoginUsuarioViewController {
+            controller.viewModel = IOLoginUsuarioViewModel(withView: controller, interactor: IOLoginFirebaseService())
+        }
+    }
+    
 }
 
