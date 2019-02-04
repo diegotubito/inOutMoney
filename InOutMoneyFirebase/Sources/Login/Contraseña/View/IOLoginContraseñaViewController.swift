@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Foundation
 
 class IOLoginContraseñaViewController: UIViewController, IOLoginPasswordViewContract {
     
-   
+    @IBOutlet var globo: UIView!
+    @IBOutlet var triesLabel: UILabel!
+    
     
     
     var viewModel : IOLoginPasswordViewModelContract!
@@ -25,6 +28,9 @@ class IOLoginContraseñaViewController: UIViewController, IOLoginPasswordViewCon
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        globo.layer.cornerRadius = globo.frame.width/2
+        globo.backgroundColor = UIColor.red
+        globo.isHidden = true
         
         disableLogin()
         
@@ -37,12 +43,38 @@ class IOLoginContraseñaViewController: UIViewController, IOLoginPasswordViewCon
         titleLabel.slide(fromX: -view.frame.width, toX: 32, duration: 0.5)
         subTitleLabel.slide(fromX: -view.frame.width, toX: 32, duration: 0.5)
         
+     //   showNumberOfTries()
+     //   fadeNumberOfTries()
+        
         contraseñaTextField.becomeFirstResponder()
     }
     
+    func showNumberOfTries() {
+        
+        globo.backgroundColor = viewModel.getBackgroundColorNumberOfTries()
+        triesLabel.textColor = viewModel.getTextColorNumberOfTries()
+       
+
+    }
     
-    @IBAction func siguientePressed(_ sender: Any) {
+    func fadeNumberOfTries() {
+        globo.isHidden = false
+        triesLabel.text = viewModel.getNumberOfTries()
+        globo.zoomIn(duration: 1) {
+            
+        }
+    }
+    func shakeNumberOfTries() {
+        globo.shake()
+    }
+    
+     
+    
+   
+    
+    @IBAction func siguientePressed(_ sender: Any?) {
         viewModel.login()
+        
         
      }
     
@@ -73,9 +105,27 @@ class IOLoginContraseñaViewController: UIViewController, IOLoginPasswordViewCon
     }
     
     func showError(message: String) {
-        print(message)
+      
         contraseñaTextField.textColor = UIColor.red
         contraseñaTextField.shake()
+     //   dialogOKCancel(title: "Error", message: message, buttonTitle: "Entendido")
+        viewModel.descontarNumberOfTries()
+    }
+    
+    func showBlockingError() {
+        let dialogo = dialogOKCancel(title: "Demasiados Intentos", message: "Demasiados intentos de login. Puedes restablecer tu contraseña si no te la acuerdas, o intenta más tarde.", buttonTitle: "Entendido")
+        
+        self.present(dialogo, animated: true, completion: nil)
+
+        contraseñaTextField.resignFirstResponder()
+        contraseñaTextField.isEnabled = false
+        contraseñaTextField.backgroundColor = UIColor.lightGray
+        contraseñaTextField.alpha = 0.5
+        disableLogin()
+        
+        triesLabel.text = "X"
+        globo.isHidden = false
+        shakeNumberOfTries()
     }
     
     func showSuccess() {
@@ -105,10 +155,8 @@ class IOLoginContraseñaViewController: UIViewController, IOLoginPasswordViewCon
 extension IOLoginContraseñaViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if !(contraseñaTextField.text?.isEmpty)! {
-            viewModel.login()
-        } else {
-            showError(message: "campo vacio")
-        }
+            siguientePressed(nil)
+        } 
         return true
     }
     
@@ -118,4 +166,23 @@ extension IOLoginContraseñaViewController: UITextFieldDelegate {
         enableLogin()
         return true
     }
+}
+
+
+func dialogOKCancel(title: String, message: String, buttonTitle: String) -> UIAlertController {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: { action in
+        switch action.style{
+        case .default:
+            print("default")
+            
+        case .cancel:
+            print("cancel")
+            
+        case .destructive:
+            print("destructive")
+            
+            
+        }}))
+    return alert
 }

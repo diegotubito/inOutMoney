@@ -13,6 +13,11 @@ protocol IOLoginPasswordViewModelContract {
     
     func login()
     func getUser() -> String
+    func getNumberOfTries() -> String
+    func descontarNumberOfTries()
+    func getBackgroundColorNumberOfTries() -> UIColor
+    func getTextColorNumberOfTries() -> UIColor
+
 }
 
 protocol IOLoginPasswordViewContract {
@@ -23,5 +28,9 @@ protocol IOLoginPasswordViewContract {
     func disableLogin()
     func enableLogin()
     func getPassword() -> String
+    func showNumberOfTries()
+    func showBlockingError()
+    func fadeNumberOfTries()
+    func shakeNumberOfTries()
 
 }

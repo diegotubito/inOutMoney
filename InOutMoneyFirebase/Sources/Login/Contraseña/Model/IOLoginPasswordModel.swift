@@ -11,4 +11,5 @@ import UIKit
 class IOLoginPasswordModel {
     var user : String = ""
     var password : String = ""
+    var numberOfTries = 3
 }

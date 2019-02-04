@@ -34,9 +34,10 @@ class IOLoginUsuarioViewModel: IOLoginUserViewModelContract {
         _interactor.getUserByEmail(email: _view.getEmailString(), success: { (response) in
             self._view.showSuccess(usuario: response!)
             self._view.hideLoading()
-        }) { (message) in
+        }) { (error) in
             self._view.hideLoading()
-            self._view.showError(message: message ?? "unknown error.")
+            
+            self._view.showError(message: error?.localizedDescription ?? "unknown error.")
 
         }
     }

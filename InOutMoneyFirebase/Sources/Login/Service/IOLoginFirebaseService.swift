@@ -10,15 +10,16 @@ import UIKit
 import FirebaseAuth
 
 protocol IOLoginFirebaseServiceContract {
-    func getUserByEmail(email: String, success: @escaping ([String]?) -> Void, fail: @escaping (String?) -> Void)
+    func getUserByEmail(email: String, success: @escaping ([String]?) -> Void, fail: @escaping (Error?) -> Void)
     
-    func signInWithEmail(email: String, password: String, success: @escaping (User?) -> Void, fail: @escaping (String?) -> Void)
+    func signInWithEmail(email: String, password: String, success: @escaping (User?) -> Void, fail: @escaping (Error?) -> Void)
  
     func signOut(success: () -> Void, fail: () -> Void)
     
 }
 
 class IOLoginFirebaseService: IOLoginFirebaseServiceContract {
+    
     func signOut(success: () -> Void, fail: () -> Void) {
         do {
             try Auth.auth().signOut()
@@ -29,10 +30,10 @@ class IOLoginFirebaseService: IOLoginFirebaseServiceContract {
         }
     }
     
-    func signInWithEmail(email: String, password: String, success: @escaping (User?) -> Void, fail: @escaping (String?) -> Void) {
+    func signInWithEmail(email: String, password: String, success: @escaping (User?) -> Void, fail: @escaping (Error?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (usuario, error) in
             if error != nil {
-                fail(error?.localizedDescription)
+                fail(error)
                 return
             }
             
@@ -44,15 +45,15 @@ class IOLoginFirebaseService: IOLoginFirebaseServiceContract {
     
   
     
-    func getUserByEmail(email: String, success: @escaping ([String]?) -> Void, fail: @escaping (String?) -> Void) {
+    func getUserByEmail(email: String, success: @escaping ([String]?) -> Void, fail: @escaping (Error?) -> Void) {
         Auth.auth().fetchProviders(forEmail: email) { (response, error) in
             if error != nil {
-                fail(error?.localizedDescription)
+                fail(error)
                 return
             }
             
             if response == nil {
-                fail("Usuario Inexistente")
+                fail(nil)
                 return
             }
             

@@ -185,11 +185,21 @@
                                                 <rect key="frame" x="169" y="150.5" width="37" height="37"/>
                                             </activityIndicatorView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="95G-4O-Fon">
-                                                <rect key="frame" x="323" y="167.5" width="20" height="20"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="318" y="162.5" width="25" height="25"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="na8-tQ-gVM">
+                                                        <rect key="frame" x="8.5" y="5" width="8" height="15"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="20" id="hY6-CZ-Nqm"/>
-                                                    <constraint firstAttribute="height" constant="20" id="mQ1-7M-ycv"/>
+                                                    <constraint firstItem="na8-tQ-gVM" firstAttribute="centerY" secondItem="95G-4O-Fon" secondAttribute="centerY" id="FDJ-U0-Ebf"/>
+                                                    <constraint firstAttribute="width" constant="25" id="hY6-CZ-Nqm"/>
+                                                    <constraint firstAttribute="height" constant="25" id="mQ1-7M-ycv"/>
+                                                    <constraint firstItem="na8-tQ-gVM" firstAttribute="centerX" secondItem="95G-4O-Fon" secondAttribute="centerX" id="vp0-1d-0Ka"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -275,11 +285,13 @@
                     </view>
                     <connections>
                         <outlet property="contraseñaTextField" destination="EKa-QJ-Oh9" id="Fif-QH-IzH"/>
+                        <outlet property="globo" destination="95G-4O-Fon" id="tKs-FG-Dvx"/>
                         <outlet property="loginOutlet" destination="CM2-UE-idz" id="tfg-m8-stx"/>
                         <outlet property="myActivityIndicator" destination="Wfr-Ca-rsW" id="l9y-4c-Fik"/>
                         <outlet property="passwordTextField" destination="EKa-QJ-Oh9" id="U2o-PA-9tD"/>
                         <outlet property="subTitleLabel" destination="LUD-qm-B3y" id="LYB-ho-YLM"/>
                         <outlet property="titleLabel" destination="KHq-gL-jXh" id="f6T-uc-6Oj"/>
+                        <outlet property="triesLabel" destination="na8-tQ-gVM" id="VgK-R7-jpr"/>
                         <segue destination="FQZ-zK-75L" kind="show" identifier="segue_to_home" id="WkN-kc-c9D"/>
                         <segue destination="ZWt-rT-O0Y" kind="show" identifier="segue_to_usuario" animates="NO" id="ir0-0M-DO1"/>
                     </connections>
