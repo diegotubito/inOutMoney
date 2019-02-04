@@ -23,8 +23,11 @@
 		849BA96722074C8A00EC93A6 /* IOLoginUsuarioViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA96622074C8A00EC93A6 /* IOLoginUsuarioViewModelContract.swift */; };
 		849BA96922074C9900EC93A6 /* IOLoginUsuarioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA96822074C9900EC93A6 /* IOLoginUsuarioViewModel.swift */; };
 		849BA96C22074DD100EC93A6 /* IOLoginFirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA96B22074DD100EC93A6 /* IOLoginFirebaseService.swift */; };
-		849BA96E2207507A00EC93A6 /* IOLoginUsuarioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA96D2207507A00EC93A6 /* IOLoginUsuarioModel.swift */; };
+		849BA96E2207507A00EC93A6 /* IOLoginUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA96D2207507A00EC93A6 /* IOLoginUserModel.swift */; };
 		849BA9702207547A00EC93A6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 849BA96F2207547A00EC93A6 /* GoogleService-Info.plist */; };
+		849BA9722207748D00EC93A6 /* IOLoginPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA9712207748D00EC93A6 /* IOLoginPasswordModel.swift */; };
+		849BA9742207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA9732207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift */; };
+		849BA976220775FE00EC93A6 /* IOLoginPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA975220775FE00EC93A6 /* IOLoginPasswordViewModel.swift */; };
 		84FD53842203F37500DC102A /* StoryboardLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FD53832203F37500DC102A /* StoryboardLogin.storyboard */; };
 		84FD53892203F52400DC102A /* IOLoginUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FD53882203F52400DC102A /* IOLoginUsuarioViewController.swift */; };
 /* End PBXBuildFile section */
@@ -48,8 +51,11 @@
 		849BA96622074C8A00EC93A6 /* IOLoginUsuarioViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginUsuarioViewModelContract.swift; sourceTree = "<group>"; };
 		849BA96822074C9900EC93A6 /* IOLoginUsuarioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginUsuarioViewModel.swift; sourceTree = "<group>"; };
 		849BA96B22074DD100EC93A6 /* IOLoginFirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginFirebaseService.swift; sourceTree = "<group>"; };
-		849BA96D2207507A00EC93A6 /* IOLoginUsuarioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginUsuarioModel.swift; sourceTree = "<group>"; };
+		849BA96D2207507A00EC93A6 /* IOLoginUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginUserModel.swift; sourceTree = "<group>"; };
 		849BA96F2207547A00EC93A6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		849BA9712207748D00EC93A6 /* IOLoginPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginPasswordModel.swift; sourceTree = "<group>"; };
+		849BA9732207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginPasswordViewModelContract.swift; sourceTree = "<group>"; };
+		849BA975220775FE00EC93A6 /* IOLoginPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginPasswordViewModel.swift; sourceTree = "<group>"; };
 		84FD53832203F37500DC102A /* StoryboardLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardLogin.storyboard; sourceTree = "<group>"; };
 		84FD53882203F52400DC102A /* IOLoginUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginUsuarioViewController.swift; sourceTree = "<group>"; };
 		D3C6A17853DDA48318A6E934 /* Pods-InOutMoneyFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InOutMoneyFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +124,8 @@
 		840268462205F2F000EF6070 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				849BA9732207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift */,
+				849BA975220775FE00EC93A6 /* IOLoginPasswordViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -125,6 +133,7 @@
 		840268472205F2F500EF6070 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				849BA9712207748D00EC93A6 /* IOLoginPasswordModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,8 +218,8 @@
 		84FD53822203F35000DC102A /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				849BA96A22074DB600EC93A6 /* Service */,
 				84FD53832203F37500DC102A /* StoryboardLogin.storyboard */,
+				849BA96A22074DB600EC93A6 /* Service */,
 				840268432205F2D100EF6070 /* Usuario */,
 				840268442205F2DE00EF6070 /* Contraseña */,
 			);
@@ -238,7 +247,7 @@
 		84FD53872203F51200DC102A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				849BA96D2207507A00EC93A6 /* IOLoginUsuarioModel.swift */,
+				849BA96D2207507A00EC93A6 /* IOLoginUserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -367,11 +376,14 @@
 			files = (
 				84594EE921DC64650019C9B9 /* homeViewController.swift in Sources */,
 				849BA96922074C9900EC93A6 /* IOLoginUsuarioViewModel.swift in Sources */,
-				849BA96E2207507A00EC93A6 /* IOLoginUsuarioModel.swift in Sources */,
+				849BA96E2207507A00EC93A6 /* IOLoginUserModel.swift in Sources */,
 				84594EEF21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld in Sources */,
 				849BA96C22074DD100EC93A6 /* IOLoginFirebaseService.swift in Sources */,
 				849BA96722074C8A00EC93A6 /* IOLoginUsuarioViewModelContract.swift in Sources */,
+				849BA976220775FE00EC93A6 /* IOLoginPasswordViewModel.swift in Sources */,
 				840268552206A7BF00EF6070 /* viewExtensions.swift in Sources */,
+				849BA9742207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift in Sources */,
+				849BA9722207748D00EC93A6 /* IOLoginPasswordModel.swift in Sources */,
 				8402684E2205F8A300EF6070 /* IOLoginContraseñaCV.swift in Sources */,
 				840268492205F31000EF6070 /* IOLoginContraseñaViewController.swift in Sources */,
 				84FD53892203F52400DC102A /* IOLoginUsuarioViewController.swift in Sources */,

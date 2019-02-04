@@ -8,20 +8,21 @@
 
 import UIKit
 
-protocol IOLoginUsuarioViewModelContract {
-    init(withView view: IOLoginUsuarioViewContract, interactor: IOLoginFirebaseServiceContract)
+protocol IOLoginUserViewModelContract {
+    init(withView view: IOLoginUserViewContract, interactor: IOLoginFirebaseServiceContract, user: String)
     
     func checkUser()
-    func setEmail(value: String)
-  
+    func logout()
+    func getUser() -> String
 }
 
-protocol IOLoginUsuarioViewContract {
+protocol IOLoginUserViewContract {
     func showLoading()
     func hideLoading()
     func showError(message: String)
     func showSuccess(usuario: [String])
-    func disableSiguiente()
-    func enableSiguiente()
+    func getEmailString() -> String
+    func goToPassword()
+    
 
 }

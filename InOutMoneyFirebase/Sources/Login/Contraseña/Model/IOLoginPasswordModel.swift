@@ -1,5 +1,5 @@
 //
-//  IOLoginUsuarioModel.swift
+//  IOLoginPasswordModel.swift
 //  InOutMoneyFirebase
 //
 //  Created by David Diego Gomez on 3/2/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IOLoginModel {
+class IOLoginPasswordModel {
     var user : String = ""
     var password : String = ""
 }

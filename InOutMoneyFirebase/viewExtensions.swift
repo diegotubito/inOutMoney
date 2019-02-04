@@ -10,6 +10,15 @@ import UIKit
 
 extension UIView {
     
+    func beat() {
+        let animation = CAKeyframeAnimation(keyPath: "transform.scale")
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        animation.duration = 0.3
+        animation.repeatCount = 2
+        animation.values = [1.0, 1.1, 1.2, 1.3, 1.2, 1.1, 1.0 ]
+        layer.add(animation, forKey: "beat")
+    }
+    
     func buttonAnimation() {
         UIButton.animate(withDuration: 0.2,
                          animations: {

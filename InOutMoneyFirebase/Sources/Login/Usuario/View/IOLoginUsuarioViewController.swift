@@ -8,7 +8,9 @@
 
 import UIKit
 
-class IOLoginUsuarioViewController: UIViewController, IOLoginUsuarioViewContract {
+class IOLoginUsuarioViewController: UIViewController, IOLoginUserViewContract {
+ 
+    
     
     
     
@@ -23,12 +25,11 @@ class IOLoginUsuarioViewController: UIViewController, IOLoginUsuarioViewContract
     
     var animacionDerecha = true
     
-    var viewModel : IOLoginUsuarioViewModelContract!
+    var viewModel : IOLoginUserViewModelContract!
     
     override func viewDidLoad() {
         super .viewDidLoad()
        
-        disableSiguiente()
         
     }
     
@@ -48,42 +49,46 @@ class IOLoginUsuarioViewController: UIViewController, IOLoginUsuarioViewContract
         }
         
         usuarioTextField.becomeFirstResponder()
+        usuarioTextField.text = viewModel.getUser()
 
 
     }
-    @IBAction func siguientePressed(_ sender: Any) {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? IOLoginContraseñaViewController {
+            controller.viewModel = IOLoginPasswordViewModel(withView: controller, interactor: IOLoginFirebaseService(), user: usuarioTextField.text!)
+        }
+    }
+    
+    @IBAction func siguientePressed(_ sender: Any?) {
+       
+        viewModel.checkUser()
+    }
+    
+    func goToPassword() {
         subTitleLabel.slide(fromX: subTitleLabel.frame.origin.x, toX: view.frame.width, duration: 0.3)
-            
+        
         titleLabel.slide(fromX: titleLabel.frame.origin.x, toX: view.frame.width, duration: 0.3) {
             self.performSegue(withIdentifier: "segue_to_login_contraseña", sender: nil)
             
             
         }
- 
     }
-    
     
     func showError(message: String) {
         print(message)
-        disableSiguiente()
-        usuarioTextField.shake()
+        
+        usuarioTextField.textColor = UIColor.red
+         usuarioTextField.shake()
     }
     
     func showSuccess(usuario: [String]) {
-        enableSiguiente()
+        usuarioTextField.textColor = UIColor.blue
         usuarioTextField.resignFirstResponder()
+        goToPassword()
     }
     
      
-    func disableSiguiente() {
-        siguienteOutlet.alpha = 0.3
-        siguienteOutlet.isEnabled = false
-    }
-    
-    func enableSiguiente() {
-        siguienteOutlet.alpha = 1
-        siguienteOutlet.isEnabled = true
-    }
     
     func showLoading() {
         myActivityIndicator.startAnimating()
@@ -93,14 +98,22 @@ class IOLoginUsuarioViewController: UIViewController, IOLoginUsuarioViewContract
         myActivityIndicator.stopAnimating()
     }
     
+    func getEmailString() -> String {
+        return usuarioTextField.text!
+    }
+   
     
     
 }
 
 extension IOLoginUsuarioViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        viewModel.setEmail(value: usuarioTextField.text ?? "")
         viewModel.checkUser()
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        usuarioTextField.textColor = UIColor.black
         return true
     }
 }

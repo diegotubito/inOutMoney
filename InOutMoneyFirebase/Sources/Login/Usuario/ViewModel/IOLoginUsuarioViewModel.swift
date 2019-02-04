@@ -10,36 +10,46 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class IOLoginUsuarioViewModel: IOLoginUsuarioViewModelContract {
+class IOLoginUsuarioViewModel: IOLoginUserViewModelContract {
+    
     
  
     
-    var _view : IOLoginUsuarioViewContract!
+    var _view : IOLoginUserViewContract!
     var _interactor : IOLoginFirebaseServiceContract!
-    var model : IOLoginModel!
+    var model : IOLoginUserModel!
     
     
-    required init(withView view: IOLoginUsuarioViewContract, interactor: IOLoginFirebaseServiceContract) {
+    required init(withView view: IOLoginUserViewContract, interactor: IOLoginFirebaseServiceContract, user: String) {
             _view = view
             _interactor = interactor
-        model = IOLoginModel()
+            model = IOLoginUserModel()
+            model.user = user
+              
     }
     
  
     func checkUser() {
-        _interactor.getUserByEmail(email: model.user, success: { (response) in
+        _view.showLoading()
+        _interactor.getUserByEmail(email: _view.getEmailString(), success: { (response) in
             self._view.showSuccess(usuario: response!)
-            
+            self._view.hideLoading()
         }) { (message) in
+            self._view.hideLoading()
             self._view.showError(message: message ?? "unknown error.")
 
         }
     }
     
-    func setEmail(value: String) {
-        model.user = value
+    func logout() {
+        _interactor.signOut(success: {
+            print("log out")
+        }) {
+            print("error logging out")
+        }
     }
     
-   
-    
+    func getUser() -> String {
+        return model.user
+    }
 }
