@@ -101,7 +101,7 @@
 			path = Usuario;
 			sourceTree = "<group>";
 		};
-		840268442205F2DE00EF6070 /* Contraseña */ = {
+		840268442205F2DE00EF6070 /* Contraseña */ = {
 			isa = PBXGroup;
 			children = (
 				840268472205F2F500EF6070 /* Model */,
@@ -221,7 +221,7 @@
 				84FD53832203F37500DC102A /* StoryboardLogin.storyboard */,
 				849BA96A22074DB600EC93A6 /* Service */,
 				840268432205F2D100EF6070 /* Usuario */,
-				840268442205F2DE00EF6070 /* Contraseña */,
+				840268442205F2DE00EF6070 /* Contraseña */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -334,6 +334,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -341,6 +342,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -538,10 +540,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S2BEC8V882;
 				INFOPLIST_FILE = InOutMoneyFirebase/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ddg.InOutMoneyFirebase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -557,10 +556,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S2BEC8V882;
 				INFOPLIST_FILE = InOutMoneyFirebase/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ddg.InOutMoneyFirebase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

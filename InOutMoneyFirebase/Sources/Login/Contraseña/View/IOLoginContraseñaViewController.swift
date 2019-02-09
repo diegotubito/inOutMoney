@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import Firebase
 
 class IOLoginContraseñaViewController: UIViewController, IOLoginPasswordViewContract {
     
@@ -129,6 +130,9 @@ class IOLoginContraseñaViewController: UIViewController, IOLoginPasswordViewCon
     }
     
     func showSuccess() {
+        
+        Analytics.logEvent("miLogin", parameters: nil)
+        
         performSegue(withIdentifier: "segue_to_home", sender: nil)
 
     }
