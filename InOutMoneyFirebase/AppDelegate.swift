@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        IORemoteConfigService.instance.fetchRemoteConfig(success: { (rc) in
+        MLFirebaseRemoteConfigService.instance.fetchRemoteConfig(success: { (rc) in
             RC = rc
             NotificationCenter.default.post(name: .rcDidChanged, object: nil, userInfo: nil)
         }) { (error) in

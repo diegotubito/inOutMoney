@@ -9,9 +9,9 @@
 import UIKit
 import Firebase
 
-class IORemoteConfigService {
+class MLFirebaseRemoteConfigService {
     
-    static var instance = IORemoteConfigService()
+    static var instance = MLFirebaseRemoteConfigService()
     
     func defaultValuesRemoteConfig() {
         let values = ["seasson_login_background" : "degrade" as NSObject]

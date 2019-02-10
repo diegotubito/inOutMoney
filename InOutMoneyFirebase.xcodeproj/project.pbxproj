@@ -13,10 +13,28 @@
 		8402685222068ECC00EF6070 /* TableViewCellLoginUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402685022068ECC00EF6070 /* TableViewCellLoginUsuario.swift */; };
 		8402685322068ECC00EF6070 /* TableViewCellLoginUsuario.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8402685122068ECC00EF6070 /* TableViewCellLoginUsuario.xib */; };
 		840268552206A7BF00EF6070 /* viewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840268542206A7BF00EF6070 /* viewExtensions.swift */; };
-		84027FBE220F34EF00C85A6A /* IORemoteConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84027FBD220F34EF00C85A6A /* IORemoteConfigService.swift */; };
+		84027FBE220F34EF00C85A6A /* MLFirebaseRemoteConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84027FBD220F34EF00C85A6A /* MLFirebaseRemoteConfigService.swift */; };
 		84027FC3220F4A9700C85A6A /* MLNotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84027FC2220F4A9700C85A6A /* MLNotificationNames.swift */; };
 		84027FC6220F4DCC00C85A6A /* IODefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84027FC5220F4DCC00C85A6A /* IODefaults.swift */; };
 		840280CF220FB0A400C85A6A /* IOLoginUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280CE220FB0A400C85A6A /* IOLoginUsuarioViewController.swift */; };
+		840280EE220FB24600C85A6A /* alamofireExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280D1220FB24600C85A6A /* alamofireExtension.swift */; };
+		840280F0220FB24600C85A6A /* configEncriptar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280D4220FB24600C85A6A /* configEncriptar.swift */; };
+		840280F1220FB24600C85A6A /* constantes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280D5220FB24600C85A6A /* constantes.swift */; };
+		840280F2220FB24600C85A6A /* _coredataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280D7220FB24600C85A6A /* _coredataManager.swift */; };
+		840280F3220FB24600C85A6A /* coredataGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280D8220FB24600C85A6A /* coredataGeneral.swift */; };
+		840280F4220FB24600C85A6A /* coreGraphycs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280D9220FB24600C85A6A /* coreGraphycs.swift */; };
+		840280F5220FB24600C85A6A /* dateLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280DA220FB24600C85A6A /* dateLibrary.swift */; };
+		840280F6220FB24600C85A6A /* extensiones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280DB220FB24600C85A6A /* extensiones.swift */; };
+		840280F7220FB24600C85A6A /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280DE220FB24600C85A6A /* csv.swift */; };
+		840280F8220FB24600C85A6A /* imageFileFromLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280E0220FB24600C85A6A /* imageFileFromLocal.swift */; };
+		840280F9220FB24600C85A6A /* MLFirebaseDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280E2220FB24600C85A6A /* MLFirebaseDatabaseService.swift */; };
+		840280FB220FB24600C85A6A /* examplesStorageFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280E4220FB24600C85A6A /* examplesStorageFunctions.swift */; };
+		840280FC220FB24600C85A6A /* storageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280E5220FB24600C85A6A /* storageManager.swift */; };
+		840280FD220FB24600C85A6A /* funcionesGlobales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280E6220FB24600C85A6A /* funcionesGlobales.swift */; };
+		840280FF220FB24600C85A6A /* networkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280E8220FB24600C85A6A /* networkManager.swift */; };
+		84028100220FB24600C85A6A /* nsimageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280E9220FB24600C85A6A /* nsimageExtension.swift */; };
+		84028101220FB24600C85A6A /* SwiftyPlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280EB220FB24600C85A6A /* SwiftyPlistManager.swift */; };
+		84028102220FB24600C85A6A /* progressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280EC220FB24600C85A6A /* progressIndicator.swift */; };
 		842227587AA8719C417032C5 /* Pods_InOutMoneyFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */; };
 		84594EE721DC64650019C9B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84594EE621DC64650019C9B9 /* AppDelegate.swift */; };
 		84594EE921DC64650019C9B9 /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84594EE821DC64650019C9B9 /* homeViewController.swift */; };
@@ -43,10 +61,28 @@
 		8402685022068ECC00EF6070 /* TableViewCellLoginUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellLoginUsuario.swift; sourceTree = "<group>"; };
 		8402685122068ECC00EF6070 /* TableViewCellLoginUsuario.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellLoginUsuario.xib; sourceTree = "<group>"; };
 		840268542206A7BF00EF6070 /* viewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewExtensions.swift; sourceTree = "<group>"; };
-		84027FBD220F34EF00C85A6A /* IORemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORemoteConfigService.swift; sourceTree = "<group>"; };
+		84027FBD220F34EF00C85A6A /* MLFirebaseRemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLFirebaseRemoteConfigService.swift; sourceTree = "<group>"; };
 		84027FC2220F4A9700C85A6A /* MLNotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLNotificationNames.swift; sourceTree = "<group>"; };
 		84027FC5220F4DCC00C85A6A /* IODefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IODefaults.swift; sourceTree = "<group>"; };
 		840280CE220FB0A400C85A6A /* IOLoginUsuarioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOLoginUsuarioViewController.swift; sourceTree = "<group>"; };
+		840280D1220FB24600C85A6A /* alamofireExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alamofireExtension.swift; sourceTree = "<group>"; };
+		840280D4220FB24600C85A6A /* configEncriptar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = configEncriptar.swift; sourceTree = "<group>"; };
+		840280D5220FB24600C85A6A /* constantes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constantes.swift; sourceTree = "<group>"; };
+		840280D7220FB24600C85A6A /* _coredataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _coredataManager.swift; sourceTree = "<group>"; };
+		840280D8220FB24600C85A6A /* coredataGeneral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = coredataGeneral.swift; sourceTree = "<group>"; };
+		840280D9220FB24600C85A6A /* coreGraphycs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = coreGraphycs.swift; sourceTree = "<group>"; };
+		840280DA220FB24600C85A6A /* dateLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dateLibrary.swift; sourceTree = "<group>"; };
+		840280DB220FB24600C85A6A /* extensiones.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensiones.swift; sourceTree = "<group>"; };
+		840280DE220FB24600C85A6A /* csv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csv.swift; sourceTree = "<group>"; };
+		840280E0220FB24600C85A6A /* imageFileFromLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageFileFromLocal.swift; sourceTree = "<group>"; };
+		840280E2220FB24600C85A6A /* MLFirebaseDatabaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLFirebaseDatabaseService.swift; sourceTree = "<group>"; };
+		840280E4220FB24600C85A6A /* examplesStorageFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = examplesStorageFunctions.swift; sourceTree = "<group>"; };
+		840280E5220FB24600C85A6A /* storageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storageManager.swift; sourceTree = "<group>"; };
+		840280E6220FB24600C85A6A /* funcionesGlobales.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = funcionesGlobales.swift; sourceTree = "<group>"; };
+		840280E8220FB24600C85A6A /* networkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = networkManager.swift; sourceTree = "<group>"; };
+		840280E9220FB24600C85A6A /* nsimageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nsimageExtension.swift; sourceTree = "<group>"; };
+		840280EB220FB24600C85A6A /* SwiftyPlistManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyPlistManager.swift; sourceTree = "<group>"; };
+		840280EC220FB24600C85A6A /* progressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = progressIndicator.swift; sourceTree = "<group>"; };
 		84594EE321DC64650019C9B9 /* InOutMoneyFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InOutMoneyFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84594EE621DC64650019C9B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84594EE821DC64650019C9B9 /* homeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
@@ -173,7 +209,6 @@
 		84027FBF220F4A4B00C85A6A /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				84027FC0220F4A5700C85A6A /* Remote Config */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -181,7 +216,7 @@
 		84027FC0220F4A5700C85A6A /* Remote Config */ = {
 			isa = PBXGroup;
 			children = (
-				84027FBD220F34EF00C85A6A /* IORemoteConfigService.swift */,
+				84027FBD220F34EF00C85A6A /* MLFirebaseRemoteConfigService.swift */,
 			);
 			path = "Remote Config";
 			sourceTree = "<group>";
@@ -198,9 +233,99 @@
 			isa = PBXGroup;
 			children = (
 				84027FC5220F4DCC00C85A6A /* IODefaults.swift */,
-				84027FC1220F4A6300C85A6A /* NotificationCenter */,
 			);
 			path = Defaults;
+			sourceTree = "<group>";
+		};
+		840280D0220FB24600C85A6A /* miLibreria */ = {
+			isa = PBXGroup;
+			children = (
+				840280D1220FB24600C85A6A /* alamofireExtension.swift */,
+				840280D4220FB24600C85A6A /* configEncriptar.swift */,
+				840280D5220FB24600C85A6A /* constantes.swift */,
+				84027FC1220F4A6300C85A6A /* NotificationCenter */,
+				840280D6220FB24600C85A6A /* CoreData */,
+				840280D9220FB24600C85A6A /* coreGraphycs.swift */,
+				840280DA220FB24600C85A6A /* dateLibrary.swift */,
+				840280DB220FB24600C85A6A /* extensiones.swift */,
+				840280DC220FB24600C85A6A /* Files */,
+				840280E1220FB24600C85A6A /* Firebase */,
+				840280E6220FB24600C85A6A /* funcionesGlobales.swift */,
+				840280E8220FB24600C85A6A /* networkManager.swift */,
+				840280E9220FB24600C85A6A /* nsimageExtension.swift */,
+				840280EA220FB24600C85A6A /* plist */,
+				840280EC220FB24600C85A6A /* progressIndicator.swift */,
+			);
+			path = miLibreria;
+			sourceTree = "<group>";
+		};
+		840280D6220FB24600C85A6A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				840280D7220FB24600C85A6A /* _coredataManager.swift */,
+				840280D8220FB24600C85A6A /* coredataGeneral.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		840280DC220FB24600C85A6A /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				840280DD220FB24600C85A6A /* CSV */,
+				840280DF220FB24600C85A6A /* FILES */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		840280DD220FB24600C85A6A /* CSV */ = {
+			isa = PBXGroup;
+			children = (
+				840280DE220FB24600C85A6A /* csv.swift */,
+			);
+			path = CSV;
+			sourceTree = "<group>";
+		};
+		840280DF220FB24600C85A6A /* FILES */ = {
+			isa = PBXGroup;
+			children = (
+				840280E0220FB24600C85A6A /* imageFileFromLocal.swift */,
+			);
+			path = FILES;
+			sourceTree = "<group>";
+		};
+		840280E1220FB24600C85A6A /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				84027FC0220F4A5700C85A6A /* Remote Config */,
+				84028103220FB52900C85A6A /* Database */,
+				84028104220FB68F00C85A6A /* Storage */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		840280EA220FB24600C85A6A /* plist */ = {
+			isa = PBXGroup;
+			children = (
+				840280EB220FB24600C85A6A /* SwiftyPlistManager.swift */,
+			);
+			path = plist;
+			sourceTree = "<group>";
+		};
+		84028103220FB52900C85A6A /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				840280E2220FB24600C85A6A /* MLFirebaseDatabaseService.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		84028104220FB68F00C85A6A /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				840280E5220FB24600C85A6A /* storageManager.swift */,
+				840280E4220FB24600C85A6A /* examplesStorageFunctions.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		84594EDA21DC64650019C9B9 = {
@@ -226,6 +351,7 @@
 			children = (
 				84594EE621DC64650019C9B9 /* AppDelegate.swift */,
 				840268542206A7BF00EF6070 /* viewExtensions.swift */,
+				840280D0220FB24600C85A6A /* miLibreria */,
 				84027FC4220F4DB900C85A6A /* Defaults */,
 				84027FBC220F34CC00C85A6A /* Common */,
 				84FD53802203F2EB00DC102A /* Sources */,
@@ -429,22 +555,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840280FF220FB24600C85A6A /* networkManager.swift in Sources */,
 				84594EE921DC64650019C9B9 /* homeViewController.swift in Sources */,
+				84028102220FB24600C85A6A /* progressIndicator.swift in Sources */,
 				849BA96922074C9900EC93A6 /* IOLoginUsuarioViewModel.swift in Sources */,
+				840280F4220FB24600C85A6A /* coreGraphycs.swift in Sources */,
+				840280F0220FB24600C85A6A /* configEncriptar.swift in Sources */,
+				840280F6220FB24600C85A6A /* extensiones.swift in Sources */,
 				84027FC3220F4A9700C85A6A /* MLNotificationNames.swift in Sources */,
+				840280FB220FB24600C85A6A /* examplesStorageFunctions.swift in Sources */,
+				840280FD220FB24600C85A6A /* funcionesGlobales.swift in Sources */,
+				84028101220FB24600C85A6A /* SwiftyPlistManager.swift in Sources */,
 				849BA96E2207507A00EC93A6 /* IOLoginUserModel.swift in Sources */,
 				84594EEF21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld in Sources */,
+				84028100220FB24600C85A6A /* nsimageExtension.swift in Sources */,
+				840280F7220FB24600C85A6A /* csv.swift in Sources */,
 				849BA96C22074DD100EC93A6 /* IOLoginFirebaseService.swift in Sources */,
 				849BA96722074C8A00EC93A6 /* IOLoginUsuarioViewModelContract.swift in Sources */,
+				840280F2220FB24600C85A6A /* _coredataManager.swift in Sources */,
 				849BA976220775FE00EC93A6 /* IOLoginPasswordViewModel.swift in Sources */,
+				840280F5220FB24600C85A6A /* dateLibrary.swift in Sources */,
 				840268552206A7BF00EF6070 /* viewExtensions.swift in Sources */,
 				840280CF220FB0A400C85A6A /* IOLoginUsuarioViewController.swift in Sources */,
+				840280FC220FB24600C85A6A /* storageManager.swift in Sources */,
+				840280F1220FB24600C85A6A /* constantes.swift in Sources */,
 				84027FC6220F4DCC00C85A6A /* IODefaults.swift in Sources */,
 				849BA9742207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift in Sources */,
-				84027FBE220F34EF00C85A6A /* IORemoteConfigService.swift in Sources */,
+				840280F9220FB24600C85A6A /* MLFirebaseDatabaseService.swift in Sources */,
+				840280F8220FB24600C85A6A /* imageFileFromLocal.swift in Sources */,
+				84027FBE220F34EF00C85A6A /* MLFirebaseRemoteConfigService.swift in Sources */,
+				840280F3220FB24600C85A6A /* coredataGeneral.swift in Sources */,
 				849BA9722207748D00EC93A6 /* IOLoginPasswordModel.swift in Sources */,
 				8402684E2205F8A300EF6070 /* IOLoginContraseñaCV.swift in Sources */,
 				840268492205F31000EF6070 /* IOLoginContraseñaViewController.swift in Sources */,
+				840280EE220FB24600C85A6A /* alamofireExtension.swift in Sources */,
 				84594EE721DC64650019C9B9 /* AppDelegate.swift in Sources */,
 				8402685222068ECC00EF6070 /* TableViewCellLoginUsuario.swift in Sources */,
 			);
