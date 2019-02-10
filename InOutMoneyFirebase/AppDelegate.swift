@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 import Firebase
 
+var RC : RemoteConfig?
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -37,6 +39,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
+        IORemoteConfigService.instance.fetchRemoteConfig(success: { (rc) in
+            RC = rc
+            NotificationCenter.default.post(name: .rcDidChanged, object: nil, userInfo: nil)
+        }) { (error) in
+            print(error?.localizedDescription as Any)
+        }
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
@@ -92,4 +100,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+
+
 

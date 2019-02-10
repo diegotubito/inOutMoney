@@ -126,6 +126,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="uTL-DQ-U5p"/>
                     <connections>
+                        <outlet property="fondoLoginUsuario" destination="XUn-pj-Pr0" id="53G-ac-1Be"/>
                         <outlet property="myActivityIndicator" destination="tQ5-Cn-sNo" id="tfK-LT-qH4"/>
                         <outlet property="siguienteOutlet" destination="0kQ-Yr-ty8" id="XXN-8T-dmk"/>
                         <outlet property="subTitleLabel" destination="2VJ-wA-9by" id="n06-Vp-69X"/>

@@ -7,14 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class IOLoginUsuarioViewController: UIViewController, IOLoginUserViewContract {
- 
     
-    
-    
-    
-    
+   
     @IBOutlet var myActivityIndicator: UIActivityIndicatorView!
     
     
@@ -22,6 +19,7 @@ class IOLoginUsuarioViewController: UIViewController, IOLoginUserViewContract {
     @IBOutlet var subTitleLabel: UILabel!
     @IBOutlet var usuarioTextField: UITextField!
     @IBOutlet var siguienteOutlet: UIButton!
+    @IBOutlet var fondoLoginUsuario: UIImageView!
     
     var animacionDerecha = true
     
@@ -30,11 +28,15 @@ class IOLoginUsuarioViewController: UIViewController, IOLoginUserViewContract {
     override func viewDidLoad() {
         super .viewDidLoad()
        
-        
-    }
+     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
-      }
+        if RC != nil {
+            let nombreFondo = RC?.configValue(forKey: IORemoteConfigKeys.login_usuario_background).stringValue
+            fondoLoginUsuario.image = UIImage(named: nombreFondo ?? "")
+        }
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         titleLabel.isHidden = false
@@ -52,6 +54,7 @@ class IOLoginUsuarioViewController: UIViewController, IOLoginUserViewContract {
         usuarioTextField.text = viewModel.getUser()
 
 
+       
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -117,5 +120,6 @@ extension IOLoginUsuarioViewController: UITextFieldDelegate {
         return true
     }
 }
+
 
 
