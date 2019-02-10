@@ -13,6 +13,9 @@
 		8402685222068ECC00EF6070 /* TableViewCellLoginUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402685022068ECC00EF6070 /* TableViewCellLoginUsuario.swift */; };
 		8402685322068ECC00EF6070 /* TableViewCellLoginUsuario.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8402685122068ECC00EF6070 /* TableViewCellLoginUsuario.xib */; };
 		840268552206A7BF00EF6070 /* viewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840268542206A7BF00EF6070 /* viewExtensions.swift */; };
+		84027FBE220F34EF00C85A6A /* IORemoteConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84027FBD220F34EF00C85A6A /* IORemoteConfigService.swift */; };
+		84027FC3220F4A9700C85A6A /* MLNotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84027FC2220F4A9700C85A6A /* MLNotificationNames.swift */; };
+		84027FC6220F4DCC00C85A6A /* IODefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84027FC5220F4DCC00C85A6A /* IODefaults.swift */; };
 		842227587AA8719C417032C5 /* Pods_InOutMoneyFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */; };
 		84594EE721DC64650019C9B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84594EE621DC64650019C9B9 /* AppDelegate.swift */; };
 		84594EE921DC64650019C9B9 /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84594EE821DC64650019C9B9 /* homeViewController.swift */; };
@@ -40,6 +43,9 @@
 		8402685022068ECC00EF6070 /* TableViewCellLoginUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellLoginUsuario.swift; sourceTree = "<group>"; };
 		8402685122068ECC00EF6070 /* TableViewCellLoginUsuario.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellLoginUsuario.xib; sourceTree = "<group>"; };
 		840268542206A7BF00EF6070 /* viewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewExtensions.swift; sourceTree = "<group>"; };
+		84027FBD220F34EF00C85A6A /* IORemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORemoteConfigService.swift; sourceTree = "<group>"; };
+		84027FC2220F4A9700C85A6A /* MLNotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLNotificationNames.swift; sourceTree = "<group>"; };
+		84027FC5220F4DCC00C85A6A /* IODefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IODefaults.swift; sourceTree = "<group>"; };
 		84594EE321DC64650019C9B9 /* InOutMoneyFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InOutMoneyFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84594EE621DC64650019C9B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84594EE821DC64650019C9B9 /* homeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +107,7 @@
 			path = Usuario;
 			sourceTree = "<group>";
 		};
-		840268442205F2DE00EF6070 /* Contraseña */ = {
+		840268442205F2DE00EF6070 /* Contraseña */ = {
 			isa = PBXGroup;
 			children = (
 				840268472205F2F500EF6070 /* Model */,
@@ -156,6 +162,47 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		84027FBC220F34CC00C85A6A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				84027FBF220F4A4B00C85A6A /* Firebase */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		84027FBF220F4A4B00C85A6A /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				84027FC0220F4A5700C85A6A /* Remote Config */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		84027FC0220F4A5700C85A6A /* Remote Config */ = {
+			isa = PBXGroup;
+			children = (
+				84027FBD220F34EF00C85A6A /* IORemoteConfigService.swift */,
+			);
+			path = "Remote Config";
+			sourceTree = "<group>";
+		};
+		84027FC1220F4A6300C85A6A /* NotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				84027FC2220F4A9700C85A6A /* MLNotificationNames.swift */,
+			);
+			path = NotificationCenter;
+			sourceTree = "<group>";
+		};
+		84027FC4220F4DB900C85A6A /* Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				84027FC1220F4A6300C85A6A /* NotificationCenter */,
+				84027FC5220F4DCC00C85A6A /* IODefaults.swift */,
+			);
+			path = Defaults;
+			sourceTree = "<group>";
+		};
 		84594EDA21DC64650019C9B9 = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +226,8 @@
 			children = (
 				84594EE621DC64650019C9B9 /* AppDelegate.swift */,
 				840268542206A7BF00EF6070 /* viewExtensions.swift */,
+				84027FC4220F4DB900C85A6A /* Defaults */,
+				84027FBC220F34CC00C85A6A /* Common */,
 				84FD53802203F2EB00DC102A /* Sources */,
 				84594EF021DC64670019C9B9 /* Assets.xcassets */,
 				84594EF221DC64670019C9B9 /* LaunchScreen.storyboard */,
@@ -221,7 +270,7 @@
 				84FD53832203F37500DC102A /* StoryboardLogin.storyboard */,
 				849BA96A22074DB600EC93A6 /* Service */,
 				840268432205F2D100EF6070 /* Usuario */,
-				840268442205F2DE00EF6070 /* Contraseña */,
+				840268442205F2DE00EF6070 /* Contraseña */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -332,17 +381,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -378,13 +431,16 @@
 			files = (
 				84594EE921DC64650019C9B9 /* homeViewController.swift in Sources */,
 				849BA96922074C9900EC93A6 /* IOLoginUsuarioViewModel.swift in Sources */,
+				84027FC3220F4A9700C85A6A /* MLNotificationNames.swift in Sources */,
 				849BA96E2207507A00EC93A6 /* IOLoginUserModel.swift in Sources */,
 				84594EEF21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld in Sources */,
 				849BA96C22074DD100EC93A6 /* IOLoginFirebaseService.swift in Sources */,
 				849BA96722074C8A00EC93A6 /* IOLoginUsuarioViewModelContract.swift in Sources */,
 				849BA976220775FE00EC93A6 /* IOLoginPasswordViewModel.swift in Sources */,
 				840268552206A7BF00EF6070 /* viewExtensions.swift in Sources */,
+				84027FC6220F4DCC00C85A6A /* IODefaults.swift in Sources */,
 				849BA9742207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift in Sources */,
+				84027FBE220F34EF00C85A6A /* IORemoteConfigService.swift in Sources */,
 				849BA9722207748D00EC93A6 /* IOLoginPasswordModel.swift in Sources */,
 				8402684E2205F8A300EF6070 /* IOLoginContraseñaCV.swift in Sources */,
 				840268492205F31000EF6070 /* IOLoginContraseñaViewController.swift in Sources */,
@@ -540,7 +596,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S2BEC8V882;
 				INFOPLIST_FILE = InOutMoneyFirebase/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ddg.InOutMoneyFirebase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -556,7 +615,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S2BEC8V882;
 				INFOPLIST_FILE = InOutMoneyFirebase/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ddg.InOutMoneyFirebase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

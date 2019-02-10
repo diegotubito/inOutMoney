@@ -14,5 +14,8 @@ target 'InOutMoneyFirebase' do
   pod 'Firebase/Storage'
   pod 'Firebase/RemoteConfig'
 
+  pod 'ReachabilitySwift'
+  pod 'Alamofire'
+
 
 end

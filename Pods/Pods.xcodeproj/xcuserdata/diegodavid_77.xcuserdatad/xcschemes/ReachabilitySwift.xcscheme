@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9213994C9A590381C5446B20190D9A11"
-               BuildableName = "Pods_InOutMoneyFirebase.framework"
-               BlueprintName = "Pods-InOutMoneyFirebase"
+               BlueprintIdentifier = "F204341917E671F5E22E66CB5901C909"
+               BuildableName = "Reachability.framework"
+               BlueprintName = "ReachabilitySwift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9213994C9A590381C5446B20190D9A11"
-            BuildableName = "Pods_InOutMoneyFirebase.framework"
-            BlueprintName = "Pods-InOutMoneyFirebase"
+            BlueprintIdentifier = "F204341917E671F5E22E66CB5901C909"
+            BuildableName = "Reachability.framework"
+            BlueprintName = "ReachabilitySwift"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

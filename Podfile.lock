@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.5.1)
   - Firebase (4.4.0):
     - Firebase/Core (= 4.4.0)
   - Firebase/Auth (4.4.0):
@@ -60,17 +61,21 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.4.0)
+  - ReachabilitySwift (4.1.0)
 
 DEPENDENCIES:
+  - Alamofire
   - Firebase
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
   - Firebase/RemoteConfig
   - Firebase/Storage
+  - ReachabilitySwift
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Alamofire
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -84,8 +89,10 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
+    - ReachabilitySwift
 
 SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   Firebase: 3e92884a63e8f76d107c43a67d2ab9071e1eda10
   FirebaseAnalytics: 722b53c7b32bfc7806b06e0093a2f5180d4f2c5a
   FirebaseAuth: e0087d479709b20b9613b804704a928d6eafb052
@@ -99,7 +106,8 @@ SPEC CHECKSUMS:
   leveldb-library: 10fb39c39e243db4af1828441162405bbcec1404
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
+  ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
 
-PODFILE CHECKSUM: 5ca5cdfcc8387fe298e569b3b4fc05f1885384f0
+PODFILE CHECKSUM: 7fd705c280120dfa003e42a0271e742d75f48777
 
 COCOAPODS: 1.5.0
