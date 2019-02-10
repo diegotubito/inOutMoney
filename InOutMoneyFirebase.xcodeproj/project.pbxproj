@@ -198,21 +198,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		84027FBC220F34CC00C85A6A /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				84027FBF220F4A4B00C85A6A /* Firebase */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		84027FBF220F4A4B00C85A6A /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Firebase;
-			sourceTree = "<group>";
-		};
 		84027FC0220F4A5700C85A6A /* Remote Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,7 +222,7 @@
 			path = Defaults;
 			sourceTree = "<group>";
 		};
-		840280D0220FB24600C85A6A /* miLibreria */ = {
+		840280D0220FB24600C85A6A /* MyLibrary */ = {
 			isa = PBXGroup;
 			children = (
 				840280D1220FB24600C85A6A /* alamofireExtension.swift */,
@@ -256,7 +241,7 @@
 				840280EA220FB24600C85A6A /* plist */,
 				840280EC220FB24600C85A6A /* progressIndicator.swift */,
 			);
-			path = miLibreria;
+			path = MyLibrary;
 			sourceTree = "<group>";
 		};
 		840280D6220FB24600C85A6A /* CoreData */ = {
@@ -351,9 +336,8 @@
 			children = (
 				84594EE621DC64650019C9B9 /* AppDelegate.swift */,
 				840268542206A7BF00EF6070 /* viewExtensions.swift */,
-				840280D0220FB24600C85A6A /* miLibreria */,
+				840280D0220FB24600C85A6A /* MyLibrary */,
 				84027FC4220F4DB900C85A6A /* Defaults */,
-				84027FBC220F34CC00C85A6A /* Common */,
 				84FD53802203F2EB00DC102A /* Sources */,
 				84594EF021DC64670019C9B9 /* Assets.xcassets */,
 				84594EF221DC64670019C9B9 /* LaunchScreen.storyboard */,
