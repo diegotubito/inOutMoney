@@ -35,6 +35,12 @@
 		84028100220FB24600C85A6A /* nsimageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280E9220FB24600C85A6A /* nsimageExtension.swift */; };
 		84028101220FB24600C85A6A /* SwiftyPlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280EB220FB24600C85A6A /* SwiftyPlistManager.swift */; };
 		84028102220FB24600C85A6A /* progressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280EC220FB24600C85A6A /* progressIndicator.swift */; };
+		84028107220FC34000C85A6A /* IONuevoUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84028106220FC34000C85A6A /* IONuevoUsuarioViewController.swift */; };
+		8402810C220FC36300C85A6A /* IONuevoUsuarioViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402810B220FC36300C85A6A /* IONuevoUsuarioViewModelContract.swift */; };
+		8402810E220FC37100C85A6A /* IONuevoUsuarioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402810D220FC37100C85A6A /* IONuevoUsuarioViewModel.swift */; };
+		84028110220FC37B00C85A6A /* IONuevoUsuarioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402810F220FC37B00C85A6A /* IONuevoUsuarioModel.swift */; };
+		8402811C220FC81600C85A6A /* IOTableViewCellSingleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402811A220FC81600C85A6A /* IOTableViewCellSingleTextField.swift */; };
+		8402811D220FC81600C85A6A /* IOTableViewCellSingleTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8402811B220FC81600C85A6A /* IOTableViewCellSingleTextField.xib */; };
 		842227587AA8719C417032C5 /* Pods_InOutMoneyFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */; };
 		84594EE721DC64650019C9B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84594EE621DC64650019C9B9 /* AppDelegate.swift */; };
 		84594EE921DC64650019C9B9 /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84594EE821DC64650019C9B9 /* homeViewController.swift */; };
@@ -50,6 +56,7 @@
 		849BA9722207748D00EC93A6 /* IOLoginPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA9712207748D00EC93A6 /* IOLoginPasswordModel.swift */; };
 		849BA9742207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA9732207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift */; };
 		849BA976220775FE00EC93A6 /* IOLoginPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA975220775FE00EC93A6 /* IOLoginPasswordViewModel.swift */; };
+		84DABE162210B6C90024B112 /* toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DABE152210B6C90024B112 /* toast.swift */; };
 		84FD53842203F37500DC102A /* StoryboardLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FD53832203F37500DC102A /* StoryboardLogin.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +90,12 @@
 		840280E9220FB24600C85A6A /* nsimageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nsimageExtension.swift; sourceTree = "<group>"; };
 		840280EB220FB24600C85A6A /* SwiftyPlistManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyPlistManager.swift; sourceTree = "<group>"; };
 		840280EC220FB24600C85A6A /* progressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = progressIndicator.swift; sourceTree = "<group>"; };
+		84028106220FC34000C85A6A /* IONuevoUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IONuevoUsuarioViewController.swift; path = InOutMoneyFirebase/Sources/Login/NuevoUsuario/View/IONuevoUsuarioViewController.swift; sourceTree = SOURCE_ROOT; };
+		8402810B220FC36300C85A6A /* IONuevoUsuarioViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IONuevoUsuarioViewModelContract.swift; path = InOutMoneyFirebase/Defaults/IONuevoUsuarioViewModelContract.swift; sourceTree = SOURCE_ROOT; };
+		8402810D220FC37100C85A6A /* IONuevoUsuarioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IONuevoUsuarioViewModel.swift; path = InOutMoneyFirebase/Defaults/IONuevoUsuarioViewModel.swift; sourceTree = SOURCE_ROOT; };
+		8402810F220FC37B00C85A6A /* IONuevoUsuarioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IONuevoUsuarioModel.swift; path = InOutMoneyFirebase/Defaults/IONuevoUsuarioModel.swift; sourceTree = SOURCE_ROOT; };
+		8402811A220FC81600C85A6A /* IOTableViewCellSingleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IOTableViewCellSingleTextField.swift; path = InOutMoneyFirebase/Defaults/IOTableViewCellSingleTextField.swift; sourceTree = SOURCE_ROOT; };
+		8402811B220FC81600C85A6A /* IOTableViewCellSingleTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = IOTableViewCellSingleTextField.xib; path = InOutMoneyFirebase/Defaults/IOTableViewCellSingleTextField.xib; sourceTree = SOURCE_ROOT; };
 		84594EE321DC64650019C9B9 /* InOutMoneyFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InOutMoneyFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84594EE621DC64650019C9B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84594EE821DC64650019C9B9 /* homeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +112,7 @@
 		849BA9712207748D00EC93A6 /* IOLoginPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginPasswordModel.swift; sourceTree = "<group>"; };
 		849BA9732207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginPasswordViewModelContract.swift; sourceTree = "<group>"; };
 		849BA975220775FE00EC93A6 /* IOLoginPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginPasswordViewModel.swift; sourceTree = "<group>"; };
+		84DABE152210B6C90024B112 /* toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = toast.swift; sourceTree = "<group>"; };
 		84FD53832203F37500DC102A /* StoryboardLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardLogin.storyboard; sourceTree = "<group>"; };
 		D3C6A17853DDA48318A6E934 /* Pods-InOutMoneyFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InOutMoneyFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InOutMoneyFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,20 +239,21 @@
 		840280D0220FB24600C85A6A /* MyLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				84DABE142210B6C90024B112 /* Toast */,
+				84027FC1220F4A6300C85A6A /* NotificationCenter */,
+				840280D6220FB24600C85A6A /* CoreData */,
+				840280DC220FB24600C85A6A /* Files */,
+				840280E1220FB24600C85A6A /* Firebase */,
+				840280EA220FB24600C85A6A /* plist */,
 				840280D1220FB24600C85A6A /* alamofireExtension.swift */,
 				840280D4220FB24600C85A6A /* configEncriptar.swift */,
 				840280D5220FB24600C85A6A /* constantes.swift */,
-				84027FC1220F4A6300C85A6A /* NotificationCenter */,
-				840280D6220FB24600C85A6A /* CoreData */,
 				840280D9220FB24600C85A6A /* coreGraphycs.swift */,
 				840280DA220FB24600C85A6A /* dateLibrary.swift */,
 				840280DB220FB24600C85A6A /* extensiones.swift */,
-				840280DC220FB24600C85A6A /* Files */,
-				840280E1220FB24600C85A6A /* Firebase */,
 				840280E6220FB24600C85A6A /* funcionesGlobales.swift */,
 				840280E8220FB24600C85A6A /* networkManager.swift */,
 				840280E9220FB24600C85A6A /* nsimageExtension.swift */,
-				840280EA220FB24600C85A6A /* plist */,
 				840280EC220FB24600C85A6A /* progressIndicator.swift */,
 			);
 			path = MyLibrary;
@@ -313,6 +328,66 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
+		84028105220FC31A00C85A6A /* NuevoUsuario */ = {
+			isa = PBXGroup;
+			children = (
+				8402810A220FC34D00C85A6A /* Model */,
+				84028109220FC34800C85A6A /* ViewModel */,
+				84028108220FC34400C85A6A /* View */,
+			);
+			path = NuevoUsuario;
+			sourceTree = "<group>";
+		};
+		84028108220FC34400C85A6A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84028106220FC34000C85A6A /* IONuevoUsuarioViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84028109220FC34800C85A6A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8402810B220FC36300C85A6A /* IONuevoUsuarioViewModelContract.swift */,
+				8402810D220FC37100C85A6A /* IONuevoUsuarioViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8402810A220FC34D00C85A6A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8402810F220FC37B00C85A6A /* IONuevoUsuarioModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84028116220FC76100C85A6A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				84028118220FC7F200C85A6A /* Cells */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		84028118220FC7F200C85A6A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84028119220FC7FB00C85A6A /* SingleTextField */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		84028119220FC7FB00C85A6A /* SingleTextField */ = {
+			isa = PBXGroup;
+			children = (
+				8402811A220FC81600C85A6A /* IOTableViewCellSingleTextField.swift */,
+				8402811B220FC81600C85A6A /* IOTableViewCellSingleTextField.xib */,
+			);
+			path = SingleTextField;
+			sourceTree = "<group>";
+		};
 		84594EDA21DC64650019C9B9 = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +411,7 @@
 			children = (
 				84594EE621DC64650019C9B9 /* AppDelegate.swift */,
 				840268542206A7BF00EF6070 /* viewExtensions.swift */,
+				84028116220FC76100C85A6A /* Common */,
 				840280D0220FB24600C85A6A /* MyLibrary */,
 				84027FC4220F4DB900C85A6A /* Defaults */,
 				84FD53802203F2EB00DC102A /* Sources */,
@@ -354,6 +430,14 @@
 				849BA96B22074DD100EC93A6 /* IOLoginFirebaseService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		84DABE142210B6C90024B112 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				84DABE152210B6C90024B112 /* toast.swift */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 		84FD53802203F2EB00DC102A /* Sources */ = {
@@ -378,6 +462,7 @@
 			isa = PBXGroup;
 			children = (
 				84FD53832203F37500DC102A /* StoryboardLogin.storyboard */,
+				84028105220FC31A00C85A6A /* NuevoUsuario */,
 				849BA96A22074DB600EC93A6 /* Service */,
 				840268432205F2D100EF6070 /* Usuario */,
 				840268442205F2DE00EF6070 /* Contraseña */,
@@ -476,6 +561,7 @@
 				84594EEC21DC64650019C9B9 /* Main.storyboard in Resources */,
 				849BA9702207547A00EC93A6 /* GoogleService-Info.plist in Resources */,
 				8402685322068ECC00EF6070 /* TableViewCellLoginUsuario.xib in Resources */,
+				8402811D220FC81600C85A6A /* IOTableViewCellSingleTextField.xib in Resources */,
 				84FD53842203F37500DC102A /* StoryboardLogin.storyboard in Resources */,
 				8402684C2205F87D00EF6070 /* IOLoginContraseñaCV.xib in Resources */,
 			);
@@ -541,6 +627,7 @@
 			files = (
 				840280FF220FB24600C85A6A /* networkManager.swift in Sources */,
 				84594EE921DC64650019C9B9 /* homeViewController.swift in Sources */,
+				84028110220FC37B00C85A6A /* IONuevoUsuarioModel.swift in Sources */,
 				84028102220FB24600C85A6A /* progressIndicator.swift in Sources */,
 				849BA96922074C9900EC93A6 /* IOLoginUsuarioViewModel.swift in Sources */,
 				840280F4220FB24600C85A6A /* coreGraphycs.swift in Sources */,
@@ -551,6 +638,7 @@
 				840280FD220FB24600C85A6A /* funcionesGlobales.swift in Sources */,
 				84028101220FB24600C85A6A /* SwiftyPlistManager.swift in Sources */,
 				849BA96E2207507A00EC93A6 /* IOLoginUserModel.swift in Sources */,
+				8402811C220FC81600C85A6A /* IOTableViewCellSingleTextField.swift in Sources */,
 				84594EEF21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld in Sources */,
 				84028100220FB24600C85A6A /* nsimageExtension.swift in Sources */,
 				840280F7220FB24600C85A6A /* csv.swift in Sources */,
@@ -558,7 +646,10 @@
 				849BA96722074C8A00EC93A6 /* IOLoginUsuarioViewModelContract.swift in Sources */,
 				840280F2220FB24600C85A6A /* _coredataManager.swift in Sources */,
 				849BA976220775FE00EC93A6 /* IOLoginPasswordViewModel.swift in Sources */,
+				8402810E220FC37100C85A6A /* IONuevoUsuarioViewModel.swift in Sources */,
+				84028107220FC34000C85A6A /* IONuevoUsuarioViewController.swift in Sources */,
 				840280F5220FB24600C85A6A /* dateLibrary.swift in Sources */,
+				8402810C220FC36300C85A6A /* IONuevoUsuarioViewModelContract.swift in Sources */,
 				840268552206A7BF00EF6070 /* viewExtensions.swift in Sources */,
 				840280CF220FB0A400C85A6A /* IOLoginUsuarioViewController.swift in Sources */,
 				840280FC220FB24600C85A6A /* storageManager.swift in Sources */,
@@ -571,6 +662,7 @@
 				840280F3220FB24600C85A6A /* coredataGeneral.swift in Sources */,
 				849BA9722207748D00EC93A6 /* IOLoginPasswordModel.swift in Sources */,
 				8402684E2205F8A300EF6070 /* IOLoginContraseñaCV.swift in Sources */,
+				84DABE162210B6C90024B112 /* toast.swift in Sources */,
 				840268492205F31000EF6070 /* IOLoginContraseñaViewController.swift in Sources */,
 				840280EE220FB24600C85A6A /* alamofireExtension.swift in Sources */,
 				84594EE721DC64650019C9B9 /* AppDelegate.swift in Sources */,

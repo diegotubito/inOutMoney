@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 import Firebase
 
 class IOLoginUsuarioViewController: UIViewController, IOLoginUserViewContract {
@@ -27,6 +28,8 @@ class IOLoginUsuarioViewController: UIViewController, IOLoginUserViewContract {
     
     override func viewDidLoad() {
         super .viewDidLoad()
+        
+        
        
      }
     
@@ -57,9 +60,14 @@ class IOLoginUsuarioViewController: UIViewController, IOLoginUserViewContract {
        
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? IOLoginContraseñaViewController {
             controller.viewModel = IOLoginPasswordViewModel(withView: controller, interactor: IOLoginFirebaseService(), user: usuarioTextField.text!)
+        }
+        
+        if let controller = segue.destination as? IONuevoUsuarioViewController {
+            controller.viewModel = IONuevoUsuarioViewModel(withView: controller, interactor: IOLoginFirebaseService())
         }
     }
     
@@ -105,6 +113,9 @@ class IOLoginUsuarioViewController: UIViewController, IOLoginUserViewContract {
         return usuarioTextField.text!
     }
    
+    @IBAction func registerPressed(_ sender: Any) {
+        performSegue(withIdentifier: "seugue_nuevo_usuario", sender: nil)
+    }
     
     
 }

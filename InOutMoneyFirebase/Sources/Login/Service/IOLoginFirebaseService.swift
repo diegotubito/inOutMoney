@@ -16,9 +16,25 @@ protocol IOLoginFirebaseServiceContract {
  
     func signOut(success: () -> Void, fail: () -> Void)
     
+    func registerNewUser(email: String, password: String, success: @escaping (User) -> Void, fail: @escaping (Error) -> Void) 
+
+    
 }
 
 class IOLoginFirebaseService: IOLoginFirebaseServiceContract {
+    
+    func registerNewUser(email: String, password: String, success: @escaping (User) -> Void, fail: @escaping (Error) -> Void) {
+
+        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+            if error != nil {
+                fail(error!)
+                return
+            }
+        
+            success(user!)
+            
+        }
+    }
     
     func signOut(success: () -> Void, fail: () -> Void) {
         do {

@@ -10,6 +10,73 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Nuevo Usuario View Controller-->
+        <scene sceneID="nHg-io-xVb">
+            <objects>
+                <viewController id="oE0-l1-0B4" customClass="IONuevoUsuarioViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xCg-cZ-PuM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b3C-FP-iDS">
+                                <rect key="frame" x="0.0" y="58" width="375" height="559"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oE0-l1-0B4" id="2NT-jK-vBA"/>
+                                    <outlet property="delegate" destination="oE0-l1-0B4" id="ayN-Qv-B8P"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHU-Va-uU1">
+                                <rect key="frame" x="8" y="28" width="43" height="30"/>
+                                <state key="normal" title="Volver"/>
+                                <connections>
+                                    <action selector="volverPresionado:" destination="oE0-l1-0B4" eventType="touchUpInside" id="UC7-Jx-mi7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hb-Je-AXd">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="amP-KO-LcL"/>
+                                </constraints>
+                                <state key="normal" title="Confirmar">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmarPresionado:" destination="oE0-l1-0B4" eventType="touchUpInside" id="fr6-2X-ZJ2"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Yhr-VO-u54">
+                                <rect key="frame" x="177.5" y="28" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Yhr-VO-u54" firstAttribute="centerX" secondItem="xCg-cZ-PuM" secondAttribute="centerX" id="06z-RV-mzb"/>
+                            <constraint firstItem="b3C-FP-iDS" firstAttribute="top" secondItem="JHU-Va-uU1" secondAttribute="bottom" id="4we-S6-O0r"/>
+                            <constraint firstItem="JHU-Va-uU1" firstAttribute="top" secondItem="RG7-k4-3NB" secondAttribute="top" constant="8" id="J9p-Ma-O43"/>
+                            <constraint firstItem="Yhr-VO-u54" firstAttribute="top" secondItem="RG7-k4-3NB" secondAttribute="top" constant="8" id="NTP-vk-tyr"/>
+                            <constraint firstItem="9hb-Je-AXd" firstAttribute="leading" secondItem="RG7-k4-3NB" secondAttribute="leading" id="VPy-Q4-dhz"/>
+                            <constraint firstItem="RG7-k4-3NB" firstAttribute="trailing" secondItem="b3C-FP-iDS" secondAttribute="trailing" id="aN5-fO-eYM"/>
+                            <constraint firstItem="JHU-Va-uU1" firstAttribute="leading" secondItem="RG7-k4-3NB" secondAttribute="leading" constant="8" id="pD4-5a-kmB"/>
+                            <constraint firstItem="RG7-k4-3NB" firstAttribute="bottom" secondItem="9hb-Je-AXd" secondAttribute="bottom" id="rE3-gd-bK6"/>
+                            <constraint firstItem="b3C-FP-iDS" firstAttribute="leading" secondItem="RG7-k4-3NB" secondAttribute="leading" id="uzV-Yc-MmP"/>
+                            <constraint firstItem="RG7-k4-3NB" firstAttribute="trailing" secondItem="9hb-Je-AXd" secondAttribute="trailing" id="yaX-sN-P2g"/>
+                            <constraint firstItem="9hb-Je-AXd" firstAttribute="top" secondItem="b3C-FP-iDS" secondAttribute="bottom" id="zCH-TU-KIY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RG7-k4-3NB"/>
+                    </view>
+                    <connections>
+                        <outlet property="myIndicator" destination="Yhr-VO-u54" id="Spf-3g-ODP"/>
+                        <outlet property="tableView" destination="b3C-FP-iDS" id="rKc-Ev-7pL"/>
+                        <segue destination="ZWt-rT-O0Y" kind="show" identifier="segue_to_usuario" id="rGm-fI-ug2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D0R-9i-ydb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="813.60000000000002" y="-594.15292353823088"/>
+        </scene>
         <!--Login Usuario View Controller-->
         <scene sceneID="Y4d-9b-QCV">
             <objects>
@@ -43,6 +110,9 @@
                                                 <state key="normal" title="Registrarse">
                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="registerPressed:" destination="ZWt-rT-O0Y" eventType="touchUpInside" id="VDY-yn-rag"/>
+                                                </connections>
                                             </button>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDa-fC-bUG">
                                                 <rect key="frame" x="139.5" y="88.5" width="96.5" height="35"/>
@@ -133,6 +203,7 @@
                         <outlet property="titleLabel" destination="NDa-fC-bUG" id="w75-Xk-VJc"/>
                         <outlet property="usuarioTextField" destination="OCv-ad-mQc" id="7yn-Lt-cdE"/>
                         <segue destination="H9n-1F-TtL" kind="show" identifier="segue_to_login_contraseña" animates="NO" id="4Zg-D4-pY1"/>
+                        <segue destination="oE0-l1-0B4" kind="show" identifier="seugue_nuevo_usuario" id="szD-L8-LUc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s4U-tq-Ret" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -313,4 +384,7 @@
     <resources>
         <image name="degrade" width="2244" height="2640"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="rGm-fI-ug2"/>
+    </inferredMetricsTieBreakers>
 </document>
