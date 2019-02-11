@@ -23,6 +23,7 @@ protocol IOLoginFirebaseServiceContract {
 
 class IOLoginFirebaseService: IOLoginFirebaseServiceContract {
     
+    
     func registerNewUser(email: String, password: String, success: @escaping (User) -> Void, fail: @escaping (Error) -> Void) {
 
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in

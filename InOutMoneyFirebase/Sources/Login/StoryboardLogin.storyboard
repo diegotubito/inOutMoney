@@ -80,7 +80,7 @@
         <!--Login Usuario View Controller-->
         <scene sceneID="Y4d-9b-QCV">
             <objects>
-                <viewController id="ZWt-rT-O0Y" customClass="IOLoginUsuarioViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IOLoginUsuarioViewController" id="ZWt-rT-O0Y" customClass="IOLoginUsuarioViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UzJ-hP-XuN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
