@@ -65,6 +65,10 @@ class IONuevoUsuarioViewModel : IONuevoUsuarioViewModelContract {
         }
     }
     
+    func createUserInDataBase() {
+        
+    }
+    
     func getModel() -> IONuevoUsuarioModel {
         return model
     }

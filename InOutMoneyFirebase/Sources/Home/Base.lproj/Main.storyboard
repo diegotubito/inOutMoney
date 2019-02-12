@@ -21,37 +21,68 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="IOHomeViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="seq-bM-euO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Homez" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kt-Rw-rsw">
-                                <rect key="frame" x="166" y="111" width="55" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3EK-pH-I4r">
-                                <rect key="frame" x="121" y="227" width="133" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Go Login"/>
-                                <connections>
-                                    <action selector="goLoginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oDJ-nW-IRw"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMP-hs-cG9">
+                                <rect key="frame" x="0.0" y="637" width="375" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFW-Qp-CBD">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="uVm-Yq-6ma"/>
+                                        </constraints>
+                                        <state key="normal" title="Gastos"/>
+                                        <connections>
+                                            <action selector="gastosPresionado:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AGg-rq-1Uz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQZ-ub-Ws2">
+                                        <rect key="frame" x="345" y="0.0" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Diw-LW-t2Z"/>
+                                            <constraint firstAttribute="height" constant="30" id="x1e-g7-Db0"/>
+                                        </constraints>
+                                        <state key="normal" image="log-out"/>
+                                        <connections>
+                                            <action selector="log_out_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Ex-93-Pg4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="brc-Vg-gCt"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUq-zD-dU1">
+                                <rect key="frame" x="0.0" y="20" width="375" height="617"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aMP-hs-cG9" firstAttribute="top" secondItem="uUq-zD-dU1" secondAttribute="bottom" id="2aw-4B-oPA"/>
+                            <constraint firstItem="uUq-zD-dU1" firstAttribute="leading" secondItem="U1X-UP-TbK" secondAttribute="leading" id="7YQ-HZ-XAe"/>
+                            <constraint firstItem="U1X-UP-TbK" firstAttribute="trailing" secondItem="uUq-zD-dU1" secondAttribute="trailing" id="HC6-7D-gFJ"/>
+                            <constraint firstItem="aMP-hs-cG9" firstAttribute="bottom" secondItem="U1X-UP-TbK" secondAttribute="bottom" id="PQJ-4j-VXY"/>
+                            <constraint firstItem="uUq-zD-dU1" firstAttribute="top" secondItem="U1X-UP-TbK" secondAttribute="top" id="Pcm-Ji-Jwz"/>
+                            <constraint firstItem="aMP-hs-cG9" firstAttribute="leading" secondItem="U1X-UP-TbK" secondAttribute="leading" id="PvJ-Z0-b9A"/>
+                            <constraint firstItem="U1X-UP-TbK" firstAttribute="trailing" secondItem="aMP-hs-cG9" secondAttribute="trailing" id="Q5F-Kg-9wa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="U1X-UP-TbK"/>
                     </view>
                     <connections>
+                        <outlet property="viewPrincipal" destination="uUq-zD-dU1" id="ra7-cg-ot5"/>
                         <segue destination="7la-QV-wb7" kind="show" identifier="segue_to_login" animates="NO" id="k46-9T-Gg8"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="40.799999999999997" y="362.96851574212894"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="log-out" width="300" height="299"/>
+    </resources>
 </document>

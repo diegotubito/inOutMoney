@@ -12,6 +12,8 @@ import Firebase
 class IOHomeViewController: UIViewController {
     var service : IOLoginFirebaseService!
     
+    @IBOutlet var viewPrincipal: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,9 +25,6 @@ class IOHomeViewController: UIViewController {
                 self.switchStoryboard()
             } else {
                 print("you are logged in \(user?.uid)")
-           //     self.userName = user?.displayName
-           //     self.userUID = user?.uid
-                
             }
         }
     }
@@ -43,15 +42,18 @@ class IOHomeViewController: UIViewController {
         
     }
 
-    @IBAction func goLoginPressed(_ sender: Any) {
+    @IBAction func gastosPresionado(_ sender: Any) {
+        let aux = IOGastosCustomView(frame: CGRect(x: 0, y: 0, width: viewPrincipal.frame.width, height: viewPrincipal.frame.height))
+        viewPrincipal.addSubview(aux)
+    }
+    @IBAction func log_out_pressed(_ sender: Any) {
         
         service.signOut(success: {
             print("sign out")
         }) {
             print(("error sign out"))
         }
-        performSegue(withIdentifier: "segue_to_login", sender: nil)
-    }
+     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? IOLoginUsuarioViewController {

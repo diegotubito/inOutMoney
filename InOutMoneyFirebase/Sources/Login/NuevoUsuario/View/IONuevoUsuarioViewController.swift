@@ -83,6 +83,7 @@ class IONuevoUsuarioViewController: UIViewController, IONuevoUsuarioViewContract
         print("success showing: \(message)")
         alertMessage(title: "Nuevo Usuario", message: message, leave: true)
         
+        
     }
     
     @IBAction func confirmarPresionado(_ sender: Any) {
@@ -148,7 +149,11 @@ extension IONuevoUsuarioViewController: IOTableViewCellSingelTextFieldDelegate {
             passwordCell.textField.becomeFirstResponder()
         } else if textField == passwordCell.textField {
             passwordRepetitionCell.textField.becomeFirstResponder()
+            self.passwordRepetitionCell.alpha = 0
             self.passwordRepetitionCell.isHidden = false
+            UIView.animate(withDuration: 1) {
+                self.passwordRepetitionCell.alpha = 1
+            }
             
         } else if textField == passwordRepetitionCell.textField {
             self.passwordRepetitionCell.textField.resignFirstResponder()
