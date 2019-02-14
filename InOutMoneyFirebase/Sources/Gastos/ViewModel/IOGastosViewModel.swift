@@ -28,13 +28,17 @@ class IOGastosViewModel: NSObject {
     override init() {
         super.init()
         
+        //hardcode data, for testing purpose
+          
+        let profile = IOGastosProfile(json: nil)
+        
         let headerItem = IOGastosViewModelProfileHeaderItem(mes: "ENERO", totalMensual: "$ 1.000,00")
         items.append(headerItem)
         
-        let rubros = IOGastosProfile.rubros
-        if !IOGastosProfile.rubros.isEmpty {
-            let rubrosItems = ProfileViewModeFriendsItem(friends: friends)
-            items.append(friendsItem)
+        let rubros = profile.rubros
+        if !profile.rubros.isEmpty {
+            let rubrosItems = IOGastosViewModelProfileRubrosItem(rubros: rubros)
+            items.append(rubrosItems)
         }
     }
 }
@@ -65,20 +69,20 @@ class IOGastosViewModelProfileHeaderItem: IOGastosViewModelProfileItem {
 
 class IOGastosViewModelProfileRubrosItem: IOGastosViewModelProfileItem {
     var type: IOGastosViewModelProfileItemType {
-        return .friend
+        return .rubros
     }
     
     var sectionTitle: String {
-        return "Friends"
+        return "Rubros"
     }
     
     var rowCount: Int {
-        return friends.count
+        return rubros.count
     }
     
-    var friends: [Friend]
+    var rubros: [IOGastosRubro]
     
-    init(friends: [Friend]) {
-        self.friends = friends
+    init(rubros: [IOGastosRubro]) {
+        self.rubros = rubros
     }
 }

@@ -12,11 +12,10 @@ import UIKit
 class IOGastosProfile {
     var mes : Int
     var totalMensual : Double
-    
     var rubros = [IOGastosRubro]()
     var nuevoRubro = [IOGastosNuevoRubro]()
     
-    init() {
+    init(json: [String: Any]?) {
         self.mes = mesDeLaFecha(fecha: Date())
         self.totalMensual = 0
     }
