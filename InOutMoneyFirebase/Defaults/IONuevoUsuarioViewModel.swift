@@ -59,9 +59,28 @@ class IONuevoUsuarioViewModel : IONuevoUsuarioViewModelContract {
         _interactor.registerNewUser(email: model.email, password: model.password, success: { (user) in
             self._view.hideLoading()
             self._view.showSuccess("Tu usuario fue creado con exito.")
+            
+            self.crearUsuarioEnFirebase(userUID: user.uid, succes: {
+                self._view.showSuccess("registro creado en firebase: \(user.uid)")
+            }, fail: { (error) in
+                self._view.showError(error?.localizedDescription ?? "unknown error")
+            })
+            
+            
         }) { (error) in
             self._view.hideLoading()
             self._view.showError(error.localizedDescription)
+        }
+    }
+    
+    func crearUsuarioEnFirebase(userUID: String, succes: @escaping () -> Void, fail: @escaping (Error?) -> Void) {
+        let initialData = ["fecha" : Date().toString(formato: formatoDeFecha.fechaConHora)]
+        
+        MLFirebaseDatabaseService.setData(path: userUID, diccionario: initialData, success: { (ref) in
+            print(ref.description())
+            succes()
+        }) { (error) in
+            fail(error)
         }
     }
     

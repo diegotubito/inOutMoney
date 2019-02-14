@@ -13,16 +13,16 @@ class MLFirebaseDatabaseService {
         observerRef.removeObserver(withHandle: observerRefHandle)
     }
    
-    static func upload(path: String, diccionario: [String: Any], success: @escaping (Bool, Error?) -> Void) {
+    static func setData(path: String, diccionario: [String: Any], success: @escaping (DatabaseReference) -> Void, fail: @escaping (Error?) -> Void) {
         
         let ref = Database.database().reference()
         
         // Guardo los datos del nuevo socio en la Firebase
         ref.child(path).setValue(diccionario) { (error, ref) -> Void in
             if error == nil {
-                success(true, nil)
+                success(ref)
             }else {
-                success(false, error)
+                fail(error)
             }
         }
         
