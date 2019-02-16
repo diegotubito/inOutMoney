@@ -9,11 +9,24 @@
 import UIKit
 
 class IOHomeViewModel: IOHomeViewModelContract {
+    var _view : IOHomeViewContract!
+    var model : IOHomeModel!
+    
+    required init(withView view: IOHomeViewContract) {
+        _view = view
+        model = IOHomeModel()
+    }
+    
     func getDataFromFirebase(path: String) {
         
         MLFirebaseDatabaseService.retrieveData(path: path) { (response, error) in
             if error != nil {
-                print("error al cargar fecha \(String(describing: error?.localizedDescription))")
+                self._view.toast(message: (error?.localizedDescription)!)
+                return
+            }
+            
+            if response == nil {
+                self._view.toast(message: "No hay registros en Firebase.")
                 return
             }
             

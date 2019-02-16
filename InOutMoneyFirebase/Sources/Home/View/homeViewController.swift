@@ -10,15 +10,19 @@ import UIKit
 import Firebase
 
 class IOHomeViewController: UIViewController, IOHomeViewContract {
+    
+    
     var service : IOLoginFirebaseService!
     
     @IBOutlet var viewPrincipal: UIView!
     var authListener : AuthStateDidChangeListenerHandle!
     
-    var viewModel = IOHomeViewModel()
+    var viewModel : IOHomeViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel = IOHomeViewModel(withView: self)
         
         // Do any additional setup after loading the view, typically from a nib.
         service = IOLoginFirebaseService()
@@ -33,7 +37,7 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
                 
             } else {
                 self.viewModel.getDataFromFirebase(path: (user?.uid)!)
-                print("you are logged in \(String(describing: user?.uid))")
+                 print("you are logged in \(String(describing: user?.uid))")
             }
         }
      
@@ -62,7 +66,7 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
         service.signOut(success: {
             print("sign out")
         }) {
-            print(("error sign out"))
+            toast(message: "Error al cerrar sesión.")
         }
      }
     
@@ -70,6 +74,10 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
         if let controller = segue.destination as? IOLoginUsuarioViewController {
             controller.viewModel = IOLoginUsuarioViewModel(withView: controller, interactor: IOLoginFirebaseService(), user: "")
         }
+    }
+    
+    func toast(message: String) {
+        Toast.show(message: message, controller: self)
     }
     
 }
