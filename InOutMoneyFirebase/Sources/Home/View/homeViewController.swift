@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 
+var UserID : String?
+
 class IOHomeViewController: UIViewController, IOHomeViewContract {
     
     
@@ -30,6 +32,9 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
         
         
         authListener = Auth.auth().addStateDidChangeListener() { auth, user in
+          
+            UserID = user?.uid
+            
             if user == nil {
                 print("no hay usuario autenticado")
                  Auth.auth().removeStateDidChangeListener(self.authListener)
@@ -37,7 +42,7 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
                 
             } else {
                 self.viewModel.getDataFromFirebase(path: (user?.uid)!)
-                 print("you are logged in \(String(describing: user?.uid))")
+                  print("you are logged in \(String(describing: user?.uid))")
             }
         }
      
@@ -58,8 +63,7 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
     }
 
     @IBAction func gastosPresionado(_ sender: Any) {
-        let aux = IOGastosCustomView(frame: CGRect(x: 0, y: 0, width: viewPrincipal.frame.width, height: viewPrincipal.frame.height))
-        viewPrincipal.addSubview(aux)
+        performSegue(withIdentifier: "segue_to_gastos", sender: nil)
     }
     @IBAction func log_out_pressed(_ sender: Any) {
         
@@ -74,6 +78,12 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
         if let controller = segue.destination as? IOLoginUsuarioViewController {
             controller.viewModel = IOLoginUsuarioViewModel(withView: controller, interactor: IOLoginFirebaseService(), user: "")
         }
+        
+        if let controller = segue.destination as? MBRubrosProfileViewController {
+            
+                controller.viewModel = MBRubrosListadoProfileViewModel(withView: controller)
+        }
+        
     }
     
     func toast(message: String) {
