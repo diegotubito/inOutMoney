@@ -10,8 +10,10 @@ import UIKit
 
 class TableViewCellHeader: UITableViewCell {
 
-    @IBOutlet var titulo: UILabel!
-    @IBOutlet var labelDesplegar: UILabel!
+    @IBOutlet var leftLabelCell: UILabel!
+    @IBOutlet var rightLabelCell: UILabel!
+    @IBOutlet var buttonLabelCell: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -31,4 +33,15 @@ class TableViewCellHeader: UITableViewCell {
         return UINib(nibName: identifier, bundle: nil)
     }
     
+    var item: Rubro? {
+        didSet {
+            guard let item = item else {
+                return
+            }
+            
+            leftLabelCell?.text = item.leftLabel
+            rightLabelCell.text = item.rightLabel
+            buttonLabelCell.text = item.buttonLabel
+        }
+    }
 }

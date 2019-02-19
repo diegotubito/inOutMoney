@@ -6,89 +6,82 @@
 //  Copyright © 2018 Gomez David Diego. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-enum MBRubrosListadoViewModelItemType {
-    case header
-    case infoGeneral
-    case estadistica
-}
-
-protocol MBRubrosListadoProfileViewModelContract {
-    init(withView view: MBRubrosListadoProfileViewContract)
-   
-    var items : [MBRubrosListadoProfileModel] {set get}
+protocol IOGastosViewModelContract {
+    init(withView view: IOGastosViewContract)
     func loadData()
-  }
-
-protocol MBRubrosListadoProfileViewContract {
-    func toast(message: String)
-    func showLoding()
-    func hideLoding()
-    func reloadList()
-    func showError(_ descripcion: String)
 }
 
-class MBRubrosListadoProfileViewModel: NSObject, MBRubrosListadoProfileViewModelContract {
+protocol IOGastosViewContract {
+    func reloadList()
+}
+
+enum ProfileViewModelItemType {
+    case rubros
+}
+
+protocol ProfileViewModelItem {
+    var type: ProfileViewModelItemType { get }
+    var sectionTitle: String { get }
+    var rowCount: Int { get }
+}
+
+class ProfileViewModel: NSObject, IOGastosViewModelContract {
+    var items = [ProfileViewModelItem]()
+    var _view : IOGastosViewContract!
     
-    var _view : MBRubrosListadoProfileViewContract
-    var items = [MBRubrosListadoProfileModel]()
-    
-    required init(withView view: MBRubrosListadoProfileViewContract) {
+    required init(withView view: IOGastosViewContract) {
         _view = view
-    
     }
     
     func loadData() {
-        
         MLFirebaseDatabaseService.retrieveData(path: UserID!) { (response, error) in
+            
             if error != nil {
-                self._view.toast(message: (error?.localizedDescription)!)
+                print("error")
                 return
             }
             
             if response == nil {
-                self._view.toast(message: "No hay registros en Firebase.")
+                print("vacio")
                 return
             }
             
-            print(response!)
-          
-            if let gastos = response?["gastos"] as? [String : Any], let rubros = gastos["rubros"] as? [String : Any] {
-                
-                
-                for (_, value) in rubros {
-                    if let registro = value as? [String: Any] {
-                        let infoGeneralItem = MBRubrosListadoProfileModel(type: .infoGeneral,
-                                                                          titleSection: registro["descripcion"] as! String,
-                                                                          desplegable: true,
-                                                                          rowCount: 1,
-                                                                          json: registro)
-                        
-                        self.items.append(infoGeneralItem)
-                        
-                    
-                   
-                    }
-                    
-                }
+            guard let profile = Profile(data: response!) else {
+                return
+            }
+            let rubros = profile.rubros
+            if !profile.rubros.isEmpty {
+                let rubrosItem = ProfileViewModeRubrosItem(rubros: rubros)
+                self.items.append(rubrosItem)
             }
             
             
-          
-             self._view.reloadList()
- 
         }
-        
-        
     }
-    
-    
-    
-    
-   
-    
     
 }
 
 
+
+class ProfileViewModeRubrosItem: ProfileViewModelItem {
+    var type: ProfileViewModelItemType {
+        return .rubros
+    }
+    
+    var sectionTitle: String {
+        return "Rubros"
+    }
+    
+    var rowCount: Int {
+        return rubros.count
+    }
+    
+    var rubros: [Rubro]
+    
+    init(rubros: [Rubro]) {
+        self.rubros = rubros
+    }
+}

@@ -6,41 +6,27 @@
 //  Copyright © 2018 Gomez David Diego. All rights reserved.
 //
 
-import UIKit
-
-class MBRubrosHeaderProfileModel {
+class Profile {
+    var rubros = [Rubro]()
     
-    var type : MBRubrosListadoViewModelItemType
-    var rowCount : Int
-    var leftLabel : String
-    var rightLabel : String
-    var buttonTitle : String
-    
-    init(type: MBRubrosListadoViewModelItemType, leftLabel: String, rightLabel: String, buttonTitle: String, rowCount: Int) {
-        self.type = type
-        self.rowCount = rowCount
-        self.leftLabel = leftLabel
-        self.rightLabel = rightLabel
-        self.buttonTitle = buttonTitle
- 
+    init?(data: [String : Any]) {
+        if let rubros = data["friends"] as? [[String: Any]] {
+            self.rubros = rubros.map { Rubro(json: $0) }
+        }
     }
+    
 }
 
-class MBRubrosListadoProfileModel {
-  
-    var type : MBRubrosListadoViewModelItemType
-    var rowCount : Int
-    var titleSection : String
-    var desplegable : Bool
-    var json : [String : Any]
-    var image : UIImage?
+class Rubro {
+    var isOpen : Bool
+    var leftLabel: String?
+    var rightLabel: String?
+    var buttonLabel: String?
     
-    init(type: MBRubrosListadoViewModelItemType, titleSection: String, desplegable: Bool, rowCount: Int, json: [String:Any]) {
-        self.desplegable = desplegable
-        self.type = type
-        self.rowCount = rowCount
-        self.json = json
-        self.titleSection = titleSection
-        self.image = nil
+    init(json: [String: Any]) {
+        self.leftLabel = json["descripcion"] as? String
+        self.rightLabel = "122.22"
+        self.isOpen = false
+        self.buttonLabel = "↓"
     }
 }

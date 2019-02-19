@@ -57,6 +57,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="buttonLabelCell" destination="H3H-3F-mOW" id="fHP-2R-rhz"/>
                 <outlet property="labelDesplegar" destination="H3H-3F-mOW" id="j9D-WD-tzT"/>
                 <outlet property="titulo" destination="8c8-ay-GLQ" id="28Z-ry-jqW"/>
             </connections>
