@@ -79,9 +79,9 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
             controller.viewModel = IOLoginUsuarioViewModel(withView: controller, interactor: IOLoginFirebaseService(), user: "")
         }
         
-        if let controller = segue.destination as? MBRubrosProfileViewController {
+        if let controller = segue.destination as? IORubrosListadoViewController {
             
-                controller.viewModel = MBRubrosListadoProfileViewModel(withView: controller)
+                controller.viewModel = IORubrosListadoViewModel(withView: controller)
         }
         
     }

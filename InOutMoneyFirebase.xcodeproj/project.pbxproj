@@ -43,15 +43,6 @@
 		8402811D220FC81600C85A6A /* IOTableViewCellSingleTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8402811B220FC81600C85A6A /* IOTableViewCellSingleTextField.xib */; };
 		840FF2542217C7F4006B809A /* IOHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FF2532217C7F4006B809A /* IOHomeModel.swift */; };
 		840FF26222185DBD006B809A /* gastosStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840FF26122185DBD006B809A /* gastosStoryboard.storyboard */; };
-		840FF28D22185EC6006B809A /* MBRubrosProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FF27922185EC6006B809A /* MBRubrosProfileModel.swift */; };
-		840FF28E22185EC6006B809A /* TableViewCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FF27C22185EC6006B809A /* TableViewCellHeader.swift */; };
-		840FF28F22185EC6006B809A /* TableViewCellHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840FF27D22185EC6006B809A /* TableViewCellHeader.xib */; };
-		840FF29022185EC6006B809A /* TableViewCellProfileEstadistica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FF27E22185EC6006B809A /* TableViewCellProfileEstadistica.swift */; };
-		840FF29122185EC6006B809A /* TableViewCellProfileEstadistica.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840FF27F22185EC6006B809A /* TableViewCellProfileEstadistica.xib */; };
-		840FF29222185EC6006B809A /* TableViewCellProfileInfoGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FF28022185EC6006B809A /* TableViewCellProfileInfoGeneral.swift */; };
-		840FF29322185EC6006B809A /* TableViewCellProfileInfoGeneral.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840FF28122185EC6006B809A /* TableViewCellProfileInfoGeneral.xib */; };
-		840FF29422185EC6006B809A /* MBRubrosProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FF28222185EC6006B809A /* MBRubrosProfileViewController.swift */; };
-		840FF29522185EC6006B809A /* MBRubrosListadoProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FF28422185EC6006B809A /* MBRubrosListadoProfileViewModel.swift */; };
 		8419E079221536690015CC99 /* IOHomeViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419E078221536690015CC99 /* IOHomeViewModelContract.swift */; };
 		8419E07B221536740015CC99 /* IOHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419E07A221536740015CC99 /* IOHomeViewModel.swift */; };
 		842227587AA8719C417032C5 /* Pods_InOutMoneyFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */; };
@@ -70,6 +61,10 @@
 		849BA9742207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA9732207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift */; };
 		849BA976220775FE00EC93A6 /* IOLoginPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA975220775FE00EC93A6 /* IOLoginPasswordViewModel.swift */; };
 		84DABE162210B6C90024B112 /* toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DABE152210B6C90024B112 /* toast.swift */; };
+		84EEEA38221E5906001F98E9 /* IORubrosListadoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEEA37221E5906001F98E9 /* IORubrosListadoModel.swift */; };
+		84EEEA3A221E5940001F98E9 /* IORubrosListadoViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEEA39221E5940001F98E9 /* IORubrosListadoViewModelContract.swift */; };
+		84EEEA3C221E594C001F98E9 /* IORubrosListadoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEEA3B221E594C001F98E9 /* IORubrosListadoViewModel.swift */; };
+		84EEEA3E221E5958001F98E9 /* IORubrosListadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEEA3D221E5958001F98E9 /* IORubrosListadoViewController.swift */; };
 		84FD53842203F37500DC102A /* StoryboardLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FD53832203F37500DC102A /* StoryboardLogin.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -111,15 +106,6 @@
 		8402811B220FC81600C85A6A /* IOTableViewCellSingleTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = IOTableViewCellSingleTextField.xib; path = InOutMoneyFirebase/Defaults/IOTableViewCellSingleTextField.xib; sourceTree = SOURCE_ROOT; };
 		840FF2532217C7F4006B809A /* IOHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOHomeModel.swift; sourceTree = "<group>"; };
 		840FF26122185DBD006B809A /* gastosStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = gastosStoryboard.storyboard; sourceTree = "<group>"; };
-		840FF27922185EC6006B809A /* MBRubrosProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBRubrosProfileModel.swift; sourceTree = "<group>"; };
-		840FF27C22185EC6006B809A /* TableViewCellHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellHeader.swift; sourceTree = "<group>"; };
-		840FF27D22185EC6006B809A /* TableViewCellHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellHeader.xib; sourceTree = "<group>"; };
-		840FF27E22185EC6006B809A /* TableViewCellProfileEstadistica.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellProfileEstadistica.swift; sourceTree = "<group>"; };
-		840FF27F22185EC6006B809A /* TableViewCellProfileEstadistica.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellProfileEstadistica.xib; sourceTree = "<group>"; };
-		840FF28022185EC6006B809A /* TableViewCellProfileInfoGeneral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellProfileInfoGeneral.swift; sourceTree = "<group>"; };
-		840FF28122185EC6006B809A /* TableViewCellProfileInfoGeneral.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellProfileInfoGeneral.xib; sourceTree = "<group>"; };
-		840FF28222185EC6006B809A /* MBRubrosProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBRubrosProfileViewController.swift; sourceTree = "<group>"; };
-		840FF28422185EC6006B809A /* MBRubrosListadoProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBRubrosListadoProfileViewModel.swift; sourceTree = "<group>"; };
 		8419E078221536690015CC99 /* IOHomeViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOHomeViewModelContract.swift; sourceTree = "<group>"; };
 		8419E07A221536740015CC99 /* IOHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOHomeViewModel.swift; sourceTree = "<group>"; };
 		84594EE321DC64650019C9B9 /* InOutMoneyFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InOutMoneyFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +125,10 @@
 		849BA9732207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginPasswordViewModelContract.swift; sourceTree = "<group>"; };
 		849BA975220775FE00EC93A6 /* IOLoginPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginPasswordViewModel.swift; sourceTree = "<group>"; };
 		84DABE152210B6C90024B112 /* toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = toast.swift; sourceTree = "<group>"; };
+		84EEEA37221E5906001F98E9 /* IORubrosListadoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubrosListadoModel.swift; sourceTree = "<group>"; };
+		84EEEA39221E5940001F98E9 /* IORubrosListadoViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubrosListadoViewModelContract.swift; sourceTree = "<group>"; };
+		84EEEA3B221E594C001F98E9 /* IORubrosListadoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubrosListadoViewModel.swift; sourceTree = "<group>"; };
+		84EEEA3D221E5958001F98E9 /* IORubrosListadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubrosListadoViewController.swift; sourceTree = "<group>"; };
 		84FD53832203F37500DC102A /* StoryboardLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardLogin.storyboard; sourceTree = "<group>"; };
 		D3C6A17853DDA48318A6E934 /* Pods-InOutMoneyFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InOutMoneyFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InOutMoneyFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -433,58 +423,10 @@
 		840FF26022185D7D006B809A /* Gastos */ = {
 			isa = PBXGroup;
 			children = (
-				840FF26722185EC6006B809A /* Rubros */,
 				840FF26122185DBD006B809A /* gastosStoryboard.storyboard */,
+				84EEEA33221E58D4001F98E9 /* Rubros */,
 			);
 			path = Gastos;
-			sourceTree = "<group>";
-		};
-		840FF26722185EC6006B809A /* Rubros */ = {
-			isa = PBXGroup;
-			children = (
-				840FF27822185EC6006B809A /* Model */,
-				840FF28322185EC6006B809A /* ViewModel */,
-				840FF27A22185EC6006B809A /* View */,
-			);
-			path = Rubros;
-			sourceTree = "<group>";
-		};
-		840FF27822185EC6006B809A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				840FF27922185EC6006B809A /* MBRubrosProfileModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		840FF27A22185EC6006B809A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				840FF27B22185EC6006B809A /* cells */,
-				840FF28222185EC6006B809A /* MBRubrosProfileViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		840FF27B22185EC6006B809A /* cells */ = {
-			isa = PBXGroup;
-			children = (
-				840FF27C22185EC6006B809A /* TableViewCellHeader.swift */,
-				840FF27D22185EC6006B809A /* TableViewCellHeader.xib */,
-				840FF27E22185EC6006B809A /* TableViewCellProfileEstadistica.swift */,
-				840FF27F22185EC6006B809A /* TableViewCellProfileEstadistica.xib */,
-				840FF28022185EC6006B809A /* TableViewCellProfileInfoGeneral.swift */,
-				840FF28122185EC6006B809A /* TableViewCellProfileInfoGeneral.xib */,
-			);
-			path = cells;
-			sourceTree = "<group>";
-		};
-		840FF28322185EC6006B809A /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				840FF28422185EC6006B809A /* MBRubrosListadoProfileViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		8419E0772215364F0015CC99 /* ViewModel */ = {
@@ -546,6 +488,41 @@
 				84DABE152210B6C90024B112 /* toast.swift */,
 			);
 			path = Toast;
+			sourceTree = "<group>";
+		};
+		84EEEA33221E58D4001F98E9 /* Rubros */ = {
+			isa = PBXGroup;
+			children = (
+				84EEEA36221E58E7001F98E9 /* Model */,
+				84EEEA35221E58E2001F98E9 /* ViewModel */,
+				84EEEA34221E58DD001F98E9 /* View */,
+			);
+			path = Rubros;
+			sourceTree = "<group>";
+		};
+		84EEEA34221E58DD001F98E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84EEEA3D221E5958001F98E9 /* IORubrosListadoViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84EEEA35221E58E2001F98E9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84EEEA39221E5940001F98E9 /* IORubrosListadoViewModelContract.swift */,
+				84EEEA3B221E594C001F98E9 /* IORubrosListadoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84EEEA36221E58E7001F98E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84EEEA37221E5906001F98E9 /* IORubrosListadoModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		84FD53802203F2EB00DC102A /* Sources */ = {
@@ -668,17 +645,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				84594EF421DC64670019C9B9 /* LaunchScreen.storyboard in Resources */,
-				840FF29322185EC6006B809A /* TableViewCellProfileInfoGeneral.xib in Resources */,
 				840FF26222185DBD006B809A /* gastosStoryboard.storyboard in Resources */,
 				84594EF121DC64670019C9B9 /* Assets.xcassets in Resources */,
 				84594EEC21DC64650019C9B9 /* Main.storyboard in Resources */,
 				849BA9702207547A00EC93A6 /* GoogleService-Info.plist in Resources */,
-				840FF29122185EC6006B809A /* TableViewCellProfileEstadistica.xib in Resources */,
 				8402685322068ECC00EF6070 /* TableViewCellLoginUsuario.xib in Resources */,
 				8402811D220FC81600C85A6A /* IOTableViewCellSingleTextField.xib in Resources */,
 				84FD53842203F37500DC102A /* StoryboardLogin.storyboard in Resources */,
 				8402684C2205F87D00EF6070 /* IOLoginContraseñaCV.xib in Resources */,
-				840FF28F22185EC6006B809A /* TableViewCellHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,18 +723,17 @@
 				840280F0220FB24600C85A6A /* configEncriptar.swift in Sources */,
 				840280F6220FB24600C85A6A /* extensiones.swift in Sources */,
 				84027FC3220F4A9700C85A6A /* MLNotificationNames.swift in Sources */,
-				840FF28D22185EC6006B809A /* MBRubrosProfileModel.swift in Sources */,
 				840280FB220FB24600C85A6A /* examplesStorageFunctions.swift in Sources */,
+				84EEEA3C221E594C001F98E9 /* IORubrosListadoViewModel.swift in Sources */,
 				840280FD220FB24600C85A6A /* funcionesGlobales.swift in Sources */,
 				84028101220FB24600C85A6A /* SwiftyPlistManager.swift in Sources */,
 				849BA96E2207507A00EC93A6 /* IOLoginUserModel.swift in Sources */,
 				840FF2542217C7F4006B809A /* IOHomeModel.swift in Sources */,
+				84EEEA38221E5906001F98E9 /* IORubrosListadoModel.swift in Sources */,
 				8402811C220FC81600C85A6A /* IOTableViewCellSingleTextField.swift in Sources */,
 				84594EEF21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld in Sources */,
 				84028100220FB24600C85A6A /* nsimageExtension.swift in Sources */,
-				840FF29222185EC6006B809A /* TableViewCellProfileInfoGeneral.swift in Sources */,
 				840280F7220FB24600C85A6A /* csv.swift in Sources */,
-				840FF29522185EC6006B809A /* MBRubrosListadoProfileViewModel.swift in Sources */,
 				849BA96C22074DD100EC93A6 /* IOLoginFirebaseService.swift in Sources */,
 				849BA96722074C8A00EC93A6 /* IOLoginUsuarioViewModelContract.swift in Sources */,
 				840280F2220FB24600C85A6A /* _coredataManager.swift in Sources */,
@@ -770,21 +743,20 @@
 				840280F5220FB24600C85A6A /* dateLibrary.swift in Sources */,
 				8402810C220FC36300C85A6A /* IONuevoUsuarioViewModelContract.swift in Sources */,
 				840268552206A7BF00EF6070 /* viewExtensions.swift in Sources */,
+				84EEEA3A221E5940001F98E9 /* IORubrosListadoViewModelContract.swift in Sources */,
 				840280CF220FB0A400C85A6A /* IOLoginUsuarioViewController.swift in Sources */,
-				840FF28E22185EC6006B809A /* TableViewCellHeader.swift in Sources */,
 				840280FC220FB24600C85A6A /* storageManager.swift in Sources */,
 				840280F1220FB24600C85A6A /* constantes.swift in Sources */,
 				8419E079221536690015CC99 /* IOHomeViewModelContract.swift in Sources */,
 				84027FC6220F4DCC00C85A6A /* IODefaults.swift in Sources */,
 				849BA9742207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift in Sources */,
 				840280F9220FB24600C85A6A /* MLFirebaseDatabaseService.swift in Sources */,
-				840FF29422185EC6006B809A /* MBRubrosProfileViewController.swift in Sources */,
 				840280F8220FB24600C85A6A /* imageFileFromLocal.swift in Sources */,
 				84027FBE220F34EF00C85A6A /* MLFirebaseRemoteConfigService.swift in Sources */,
 				840280F3220FB24600C85A6A /* coredataGeneral.swift in Sources */,
+				84EEEA3E221E5958001F98E9 /* IORubrosListadoViewController.swift in Sources */,
 				849BA9722207748D00EC93A6 /* IOLoginPasswordModel.swift in Sources */,
 				8402684E2205F8A300EF6070 /* IOLoginContraseñaCV.swift in Sources */,
-				840FF29022185EC6006B809A /* TableViewCellProfileEstadistica.swift in Sources */,
 				84DABE162210B6C90024B112 /* toast.swift in Sources */,
 				840268492205F31000EF6070 /* IOLoginContraseñaViewController.swift in Sources */,
 				840280EE220FB24600C85A6A /* alamofireExtension.swift in Sources */,

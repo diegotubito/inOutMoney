@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Rubros Profile View Controller-->
+        <!--Rubros Listado View Controller-->
         <scene sceneID="1lP-vF-6WH">
             <objects>
-                <viewController id="gff-Nv-03U" customClass="MBRubrosProfileViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gff-Nv-03U" customClass="IORubrosListadoViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dcf-bn-WfJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +37,7 @@
                         <viewLayoutGuide key="safeArea" id="HEl-Cf-bPP"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="bww-2H-Cs5" id="z6k-aa-rpc"/>
+                        <outlet property="tableView" destination="bww-2H-Cs5" id="Fkk-OX-o8r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0aj-D0-aAN" userLabel="First Responder" sceneMemberID="firstResponder"/>
