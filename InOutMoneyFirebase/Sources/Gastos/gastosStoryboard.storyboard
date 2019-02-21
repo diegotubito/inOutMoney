@@ -38,11 +38,39 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="bww-2H-Cs5" id="Fkk-OX-o8r"/>
+                        <segue destination="TPQ-mJ-6go" kind="show" identifier="segue_to_rubro_profile" id="ppG-sX-Kio"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0aj-D0-aAN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-183" y="16"/>
+        </scene>
+        <!--Rubros Profile View Controller-->
+        <scene sceneID="mUy-Ak-Wy4">
+            <objects>
+                <viewController id="TPQ-mJ-6go" customClass="IORubrosProfileViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xwg-lV-Thp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jdj-fv-jMm">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="va4-Vy-mcf" firstAttribute="bottom" secondItem="jdj-fv-jMm" secondAttribute="bottom" id="C04-vC-qZA"/>
+                            <constraint firstItem="jdj-fv-jMm" firstAttribute="leading" secondItem="va4-Vy-mcf" secondAttribute="leading" id="KPl-6U-n6r"/>
+                            <constraint firstItem="jdj-fv-jMm" firstAttribute="top" secondItem="va4-Vy-mcf" secondAttribute="top" id="Uje-fK-ZA1"/>
+                            <constraint firstItem="va4-Vy-mcf" firstAttribute="trailing" secondItem="jdj-fv-jMm" secondAttribute="trailing" id="sNH-XG-DOA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="va4-Vy-mcf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Md-ZH-aKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="703.20000000000005" y="7.6461769115442282"/>
         </scene>
     </scenes>
 </document>

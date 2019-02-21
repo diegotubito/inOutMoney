@@ -20,8 +20,8 @@ class IORubrosListadoViewModel: IORubrosListadoViewModelContract {
     }
     
     func loadData() {
-        MLFirebaseDatabaseService.retrieveData(path: UserID! + "/gastos") { (response, error) in
-            if error == nil {
+        MLFirebaseDatabaseService.retrieveData(path: UserID! + "/gastos/rubros") { (response, error) in
+            if error != nil {
                 print(error?.localizedDescription ?? "error unknown")
                 return
             }
@@ -33,13 +33,15 @@ class IORubrosListadoViewModel: IORubrosListadoViewModelContract {
             
             for i in response! {
                 if let registro = i.value as? [String : Any] {
-                    let descripcion = registro["descripcion"] as! String
+                    let childID = registro["childID"] as! String
+                     let descripcion = registro["descripcion"] as! String
                     let fechaCreacionStr = registro["fechaCreacion"] as! String
                     let fechaCreacion = fechaCreacionStr.toDate(formato: formatoDeFecha.fechaConHora)
-                    let newRegister = IORubrosListadoModel.rowData(descripcion: descripcion,
+                    let newRegister = IORubrosListadoModel.rowData(childID: childID,
+                                                                   descripcion: descripcion,
                                                                    fechaCreacion: fechaCreacion!)
                     
-                    self.model.listado?.append(newRegister)
+                    self.model.listado.append(newRegister)
                 }
             }
             

@@ -1,5 +1,5 @@
 //
-//  IORubrosListadoViewController.swift
+//  IORubrosProfileViewController.swift
 //  InOutMoneyFirebase
 //
 //  Created by David Diego Gomez on 21/2/19.
@@ -8,19 +8,20 @@
 
 import UIKit
 
-class IORubrosListadoViewController: UIViewController, IORubrosListadoViewContract {
+class IORubrosProfileViewController : UIViewController, IORubrosProfileViewContract {
    
-    @IBOutlet var tableView: UITableView!
     
-    var viewModel : IORubrosListadoViewModelContract!
+    
+    var viewModel : IORubrosProfileViewModelContract!
     
     override func viewDidLoad() {
-        super .viewDidLoad()
+        super.viewDidLoad()
         
         viewModel.loadData()
+        
     }
     
     func reloadList() {
-        tableView.reloadData()
+        
     }
 }

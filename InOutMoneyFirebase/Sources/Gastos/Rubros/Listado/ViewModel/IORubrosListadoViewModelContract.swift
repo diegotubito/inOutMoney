@@ -10,6 +10,8 @@ import UIKit
 
 protocol IORubrosListadoViewModelContract {
     init(withView view: IORubrosListadoViewContract)
+    var model : IORubrosListadoModel! {get set}
+    
     func loadData() 
 }
 

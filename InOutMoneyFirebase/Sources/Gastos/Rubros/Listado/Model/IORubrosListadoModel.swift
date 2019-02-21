@@ -10,13 +10,15 @@ import Foundation
 import UIKit
 
 class IORubrosListadoModel {
-    var listado : [rowData]?
+    var listado : [rowData] = [rowData]()
     
     class rowData {
+        var childID : String?
         var descripcion : String?
         var fechaCreacion : Date?
         
-        init(descripcion: String, fechaCreacion: Date) {
+        init(childID: String, descripcion: String, fechaCreacion: Date) {
+            self.childID = childID
             self.descripcion = descripcion
             self.fechaCreacion = fechaCreacion
         }
