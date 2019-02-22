@@ -9,6 +9,7 @@
 import UIKit
 
 class IORubrosProfileViewModel: IORubrosProfileViewModelContract {
+    
     var _view : IORubrosProfileViewContract!
     var model : IORubrosProfileModel!
     
@@ -32,6 +33,15 @@ class IORubrosProfileViewModel: IORubrosProfileViewModelContract {
             }
             
             print(response)
+            //ahora que tengo los datos creo los items
+            
+            let infoGeneral = IORubrosProfileItem(type: IORubrosProfileType.headerInfo,
+                                                  rowCount: 1,
+                                                  titleSection: "Info General",
+                                                  json: response!)
+            self.model.items.append(infoGeneral)
+            
+            self._view.reloadList()
         }
     }
     

@@ -71,6 +71,8 @@
 		84EEEA4C221E63E5001F98E9 /* IORubrosProfileViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEEA4B221E63E5001F98E9 /* IORubrosProfileViewModelContract.swift */; };
 		84EEEA4E221E63F3001F98E9 /* IORubrosProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEEA4D221E63F3001F98E9 /* IORubrosProfileViewModel.swift */; };
 		84EEEA50221E6400001F98E9 /* IORubrosProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEEA4F221E6400001F98E9 /* IORubrosProfileViewController.swift */; };
+		84EEEA54221FAC5A001F98E9 /* IOTableViewCellHeaderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEEA52221FAC5A001F98E9 /* IOTableViewCellHeaderInfo.swift */; };
+		84EEEA55221FAC5A001F98E9 /* IOTableViewCellHeaderInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EEEA53221FAC5A001F98E9 /* IOTableViewCellHeaderInfo.xib */; };
 		84FD53842203F37500DC102A /* StoryboardLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FD53832203F37500DC102A /* StoryboardLogin.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +143,8 @@
 		84EEEA4B221E63E5001F98E9 /* IORubrosProfileViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubrosProfileViewModelContract.swift; sourceTree = "<group>"; };
 		84EEEA4D221E63F3001F98E9 /* IORubrosProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubrosProfileViewModel.swift; sourceTree = "<group>"; };
 		84EEEA4F221E6400001F98E9 /* IORubrosProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubrosProfileViewController.swift; sourceTree = "<group>"; };
+		84EEEA52221FAC5A001F98E9 /* IOTableViewCellHeaderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellHeaderInfo.swift; sourceTree = "<group>"; };
+		84EEEA53221FAC5A001F98E9 /* IOTableViewCellHeaderInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellHeaderInfo.xib; sourceTree = "<group>"; };
 		84FD53832203F37500DC102A /* StoryboardLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardLogin.storyboard; sourceTree = "<group>"; };
 		D3C6A17853DDA48318A6E934 /* Pods-InOutMoneyFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InOutMoneyFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InOutMoneyFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -570,6 +574,7 @@
 			isa = PBXGroup;
 			children = (
 				84EEEA4F221E6400001F98E9 /* IORubrosProfileViewController.swift */,
+				84EEEA51221FAC37001F98E9 /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -589,6 +594,15 @@
 				84EEEA49221E63CA001F98E9 /* IORubrosProfileModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		84EEEA51221FAC37001F98E9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84EEEA52221FAC5A001F98E9 /* IOTableViewCellHeaderInfo.swift */,
+				84EEEA53221FAC5A001F98E9 /* IOTableViewCellHeaderInfo.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		84FD53802203F2EB00DC102A /* Sources */ = {
@@ -711,6 +725,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84594EF421DC64670019C9B9 /* LaunchScreen.storyboard in Resources */,
+				84EEEA55221FAC5A001F98E9 /* IOTableViewCellHeaderInfo.xib in Resources */,
 				840FF26222185DBD006B809A /* gastosStoryboard.storyboard in Resources */,
 				84EEEA43221E5F06001F98E9 /* IOTableViewCellRubrosListado.xib in Resources */,
 				84594EF121DC64670019C9B9 /* Assets.xcassets in Resources */,
@@ -794,6 +809,7 @@
 				84EEEA4C221E63E5001F98E9 /* IORubrosProfileViewModelContract.swift in Sources */,
 				840280FB220FB24600C85A6A /* examplesStorageFunctions.swift in Sources */,
 				84EEEA3C221E594C001F98E9 /* IORubrosListadoViewModel.swift in Sources */,
+				84EEEA54221FAC5A001F98E9 /* IOTableViewCellHeaderInfo.swift in Sources */,
 				840280FD220FB24600C85A6A /* funcionesGlobales.swift in Sources */,
 				84028101220FB24600C85A6A /* SwiftyPlistManager.swift in Sources */,
 				849BA96E2207507A00EC93A6 /* IOLoginUserModel.swift in Sources */,
