@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="136" id="KGk-i7-Jjw" customClass="IOTableViewCellHeaderInfo" customModule="InOutMoneyFirebase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="406" height="136"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="406" height="135.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lBi-xh-mPk">
+                        <rect key="frame" x="0.0" y="0.0" width="406" height="100"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="mmE-HH-ReU"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Feb" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xV-7K-RCf">
+                        <rect key="frame" x="16" y="8" width="47" height="84"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8d-tT-GTp">
+                        <rect key="frame" x="353" y="3" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="Dos-Kx-CSc"/>
+                            <constraint firstAttribute="width" constant="50" id="R2L-Ny-7eU"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="Calendar-icon"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 3.000,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQU-Xb-Jba">
+                        <rect key="frame" x="199" y="8" width="146" height="84"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="lBi-xh-mPk" secondAttribute="trailing" id="3GE-Hu-4Ft"/>
+                    <constraint firstItem="lBi-xh-mPk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="3pR-9k-Ruw"/>
+                    <constraint firstItem="aQU-Xb-Jba" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7xV-7K-RCf" secondAttribute="trailing" constant="8" id="8wU-bT-DNL"/>
+                    <constraint firstItem="lBi-xh-mPk" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Csd-Wn-OY7"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7xV-7K-RCf" secondAttribute="trailing" priority="750" constant="8" id="FWT-8r-4Hk"/>
+                    <constraint firstItem="aQU-Xb-Jba" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="M0N-n5-rEY"/>
+                    <constraint firstItem="lBi-xh-mPk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="PdV-NX-Sl8"/>
+                    <constraint firstAttribute="bottom" secondItem="lBi-xh-mPk" secondAttribute="bottom" id="Qgn-7e-xVl"/>
+                    <constraint firstAttribute="bottom" secondItem="aQU-Xb-Jba" secondAttribute="bottom" constant="8" id="fJx-cE-EeZ"/>
+                    <constraint firstItem="P8d-tT-GTp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="gH5-t4-x59"/>
+                    <constraint firstItem="7xV-7K-RCf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="j1Y-xi-Mrv"/>
+                    <constraint firstAttribute="trailing" secondItem="P8d-tT-GTp" secondAttribute="trailing" constant="3" id="n7D-dk-CaR"/>
+                    <constraint firstItem="7xV-7K-RCf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="sfX-V6-gAw"/>
+                    <constraint firstItem="P8d-tT-GTp" firstAttribute="leading" secondItem="aQU-Xb-Jba" secondAttribute="trailing" constant="8" id="tpf-jP-uoT"/>
+                    <constraint firstAttribute="bottom" secondItem="7xV-7K-RCf" secondAttribute="bottom" constant="8" id="xzP-xo-E2K"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="mes" destination="7xV-7K-RCf" id="4Nu-kU-ouR"/>
+                <outlet property="total" destination="aQU-Xb-Jba" id="BKh-dd-xcc"/>
+            </connections>
+            <point key="canvasLocation" x="-136" y="149.32533733133434"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Calendar-icon" width="256" height="256"/>
+    </resources>
+</document>

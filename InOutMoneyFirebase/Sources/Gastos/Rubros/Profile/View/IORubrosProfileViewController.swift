@@ -18,11 +18,13 @@ class IORubrosProfileViewController : UIViewController, IORubrosProfileViewContr
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView?.estimatedRowHeight = 100
+        tableView?.estimatedRowHeight = 50
         tableView?.rowHeight = UITableView.automaticDimension
         
         
         tableView?.register(IOTableViewCellHeaderInfo.nib, forCellReuseIdentifier: IOTableViewCellHeaderInfo.identifier)
+        tableView?.register(IOTableViewCellRegistrosGastos.nib, forCellReuseIdentifier: IOTableViewCellRegistrosGastos.identifier)
+        tableView.register(IOTableViewCellBotonAgregarRegistro.nib, forCellReuseIdentifier: IOTableViewCellBotonAgregarRegistro.identifier)
          
         
         
@@ -46,83 +48,41 @@ extension IORubrosProfileViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        //rows updates
         let item = viewModel.model.items[indexPath.section]
         switch item.type {
         case .headerInfo:
             if let cell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellHeaderInfo.identifier, for: indexPath) as? IOTableViewCellHeaderInfo {
-                
-                let dato = viewModel.model.items[indexPath.row].json
-                cell.titleLabel.text = "Ene"
-                cell.subTitleLabel.text = "199"
-                
+                cell.item = item
+                return cell
+            }
+            
+        case .botonAgregarRegistro:
+            if let item = item as? ProfileViewModelBotonAgregarRegistroItem, let cell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellBotonAgregarRegistro.identifier, for: indexPath) as? IOTableViewCellBotonAgregarRegistro {
+                cell.delegate = self
                 return cell
             }
             
         case .registros:
-            break
-        case .botonAgregarRegistro:
-            break
+            if let item = item as? ProfileViewModelRegistrosGastosItem, let cell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellRegistrosGastos.identifier, for: indexPath) as? IOTableViewCellRegistrosGastos {
+                let registro = item.registros[indexPath.row]
+                cell.item = registro
+                return cell
+            }
+      
         }
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel.model.items[section].sectionTitle
+    }
 }
 
 
-extension IORubrosProfileViewController: UITableViewDelegate {
-    
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if viewModel.model.items[section].titleSection.isEmpty {
-            return 0
-        }
-        return 30
+extension IORubrosProfileViewController: IOTableViewCellBotonAgregarRegistroDelegate {
+    func addButtonPressedDelegate() {
+        performSegue(withIdentifier: "segue_to_nuevo_registro_gastos", sender: nil)
     }
-  
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        tableView.sectionHeaderHeight = 41
-    }
- 
- 
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let header = UIView()
-        
-        let altoHeader : CGFloat = 30
-        //titulo
-        let tituloLabel = UILabel(frame: CGRect(x: 16, y: 0, width: view.frame.width, height: altoHeader))
-        tituloLabel.text = viewModel.model.items[section].titleSection
-        tituloLabel.textColor = UIColor.white
-        tituloLabel.font = UIFont.systemFont(ofSize: 12)
-        
-        header.addSubview(tituloLabel)
-        
-        //separador
-        let separador = UIImageView(frame: CGRect(x: 0, y: altoHeader - 0.3, width: view.frame.width, height: 0.3))
-        separador.backgroundColor = UIColor.darkGray.withAlphaComponent(0.3)
-        header.addSubview(separador)
-        
-        header.backgroundColor = UIColor.lightGray.withAlphaComponent(0.9)
-        
-        let labelDesplegar = UILabel(frame: CGRect(x: view.frame.width - 40, y: 1, width: 40, height: altoHeader - 2))
-        labelDesplegar.isUserInteractionEnabled = true
-        labelDesplegar.textColor = UIColor.white
-        labelDesplegar.textAlignment = .center
-        labelDesplegar.font = UIFont.systemFont(ofSize: 10)
-        header.addSubview(labelDesplegar)
-     //   if viewModel.model.items[section].desplegable {
-            labelDesplegar.backgroundColor = UIColor.lightGray
-            labelDesplegar.text = "↑↓"
-            
-          
-       // }
-        
-        
-        return header
-        
-    }
     
 }

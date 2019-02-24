@@ -10,8 +10,20 @@ import UIKit
 
 class IOTableViewCellHeaderInfo: UITableViewCell {
 
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var subTitleLabel: UILabel!
+    @IBOutlet var mes: UILabel!
+    @IBOutlet var total: UILabel!
+    
+    var item: IORubrosProfileItem? {
+        didSet {
+            guard let item = item as? ProfileViewModelRubrosHeaderItem else {
+                return
+            }
+            
+            mes?.text = item.mes
+            total?.text = item.total.formatoMoneda(decimales: 2, simbolo: "$")
+            
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -13,6 +13,9 @@ protocol IORubrosProfileViewModelContract {
     var model : IORubrosProfileModel! {get set}
 
     func loadData()
+    func getTotal() -> Double
+    func getNombreMes() -> String
+    
 }
 
 protocol IORubrosProfileViewContract {

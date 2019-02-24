@@ -9,6 +9,7 @@
 import UIKit
 
 class IORubrosProfileViewModel: IORubrosProfileViewModelContract {
+   
     
     var _view : IORubrosProfileViewContract!
     var model : IORubrosProfileModel!
@@ -33,17 +34,50 @@ class IORubrosProfileViewModel: IORubrosProfileViewModelContract {
             }
             
             print(response)
-            //ahora que tengo los datos creo los items
+            let profile = Profile(data: response!)
+            let registros = profile!.registros
+            self.model.registrosGastos = registros
             
-            let infoGeneral = IORubrosProfileItem(type: IORubrosProfileType.headerInfo,
-                                                  rowCount: 1,
-                                                  titleSection: "Info General",
-                                                  json: response!)
-            self.model.items.append(infoGeneral)
+            //agrego el header
+
+            let headerInfo = ProfileViewModelRubrosHeaderItem(mes: self.getNombreMes(), total: self.getTotal())
+            self.model.items.append(headerInfo)
+            
+            //agrego el boton agregar
+            let botonItem = ProfileViewModelBotonAgregarRegistroItem()
+            self.model.items.append(botonItem)
+            
+            //agrego los registros de los gastos realizados
+            
+             if !profile!.registros.isEmpty {
+                let friendsItem = ProfileViewModelRegistrosGastosItem(registros: registros)
+                self.model.items.append(friendsItem)
+            }
+            
+            
+       
             
             self._view.reloadList()
+            
+            
         }
     }
     
+    func getTotal() -> Double {
+        var total : Double = 0
+        for i in model.registrosGastos {
+            total += i.importe!
+        }
+        
+        return total
+    }
+    
+    func getNombreMes() -> String {
+        return model.fechaSeleccionada.nombreDelMes
+    }
+    
+    
     
 }
+
+

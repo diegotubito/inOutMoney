@@ -174,7 +174,7 @@ extension Double {
     func formatoMoneda(decimales: Int, codigoMoneda: String) -> String {
         let numberFormatter = NumberFormatter()
         // numberFormatter.locale = NSLocale.current
-        //  numberFormatter.currencySymbol = "$"
+        numberFormatter.currencySymbol = "$"
         numberFormatter.currencyCode = codigoMoneda
         numberFormatter.numberStyle = NumberFormatter.Style.currency
         let formatoFinal = numberFormatter.string(from: NSNumber(value: self))!
@@ -183,6 +183,18 @@ extension Double {
         
     }
     
+    func formatoMoneda(decimales: Int, simbolo: String) -> String {
+        let numberFormatter = NumberFormatter()
+        // numberFormatter.locale = NSLocale.current
+        numberFormatter.currencySymbol = simbolo
+      //  numberFormatter.currencyCode = codigoMoneda
+        numberFormatter.numberStyle = NumberFormatter.Style.currency
+        let formatoFinal = numberFormatter.string(from: NSNumber(value: self))!
+        
+        return String(formatoFinal)
+        
+    }
+  
     func formatoMoneda(decimales: Int) -> String {
         let numberFormatter = NumberFormatter()
         numberFormatter.locale = NSLocale.current

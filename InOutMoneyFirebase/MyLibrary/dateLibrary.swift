@@ -47,6 +47,23 @@ extension Date {
         let str = timeAgoSinceDate(date: self as NSDate, numericDates: numericDates)
         return str
     }
+    
+    var mes : Int {
+        let calendar = Calendar.current
+        let mes = calendar.component(.month, from: self)
+        
+        return mes
+    }
+    
+    var nombreDelMes : String {
+        let calendar = Calendar.current
+        let mes = calendar.component(.month, from: self)
+        
+        let nombre = MESES[mes]?.localized
+        
+        return nombre ?? "error"
+    }
+
 }
 
 extension Date {
