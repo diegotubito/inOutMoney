@@ -33,6 +33,20 @@ extension String {
 }
 
 extension Date {
+    func getMilisecondsSinceDate() -> Double {
+        var hoy = self.toString(formato: formatoDeFecha.fecha)
+        hoy.append(" 00:00:00")
+        
+        let date = hoy.toDate(formato: formatoDeFecha.fechaConHora)
+        
+        let mili = Date().timeIntervalSince(date!)
+        
+        let miliDouble = Double(mili)
+        return miliDouble
+    }
+}
+
+extension Date {
     func toString(formato: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = formato
@@ -42,10 +56,31 @@ extension Date {
 }
 
 extension Date {
-    func desdeHace(numericDates: Bool) -> String {
+    mutating func sumarMes(valor: Int) {
+        let myCalendar = Calendar(identifier: .gregorian)
+        self = myCalendar.date(byAdding: .month, value: valor, to: self)!
         
-        let str = timeAgoSinceDate(date: self as NSDate, numericDates: numericDates)
-        return str
+    }
+    
+    var dayName : String {
+        let valor = Calendar.current.component(.weekday, from: self)
+        return NombreDias[valor]
+    }
+    
+    func startDay() -> Int {
+        let myCalendar = Calendar(identifier: .gregorian)
+        return myCalendar.component(.weekday, from: self)
+    }
+    
+    func endDay() -> Int {
+        let myCalendar = Calendar(identifier: .gregorian)
+        
+        // Calculate start and end of the current year (or month with `.month`):
+        let interval = myCalendar.dateInterval(of: .month, for: self)!
+        
+        // Compute difference in days:
+        let days = myCalendar.dateComponents([.day], from: interval.start, to: interval.end).day!
+        return days
     }
     
     var mes : Int {
@@ -55,6 +90,22 @@ extension Date {
         return mes
     }
     
+    var año : Int {
+        let calendar = Calendar.current
+        let mes = calendar.component(.year, from: self)
+        
+        return mes
+    }
+
+    
+    
+    func desdeHace(numericDates: Bool) -> String {
+        
+        let str = timeAgoSinceDate(date: self as NSDate, numericDates: numericDates)
+        return str
+    }
+    
+  
     var nombreDelMes : String {
         let calendar = Calendar.current
         let mes = calendar.component(.month, from: self)

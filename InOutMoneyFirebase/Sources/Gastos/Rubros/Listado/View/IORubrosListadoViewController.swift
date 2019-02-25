@@ -20,8 +20,10 @@ class IORubrosListadoViewController: UIViewController, IORubrosListadoViewContra
         tableView.register(IOTableViewCellRubrosListado.nib, forCellReuseIdentifier: IOTableViewCellRubrosListado.identifier)
         
         viewModel.loadData()
-    }
+
+     }
     
+     
     func reloadList() {
         tableView.reloadData()
     }
@@ -32,6 +34,10 @@ class IORubrosListadoViewController: UIViewController, IORubrosListadoViewContra
         if let controller = segue.destination as? IORubrosProfileViewController {
             controller.viewModel = IORubrosProfileViewModel(withView: controller, rubroSeleccionado: viewModel.model.listado[(tableView.indexPathForSelectedRow?.row)!])
         }
+    }
+    
+    func showToast(message: String) {
+        Toast.show(message: message, controller: self)
     }
 }
 

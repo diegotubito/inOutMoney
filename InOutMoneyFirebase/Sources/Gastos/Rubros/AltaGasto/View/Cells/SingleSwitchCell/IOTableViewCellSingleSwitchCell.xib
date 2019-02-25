@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="IOTableViewCellSingleSwitchCell" customModule="InOutMoneyFirebase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="57a-RH-f4i">
+                        <rect key="frame" x="255" y="8" width="51" height="27.5"/>
+                        <connections>
+                            <action selector="switchPressed:" destination="KGk-i7-Jjw" eventType="valueChanged" id="Qxw-os-C9q"/>
+                        </connections>
+                    </switch>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kL-do-Ybx">
+                        <rect key="frame" x="16" y="14.5" width="31" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="57a-RH-f4i" secondAttribute="bottom" constant="8" id="11R-Ip-rJY"/>
+                    <constraint firstItem="57a-RH-f4i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Ji9-Tl-g6L"/>
+                    <constraint firstItem="7kL-do-Ybx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="MVx-IV-Ffx"/>
+                    <constraint firstItem="7kL-do-Ybx" firstAttribute="centerY" secondItem="57a-RH-f4i" secondAttribute="centerY" id="V2B-De-KKh"/>
+                    <constraint firstItem="57a-RH-f4i" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7kL-do-Ybx" secondAttribute="trailing" constant="8" id="Xas-o9-xo5"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7kL-do-Ybx" secondAttribute="trailing" priority="750" constant="8" id="qSX-rH-qyE"/>
+                    <constraint firstAttribute="trailing" secondItem="57a-RH-f4i" secondAttribute="trailing" constant="16" id="xJa-GZ-2YY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="switchOutletCell" destination="57a-RH-f4i" id="cKK-of-Vt5"/>
+                <outlet property="titleCell" destination="7kL-do-Ybx" id="Jd1-Hc-pHr"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

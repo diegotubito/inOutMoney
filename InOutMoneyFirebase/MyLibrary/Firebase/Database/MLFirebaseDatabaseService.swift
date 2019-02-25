@@ -12,13 +12,21 @@ class MLFirebaseDatabaseService {
         print("firebase observer removed at (\(observerRef.key))")
         observerRef.removeObserver(withHandle: observerRefHandle)
     }
-   
+    
+    static func setData2() {
+        let ref = Database.database().reference()
+        
+        ref.childByAutoId()
+        
+    }
+
+    
     static func setData(path: String, diccionario: [String: Any], success: @escaping (DatabaseReference) -> Void, fail: @escaping (Error?) -> Void) {
         
         let ref = Database.database().reference()
         
         // Guardo los datos del nuevo socio en la Firebase
-        ref.child(path).setValue(diccionario) { (error, ref) -> Void in
+        ref.child(path).childByAutoId().setValue(diccionario) { (error, ref) -> Void in
             if error == nil {
                 success(ref)
             }else {

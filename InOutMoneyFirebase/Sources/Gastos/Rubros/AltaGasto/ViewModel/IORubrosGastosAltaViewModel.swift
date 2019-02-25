@@ -13,12 +13,12 @@ class IORubrosGastosAltaViewModel: IORubrosGastosAltaViewModelContract {
     var model: IORubrosGastosAltaModel!
     var _view : IORubrosGastosAltaViewContract!
     
-    required init(withView view: IORubrosGastosAltaViewContract) {
-        <#code#>
+    required init(withView view: IORubrosGastosAltaViewContract, rubroSeleccionado: IORubrosListadoModel.rowData) {
+        model = IORubrosGastosAltaModel(rubroRecibido: rubroSeleccionado)
     }
     
     func loadData() {
-        <#code#>
+        
     }
     
     

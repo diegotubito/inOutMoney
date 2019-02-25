@@ -17,4 +17,5 @@ protocol IORubrosListadoViewModelContract {
 
 protocol IORubrosListadoViewContract {
     func reloadList()
+    func showToast(message: String)
 }

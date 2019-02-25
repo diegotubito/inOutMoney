@@ -9,6 +9,8 @@
 import UIKit
 
 class IORubrosProfileViewController : UIViewController, IORubrosProfileViewContract {
+    
+    
    
     
     @IBOutlet var tableView: UITableView!
@@ -30,11 +32,22 @@ class IORubrosProfileViewController : UIViewController, IORubrosProfileViewContr
         
         viewModel.loadData()
         
+    
+        
     }
     
     func reloadList() {
         tableView.reloadData()
     }
+    
+    func showToast(message: String) {
+        Toast.show(message: message, controller: self)
+    }
+    
+    func showFechaSeleccionada() {
+        viewModel.loadData()
+    }
+
 }
 
 
@@ -52,6 +65,7 @@ extension IORubrosProfileViewController: UITableViewDataSource {
         switch item.type {
         case .headerInfo:
             if let cell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellHeaderInfo.identifier, for: indexPath) as? IOTableViewCellHeaderInfo {
+                cell.delegate = self
                 cell.item = item
                 return cell
             }
@@ -84,5 +98,36 @@ extension IORubrosProfileViewController: IOTableViewCellBotonAgregarRegistroDele
         performSegue(withIdentifier: "segue_to_nuevo_registro_gastos", sender: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? IORubrosGastosAltaViewController {
+            controller.delegate = self
+            
+            controller.viewModel = IORubrosGastosAltaViewModel(withView: controller, rubroSeleccionado: viewModel.model.rubroRecibido)
+        }
+        
+        
+    }
+    
+}
+
+
+extension IORubrosProfileViewController: IORubrosGastosAltaViewControllerDelegate {
+    func nuevoGastoIngresadoDelegate() {
+        showToast(message: "Nuevo gasto ingresado")
+        viewModel.loadData()
+    }
+    
+    
+}
+
+
+extension IORubrosProfileViewController: IOTableViewCellHeaderInfoDelegate {
+    func swipeRightDelegate() {
+        viewModel.restarMesFechaSeleccionada()
+    }
+    
+    func swipeLeftDelegate() {
+        viewModel.sumarMesFechaSeleccionada()
+    }
     
 }

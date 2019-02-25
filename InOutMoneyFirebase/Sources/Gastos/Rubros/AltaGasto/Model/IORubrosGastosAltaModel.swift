@@ -9,5 +9,10 @@
 import Foundation
 
 class IORubrosGastosAltaModel {
+    var rubroSeleccionado : IORubrosListadoModel.rowData
+    var codigoCuentaSeleccionada : Int = 0
     
+    init(rubroRecibido: IORubrosListadoModel.rowData) {
+        self.rubroSeleccionado = rubroRecibido
+    }
 }

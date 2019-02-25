@@ -15,9 +15,14 @@ protocol IORubrosProfileViewModelContract {
     func loadData()
     func getTotal() -> Double
     func getNombreMes() -> String
+    func filtarRegistros(registros: [IORegistroGastos]) -> [IORegistroGastos]
+    func sumarMesFechaSeleccionada()
+    func restarMesFechaSeleccionada()
     
 }
 
 protocol IORubrosProfileViewContract {
     func reloadList()
+    func showToast(message: String)
+    func showFechaSeleccionada()
 }

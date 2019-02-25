@@ -9,6 +9,9 @@
 import UIKit
 
 class IORubrosProfileViewModel: IORubrosProfileViewModelContract {
+    
+    
+   
    
     
     var _view : IORubrosProfileViewContract!
@@ -22,30 +25,42 @@ class IORubrosProfileViewModel: IORubrosProfileViewModelContract {
     }
     
     func loadData() {
-        MLFirebaseDatabaseService.retrieveData(path: UserID! + "/gastos/profiles/" + model.rubroRecibido.childID!) { (response, error) in
+
+        let mes = model.fechaSeleccionada.mes
+        let año = model.fechaSeleccionada.año
+        let keyFechaString = MESES[mes]! + String(año)
+        
+        let path = UserID! + "/gastos/profiles/" + model.rubroRecibido.childID! + "/registros/" + keyFechaString
+        
+        MLFirebaseDatabaseService.retrieveData(path: path) { (response, error) in
             if error != nil {
                 print(error?.localizedDescription ?? "error desconocido")
                 return
             }
             
-            if response == nil {
-                print("no hay datos")
-                return
-            }
+           
             
-            print(response)
-            let profile = Profile(data: response!)
-            let registros = profile!.registros
+            let profile = Profile(data: response ?? [:])
+            var registros = profile!.registros
+            
+            //filtro los registro
+            registros = self.filtarRegistros(registros: registros)
+            
+            //una vez cargado los datos, los ordeno
+            registros = registros.sorted(by: { $0.fechaCreacion? .compare($1.fechaCreacion!) == ComparisonResult.orderedDescending})
+            
             self.model.registrosGastos = registros
             
+            self.model.items.removeAll()
             //agrego el header
 
-            let headerInfo = ProfileViewModelRubrosHeaderItem(mes: self.getNombreMes(), total: self.getTotal())
-            self.model.items.append(headerInfo)
+            let headerInfo = ProfileViewModelRubrosHeaderItem(mes: self.getNombreMes(), total: self.getTotal(), rubro: self.model.rubroRecibido.descripcion!)
+             self.model.items.append(headerInfo)
             
             //agrego el boton agregar
             let botonItem = ProfileViewModelBotonAgregarRegistroItem()
             self.model.items.append(botonItem)
+            
             
             //agrego los registros de los gastos realizados
             
@@ -55,18 +70,19 @@ class IORubrosProfileViewModel: IORubrosProfileViewModelContract {
             }
             
             
-       
-            
             self._view.reloadList()
             
             
         }
     }
+
     
     func getTotal() -> Double {
         var total : Double = 0
         for i in model.registrosGastos {
-            total += i.importe!
+            if i.isEnabled {
+                total += i.importe!
+            }
         }
         
         return total
@@ -77,6 +93,40 @@ class IORubrosProfileViewModel: IORubrosProfileViewModelContract {
     }
     
     
+    func filtarRegistros(registros: [IORegistroGastos]) -> [IORegistroGastos] {
+        
+        let newArray = [IORegistroGastos]()
+        
+        let mesSeleccionado = model.fechaSeleccionada.mes
+        let añoSeleccionado = model.fechaSeleccionada.año
+        let fechaInicialString = "01-" + String(mesSeleccionado) + "-" + String(añoSeleccionado) + " 00:00:00"
+        let fechaInicial = fechaInicialString.toDate(formato: formatoDeFecha.fechaConHora)!
+        
+        let ultimoDia = model.fechaSeleccionada.endDay()
+        let fechaFinalSlice = String(ultimoDia) + "-" + String(mesSeleccionado)
+        let fechaFinalString =  fechaFinalSlice + "-" + String(añoSeleccionado) + " 00:00:00"
+        let fechaFinal = fechaFinalString.toDate(formato: formatoDeFecha.fechaConHora)!
+        
+        var array  = [IORegistroGastos]()
+        for i in registros {
+            if i.fechaGasto! > fechaInicial && i.fechaGasto! < fechaFinal {
+                array.append(i)
+            }
+        }
+        
+        return array
+        
+    }
+    
+    func sumarMesFechaSeleccionada() {
+        model.fechaSeleccionada.sumarMes(valor: 1)
+        _view.showFechaSeleccionada()
+    }
+    
+    func restarMesFechaSeleccionada() {
+        model.fechaSeleccionada.sumarMes(valor: -1)
+        _view.showFechaSeleccionada()
+    }
     
 }
 

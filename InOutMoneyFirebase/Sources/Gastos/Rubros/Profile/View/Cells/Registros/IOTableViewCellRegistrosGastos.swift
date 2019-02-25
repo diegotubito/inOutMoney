@@ -13,15 +13,24 @@ class IOTableViewCellRegistrosGastos: UITableViewCell {
     @IBOutlet weak var descripcionCell: UILabel?
     @IBOutlet weak var fechaCell: UILabel?
     @IBOutlet var importeCell: UILabel!
+    @IBOutlet var lineaAnulado: UIView!
     
     var item: IORegistroGastos? {
         didSet {
             guard let item = item else {
                 return
             }
-            fechaCell?.text = item.fecha
+            
+            if item.isEnabled {
+                lineaAnulado.isHidden = true
+             } else {
+                lineaAnulado.isHidden = false
+            }
+            
+            fechaCell?.text = item.fechaGasto?.toString(formato: formatoDeFecha.fecha)
             descripcionCell?.text = item.descripcion
             importeCell.text = "$ " + String(item.importe ?? 0.0)
+            
         }
     }
     
@@ -41,7 +50,7 @@ class IOTableViewCellRegistrosGastos: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
-        selectionStyle = .none
+        selectionStyle = .blue
     }
     
     override func prepareForReuse() {

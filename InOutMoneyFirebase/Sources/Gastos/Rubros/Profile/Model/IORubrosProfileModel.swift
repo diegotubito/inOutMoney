@@ -31,12 +31,13 @@ class Profile {
     var registros = [IORegistroGastos]()
     
     init?(data: [String : Any]) {
-        if let reg = data["registros"] as? [String : Any] {
-            for (_, value) in reg {
-                let nuevo = IORegistroGastos(json: value as! [String : Any])
-                registros.append(nuevo)
-            }
+        for (_, value) in data {
+            let nuevo = IORegistroGastos(json: value as! [String : Any])
+            registros.append(nuevo)
         }
+
+            
+    
         
     }
 }
@@ -64,7 +65,7 @@ class ProfileViewModelRubrosHeaderItem: IORubrosProfileItem {
     }
     
     var sectionTitle: String {
-        return "header"
+        return ""
     }
     
     var rowCount: Int {
@@ -73,22 +74,28 @@ class ProfileViewModelRubrosHeaderItem: IORubrosProfileItem {
     
     var mes: String
     var total: Double
+    var rubro : String
     
-    init(mes: String, total: Double) {
+    init(mes: String, total: Double, rubro: String) {
         self.mes = mes
         self.total = total
+        self.rubro = rubro
     }
 }
 
 //REGISTROS
 class IORegistroGastos {
     var descripcion: String?
-    var fecha: String?
+    var fechaGasto: Date?
+    var fechaCreacion : Date?
     var importe : Double?
+    var isEnabled : Bool
     
     init(json: [String: Any]) {
+        self.isEnabled = json["isEnabled"] as? Bool ?? true
         self.descripcion = json["descripcion"] as? String
-        self.fecha = json["fechaCreacion"] as? String
+        self.fechaGasto = (json["fechaGasto"] as? String)?.toDate(formato: formatoDeFecha.fecha)
+        self.fechaCreacion = (json["fechaCreacion"] as? String)?.toDate(formato: formatoDeFecha.fechaConHora)
         self.importe = json["importe"] as? Double
     }
 }

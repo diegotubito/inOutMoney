@@ -59,7 +59,7 @@ func diaDeLaSemana(fecha: Date) -> String {
     let calendar = Calendar.current
     let diaDeLaSemana = calendar.component(.weekday, from: fecha)
     
-    return DIAS[diaDeLaSemana]!
+    return NombreDias[diaDeLaSemana]
 }
 
 func añoDeLaFecha(fecha: Date) -> Int {

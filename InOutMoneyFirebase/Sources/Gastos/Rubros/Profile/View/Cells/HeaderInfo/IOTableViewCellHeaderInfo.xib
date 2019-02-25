@@ -19,17 +19,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="406" height="135.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lBi-xh-mPk">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradienteGris" translatesAutoresizingMaskIntoConstraints="NO" id="lBi-xh-mPk">
                         <rect key="frame" x="0.0" y="0.0" width="406" height="100"/>
-                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="100" id="mmE-HH-ReU"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Feb" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xV-7K-RCf">
-                        <rect key="frame" x="16" y="8" width="47" height="84"/>
+                        <rect key="frame" x="16" y="57" width="47" height="35"/>
                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8d-tT-GTp">
@@ -41,9 +40,15 @@
                         <state key="normal" title="Button" image="Calendar-icon"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 3.000,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQU-Xb-Jba">
-                        <rect key="frame" x="199" y="8" width="146" height="84"/>
+                        <rect key="frame" x="199" y="57" width="146" height="35"/>
                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verdulería" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC3-Fe-UZ0">
+                        <rect key="frame" x="16" y="8" width="77.5" height="41"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -51,23 +56,26 @@
                     <constraint firstAttribute="trailing" secondItem="lBi-xh-mPk" secondAttribute="trailing" id="3GE-Hu-4Ft"/>
                     <constraint firstItem="lBi-xh-mPk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="3pR-9k-Ruw"/>
                     <constraint firstItem="aQU-Xb-Jba" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7xV-7K-RCf" secondAttribute="trailing" constant="8" id="8wU-bT-DNL"/>
+                    <constraint firstItem="7xV-7K-RCf" firstAttribute="centerY" secondItem="aQU-Xb-Jba" secondAttribute="centerY" id="9Sh-dL-cN8"/>
                     <constraint firstItem="lBi-xh-mPk" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Csd-Wn-OY7"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7xV-7K-RCf" secondAttribute="trailing" priority="750" constant="8" id="FWT-8r-4Hk"/>
-                    <constraint firstItem="aQU-Xb-Jba" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="M0N-n5-rEY"/>
                     <constraint firstItem="lBi-xh-mPk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="PdV-NX-Sl8"/>
+                    <constraint firstItem="hC3-Fe-UZ0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Pvz-2H-gq8"/>
                     <constraint firstAttribute="bottom" secondItem="lBi-xh-mPk" secondAttribute="bottom" id="Qgn-7e-xVl"/>
                     <constraint firstAttribute="bottom" secondItem="aQU-Xb-Jba" secondAttribute="bottom" constant="8" id="fJx-cE-EeZ"/>
                     <constraint firstItem="P8d-tT-GTp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="gH5-t4-x59"/>
-                    <constraint firstItem="7xV-7K-RCf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="j1Y-xi-Mrv"/>
+                    <constraint firstItem="7xV-7K-RCf" firstAttribute="top" secondItem="hC3-Fe-UZ0" secondAttribute="bottom" constant="8" id="mGB-gL-gbH"/>
                     <constraint firstAttribute="trailing" secondItem="P8d-tT-GTp" secondAttribute="trailing" constant="3" id="n7D-dk-CaR"/>
                     <constraint firstItem="7xV-7K-RCf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="sfX-V6-gAw"/>
                     <constraint firstItem="P8d-tT-GTp" firstAttribute="leading" secondItem="aQU-Xb-Jba" secondAttribute="trailing" constant="8" id="tpf-jP-uoT"/>
+                    <constraint firstItem="hC3-Fe-UZ0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="vWc-bc-Usx"/>
                     <constraint firstAttribute="bottom" secondItem="7xV-7K-RCf" secondAttribute="bottom" constant="8" id="xzP-xo-E2K"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="mes" destination="7xV-7K-RCf" id="4Nu-kU-ouR"/>
+                <outlet property="rubro" destination="hC3-Fe-UZ0" id="mcb-Xc-nri"/>
                 <outlet property="total" destination="aQU-Xb-Jba" id="BKh-dd-xcc"/>
             </connections>
             <point key="canvasLocation" x="-136" y="149.32533733133434"/>
@@ -75,5 +83,6 @@
     </objects>
     <resources>
         <image name="Calendar-icon" width="256" height="256"/>
+        <image name="gradienteGris" width="519" height="443"/>
     </resources>
 </document>

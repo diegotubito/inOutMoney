@@ -29,9 +29,7 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
         // Do any additional setup after loading the view, typically from a nib.
         service = IOLoginFirebaseService()
         
-        
-        
-        authListener = Auth.auth().addStateDidChangeListener() { auth, user in
+         authListener = Auth.auth().addStateDidChangeListener() { auth, user in
           
             UserID = user?.uid
             
@@ -41,8 +39,14 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
                 self.switchStoryboard()
                 
             } else {
-                self.viewModel.getDataFromFirebase(path: (user?.uid)!)
-                  print("you are logged in \(String(describing: user?.uid))")
+                print("you are logged in \(String(describing: user?.uid))")
+                
+                
+                IOCuentaManager.loadCuentas(complete: {
+                    print("cuentas cargadas")
+                }, fail: { (message) in
+                    print(message)
+                })
             }
         }
      

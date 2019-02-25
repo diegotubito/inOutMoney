@@ -47,11 +47,20 @@
                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEe-0U-QBJ">
+                        <rect key="frame" x="16" y="63" width="288" height="5"/>
+                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="5" id="kle-zI-XvD"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="o1X-uD-T5d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="2Lt-WK-bfN"/>
+                    <constraint firstItem="GEe-0U-QBJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="5nF-xQ-KrD"/>
                     <constraint firstAttribute="bottom" secondItem="o1X-uD-T5d" secondAttribute="bottom" id="Ac7-v8-LtD"/>
                     <constraint firstItem="DLR-TX-ypq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="AkQ-Fd-aBC"/>
+                    <constraint firstItem="GEe-0U-QBJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="10" id="IVv-Ju-drc"/>
                     <constraint firstItem="tgc-aC-sob" firstAttribute="top" secondItem="DLR-TX-ypq" secondAttribute="bottom" constant="3" id="MDY-J0-CEa"/>
                     <constraint firstAttribute="trailing" secondItem="o1X-uD-T5d" secondAttribute="trailing" constant="16" id="P2h-MD-6jq"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tgc-aC-sob" secondAttribute="trailing" priority="750" constant="8" id="Tuw-jy-Rz9"/>
@@ -59,6 +68,7 @@
                     <constraint firstItem="42E-3x-oXr" firstAttribute="top" secondItem="DLR-TX-ypq" secondAttribute="bottom" constant="3" id="WhO-fd-ICs"/>
                     <constraint firstAttribute="trailing" secondItem="42E-3x-oXr" secondAttribute="trailing" constant="16" id="Xbg-NL-Mhy"/>
                     <constraint firstItem="o1X-uD-T5d" firstAttribute="top" secondItem="tgc-aC-sob" secondAttribute="bottom" constant="3" id="d0s-Ip-Y2Z"/>
+                    <constraint firstAttribute="trailing" secondItem="GEe-0U-QBJ" secondAttribute="trailing" constant="16" id="fhQ-OJ-UjV"/>
                     <constraint firstItem="tgc-aC-sob" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="qOE-Ub-ymf"/>
                     <constraint firstItem="42E-3x-oXr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tgc-aC-sob" secondAttribute="trailing" constant="8" id="t11-wb-vlW"/>
                     <constraint firstAttribute="trailing" secondItem="DLR-TX-ypq" secondAttribute="trailing" constant="16" id="w1N-lD-HcT"/>
@@ -69,6 +79,7 @@
                 <outlet property="descripcionCell" destination="tgc-aC-sob" id="gQG-cW-dnZ"/>
                 <outlet property="fechaCell" destination="DLR-TX-ypq" id="iDv-4J-leg"/>
                 <outlet property="importeCell" destination="42E-3x-oXr" id="48f-MR-B1l"/>
+                <outlet property="lineaAnulado" destination="GEe-0U-QBJ" id="vir-3b-XxM"/>
             </connections>
             <point key="canvasLocation" x="156.80000000000001" y="88.605697151424295"/>
         </tableViewCell>

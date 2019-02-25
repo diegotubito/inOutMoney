@@ -10,9 +10,10 @@ import Foundation
 import UIKit
 
 protocol IORubrosGastosAltaViewModelContract {
-    init(withView view: IORubrosGastosAltaViewContract)
+    init(withView view: IORubrosGastosAltaViewContract, rubroSeleccionado: IORubrosListadoModel.rowData)
     func loadData()
     var model : IORubrosGastosAltaModel! {get set}
+    
 }
 
 protocol IORubrosGastosAltaViewContract {

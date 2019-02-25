@@ -31,6 +31,8 @@ class IORubrosListadoViewModel: IORubrosListadoViewModelContract {
                 return
             }
             
+            self.model.listado.removeAll()
+            
             for i in response! {
                 if let registro = i.value as? [String : Any] {
                     let childID = registro["childID"] as! String
