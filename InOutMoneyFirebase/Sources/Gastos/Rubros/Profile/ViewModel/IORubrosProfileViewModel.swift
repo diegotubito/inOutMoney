@@ -63,12 +63,32 @@ class IORubrosProfileViewModel: IORubrosProfileViewModelContract {
             
             
             //agrego los registros de los gastos realizados
-            
+       /*
              if !profile!.registros.isEmpty {
                 let friendsItem = ProfileViewModelRegistrosGastosItem(registros: registros)
                 self.model.items.append(friendsItem)
             }
+         */
             
+            let mes = String(self.model.fechaSeleccionada.mes)
+            let año = String(self.model.fechaSeleccionada.año)
+            let maxDays = self.model.fechaSeleccionada.endDay()
+            var fechaInicial = (String(maxDays) + "-" + mes + "-" + año).toDate(formato: "dd-MM-yyyy")
+            for _ in 1...maxDays - 1 {
+                
+                let resultArray = registros.filter {$0.fechaGasto == fechaInicial}
+                
+                if resultArray.count > 0 {
+                    let fechaItem = ProfileViewModelFechaGastosItem(fecha: fechaInicial!)
+                    self.model.items.append(fechaItem)
+                    
+                    let registrosItem = ProfileViewModelRegistrosGastosItem(registros: resultArray)
+                    self.model.items.append(registrosItem)
+                    
+                }
+                
+                fechaInicial = Calendar.current.date(byAdding: .day, value: -1, to: fechaInicial!)
+            }
             
             self._view.reloadList()
             

@@ -20,42 +20,42 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="$ 100,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42E-3x-oXr">
-                        <rect key="frame" x="254" y="40" width="50" height="14.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <rect key="frame" x="250.5" y="38" width="53.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1X-uD-T5d">
-                        <rect key="frame" x="16" y="89.5" width="288" height="2"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <rect key="frame" x="16" y="91.5" width="288" height="1"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="2" id="eUc-Yv-okV"/>
+                            <constraint firstAttribute="height" constant="1" id="eUc-Yv-okV"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chaucha" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgc-aC-sob">
-                        <rect key="frame" x="16" y="8" width="50" height="78.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <rect key="frame" x="16" y="3" width="53.5" height="85.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEe-0U-QBJ">
-                        <rect key="frame" x="16" y="40" width="288" height="12"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEe-0U-QBJ">
+                        <rect key="frame" x="16" y="44.5" width="288" height="3"/>
+                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="12" id="kle-zI-XvD"/>
+                            <constraint firstAttribute="height" constant="3" id="kle-zI-XvD"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="o1X-uD-T5d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="2Lt-WK-bfN"/>
                     <constraint firstItem="GEe-0U-QBJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="5nF-xQ-KrD"/>
-                    <constraint firstAttribute="bottom" secondItem="o1X-uD-T5d" secondAttribute="bottom" id="Ac7-v8-LtD"/>
-                    <constraint firstItem="GEe-0U-QBJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="IVv-Ju-drc"/>
+                    <constraint firstAttribute="bottom" secondItem="o1X-uD-T5d" secondAttribute="bottom" constant="-1" id="Ac7-v8-LtD"/>
                     <constraint firstAttribute="trailing" secondItem="o1X-uD-T5d" secondAttribute="trailing" constant="16" id="P2h-MD-6jq"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tgc-aC-sob" secondAttribute="trailing" priority="750" constant="8" id="Tuw-jy-Rz9"/>
                     <constraint firstAttribute="trailing" secondItem="42E-3x-oXr" secondAttribute="trailing" constant="16" id="Xbg-NL-Mhy"/>
-                    <constraint firstItem="tgc-aC-sob" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Z9I-Rl-VS3"/>
+                    <constraint firstItem="tgc-aC-sob" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="Z9I-Rl-VS3"/>
                     <constraint firstItem="o1X-uD-T5d" firstAttribute="top" secondItem="tgc-aC-sob" secondAttribute="bottom" constant="3" id="d0s-Ip-Y2Z"/>
+                    <constraint firstItem="GEe-0U-QBJ" firstAttribute="centerY" secondItem="tgc-aC-sob" secondAttribute="centerY" id="dxr-LX-KFX"/>
                     <constraint firstAttribute="trailing" secondItem="GEe-0U-QBJ" secondAttribute="trailing" constant="16" id="fhQ-OJ-UjV"/>
                     <constraint firstItem="tgc-aC-sob" firstAttribute="centerY" secondItem="42E-3x-oXr" secondAttribute="centerY" id="hPZ-fb-M1g"/>
                     <constraint firstItem="tgc-aC-sob" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="qOE-Ub-ymf"/>

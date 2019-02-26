@@ -12,6 +12,7 @@ import UIKit
 enum IORubrosProfileType {
     case headerInfo
     case botonAgregarRegistro
+    case fecha
     case registros
 }
 
@@ -118,6 +119,26 @@ class ProfileViewModelRegistrosGastosItem: IORubrosProfileItem {
     
     init(registros: [IORegistroGastos]) {
         self.registros = registros
+    }
+}
+
+class ProfileViewModelFechaGastosItem: IORubrosProfileItem {
+    var type: IORubrosProfileType {
+        return .fecha
+    }
+    
+    var sectionTitle: String {
+        return ""
+    }
+    
+    var rowCount: Int {
+        return 1
+    }
+    
+    var fecha: Date?
+    
+    init(fecha: Date) {
+        self.fecha = fecha
     }
 }
 

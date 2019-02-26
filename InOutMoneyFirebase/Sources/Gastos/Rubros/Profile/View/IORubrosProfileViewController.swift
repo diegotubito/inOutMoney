@@ -27,7 +27,7 @@ class IORubrosProfileViewController : UIViewController, IORubrosProfileViewContr
         tableView?.register(IOTableViewCellHeaderInfo.nib, forCellReuseIdentifier: IOTableViewCellHeaderInfo.identifier)
         tableView?.register(IOTableViewCellRegistrosGastos.nib, forCellReuseIdentifier: IOTableViewCellRegistrosGastos.identifier)
         tableView.register(IOTableViewCellBotonAgregarRegistro.nib, forCellReuseIdentifier: IOTableViewCellBotonAgregarRegistro.identifier)
-         
+         tableView.register(IOTableViewCellGastoProfileFecha.nib, forCellReuseIdentifier: IOTableViewCellGastoProfileFecha.identifier)
         
         
         viewModel.loadData()
@@ -70,12 +70,17 @@ extension IORubrosProfileViewController: UITableViewDataSource {
                 return cell
             }
             
+            
         case .botonAgregarRegistro:
             if let item = item as? ProfileViewModelBotonAgregarRegistroItem, let cell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellBotonAgregarRegistro.identifier, for: indexPath) as? IOTableViewCellBotonAgregarRegistro {
                 cell.delegate = self
                 return cell
             }
-            
+        case .fecha :
+            if let cell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellGastoProfileFecha.identifier, for: indexPath) as? IOTableViewCellGastoProfileFecha {
+                cell.item = item
+                return cell
+            }
         case .registros:
             if let item = item as? ProfileViewModelRegistrosGastosItem, let cell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellRegistrosGastos.identifier, for: indexPath) as? IOTableViewCellRegistrosGastos {
                 let registro = item.registros[indexPath.row]

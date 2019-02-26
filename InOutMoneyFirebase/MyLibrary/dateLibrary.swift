@@ -62,11 +62,6 @@ extension Date {
         
     }
     
-    var dayName : String {
-        let valor = Calendar.current.component(.weekday, from: self)
-        return NombreDias[valor]
-    }
-    
     func startDay() -> Int {
         let myCalendar = Calendar(identifier: .gregorian)
         return myCalendar.component(.weekday, from: self)
@@ -82,7 +77,12 @@ extension Date {
         let days = myCalendar.dateComponents([.day], from: interval.start, to: interval.end).day!
         return days
     }
-    
+    var dia : Int {
+        let calendar = Calendar.current
+        let dia = calendar.component(.day, from: self)
+        
+        return dia
+    }
     var mes : Int {
         let calendar = Calendar.current
         let mes = calendar.component(.month, from: self)
@@ -113,6 +113,15 @@ extension Date {
         let nombre = MESES[mes]?.localized
         
         return nombre ?? "error"
+    }
+    
+    var nombreDelDia : String {
+        let calendar = Calendar.current
+        let dia = calendar.component(.weekday, from: self)
+        
+        let nombre = NombreDias[dia-1].localized
+        
+        return nombre
     }
 
 }

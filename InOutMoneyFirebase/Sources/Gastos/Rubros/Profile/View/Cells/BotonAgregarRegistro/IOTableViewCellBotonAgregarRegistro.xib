@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRy-WC-l44">
-                        <rect key="frame" x="128" y="19" width="70" height="70"/>
+                        <rect key="frame" x="128" y="14" width="70" height="70"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="YXM-1l-GaN"/>
                             <constraint firstAttribute="height" constant="70" id="ogX-9K-79S"/>
@@ -33,8 +33,8 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="gRy-WC-l44" secondAttribute="bottom" constant="8" id="1tJ-ci-Bwa"/>
-                    <constraint firstItem="gRy-WC-l44" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="Kp1-gI-x5Z"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="gRy-WC-l44" secondAttribute="bottom" constant="3" id="1tJ-ci-Bwa"/>
+                    <constraint firstItem="gRy-WC-l44" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="Kp1-gI-x5Z"/>
                     <constraint firstItem="gRy-WC-l44" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="eJa-ZB-clm"/>
                 </constraints>
             </tableViewCellContentView>

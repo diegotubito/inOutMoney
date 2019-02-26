@@ -85,7 +85,6 @@
 		84CA12472223098B0040B78B /* IOTableViewCellBotonGuardar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CA12452223098B0040B78B /* IOTableViewCellBotonGuardar.xib */; };
 		84CA124B22238A2D0040B78B /* IOTableViewCellSinglePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA124922238A2D0040B78B /* IOTableViewCellSinglePicker.swift */; };
 		84CA124C22238A2D0040B78B /* IOTableViewCellSinglePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CA124A22238A2D0040B78B /* IOTableViewCellSinglePicker.xib */; };
-		84CA124E222393B60040B78B /* IOGlobales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA124D222393B60040B78B /* IOGlobales.swift */; };
 		84CA1251222398EB0040B78B /* IOCuentasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA1250222398EB0040B78B /* IOCuentasManager.swift */; };
 		84CA12552224EDF20040B78B /* IOTableViewCellGastoProfileFecha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA12532224EDF20040B78B /* IOTableViewCellGastoProfileFecha.swift */; };
 		84CA12562224EDF20040B78B /* IOTableViewCellGastoProfileFecha.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CA12542224EDF20040B78B /* IOTableViewCellGastoProfileFecha.xib */; };
@@ -186,7 +185,6 @@
 		84CA12452223098B0040B78B /* IOTableViewCellBotonGuardar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellBotonGuardar.xib; sourceTree = "<group>"; };
 		84CA124922238A2D0040B78B /* IOTableViewCellSinglePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellSinglePicker.swift; sourceTree = "<group>"; };
 		84CA124A22238A2D0040B78B /* IOTableViewCellSinglePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellSinglePicker.xib; sourceTree = "<group>"; };
-		84CA124D222393B60040B78B /* IOGlobales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOGlobales.swift; sourceTree = "<group>"; };
 		84CA1250222398EB0040B78B /* IOCuentasManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOCuentasManager.swift; sourceTree = "<group>"; };
 		84CA12532224EDF20040B78B /* IOTableViewCellGastoProfileFecha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellGastoProfileFecha.swift; sourceTree = "<group>"; };
 		84CA12542224EDF20040B78B /* IOTableViewCellGastoProfileFecha.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellGastoProfileFecha.xib; sourceTree = "<group>"; };
@@ -460,7 +458,6 @@
 			children = (
 				84CA124F222398DC0040B78B /* Cuentas */,
 				84028118220FC7F200C85A6A /* Cells */,
-				84CA124D222393B60040B78B /* IOGlobales.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1121,7 +1118,6 @@
 				84CA124B22238A2D0040B78B /* IOTableViewCellSinglePicker.swift in Sources */,
 				840280FC220FB24600C85A6A /* storageManager.swift in Sources */,
 				840280F1220FB24600C85A6A /* constantes.swift in Sources */,
-				84CA124E222393B60040B78B /* IOGlobales.swift in Sources */,
 				8419E079221536690015CC99 /* IOHomeViewModelContract.swift in Sources */,
 				84027FC6220F4DCC00C85A6A /* IODefaults.swift in Sources */,
 				84EEEA42221E5F06001F98E9 /* IOTableViewCellRubrosListado.swift in Sources */,

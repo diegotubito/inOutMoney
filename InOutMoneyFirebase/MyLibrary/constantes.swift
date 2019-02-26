@@ -19,13 +19,13 @@ let HORA_SIN_SEGUNDOS = "HH:mm"
 let HORA_24HS = "HH:mm a"
 let HORA_CONSEGUNDOS_24HS = "HH:mm:ss a"
 
-let NombreDias = ["domingo".localized,
-                       "lunes".localized,
-                       "martes".localized,
-                       "miercoles".localized,
-                       "jueves".localized,
-                       "viernes".localized,
-                       "sabado".localized]
+let NombreDias = ["Domingo".localized,
+                       "Lunes".localized,
+                       "Martes".localized,
+                       "Miércoles".localized,
+                       "Jueves".localized,
+                       "Viernes".localized,
+                       "Sábado".localized]
 
 //let DIAS = [1:"Domingo".localized, 2: "Lunes".localized, 3: "Martes".localized, 4: "Miércoles".localized, 5: "Jueves".localized, 6: "Viernes".localized, 7: "Sábado".localized]
 let MESES = [1:"Enero".localized, 2:"Febrero".localized, 3:"Marzo".localized, 4:"Abril".localized, 5:"Mayo".localized, 6:"Junio".localized, 7:"Julio".localized, 8:"Agosto".localized, 9:"Septiembre".localized, 10:"Octubre".localized, 11:"Noviembre".localized, 12:"Diciembre".localized]

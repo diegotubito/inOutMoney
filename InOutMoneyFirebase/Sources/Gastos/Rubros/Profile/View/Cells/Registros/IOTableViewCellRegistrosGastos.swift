@@ -50,7 +50,7 @@ class IOTableViewCellRegistrosGastos: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
-        selectionStyle = .blue
+        selectionStyle = .none
     }
     
     override func prepareForReuse() {
