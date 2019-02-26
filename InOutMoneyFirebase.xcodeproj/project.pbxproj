@@ -87,6 +87,8 @@
 		84CA124C22238A2D0040B78B /* IOTableViewCellSinglePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CA124A22238A2D0040B78B /* IOTableViewCellSinglePicker.xib */; };
 		84CA124E222393B60040B78B /* IOGlobales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA124D222393B60040B78B /* IOGlobales.swift */; };
 		84CA1251222398EB0040B78B /* IOCuentasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA1250222398EB0040B78B /* IOCuentasManager.swift */; };
+		84CA12552224EDF20040B78B /* IOTableViewCellGastoProfileFecha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA12532224EDF20040B78B /* IOTableViewCellGastoProfileFecha.swift */; };
+		84CA12562224EDF20040B78B /* IOTableViewCellGastoProfileFecha.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CA12542224EDF20040B78B /* IOTableViewCellGastoProfileFecha.xib */; };
 		84DABE162210B6C90024B112 /* toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DABE152210B6C90024B112 /* toast.swift */; };
 		84EEEA38221E5906001F98E9 /* IORubrosListadoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEEA37221E5906001F98E9 /* IORubrosListadoModel.swift */; };
 		84EEEA3A221E5940001F98E9 /* IORubrosListadoViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEEA39221E5940001F98E9 /* IORubrosListadoViewModelContract.swift */; };
@@ -186,6 +188,8 @@
 		84CA124A22238A2D0040B78B /* IOTableViewCellSinglePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellSinglePicker.xib; sourceTree = "<group>"; };
 		84CA124D222393B60040B78B /* IOGlobales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOGlobales.swift; sourceTree = "<group>"; };
 		84CA1250222398EB0040B78B /* IOCuentasManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOCuentasManager.swift; sourceTree = "<group>"; };
+		84CA12532224EDF20040B78B /* IOTableViewCellGastoProfileFecha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellGastoProfileFecha.swift; sourceTree = "<group>"; };
+		84CA12542224EDF20040B78B /* IOTableViewCellGastoProfileFecha.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellGastoProfileFecha.xib; sourceTree = "<group>"; };
 		84DABE152210B6C90024B112 /* toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = toast.swift; sourceTree = "<group>"; };
 		84EEEA37221E5906001F98E9 /* IORubrosListadoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubrosListadoModel.swift; sourceTree = "<group>"; };
 		84EEEA39221E5940001F98E9 /* IORubrosListadoViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubrosListadoViewModelContract.swift; sourceTree = "<group>"; };
@@ -745,6 +749,15 @@
 			path = Cuentas;
 			sourceTree = "<group>";
 		};
+		84CA12522224ED7C0040B78B /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				84CA12532224EDF20040B78B /* IOTableViewCellGastoProfileFecha.swift */,
+				84CA12542224EDF20040B78B /* IOTableViewCellGastoProfileFecha.xib */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
 		84DABE142210B6C90024B112 /* Toast */ = {
 			isa = PBXGroup;
 			children = (
@@ -847,6 +860,7 @@
 		84EEEA51221FAC37001F98E9 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				84CA12522224ED7C0040B78B /* Date */,
 				84CA120B222107C10040B78B /* HeaderInfo */,
 				84CA120C222107D00040B78B /* BotonAgregarRegistro */,
 				84CA120A222107B10040B78B /* Registros */,
@@ -973,6 +987,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CA12562224EDF20040B78B /* IOTableViewCellGastoProfileFecha.xib in Resources */,
 				84594EF421DC64670019C9B9 /* LaunchScreen.storyboard in Resources */,
 				84EEEA55221FAC5A001F98E9 /* IOTableViewCellHeaderInfo.xib in Resources */,
 				84CA12472223098B0040B78B /* IOTableViewCellBotonGuardar.xib in Resources */,
@@ -1062,6 +1077,7 @@
 				84CA12082220FDAD0040B78B /* IOTableViewCellRegistrosGastos.swift in Sources */,
 				849BA96922074C9900EC93A6 /* IOLoginUsuarioViewModel.swift in Sources */,
 				84CA12272222FB3B0040B78B /* IOTableViewCellSingleSwitchCell.swift in Sources */,
+				84CA12552224EDF20040B78B /* IOTableViewCellGastoProfileFecha.swift in Sources */,
 				840280F4220FB24600C85A6A /* coreGraphycs.swift in Sources */,
 				840280F0220FB24600C85A6A /* configEncriptar.swift in Sources */,
 				840280F6220FB24600C85A6A /* extensiones.swift in Sources */,
