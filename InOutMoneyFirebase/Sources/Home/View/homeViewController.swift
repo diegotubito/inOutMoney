@@ -13,6 +13,8 @@ var UserID : String?
 
 class IOHomeViewController: UIViewController, IOHomeViewContract {
     
+    @IBOutlet var myButton: UIView!
+    @IBOutlet var resumenIngresosGastosView: UIView!
     
     var service : IOLoginFirebaseService!
     
@@ -39,6 +41,10 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
                 self.switchStoryboard()
                 
             } else {
+                self.crearResumenGastosIngresos()
+                let aux = MLBotonCircularCustomView(frame: CGRect(x: 0, y: 0, width: self.myButton.frame.width, height: self.myButton.frame.height))
+                self.myButton.addSubview(aux)
+                
                 print("you are logged in \(String(describing: user?.uid))")
                 
                 
@@ -96,3 +102,10 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
     
 }
 
+
+extension IOHomeViewController {
+    func crearResumenGastosIngresos() {
+        let aux = IOResumenEntradaSalidaCV(frame: CGRect(x: 0, y: 0, width: resumenIngresosGastosView.frame.width, height: resumenIngresosGastosView.frame.height))
+        resumenIngresosGastosView.addSubview(aux)
+    }
+}

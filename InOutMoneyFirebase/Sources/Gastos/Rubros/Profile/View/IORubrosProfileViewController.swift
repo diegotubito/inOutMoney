@@ -32,9 +32,9 @@ class IORubrosProfileViewController : UIViewController, IORubrosProfileViewContr
         
         viewModel.loadData()
         
-    
         
     }
+    
     
     func reloadList() {
         tableView.reloadData()

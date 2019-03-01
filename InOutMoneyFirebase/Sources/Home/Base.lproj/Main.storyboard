@@ -57,7 +57,31 @@
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUq-zD-dU1">
                                 <rect key="frame" x="0.0" y="64" width="375" height="573"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CrU-og-yqj">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="77T-Br-TIj"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cfi-2n-w17">
+                                        <rect key="frame" x="33" y="490" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Pcv-9n-ni4"/>
+                                            <constraint firstAttribute="width" constant="50" id="lPw-y6-6ki"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="CrU-og-yqj" firstAttribute="leading" secondItem="uUq-zD-dU1" secondAttribute="leading" id="2eK-IJ-IQY"/>
+                                    <constraint firstAttribute="trailing" secondItem="CrU-og-yqj" secondAttribute="trailing" id="NGN-Lm-Z8N"/>
+                                    <constraint firstItem="CrU-og-yqj" firstAttribute="top" secondItem="uUq-zD-dU1" secondAttribute="top" id="rGC-Dq-vq2"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cfi-2n-w17" secondAttribute="bottom" constant="33" id="ug7-5Y-Rai"/>
+                                    <constraint firstItem="Cfi-2n-w17" firstAttribute="leading" secondItem="uUq-zD-dU1" secondAttribute="leading" constant="33" id="wMg-Jh-aoq"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -74,6 +98,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="f25-cv-BeN"/>
                     <connections>
+                        <outlet property="myButton" destination="Cfi-2n-w17" id="nDl-AV-Hyl"/>
+                        <outlet property="resumenIngresosGastosView" destination="CrU-og-yqj" id="al2-Sk-cGV"/>
                         <outlet property="viewPrincipal" destination="uUq-zD-dU1" id="ra7-cg-ot5"/>
                         <segue destination="7la-QV-wb7" kind="show" identifier="segue_to_login" animates="NO" id="k46-9T-Gg8"/>
                         <segue destination="eJt-BG-sIQ" kind="show" identifier="segue_to_gastos" id="SiX-1S-av8"/>
@@ -89,7 +115,7 @@
                 <viewControllerPlaceholder storyboardName="gastosStoryboard" id="eJt-BG-sIQ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qCV-Ps-Ppm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1639.2" y="237.48125937031486"/>
+            <point key="canvasLocation" x="1646" y="363"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GaT-PT-eFS">
