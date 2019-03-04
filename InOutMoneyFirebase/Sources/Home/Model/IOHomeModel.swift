@@ -8,10 +8,21 @@
 
 import UIKit
 
+enum HomeProfileItemType {
+    case cuentas
+    case entradaSalida
+    case rubroGasto
+    case rubroIngreso
+}
+
+protocol HomeProfileViewModelItem {
+    var type: HomeProfileItemType { get }
+    var sectionTitle: String { get }
+    var rowCount: Int { get }
+}
+
 class IOHomeModel {
-    var total : Double!
+    var items = [HomeProfileViewModelItem]()
+    var periodoSeleccionado = Date()
     
-    init() {
-        total = 0
-    }
 }

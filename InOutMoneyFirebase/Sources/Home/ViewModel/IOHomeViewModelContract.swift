@@ -8,10 +8,11 @@
 
 import UIKit
 protocol IOHomeViewModelContract {
-    init(withView view: IOHomeViewContract) 
-    func getDataFromFirebase(path: String)
+    init(withView view: IOHomeViewContract)
+    func crearItems() 
 }
 
 protocol IOHomeViewContract {
     func toast(message: String)
+    func reloadList()
 }

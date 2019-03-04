@@ -11,12 +11,12 @@ import UIKit
 class IOCuentaManager {
     static var instance = IOCuentaManager()
     
-    static var cuentas = [IOCuentasModel]()
+    static var cuentas = [Cuenta]()
     
-    class IOCuentasModel {
-        var codigo : String?
-        var descripcion : String?
-        var saldo : Double?
+    class Cuenta {
+        var codigo : String
+        var descripcion : String
+        var saldo : Double
         
         init(codigo: String, descripcion: String, saldo: Double) {
             self.codigo = codigo
@@ -26,26 +26,42 @@ class IOCuentaManager {
         
     }
     
-    static func loadCuentas(complete: @escaping () -> Void, fail: @escaping (String) -> Void) {
+    struct keyCuenta {
+        static let codigo = "codigo"
+        static let descripcion = "descripcion"
+        static let saldo = "saldo"
+    }
+    
+    private func parse(data: [String : Any]?) {
+        if data == nil {return}
+        
+        for i in data! {
+            if let registro = i.value as? [String : Any] {
+                let codigo = registro[keyCuenta.codigo] as! String
+                let descripcion = registro[keyCuenta.descripcion] as! String
+                let saldo = registro[keyCuenta.saldo] as! Double
+           
+                let nuevoRegistro = Cuenta(codigo: codigo,
+                                        descripcion: descripcion,
+                                        saldo: saldo)
+                
+                IOCuentaManager.cuentas.append(nuevoRegistro)
+                
+            }
+        }
+        
+    }
+    
+    static func loadCuentasFromFirebase(success: @escaping () -> Void, fail: @escaping (String) -> Void) {
         MLFirebaseDatabaseService.retrieveData(path: UserID! + "/cuentas") { (response, error) in
             if error != nil {
                 fail(error?.localizedDescription ?? "Error")
                 return
             }
             
-            if response != nil {
-                cuentas.removeAll()
-                for i in response! {
-                    if let registro = i.value as? [String : Any] {
-                        let nuevo = IOCuentasModel(codigo: registro["codigo"] as! String,
-                                                   descripcion: registro["descripcion"] as! String,
-                                                   saldo: registro["saldo"] as! Double)
-                        
-                        cuentas.append(nuevo)
-                    }
-                }
-            }
-            complete()
+            IOCuentaManager.instance.parse(data: response)
+            
+            success()
         }
     }
     
@@ -71,7 +87,7 @@ class IOCuentaManager {
     static func getDescriptionAndAmountArray() -> [String] {
         var array = [String]()
         for i in cuentas {
-            array.append(i.descripcion! + " " + (i.saldo?.formatoMoneda(decimales: 2, simbolo: "$"))!)
+            array.append(i.descripcion + " " + i.saldo.formatoMoneda(decimales: 2, simbolo: "$"))
         }
         return array
     }

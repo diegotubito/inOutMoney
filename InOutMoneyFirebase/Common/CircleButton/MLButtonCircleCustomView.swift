@@ -20,7 +20,7 @@ class MLBotonCircularCustomView: UIView {
     
     let ACTIVE_LABEL_COLOR = UIColor.white
     let INACTIVE_LABEL_COLOR = UIColor.gray
-    let SHADOW_OFFSET = CGSize(width: 0, height: 0)
+    let SHADOW_OFFSET = CGSize(width: 3, height: 3)
     var SHADOW_RADIOUS : CGFloat!
     let SHADOW_COLOR : UIColor = .black
     let INACTIVE_SHADOW_COLOR : UIColor = .black
@@ -120,7 +120,7 @@ class MLBotonCircularCustomView: UIView {
             layerCirculo.fillColor = ACTIVE_BACKGROUND_COLOR.cgColor
             
         } else {
-            layerCirculo.strokeColor = INACTIVE_RING_COLOR.cgColor
+         //   layerCirculo.strokeColor = INACTIVE_RING_COLOR.cgColor
             layerCirculo.fillColor = INACTIVE_BACKGROUND_COLOR.cgColor
             
         }

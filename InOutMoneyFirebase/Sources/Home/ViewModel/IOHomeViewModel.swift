@@ -14,23 +14,107 @@ class IOHomeViewModel: IOHomeViewModelContract {
     
     required init(withView view: IOHomeViewContract) {
         _view = view
+        
         model = IOHomeModel()
+        
+        
+        
     }
     
-    func getDataFromFirebase(path: String) {
+    func crearItems() {
+        model.items.removeAll()
         
-        MLFirebaseDatabaseService.retrieveData(path: path) { (response, error) in
-            if error != nil {
-                self._view.toast(message: (error?.localizedDescription)!)
-                return
-            }
-            
-            if response == nil {
-                self._view.toast(message: "No hay registros en Firebase.")
-                return
-            }
-            
-            print(response!)
+        
+        //creo la entrada y salida
+        let entradaSalida = HomeProfileViewModelEntradaSalidaItem(periodo: model.periodoSeleccionado,
+                                                                  totalGastos: IORegistroManager.getTotalRegistros(),
+                                                                  totalIngresos: 0.0)
+        model.items.append(entradaSalida)
+        
+        //creo los rubros
+        let rubros = IORubroManager.rubros
+        if !rubros.isEmpty {
+            let rubrosItem = HomeProfileViewModelRubrosItem(rubros: rubros)
+            model.items.append(rubrosItem)
         }
+  
+        //creo las cuentas
+        let rubros = IORubroManager.rubros
+        if !rubros.isEmpty {
+            let rubrosItem = HomeProfileViewModelRubrosItem(rubros: rubros)
+            model.items.append(rubrosItem)
+        }
+        
+        
+        _view.reloadList()
+    }
+    
+    
+ 
+}
+
+class HomeProfileViewModelCuentasItem: HomeProfileViewModelItem {
+    var type: HomeProfileItemType {
+        return .cuentas
+    }
+    
+    var sectionTitle: String {
+        return "TUS CUENTAS"
+    }
+    
+    var rowCount: Int {
+        return cuentas.count
+    }
+    
+    var cuentas: [IOCuentaManager.Cuenta]
+    
+    init(cuentas: [IOCuentaManager.Cuenta]) {
+        self.cuentas = cuentas
+    }
+}
+
+
+class HomeProfileViewModelRubrosItem: HomeProfileViewModelItem {
+    var type: HomeProfileItemType {
+        return .rubroGasto
+    }
+    
+    var sectionTitle: String {
+        return "RUBROS GASTOS"
+    }
+    
+    var rowCount: Int {
+        return rubros.count
+    }
+    
+    var rubros: [IORubroManager.Rubro]
+    
+    init(rubros: [IORubroManager.Rubro]) {
+        self.rubros = rubros
+    }
+}
+
+
+class HomeProfileViewModelEntradaSalidaItem: HomeProfileViewModelItem {
+    var type: HomeProfileItemType {
+        return .entradaSalida
+    }
+    
+    var sectionTitle: String {
+        return ""
+    }
+    
+    var rowCount: Int {
+        return 1
+    }
+    
+    var periodoSeleccionado: Date
+    var totalGastos: Double
+    var totalIngresos : Double
+    
+    init(periodo: Date, totalGastos: Double, totalIngresos: Double) {
+        self.periodoSeleccionado = periodo
+        self.totalGastos = totalGastos
+        self.totalIngresos = totalIngresos
     }
 }

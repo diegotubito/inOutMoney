@@ -13,12 +13,11 @@ var UserID : String?
 
 class IOHomeViewController: UIViewController, IOHomeViewContract {
     
-    @IBOutlet var myButton: UIView!
-    @IBOutlet var resumenIngresosGastosView: UIView!
-    
+    @IBOutlet var tableView: UITableView!
     var service : IOLoginFirebaseService!
+    var cells = [UITableViewCell]()
+    var cellEntradaSalida : IOTableViewCellEntradaSalida!
     
-    @IBOutlet var viewPrincipal: UIView!
     var authListener : AuthStateDidChangeListenerHandle!
     
     var viewModel : IOHomeViewModel!
@@ -26,6 +25,13 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
+        
+        registerCells()
+        
+
         viewModel = IOHomeViewModel(withView: self)
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -41,18 +47,8 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
                 self.switchStoryboard()
                 
             } else {
-                self.crearResumenGastosIngresos()
-                let aux = MLBotonCircularCustomView(frame: CGRect(x: 0, y: 0, width: self.myButton.frame.width, height: self.myButton.frame.height))
-                self.myButton.addSubview(aux)
-                
                 print("you are logged in \(String(describing: user?.uid))")
-                
-                
-                IOCuentaManager.loadCuentas(complete: {
-                    print("cuentas cargadas")
-                }, fail: { (message) in
-                    print(message)
-                })
+                self.start()
             }
         }
      
@@ -60,7 +56,44 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
     }
     
     
+    func start() {
+        
+        IOCuentaManager.loadCuentasFromFirebase(success: {
+            print("tengo las cuentas")
+        }, fail: { (message) in
+            print(message)
+        })
+        
+        IORubroManager.loadRubrosFromFirebase(success: {
+            print("tengo los rubros")
+            self.tableView.reloadData()
+            IORegistroManager.loadRegistrosFromFirebase(mes: 3, año: 2019, success: {
+                print("tengo los registros")
+                let total = IORegistroManager.getTotalRegistros()
+                print("el total de gastos del mes de marzo es : \(total)")
+               
+                self.viewModel.crearItems()
+            }, fail: { (errorString) in
+                print(errorString)
+            })
+            
+        }) { (errorString) in
+            print(errorString)
+        }
+        
+    }
     
+    func reloadList() {
+        tableView.reloadData()
+    }
+
+    func registerCells() {
+        
+        tableView.register(IOTableViewCellEntradaSalida.nib, forCellReuseIdentifier: IOTableViewCellEntradaSalida.identifier)
+        tableView.register(IOTableViewCellHomeRubroGasto.nib, forCellReuseIdentifier: IOTableViewCellHomeRubroGasto.identifier)
+    }
+    
+
     func switchStoryboard() {
         //Go to the HomeViewController if the login is sucessful
         // switch root view controllers
@@ -103,9 +136,44 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
 }
 
 
-extension IOHomeViewController {
-    func crearResumenGastosIngresos() {
-        let aux = IOResumenEntradaSalidaCV(frame: CGRect(x: 0, y: 0, width: resumenIngresosGastosView.frame.width, height: resumenIngresosGastosView.frame.height))
-        resumenIngresosGastosView.addSubview(aux)
+
+extension IOHomeViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.model.items.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.model.items[section].rowCount
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = viewModel.model.items[indexPath.section]
+        switch item.type {
+        case .entradaSalida:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellEntradaSalida.identifier, for: indexPath) as? IOTableViewCellEntradaSalida {
+                cell.item = item
+                return cell
+            }
+        case .rubroGasto:
+             if let item = item as? HomeProfileViewModelRubrosItem, let cell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellHomeRubroGasto.identifier, for: indexPath) as? IOTableViewCellHomeRubroGasto {
+                let friend = item.rubros[indexPath.row]
+                cell.item = friend
+                return cell
+            }
+       
+        case .cuentas:
+            if let item = item as? HomeProfileViewModelCuentasItem, let cell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellCuentaInfo.identifier, for: indexPath) as? IOTableViewCellCuentaInfo {
+                let cuenta = item.cuentas[indexPath.row]
+                cell.item = cuenta
+            }
+            break
+        case .rubroIngreso:
+            break
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel.model.items[section].sectionTitle
     }
 }

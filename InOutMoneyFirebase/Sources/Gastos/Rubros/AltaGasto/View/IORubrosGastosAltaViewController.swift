@@ -95,7 +95,7 @@ class IORubrosGastosAltaViewController: UIViewController, IORubrosGastosAltaView
         
         
          let datos = ["isEnabled" : 1,
-                      "cuentaDebito" : IOCuentaManager.cuentas[viewModel.model.codigoCuentaSeleccionada].codigo!,
+                      "cuentaDebito" : IOCuentaManager.cuentas[viewModel.model.codigoCuentaSeleccionada].codigo,
                      "descripcion" : descripcionCell.textFieldCell.text!,
                      "fechaGasto" : fechaCell.valueCell.text!,
                      "fechaCreacion" : Date().toString(formato: formatoDeFecha.fechaConHora),
@@ -107,7 +107,7 @@ class IORubrosGastosAltaViewController: UIViewController, IORubrosGastosAltaView
         let mes = keyFecha?.mes
         let año = keyFecha?.año
         let keyFechaString = MESES[mes!]! + String(año!)
-        let path = UserID! + "/gastos/profiles/" + childIDRubro + "/registros/" + keyFechaString
+        let path = UserID! + "/gastos/" + keyFechaString + "/" + childIDRubro
         
         
         MLFirebaseDatabaseService.setData(path: path, diccionario: datos, success: { (ref) in
