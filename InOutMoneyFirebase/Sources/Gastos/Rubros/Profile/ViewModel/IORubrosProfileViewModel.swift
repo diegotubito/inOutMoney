@@ -10,20 +10,15 @@ import UIKit
 
 class IORubrosProfileViewModel: IORubrosProfileViewModelContract {
     
-    
-   
-   
-    
     var _view : IORubrosProfileViewContract!
     var model : IORubrosProfileModel!
     
-    required init(withView view: IORubrosProfileViewContract, rubroSeleccionado: IORubrosListadoModel.rowData) {
+    required init(withView view: IORubrosProfileViewContract, rubroSeleccionado: IORubroManager.Rubro, fechaSeleccionada: Date) {
         _view = view
-        model = IORubrosProfileModel(rubro: rubroSeleccionado)
-    
-        
+        model = IORubrosProfileModel(rubro: rubroSeleccionado, fechaSeleccionada: fechaSeleccionada)
+         
     }
-    
+    /*
     func loadData() {
 
         let mes = model.fechaSeleccionada.mes
@@ -96,46 +91,45 @@ class IORubrosProfileViewModel: IORubrosProfileViewModelContract {
         }
     }
 
+    */
     
-    func getTotal() -> Double {
-        var total : Double = 0
-        for i in model.registrosGastos {
-            if i.isEnabled {
-                total += i.importe!
-            }
-        }
+    func loadData() {
+        let headerInfo = ProfileViewModelRubrosHeaderItem(mes: MESES[model.fechaSeleccionada.mes]!, total: IORegistroManager.getTotal(childIDRubro: model.rubroRecibido.childID), rubro: self.model.rubroRecibido.descripcion)
+        self.model.items.append(headerInfo)
         
-        return total
+        //agrego el boton agregar
+        let botonItem = ProfileViewModelBotonAgregarRegistroItem()
+        self.model.items.append(botonItem)
+        
+        //registros
+        if IORegistroManager.registros.count == 0 {return}
+        
+        let fecha = model.fechaSeleccionada
+        let mes = String(fecha.mes)
+        let año = String(fecha.año)
+        let maxDays = fecha.endDay()
+        var fechaInicial = (String(maxDays) + "-" + mes + "-" + año).toDate(formato: "dd-MM-yyyy")
+        for _ in 1...maxDays - 1 {
+            
+            let resultArray = IORegistroManager.registros.filter {$0.fechaGasto == fechaInicial && $0.childIDRubro == model.rubroRecibido.childID}
+            
+            if resultArray.count > 0 {
+                let fechaItem = ProfileViewModelFechaGastosItem(fecha: fechaInicial!)
+                self.model.items.append(fechaItem)
+                
+                let registrosItem = ProfileViewModelRegistrosGastosItem(registros: resultArray)
+                self.model.items.append(registrosItem)
+                
+            }
+            
+            fechaInicial = Calendar.current.date(byAdding: .day, value: -1, to: fechaInicial!)
+        }
     }
+    
+  
     
     func getNombreMes() -> String {
         return model.fechaSeleccionada.nombreDelMes
-    }
-    
-    
-    func filtarRegistros(registros: [IORegistroGastos]) -> [IORegistroGastos] {
-        
-        let newArray = [IORegistroGastos]()
-        
-        let mesSeleccionado = model.fechaSeleccionada.mes
-        let añoSeleccionado = model.fechaSeleccionada.año
-        let fechaInicialString = "01-" + String(mesSeleccionado) + "-" + String(añoSeleccionado) + " 00:00:00"
-        let fechaInicial = fechaInicialString.toDate(formato: formatoDeFecha.fechaConHora)!
-        
-        let ultimoDia = model.fechaSeleccionada.endDay()
-        let fechaFinalSlice = String(ultimoDia) + "-" + String(mesSeleccionado)
-        let fechaFinalString =  fechaFinalSlice + "-" + String(añoSeleccionado) + " 00:00:00"
-        let fechaFinal = fechaFinalString.toDate(formato: formatoDeFecha.fechaConHora)!
-        
-        var array  = [IORegistroGastos]()
-        for i in registros {
-            if i.fechaGasto! > fechaInicial && i.fechaGasto! < fechaFinal {
-                array.append(i)
-            }
-        }
-        
-        return array
-        
     }
     
     func sumarMesFechaSeleccionada() {

@@ -102,7 +102,7 @@ class IORubrosGastosAltaViewController: UIViewController, IORubrosGastosAltaView
                      "importe" : Double(importeCell.textFieldCell.text!)!] as [String : Any]
         
         
-        let childIDRubro = viewModel.model.rubroSeleccionado.childID!
+        let childIDRubro = viewModel.model.rubroSeleccionado.childID
         let keyFecha = fechaCell.valueCell?.text!.toDate(formato: formatoDeFecha.fecha)
         let mes = keyFecha?.mes
         let año = keyFecha?.año

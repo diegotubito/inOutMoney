@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gff-Nv-03U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TPQ-mJ-6go">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,41 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Rubros Listado View Controller-->
-        <scene sceneID="1lP-vF-6WH">
-            <objects>
-                <viewController id="gff-Nv-03U" customClass="IORubrosListadoViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dcf-bn-WfJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bww-2H-Cs5">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="gff-Nv-03U" id="JdA-iI-d6D"/>
-                                    <outlet property="delegate" destination="gff-Nv-03U" id="MFi-ML-Xd7"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="bww-2H-Cs5" firstAttribute="leading" secondItem="HEl-Cf-bPP" secondAttribute="leading" id="CEV-6R-cAv"/>
-                            <constraint firstItem="HEl-Cf-bPP" firstAttribute="bottom" secondItem="bww-2H-Cs5" secondAttribute="bottom" id="Seb-cs-zLF"/>
-                            <constraint firstItem="bww-2H-Cs5" firstAttribute="top" secondItem="HEl-Cf-bPP" secondAttribute="top" id="XXM-cq-qzR"/>
-                            <constraint firstItem="HEl-Cf-bPP" firstAttribute="trailing" secondItem="bww-2H-Cs5" secondAttribute="trailing" id="lbS-P1-O22"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="HEl-Cf-bPP"/>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="bww-2H-Cs5" id="Fkk-OX-o8r"/>
-                        <segue destination="TPQ-mJ-6go" kind="show" identifier="segue_to_rubro_profile" id="ppG-sX-Kio"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0aj-D0-aAN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-183" y="16"/>
-        </scene>
         <!--Rubros Profile View Controller-->
         <scene sceneID="mUy-Ak-Wy4">
             <objects>

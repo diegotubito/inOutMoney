@@ -9,10 +9,12 @@
 import UIKit
 protocol IOHomeViewModelContract {
     init(withView view: IOHomeViewContract)
-    func crearItems() 
+    func crearItems()
+    func setRubroSeleccionado(index: Int)
 }
 
 protocol IOHomeViewContract {
     func toast(message: String)
     func reloadList()
+    func goToProfileRubro()
 }

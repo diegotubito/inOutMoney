@@ -15,7 +15,7 @@ class IOTableViewCellRegistrosGastos: UITableViewCell {
     @IBOutlet var importeCell: UILabel!
     @IBOutlet var lineaAnulado: UIView!
     
-    var item: IORegistroGastos? {
+    var item: IORegistroManager.Registro? {
         didSet {
             guard let item = item else {
                 return
@@ -27,9 +27,9 @@ class IOTableViewCellRegistrosGastos: UITableViewCell {
                 lineaAnulado.isHidden = false
             }
             
-            fechaCell?.text = item.fechaGasto?.toString(formato: formatoDeFecha.fecha)
+            fechaCell?.text = item.fechaGasto.toString(formato: formatoDeFecha.fecha)
             descripcionCell?.text = item.descripcion
-            importeCell.text = "$ " + String(item.importe ?? 0.0)
+            importeCell.text = item.importe.formatoMoneda(decimales: 2, simbolo: "$")
             
         }
     }

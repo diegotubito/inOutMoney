@@ -80,7 +80,7 @@
                     <connections>
                         <outlet property="tableView" destination="W8C-L8-MTt" id="4Yf-gI-mjP"/>
                         <segue destination="7la-QV-wb7" kind="show" identifier="segue_to_login" animates="NO" id="k46-9T-Gg8"/>
-                        <segue destination="eJt-BG-sIQ" kind="show" identifier="segue_to_gastos" id="SiX-1S-av8"/>
+                        <segue destination="eJt-BG-sIQ" kind="show" identifier="segue_to_rubro_profile" id="SiX-1S-av8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

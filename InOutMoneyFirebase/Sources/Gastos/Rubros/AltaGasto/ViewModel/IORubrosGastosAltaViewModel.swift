@@ -13,7 +13,7 @@ class IORubrosGastosAltaViewModel: IORubrosGastosAltaViewModelContract {
     var model: IORubrosGastosAltaModel!
     var _view : IORubrosGastosAltaViewContract!
     
-    required init(withView view: IORubrosGastosAltaViewContract, rubroSeleccionado: IORubrosListadoModel.rowData) {
+    required init(withView view: IORubrosGastosAltaViewContract, rubroSeleccionado: IORubroManager.Rubro) {
         model = IORubrosGastosAltaModel(rubroRecibido: rubroSeleccionado)
     }
     

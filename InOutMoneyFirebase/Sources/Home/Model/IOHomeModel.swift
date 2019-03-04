@@ -24,5 +24,6 @@ protocol HomeProfileViewModelItem {
 class IOHomeModel {
     var items = [HomeProfileViewModelItem]()
     var periodoSeleccionado = Date()
+    var rubroSeleccionado : IORubroManager.Rubro?
     
 }

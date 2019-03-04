@@ -19,15 +19,7 @@ class IOTableViewCellBotonAgregarRegistro: UITableViewCell {
 
     @IBOutlet var button: UIButton!
     
-    var item: IORegistroGastos? {
-        didSet {
-            guard let item = item else {
-                return
-            }
-         
-        }
-    }
-    
+  
     static var nib:UINib {
         return UINib(nibName: identifier, bundle: nil)
     }

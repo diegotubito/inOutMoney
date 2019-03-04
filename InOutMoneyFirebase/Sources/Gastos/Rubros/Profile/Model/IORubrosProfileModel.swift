@@ -17,31 +17,17 @@ enum IORubrosProfileType {
 }
 
 class IORubrosProfileModel {
-    var rubroRecibido : IORubrosListadoModel.rowData
+    var rubroRecibido : IORubroManager.Rubro
     var items = [IORubrosProfileItem]()
-    var registrosGastos = [IORegistroGastos]()
     var fechaSeleccionada = Date()
     
-    init(rubro: IORubrosListadoModel.rowData) {
+    init(rubro: IORubroManager.Rubro, fechaSeleccionada: Date) {
         self.rubroRecibido = rubro
+        self.fechaSeleccionada = fechaSeleccionada
         
     }
 }
 
-class Profile {
-    var registros = [IORegistroGastos]()
-    
-    init?(data: [String : Any]) {
-        for (_, value) in data {
-            let nuevo = IORegistroGastos(json: value as! [String : Any])
-            registros.append(nuevo)
-        }
-
-            
-    
-        
-    }
-}
 
 protocol IORubrosProfileItem {
     var type: IORubrosProfileType { get }
@@ -84,23 +70,6 @@ class ProfileViewModelRubrosHeaderItem: IORubrosProfileItem {
     }
 }
 
-//REGISTROS
-class IORegistroGastos {
-    var descripcion: String?
-    var fechaGasto: Date?
-    var fechaCreacion : Date?
-    var importe : Double?
-    var isEnabled : Bool
-    
-    init(json: [String: Any]) {
-        self.isEnabled = json["isEnabled"] as? Bool ?? true
-        self.descripcion = json["descripcion"] as? String
-        self.fechaGasto = (json["fechaGasto"] as? String)?.toDate(formato: formatoDeFecha.fecha)
-        self.fechaCreacion = (json["fechaCreacion"] as? String)?.toDate(formato: formatoDeFecha.fechaConHora)
-        self.importe = json["importe"] as? Double
-    }
-}
-
 
 class ProfileViewModelRegistrosGastosItem: IORubrosProfileItem {
     var type: IORubrosProfileType {
@@ -115,9 +84,9 @@ class ProfileViewModelRegistrosGastosItem: IORubrosProfileItem {
         return registros.count
     }
     
-    var registros: [IORegistroGastos]
+    var registros: [IORegistroManager.Registro]
     
-    init(registros: [IORegistroGastos]) {
+    init(registros: [IORegistroManager.Registro]) {
         self.registros = registros
     }
 }

@@ -31,6 +31,13 @@ class IOHomeViewModel: IOHomeViewModelContract {
                                                                   totalIngresos: 0.0)
         model.items.append(entradaSalida)
         
+        //creo las cuentas
+        let cuentas = IOCuentaManager.cuentas
+        if !cuentas.isEmpty {
+            let cuentasItem = HomeProfileViewModelCuentasItem(cuentas: cuentas)
+            model.items.append(cuentasItem)
+        }
+        
         //creo los rubros
         let rubros = IORubroManager.rubros
         if !rubros.isEmpty {
@@ -38,19 +45,17 @@ class IOHomeViewModel: IOHomeViewModelContract {
             model.items.append(rubrosItem)
         }
   
-        //creo las cuentas
-        let rubros = IORubroManager.rubros
-        if !rubros.isEmpty {
-            let rubrosItem = HomeProfileViewModelRubrosItem(rubros: rubros)
-            model.items.append(rubrosItem)
-        }
+      
         
         
         _view.reloadList()
     }
     
     
- 
+    func setRubroSeleccionado(index: Int) {
+        model.rubroSeleccionado = IORubroManager.rubros[index]
+        _view.goToProfileRubro()
+    }
 }
 
 class HomeProfileViewModelCuentasItem: HomeProfileViewModelItem {

@@ -13,6 +13,8 @@ var UserID : String?
 
 class IOHomeViewController: UIViewController, IOHomeViewContract {
     
+    
+    
     @IBOutlet var tableView: UITableView!
     var service : IOLoginFirebaseService!
     var cells = [UITableViewCell]()
@@ -60,26 +62,30 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
         
         IOCuentaManager.loadCuentasFromFirebase(success: {
             print("tengo las cuentas")
+           
+            IORubroManager.loadRubrosFromFirebase(success: {
+                print("tengo los rubros")
+                
+                IORegistroManager.loadRegistrosFromFirebase(mes: 3, año: 2019, success: {
+                    print("tengo los registros")
+                    let total = IORegistroManager.getTotalRegistros()
+                    print("el total de gastos del mes de marzo es : \(total)")
+                    
+                    self.viewModel.crearItems()
+                }, fail: { (errorString) in
+                    print(errorString)
+                })
+                
+            }) { (errorString) in
+                print(errorString)
+            }
+            
+            
         }, fail: { (message) in
             print(message)
         })
         
-        IORubroManager.loadRubrosFromFirebase(success: {
-            print("tengo los rubros")
-            self.tableView.reloadData()
-            IORegistroManager.loadRegistrosFromFirebase(mes: 3, año: 2019, success: {
-                print("tengo los registros")
-                let total = IORegistroManager.getTotalRegistros()
-                print("el total de gastos del mes de marzo es : \(total)")
-               
-                self.viewModel.crearItems()
-            }, fail: { (errorString) in
-                print(errorString)
-            })
-            
-        }) { (errorString) in
-            print(errorString)
-        }
+        
         
     }
     
@@ -91,6 +97,7 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
         
         tableView.register(IOTableViewCellEntradaSalida.nib, forCellReuseIdentifier: IOTableViewCellEntradaSalida.identifier)
         tableView.register(IOTableViewCellHomeRubroGasto.nib, forCellReuseIdentifier: IOTableViewCellHomeRubroGasto.identifier)
+        tableView.register(IOTableViewCellCuentaInfo.nib, forCellReuseIdentifier: IOTableViewCellCuentaInfo.identifier)
     }
     
 
@@ -117,14 +124,16 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
         }
      }
     
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super .prepare(for: segue, sender: sender)
+        
         if let controller = segue.destination as? IOLoginUsuarioViewController {
             controller.viewModel = IOLoginUsuarioViewModel(withView: controller, interactor: IOLoginFirebaseService(), user: "")
         }
         
-        if let controller = segue.destination as? IORubrosListadoViewController {
-            
-                controller.viewModel = IORubrosListadoViewModel(withView: controller)
+        if let controller = segue.destination as? IORubrosProfileViewController {
+            controller.viewModel = IORubrosProfileViewModel(withView: controller, rubroSeleccionado: viewModel.model.rubroSeleccionado!, fechaSeleccionada: viewModel.model.periodoSeleccionado)
         }
         
     }
@@ -133,9 +142,20 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
         Toast.show(message: message, controller: self)
     }
     
+    func goToProfileRubro() {
+        performSegue(withIdentifier: "segue_to_rubro_profile", sender: nil)
+    }
+    
 }
 
-
+extension IOHomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 2 {
+            viewModel.setRubroSeleccionado(index: indexPath.row)
+            
+        }
+    }
+}
 
 extension IOHomeViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -154,17 +174,19 @@ extension IOHomeViewController: UITableViewDataSource {
                 cell.item = item
                 return cell
             }
+            break
         case .rubroGasto:
              if let item = item as? HomeProfileViewModelRubrosItem, let cell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellHomeRubroGasto.identifier, for: indexPath) as? IOTableViewCellHomeRubroGasto {
                 let friend = item.rubros[indexPath.row]
                 cell.item = friend
                 return cell
             }
-       
+            break
         case .cuentas:
             if let item = item as? HomeProfileViewModelCuentasItem, let cell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellCuentaInfo.identifier, for: indexPath) as? IOTableViewCellCuentaInfo {
                 let cuenta = item.cuentas[indexPath.row]
                 cell.item = cuenta
+                return cell
             }
             break
         case .rubroIngreso:

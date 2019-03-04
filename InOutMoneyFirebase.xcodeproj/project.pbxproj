@@ -98,12 +98,6 @@
 		84E41792222CA998000214E8 /* IOTableViewCellHomeRubroGasto.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E41790222CA998000214E8 /* IOTableViewCellHomeRubroGasto.xib */; };
 		84E41796222CAD45000214E8 /* IOTableViewCellEntradaSalida.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E41794222CAD45000214E8 /* IOTableViewCellEntradaSalida.swift */; };
 		84E41797222CAD45000214E8 /* IOTableViewCellEntradaSalida.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E41795222CAD45000214E8 /* IOTableViewCellEntradaSalida.xib */; };
-		84EEEA38221E5906001F98E9 /* IORubrosListadoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEEA37221E5906001F98E9 /* IORubrosListadoModel.swift */; };
-		84EEEA3A221E5940001F98E9 /* IORubrosListadoViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEEA39221E5940001F98E9 /* IORubrosListadoViewModelContract.swift */; };
-		84EEEA3C221E594C001F98E9 /* IORubrosListadoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEEA3B221E594C001F98E9 /* IORubrosListadoViewModel.swift */; };
-		84EEEA3E221E5958001F98E9 /* IORubrosListadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEEA3D221E5958001F98E9 /* IORubrosListadoViewController.swift */; };
-		84EEEA42221E5F06001F98E9 /* IOTableViewCellRubrosListado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEEA40221E5F06001F98E9 /* IOTableViewCellRubrosListado.swift */; };
-		84EEEA43221E5F06001F98E9 /* IOTableViewCellRubrosListado.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EEEA41221E5F06001F98E9 /* IOTableViewCellRubrosListado.xib */; };
 		84EEEA4A221E63CA001F98E9 /* IORubrosProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEEA49221E63CA001F98E9 /* IORubrosProfileModel.swift */; };
 		84EEEA4C221E63E5001F98E9 /* IORubrosProfileViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEEA4B221E63E5001F98E9 /* IORubrosProfileViewModelContract.swift */; };
 		84EEEA4E221E63F3001F98E9 /* IORubrosProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEEA4D221E63F3001F98E9 /* IORubrosProfileViewModel.swift */; };
@@ -207,12 +201,6 @@
 		84E41790222CA998000214E8 /* IOTableViewCellHomeRubroGasto.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellHomeRubroGasto.xib; sourceTree = "<group>"; };
 		84E41794222CAD45000214E8 /* IOTableViewCellEntradaSalida.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellEntradaSalida.swift; sourceTree = "<group>"; };
 		84E41795222CAD45000214E8 /* IOTableViewCellEntradaSalida.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellEntradaSalida.xib; sourceTree = "<group>"; };
-		84EEEA37221E5906001F98E9 /* IORubrosListadoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubrosListadoModel.swift; sourceTree = "<group>"; };
-		84EEEA39221E5940001F98E9 /* IORubrosListadoViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubrosListadoViewModelContract.swift; sourceTree = "<group>"; };
-		84EEEA3B221E594C001F98E9 /* IORubrosListadoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubrosListadoViewModel.swift; sourceTree = "<group>"; };
-		84EEEA3D221E5958001F98E9 /* IORubrosListadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubrosListadoViewController.swift; sourceTree = "<group>"; };
-		84EEEA40221E5F06001F98E9 /* IOTableViewCellRubrosListado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellRubrosListado.swift; sourceTree = "<group>"; };
-		84EEEA41221E5F06001F98E9 /* IOTableViewCellRubrosListado.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellRubrosListado.xib; sourceTree = "<group>"; };
 		84EEEA49221E63CA001F98E9 /* IORubrosProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubrosProfileModel.swift; sourceTree = "<group>"; };
 		84EEEA4B221E63E5001F98E9 /* IORubrosProfileViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubrosProfileViewModelContract.swift; sourceTree = "<group>"; };
 		84EEEA4D221E63F3001F98E9 /* IORubrosProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubrosProfileViewModel.swift; sourceTree = "<group>"; };
@@ -851,54 +839,8 @@
 			children = (
 				84CA121222221E580040B78B /* AltaGasto */,
 				84EEEA45221E63A5001F98E9 /* Profile */,
-				84EEEA44221E639C001F98E9 /* Listado */,
 			);
 			path = Rubros;
-			sourceTree = "<group>";
-		};
-		84EEEA34221E58DD001F98E9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				84EEEA3F221E5EDA001F98E9 /* Cell */,
-				84EEEA3D221E5958001F98E9 /* IORubrosListadoViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		84EEEA35221E58E2001F98E9 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				84EEEA39221E5940001F98E9 /* IORubrosListadoViewModelContract.swift */,
-				84EEEA3B221E594C001F98E9 /* IORubrosListadoViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		84EEEA36221E58E7001F98E9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				84EEEA37221E5906001F98E9 /* IORubrosListadoModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		84EEEA3F221E5EDA001F98E9 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				84EEEA40221E5F06001F98E9 /* IOTableViewCellRubrosListado.swift */,
-				84EEEA41221E5F06001F98E9 /* IOTableViewCellRubrosListado.xib */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		84EEEA44221E639C001F98E9 /* Listado */ = {
-			isa = PBXGroup;
-			children = (
-				84EEEA36221E58E7001F98E9 /* Model */,
-				84EEEA35221E58E2001F98E9 /* ViewModel */,
-				84EEEA34221E58DD001F98E9 /* View */,
-			);
-			path = Listado;
 			sourceTree = "<group>";
 		};
 		84EEEA45221E63A5001F98E9 /* Profile */ = {
@@ -1073,7 +1015,6 @@
 				84EEEA55221FAC5A001F98E9 /* IOTableViewCellHeaderInfo.xib in Resources */,
 				84CA12472223098B0040B78B /* IOTableViewCellBotonGuardar.xib in Resources */,
 				840FF26222185DBD006B809A /* gastosStoryboard.storyboard in Resources */,
-				84EEEA43221E5F06001F98E9 /* IOTableViewCellRubrosListado.xib in Resources */,
 				84594EF121DC64670019C9B9 /* Assets.xcassets in Resources */,
 				84CA12092220FDAD0040B78B /* IOTableViewCellRegistrosGastos.xib in Resources */,
 				84CA12222222F2EF0040B78B /* IOTableViewCellSingleDataEntry.xib in Resources */,
@@ -1167,7 +1108,6 @@
 				84027FC3220F4A9700C85A6A /* MLNotificationNames.swift in Sources */,
 				84EEEA4C221E63E5001F98E9 /* IORubrosProfileViewModelContract.swift in Sources */,
 				840280FB220FB24600C85A6A /* examplesStorageFunctions.swift in Sources */,
-				84EEEA3C221E594C001F98E9 /* IORubrosListadoViewModel.swift in Sources */,
 				84EEEA54221FAC5A001F98E9 /* IOTableViewCellHeaderInfo.swift in Sources */,
 				84CA123E222306230040B78B /* PCMensualCustomView.swift in Sources */,
 				840280FD220FB24600C85A6A /* funcionesGlobales.swift in Sources */,
@@ -1178,7 +1118,6 @@
 				84EEEA50221E6400001F98E9 /* IORubrosProfileViewController.swift in Sources */,
 				84CA123F222306230040B78B /* PCMensualViewModel.swift in Sources */,
 				84E41796222CAD45000214E8 /* IOTableViewCellEntradaSalida.swift in Sources */,
-				84EEEA38221E5906001F98E9 /* IORubrosListadoModel.swift in Sources */,
 				8402811C220FC81600C85A6A /* IOTableViewCellSingleTextField.swift in Sources */,
 				84594EEF21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld in Sources */,
 				84028100220FB24600C85A6A /* nsimageExtension.swift in Sources */,
@@ -1203,7 +1142,6 @@
 				84CA1240222306230040B78B /* PCMensualViewModelContract.swift in Sources */,
 				84E4178C222C9DDB000214E8 /* IOTableViewCellCuentaInfo.swift in Sources */,
 				84CA120F222107EC0040B78B /* IOTableViewCellBotonAgregarRegistro.swift in Sources */,
-				84EEEA3A221E5940001F98E9 /* IORubrosListadoViewModelContract.swift in Sources */,
 				840280CF220FB0A400C85A6A /* IOLoginUsuarioViewController.swift in Sources */,
 				84CA121722221E910040B78B /* IORubrosGastosAltaModel.swift in Sources */,
 				84CA124B22238A2D0040B78B /* IOTableViewCellSinglePicker.swift in Sources */,
@@ -1211,7 +1149,6 @@
 				840280F1220FB24600C85A6A /* constantes.swift in Sources */,
 				8419E079221536690015CC99 /* IOHomeViewModelContract.swift in Sources */,
 				84027FC6220F4DCC00C85A6A /* IODefaults.swift in Sources */,
-				84EEEA42221E5F06001F98E9 /* IOTableViewCellRubrosListado.swift in Sources */,
 				84E41786222C42D0000214E8 /* IORubroModel.swift in Sources */,
 				84CA123B222306230040B78B /* PCMensualModel.swift in Sources */,
 				84CA121B22221F230040B78B /* IORubrosGastosAltaViewModel.swift in Sources */,
@@ -1220,7 +1157,6 @@
 				840280F8220FB24600C85A6A /* imageFileFromLocal.swift in Sources */,
 				84027FBE220F34EF00C85A6A /* MLFirebaseRemoteConfigService.swift in Sources */,
 				840280F3220FB24600C85A6A /* coredataGeneral.swift in Sources */,
-				84EEEA3E221E5958001F98E9 /* IORubrosListadoViewController.swift in Sources */,
 				84CA12212222F2EF0040B78B /* IOTableViewCellSingleDataEntry.swift in Sources */,
 				849BA9722207748D00EC93A6 /* IOLoginPasswordModel.swift in Sources */,
 				8402684E2205F8A300EF6070 /* IOLoginContraseñaCV.swift in Sources */,

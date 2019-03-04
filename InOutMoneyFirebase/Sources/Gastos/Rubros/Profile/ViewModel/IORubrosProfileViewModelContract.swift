@@ -9,14 +9,12 @@
 import UIKit
 
 protocol IORubrosProfileViewModelContract {
-    init(withView view: IORubrosProfileViewContract, rubroSeleccionado: IORubrosListadoModel.rowData)
+    init(withView view: IORubrosProfileViewContract, rubroSeleccionado: IORubroManager.Rubro, fechaSeleccionada: Date)
     var model : IORubrosProfileModel! {get set}
 
     func loadData()
-    func getTotal() -> Double
-    func getNombreMes() -> String
-    func filtarRegistros(registros: [IORegistroGastos]) -> [IORegistroGastos]
-    func sumarMesFechaSeleccionada()
+     func getNombreMes() -> String
+     func sumarMesFechaSeleccionada()
     func restarMesFechaSeleccionada()
     
 }

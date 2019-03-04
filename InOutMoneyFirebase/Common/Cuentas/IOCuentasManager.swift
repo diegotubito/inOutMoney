@@ -27,7 +27,7 @@ class IOCuentaManager {
     }
     
     struct keyCuenta {
-        static let codigo = "codigo"
+        static let childID = "childID"
         static let descripcion = "descripcion"
         static let saldo = "saldo"
     }
@@ -37,7 +37,7 @@ class IOCuentaManager {
         
         for i in data! {
             if let registro = i.value as? [String : Any] {
-                let codigo = registro[keyCuenta.codigo] as! String
+                let codigo = registro[keyCuenta.childID] as! String
                 let descripcion = registro[keyCuenta.descripcion] as! String
                 let saldo = registro[keyCuenta.saldo] as! Double
            
