@@ -89,6 +89,12 @@
 		84CA1251222398EB0040B78B /* IOCuentasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA1250222398EB0040B78B /* IOCuentasManager.swift */; };
 		84CA12552224EDF20040B78B /* IOTableViewCellGastoProfileFecha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA12532224EDF20040B78B /* IOTableViewCellGastoProfileFecha.swift */; };
 		84CA12562224EDF20040B78B /* IOTableViewCellGastoProfileFecha.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CA12542224EDF20040B78B /* IOTableViewCellGastoProfileFecha.xib */; };
+		84CFD324222D85C4004CE810 /* IOTableViewCellOwnHeaderHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFD322222D85C4004CE810 /* IOTableViewCellOwnHeaderHome.swift */; };
+		84CFD325222D85C4004CE810 /* IOTableViewCellOwnHeaderHome.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CFD323222D85C4004CE810 /* IOTableViewCellOwnHeaderHome.xib */; };
+		84CFD32B222DD1F4004CE810 /* IOAltaRubroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFD32A222DD1F4004CE810 /* IOAltaRubroModel.swift */; };
+		84CFD32D222DD234004CE810 /* IOAltaRubroViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFD32C222DD234004CE810 /* IOAltaRubroViewModelContract.swift */; };
+		84CFD32F222DD23F004CE810 /* IOAltaRubroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFD32E222DD23F004CE810 /* IOAltaRubroViewModel.swift */; };
+		84CFD331222DD24F004CE810 /* IOAltaRubroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFD330222DD24F004CE810 /* IOAltaRubroViewController.swift */; };
 		84DABE162210B6C90024B112 /* toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DABE152210B6C90024B112 /* toast.swift */; };
 		84E41786222C42D0000214E8 /* IORubroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E41785222C42D0000214E8 /* IORubroModel.swift */; };
 		84E41789222C74B3000214E8 /* IORegistroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E41788222C74B3000214E8 /* IORegistroManager.swift */; };
@@ -192,6 +198,12 @@
 		84CA1250222398EB0040B78B /* IOCuentasManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOCuentasManager.swift; sourceTree = "<group>"; };
 		84CA12532224EDF20040B78B /* IOTableViewCellGastoProfileFecha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellGastoProfileFecha.swift; sourceTree = "<group>"; };
 		84CA12542224EDF20040B78B /* IOTableViewCellGastoProfileFecha.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellGastoProfileFecha.xib; sourceTree = "<group>"; };
+		84CFD322222D85C4004CE810 /* IOTableViewCellOwnHeaderHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellOwnHeaderHome.swift; sourceTree = "<group>"; };
+		84CFD323222D85C4004CE810 /* IOTableViewCellOwnHeaderHome.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellOwnHeaderHome.xib; sourceTree = "<group>"; };
+		84CFD32A222DD1F4004CE810 /* IOAltaRubroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOAltaRubroModel.swift; sourceTree = "<group>"; };
+		84CFD32C222DD234004CE810 /* IOAltaRubroViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOAltaRubroViewModelContract.swift; sourceTree = "<group>"; };
+		84CFD32E222DD23F004CE810 /* IOAltaRubroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOAltaRubroViewModel.swift; sourceTree = "<group>"; };
+		84CFD330222DD24F004CE810 /* IOAltaRubroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOAltaRubroViewController.swift; sourceTree = "<group>"; };
 		84DABE152210B6C90024B112 /* toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = toast.swift; sourceTree = "<group>"; };
 		84E41785222C42D0000214E8 /* IORubroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubroModel.swift; sourceTree = "<group>"; };
 		84E41788222C74B3000214E8 /* IORegistroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORegistroManager.swift; sourceTree = "<group>"; };
@@ -773,6 +785,58 @@
 			path = Date;
 			sourceTree = "<group>";
 		};
+		84CFD321222D85A4004CE810 /* OwnHeader */ = {
+			isa = PBXGroup;
+			children = (
+				84CFD322222D85C4004CE810 /* IOTableViewCellOwnHeaderHome.swift */,
+				84CFD323222D85C4004CE810 /* IOTableViewCellOwnHeaderHome.xib */,
+			);
+			path = OwnHeader;
+			sourceTree = "<group>";
+		};
+		84CFD326222DD1C7004CE810 /* AltaRubro */ = {
+			isa = PBXGroup;
+			children = (
+				84CFD329222DD1E0004CE810 /* Model */,
+				84CFD328222DD1DB004CE810 /* ViewModel */,
+				84CFD327222DD1D7004CE810 /* View */,
+			);
+			path = AltaRubro;
+			sourceTree = "<group>";
+		};
+		84CFD327222DD1D7004CE810 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84CFD332222DD2E4004CE810 /* Cells */,
+				84CFD330222DD24F004CE810 /* IOAltaRubroViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84CFD328222DD1DB004CE810 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84CFD32C222DD234004CE810 /* IOAltaRubroViewModelContract.swift */,
+				84CFD32E222DD23F004CE810 /* IOAltaRubroViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84CFD329222DD1E0004CE810 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84CFD32A222DD1F4004CE810 /* IOAltaRubroModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84CFD332222DD2E4004CE810 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		84DABE142210B6C90024B112 /* Toast */ = {
 			isa = PBXGroup;
 			children = (
@@ -784,6 +848,7 @@
 		84E4177B222C36FA000214E8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				84CFD321222D85A4004CE810 /* OwnHeader */,
 				84E41793222CAD34000214E8 /* EntradaSalida */,
 				84E4178E222CA974000214E8 /* Rubros */,
 				84E41781222C3968000214E8 /* Cuentas */,
@@ -893,6 +958,7 @@
 		84FD53802203F2EB00DC102A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				84CFD326222DD1C7004CE810 /* AltaRubro */,
 				840FF26022185D7D006B809A /* Gastos */,
 				84FD53822203F35000DC102A /* Login */,
 				84FD53812203F2F800DC102A /* Home */,
@@ -1019,6 +1085,7 @@
 				84CA12092220FDAD0040B78B /* IOTableViewCellRegistrosGastos.xib in Resources */,
 				84CA12222222F2EF0040B78B /* IOTableViewCellSingleDataEntry.xib in Resources */,
 				84CA122D2222FEDC0040B78B /* IOTableViewCellSingleDateCell.xib in Resources */,
+				84CFD325222D85C4004CE810 /* IOTableViewCellOwnHeaderHome.xib in Resources */,
 				84CA124C22238A2D0040B78B /* IOTableViewCellSinglePicker.xib in Resources */,
 				84CA12282222FB3B0040B78B /* IOTableViewCellSingleSwitchCell.xib in Resources */,
 				84594EEC21DC64650019C9B9 /* Main.storyboard in Resources */,
@@ -1096,8 +1163,11 @@
 				84CA121922221EAB0040B78B /* IORubrosGastosAltaViewModelContract.swift in Sources */,
 				840280FF220FB24600C85A6A /* networkManager.swift in Sources */,
 				84594EE921DC64650019C9B9 /* homeViewController.swift in Sources */,
+				84CFD32F222DD23F004CE810 /* IOAltaRubroViewModel.swift in Sources */,
+				84CFD32D222DD234004CE810 /* IOAltaRubroViewModelContract.swift in Sources */,
 				84028110220FC37B00C85A6A /* IONuevoUsuarioModel.swift in Sources */,
 				84028102220FB24600C85A6A /* progressIndicator.swift in Sources */,
+				84CFD324222D85C4004CE810 /* IOTableViewCellOwnHeaderHome.swift in Sources */,
 				84CA12082220FDAD0040B78B /* IOTableViewCellRegistrosGastos.swift in Sources */,
 				849BA96922074C9900EC93A6 /* IOLoginUsuarioViewModel.swift in Sources */,
 				84CA12272222FB3B0040B78B /* IOTableViewCellSingleSwitchCell.swift in Sources */,
@@ -1114,11 +1184,13 @@
 				84E41791222CA998000214E8 /* IOTableViewCellHomeRubroGasto.swift in Sources */,
 				84028101220FB24600C85A6A /* SwiftyPlistManager.swift in Sources */,
 				849BA96E2207507A00EC93A6 /* IOLoginUserModel.swift in Sources */,
+				84CFD32B222DD1F4004CE810 /* IOAltaRubroModel.swift in Sources */,
 				840FF2542217C7F4006B809A /* IOHomeModel.swift in Sources */,
 				84EEEA50221E6400001F98E9 /* IORubrosProfileViewController.swift in Sources */,
 				84CA123F222306230040B78B /* PCMensualViewModel.swift in Sources */,
 				84E41796222CAD45000214E8 /* IOTableViewCellEntradaSalida.swift in Sources */,
 				8402811C220FC81600C85A6A /* IOTableViewCellSingleTextField.swift in Sources */,
+				84CFD331222DD24F004CE810 /* IOAltaRubroViewController.swift in Sources */,
 				84594EEF21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld in Sources */,
 				84028100220FB24600C85A6A /* nsimageExtension.swift in Sources */,
 				84E41789222C74B3000214E8 /* IORegistroManager.swift in Sources */,

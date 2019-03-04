@@ -13,6 +13,7 @@ enum HomeProfileItemType {
     case entradaSalida
     case rubroGasto
     case rubroIngreso
+    case ownHeader
 }
 
 protocol HomeProfileViewModelItem {

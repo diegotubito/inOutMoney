@@ -98,6 +98,7 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
         tableView.register(IOTableViewCellEntradaSalida.nib, forCellReuseIdentifier: IOTableViewCellEntradaSalida.identifier)
         tableView.register(IOTableViewCellHomeRubroGasto.nib, forCellReuseIdentifier: IOTableViewCellHomeRubroGasto.identifier)
         tableView.register(IOTableViewCellCuentaInfo.nib, forCellReuseIdentifier: IOTableViewCellCuentaInfo.identifier)
+        tableView.register(IOTableViewCellOwnHeaderHome.nib, forCellReuseIdentifier: IOTableViewCellOwnHeaderHome.identifier)
     }
     
 
@@ -136,6 +137,9 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
             controller.viewModel = IORubrosProfileViewModel(withView: controller, rubroSeleccionado: viewModel.model.rubroSeleccionado!, fechaSeleccionada: viewModel.model.periodoSeleccionado)
         }
         
+        if let controller = segue.destination as? IOAltaRubroViewController {
+            controller.viewModel = IOAltaRubroViewModel(withView: controller)
+        }
     }
     
     func toast(message: String) {
@@ -150,7 +154,7 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
 
 extension IOHomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 2 {
+        if indexPath.section == 4 {
             viewModel.setRubroSeleccionado(index: indexPath.row)
             
         }
@@ -191,6 +195,13 @@ extension IOHomeViewController: UITableViewDataSource {
             break
         case .rubroIngreso:
             break
+        case .ownHeader:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellOwnHeaderHome.identifier, for: indexPath) as? IOTableViewCellOwnHeaderHome {
+                cell.item = item
+                cell.delegate = self
+                return cell
+            }
+            break
         }
         return UITableViewCell()
     }
@@ -198,4 +209,55 @@ extension IOHomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return viewModel.model.items[section].sectionTitle
     }
+}
+
+
+extension IOHomeViewController : IOTableViewCellOwnHeaderHomeDelegate {
+    func didTappedDelegate(keyName: String) {
+        print(keyName)
+        viewModel.crearItems()
+        
+        if keyName == "rubroGastoHeader" {
+            alertActionsRubroGastos()
+        } else if keyName == "cuentaHeader" {
+            alertActionsCuentas()
+        }
+    }
+    
+    
+    func alertActionsRubroGastos() {
+        let alert = UIAlertController(title: "Rubros Gastos", message: "Selecciona una opción", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Nuevo Rubro", style: .default , handler:{ (UIAlertAction)in
+            print("User click Approve button")
+            self.performSegue(withIdentifier: "segue_to_alta_rubro", sender: nil)
+        }))
+        
+       
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler:{ (UIAlertAction)in
+            print("User click Dismiss button")
+        }))
+        
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
+    }
+    
+    func alertActionsCuentas() {
+        let alert = UIAlertController(title: "Cuentas", message: "Selecciona una opción", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Nueva Cuenta", style: .default , handler:{ (UIAlertAction)in
+            print("User click Approve button")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler:{ (UIAlertAction)in
+            print("User click Dismiss button")
+        }))
+        
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
+    }
+    
+    
 }

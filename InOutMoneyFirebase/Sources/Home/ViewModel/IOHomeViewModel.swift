@@ -31,12 +31,21 @@ class IOHomeViewModel: IOHomeViewModelContract {
                                                                   totalIngresos: 0.0)
         model.items.append(entradaSalida)
         
+        //creo el header de cuentas
+        let headerCuentas = HomeProfileViewModelOwnHeaderItem(keyName: "cuentaHeader", title: "TUS CUENTAS")
+        model.items.append(headerCuentas)
+        
+        
         //creo las cuentas
         let cuentas = IOCuentaManager.cuentas
         if !cuentas.isEmpty {
             let cuentasItem = HomeProfileViewModelCuentasItem(cuentas: cuentas)
             model.items.append(cuentasItem)
         }
+        
+        //creo el header de rubros gastos
+        let headerRubroGasto = HomeProfileViewModelOwnHeaderItem(keyName: "rubroGastoHeader", title: "RUBRO GASTOS")
+        model.items.append(headerRubroGasto)
         
         //creo los rubros
         let rubros = IORubroManager.rubros
@@ -64,7 +73,7 @@ class HomeProfileViewModelCuentasItem: HomeProfileViewModelItem {
     }
     
     var sectionTitle: String {
-        return "TUS CUENTAS"
+        return ""
     }
     
     var rowCount: Int {
@@ -85,7 +94,7 @@ class HomeProfileViewModelRubrosItem: HomeProfileViewModelItem {
     }
     
     var sectionTitle: String {
-        return "RUBROS GASTOS"
+        return ""
     }
     
     var rowCount: Int {
@@ -121,5 +130,28 @@ class HomeProfileViewModelEntradaSalidaItem: HomeProfileViewModelItem {
         self.periodoSeleccionado = periodo
         self.totalGastos = totalGastos
         self.totalIngresos = totalIngresos
+    }
+}
+
+
+class HomeProfileViewModelOwnHeaderItem: HomeProfileViewModelItem {
+    var type: HomeProfileItemType {
+        return .ownHeader
+    }
+    
+    var sectionTitle: String {
+        return ""
+    }
+    
+    var rowCount: Int {
+        return 1
+    }
+    
+    var title: String
+    var keyName : String
+    
+    init(keyName: String, title: String) {
+        self.title = title
+        self.keyName = keyName
     }
 }

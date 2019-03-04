@@ -16,7 +16,7 @@
                 <viewControllerPlaceholder storyboardName="StoryboardLogin" id="7la-QV-wb7" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXQ-t3-Brf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1722" y="201"/>
+            <point key="canvasLocation" x="1773" y="8"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -81,6 +81,7 @@
                         <outlet property="tableView" destination="W8C-L8-MTt" id="4Yf-gI-mjP"/>
                         <segue destination="7la-QV-wb7" kind="show" identifier="segue_to_login" animates="NO" id="k46-9T-Gg8"/>
                         <segue destination="eJt-BG-sIQ" kind="show" identifier="segue_to_rubro_profile" id="SiX-1S-av8"/>
+                        <segue destination="yCV-C0-geK" kind="show" identifier="segue_to_alta_rubro" id="svv-u1-jeo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -93,7 +94,34 @@
                 <viewControllerPlaceholder storyboardName="gastosStoryboard" id="eJt-BG-sIQ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qCV-Ps-Ppm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1716" y="363"/>
+            <point key="canvasLocation" x="1778" y="116"/>
+        </scene>
+        <!--Alta Rubro View Controller-->
+        <scene sceneID="hsm-G1-GnF">
+            <objects>
+                <viewController id="yCV-C0-geK" customClass="IOAltaRubroViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rNv-Nk-TPY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NFP-5g-xxn">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zeE-nT-yBE" firstAttribute="bottom" secondItem="NFP-5g-xxn" secondAttribute="bottom" id="41K-4D-gsf"/>
+                            <constraint firstItem="NFP-5g-xxn" firstAttribute="leading" secondItem="zeE-nT-yBE" secondAttribute="leading" id="Tkz-Yn-bNv"/>
+                            <constraint firstItem="zeE-nT-yBE" firstAttribute="trailing" secondItem="NFP-5g-xxn" secondAttribute="trailing" id="mWE-eu-GNA"/>
+                            <constraint firstItem="NFP-5g-xxn" firstAttribute="top" secondItem="zeE-nT-yBE" secondAttribute="top" id="yfQ-V4-Tp3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zeE-nT-yBE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T8J-9d-fzX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="1099"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GaT-PT-eFS">
