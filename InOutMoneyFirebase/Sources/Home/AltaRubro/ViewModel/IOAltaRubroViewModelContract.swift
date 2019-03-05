@@ -11,8 +11,10 @@ import Foundation
 protocol IOAltaRubroViewModelContract {
     init(withView view: IOAltaRubroViewContract)
     var model : IOAltaRubroModel! {get set}
-}
+    func guardarNuevoRubro(descripcion: String)
+   }
 
 protocol IOAltaRubroViewContract {
-    
+    func showError(_ message: String) 
+    func success()
 }

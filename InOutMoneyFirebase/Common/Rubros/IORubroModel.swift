@@ -43,7 +43,7 @@ class IORubroManager {
         
         for i in data! {
             if let registro = i.value as? [String : Any] {
-                let childID = registro[keyRubro.childID] as! String
+                let childID = i.key
                 let descripcion = registro[keyRubro.descripcion] as! String
                 let fechaStr = registro[keyRubro.fechaCreacion] as! String
                 let fecha = fechaStr.toDate(formato: formatoDeFecha.fechaConHora)

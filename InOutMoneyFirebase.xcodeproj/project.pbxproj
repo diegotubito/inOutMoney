@@ -807,7 +807,6 @@
 		84CFD327222DD1D7004CE810 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				84CFD332222DD2E4004CE810 /* Cells */,
 				84CFD330222DD24F004CE810 /* IOAltaRubroViewController.swift */,
 			);
 			path = View;
@@ -830,11 +829,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		84CFD332222DD2E4004CE810 /* Cells */ = {
+		84CFD333222DD71B004CE810 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				840FF2522217C7E1006B809A /* Model */,
+				8419E0772215364F0015CC99 /* ViewModel */,
+				840FF2512217C7D4006B809A /* View */,
 			);
-			path = Cells;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		84DABE142210B6C90024B112 /* Toast */ = {
@@ -958,7 +960,6 @@
 		84FD53802203F2EB00DC102A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				84CFD326222DD1C7004CE810 /* AltaRubro */,
 				840FF26022185D7D006B809A /* Gastos */,
 				84FD53822203F35000DC102A /* Login */,
 				84FD53812203F2F800DC102A /* Home */,
@@ -970,9 +971,8 @@
 			isa = PBXGroup;
 			children = (
 				84594EEA21DC64650019C9B9 /* Main.storyboard */,
-				840FF2522217C7E1006B809A /* Model */,
-				8419E0772215364F0015CC99 /* ViewModel */,
-				840FF2512217C7D4006B809A /* View */,
+				84CFD333222DD71B004CE810 /* Profile */,
+				84CFD326222DD1C7004CE810 /* AltaRubro */,
 			);
 			path = Home;
 			sourceTree = "<group>";

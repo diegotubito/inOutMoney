@@ -17,10 +17,17 @@ protocol IORubrosProfileViewModelContract {
      func sumarMesFechaSeleccionada()
     func restarMesFechaSeleccionada()
     
+    func eliminarRubro()
+    func deshabilitarRubro()
+    func habilitarRubro()
+    
 }
 
 protocol IORubrosProfileViewContract {
     func reloadList()
     func showToast(message: String)
     func showFechaSeleccionada()
+    func eliminarSuccess()
+    func eliminarError()
+    
 }

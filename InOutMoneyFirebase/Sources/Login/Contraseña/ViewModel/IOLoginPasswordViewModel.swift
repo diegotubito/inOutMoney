@@ -44,7 +44,7 @@ class IOLoginPasswordViewModel: IOLoginPasswordViewModelContract {
             
                 case .some( _):
                     self._view.showBlockingError()
-                     print("blocking error \(error?.localizedDescription)")
+                    print("blocking error \(String(describing: error?.localizedDescription))")
                     break
                 case .none:
                     break

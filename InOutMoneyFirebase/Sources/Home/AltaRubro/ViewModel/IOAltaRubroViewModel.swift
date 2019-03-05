@@ -19,6 +19,15 @@ class IOAltaRubroViewModel: IOAltaRubroViewModelContract {
         model = IOAltaRubroModel()
     }
     
-    
-    
+    func guardarNuevoRubro(descripcion: String) {
+        let dato = ["descripcion" : descripcion,
+                    "fechaCreacion" : Date().toString(formato: formatoDeFecha.fechaConHora)]
+        
+        MLFirebaseDatabaseService.setData(path: UserID! + "/gastos/rubros", diccionario: dato, success: { (response) in
+            self._view.success()
+        }) { (error) in
+            self._view.showError(error?.localizedDescription ?? "error")
+        }
+    }
+
 }

@@ -10,6 +10,7 @@ import UIKit
 protocol IOTableViewCellHeaderInfoDelegate {
     func swipeRightDelegate()
     func swipeLeftDelegate()
+    func moreTappedDelegate()
 }
 
 class IOTableViewCellHeaderInfo: UITableViewCell {
@@ -19,6 +20,7 @@ class IOTableViewCellHeaderInfo: UITableViewCell {
     @IBOutlet var rubro: UILabel!
     @IBOutlet var mes: UILabel!
     @IBOutlet var total: UILabel!
+    @IBOutlet var moreButton: UILabel!
     
     var item: IORubrosProfileItem? {
         didSet {
@@ -30,9 +32,15 @@ class IOTableViewCellHeaderInfo: UITableViewCell {
             mes?.text = item.mes
             total?.text = item.total.formatoMoneda(decimales: 2, simbolo: "$")
             
-
+            let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
+            moreButton.isUserInteractionEnabled = true
+            moreButton.addGestureRecognizer(tap)
             
         }
+    }
+    
+    @objc func tapped() {
+        self.delegate?.moreTappedDelegate()
     }
     
     override func awakeFromNib() {

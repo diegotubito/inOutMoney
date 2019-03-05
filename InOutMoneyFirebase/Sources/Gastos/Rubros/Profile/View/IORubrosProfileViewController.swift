@@ -11,6 +11,8 @@ import UIKit
 class IORubrosProfileViewController : UIViewController, IORubrosProfileViewContract {
     
     
+    
+    
    
     
     @IBOutlet var tableView: UITableView!
@@ -46,6 +48,15 @@ class IORubrosProfileViewController : UIViewController, IORubrosProfileViewContr
     
     func showFechaSeleccionada() {
         viewModel.loadData()
+    }
+    
+    func eliminarSuccess() {
+        showToast(message: "Rubro eliminado correctamente.")
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func eliminarError() {
+        showToast(message: "Error al intentar eliminar rubro.")
     }
 
 }
@@ -127,6 +138,10 @@ extension IORubrosProfileViewController: IORubrosGastosAltaViewControllerDelegat
 
 
 extension IORubrosProfileViewController: IOTableViewCellHeaderInfoDelegate {
+    func moreTappedDelegate() {
+        alertActions()
+    }
+    
     func swipeRightDelegate() {
         viewModel.restarMesFechaSeleccionada()
     }
@@ -135,4 +150,26 @@ extension IORubrosProfileViewController: IOTableViewCellHeaderInfoDelegate {
         viewModel.sumarMesFechaSeleccionada()
     }
     
+}
+
+
+extension IORubrosProfileViewController {
+    func alertActions() {
+        let alert = UIAlertController(title: "Rubros", message: "Selecciona una opción", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Dejar de usar", style: .default , handler:{ (UIAlertAction)in
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Eliminar rubro", style: .destructive , handler:{ (UIAlertAction)in
+            self.viewModel.eliminarRubro()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler:{ (UIAlertAction)in
+            print("User click Dismiss button")
+        }))
+        
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
+    }
 }
