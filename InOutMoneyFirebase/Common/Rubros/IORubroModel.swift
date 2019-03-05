@@ -17,11 +17,13 @@ class IORubroManager {
         var childID : String
         var descripcion : String
         var fechaCreacion : Date
+        var isEnabled : Bool
         
-        init(childID: String, descripcion: String, fechaCreacion: Date) {
+        init(childID: String, descripcion: String, fechaCreacion: Date, isEnabled: Bool) {
             self.childID = childID
             self.descripcion = descripcion
             self.fechaCreacion = fechaCreacion
+            self.isEnabled = isEnabled
         }
         
         
@@ -33,6 +35,7 @@ class IORubroManager {
         static let childID = "childID"
         static let descripcion = "descripcion"
         static let fechaCreacion = "fechaCreacion"
+        static let isEnabled = "isEnabled"
     }
     
   
@@ -47,10 +50,12 @@ class IORubroManager {
                 let descripcion = registro[keyRubro.descripcion] as! String
                 let fechaStr = registro[keyRubro.fechaCreacion] as! String
                 let fecha = fechaStr.toDate(formato: formatoDeFecha.fechaConHora)
+                let isEnabled = registro[keyRubro.isEnabled] as! Bool
               
                 let nuevoRegistro = Rubro(childID: childID,
                                        descripcion: descripcion,
-                                       fechaCreacion: fecha!)
+                                       fechaCreacion: fecha!,
+                                       isEnabled: isEnabled)
                 
                 IORubroManager.rubros.append(nuevoRegistro)
                 

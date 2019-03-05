@@ -9,6 +9,8 @@
 import UIKit
 
 class IORubrosProfileViewController : UIViewController, IORubrosProfileViewContract {
+  
+    
     
     
     
@@ -156,10 +158,21 @@ extension IORubrosProfileViewController: IOTableViewCellHeaderInfoDelegate {
 extension IORubrosProfileViewController {
     func alertActions() {
         let alert = UIAlertController(title: "Rubros", message: "Selecciona una opción", preferredStyle: .actionSheet)
-        
-        alert.addAction(UIAlertAction(title: "Dejar de usar", style: .default , handler:{ (UIAlertAction)in
+       
+        alert.addAction(UIAlertAction(title: "Transferir gastos", style: .default , handler:{ (UIAlertAction)in
             
         }))
+
+        if viewModel.model.rubroRecibido.isEnabled {
+            alert.addAction(UIAlertAction(title: "Dejar de usar \(viewModel.model.rubroRecibido.descripcion)", style: .default , handler:{ (UIAlertAction)in
+                self.viewModel.deshabilitarRubro()
+                
+            }))
+        } else {
+            alert.addAction(UIAlertAction(title: "Volver a usar \(viewModel.model.rubroRecibido.descripcion)", style: .default , handler:{ (UIAlertAction)in
+                self.viewModel.habilitarRubro()
+            }))
+        }
         alert.addAction(UIAlertAction(title: "Eliminar rubro", style: .destructive , handler:{ (UIAlertAction)in
             self.viewModel.eliminarRubro()
         }))

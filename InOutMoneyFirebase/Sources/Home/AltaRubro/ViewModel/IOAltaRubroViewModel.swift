@@ -23,7 +23,7 @@ class IOAltaRubroViewModel: IOAltaRubroViewModelContract {
         let dato = ["descripcion" : descripcion,
                     "fechaCreacion" : Date().toString(formato: formatoDeFecha.fechaConHora)]
         
-        MLFirebaseDatabaseService.setData(path: UserID! + "/gastos/rubros", diccionario: dato, success: { (response) in
+        MLFirebaseDatabaseService.setDataWithAutoId(path: UserID! + "/gastos/rubros", diccionario: dato, success: { (response) in
             self._view.success()
         }) { (error) in
             self._view.showError(error?.localizedDescription ?? "error")

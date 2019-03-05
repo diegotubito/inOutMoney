@@ -20,6 +20,7 @@ protocol IORubrosProfileViewModelContract {
     func eliminarRubro()
     func deshabilitarRubro()
     func habilitarRubro()
+
     
 }
 

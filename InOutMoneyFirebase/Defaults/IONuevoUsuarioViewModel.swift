@@ -76,7 +76,7 @@ class IONuevoUsuarioViewModel : IONuevoUsuarioViewModelContract {
     func crearUsuarioEnFirebase(userUID: String, succes: @escaping () -> Void, fail: @escaping (Error?) -> Void) {
         let initialData = ["fecha" : Date().toString(formato: formatoDeFecha.fechaConHora)]
         
-        MLFirebaseDatabaseService.setData(path: userUID, diccionario: initialData, success: { (ref) in
+        MLFirebaseDatabaseService.setDataWithAutoId(path: userUID, diccionario: initialData, success: { (ref) in
             print(ref.description())
             succes()
         }) { (error) in

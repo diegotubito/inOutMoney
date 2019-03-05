@@ -80,17 +80,31 @@ class IORubrosProfileViewModel: IORubrosProfileViewModelContract {
                 self._view.eliminarSuccess()
                 return
             }
-            
-            
         }
     }
     
     func deshabilitarRubro() {
+        let childID = model.rubroRecibido.childID
         
+        let dato = ["isEnabled" : false]
+        
+        MLFirebaseDatabaseService.update(path: UserID! + "/gastos/rubros/" + childID, diccionario: dato, success: { (response) in
+            self._view.showToast(message: "Rubro deshabilitado.")
+        }) { (error) in
+            self._view.showToast(message: error?.localizedDescription ?? "No se pudo deshabilitar rubro.")
+        }
     }
     
     func habilitarRubro() {
+        let childID = model.rubroRecibido.childID
         
+        let dato = ["isEnabled" : true]
+        
+        MLFirebaseDatabaseService.update(path: UserID! + "/gastos/rubros/" + childID, diccionario: dato, success: { (response) in
+            self._view.showToast(message: "Rubro habilitado.")
+        }) { (error) in
+            self._view.showToast(message: error?.localizedDescription ?? "No se pudo habilitar rubro.")
+        }
     }
     
     

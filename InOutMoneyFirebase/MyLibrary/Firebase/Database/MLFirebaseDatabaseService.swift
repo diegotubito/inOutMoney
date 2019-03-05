@@ -13,15 +13,7 @@ class MLFirebaseDatabaseService {
         observerRef.removeObserver(withHandle: observerRefHandle)
     }
     
-    static func setData2() {
-        let ref = Database.database().reference()
-        
-        ref.childByAutoId()
-        
-    }
-
-    
-    static func setData(path: String, diccionario: [String: Any], success: @escaping (DatabaseReference) -> Void, fail: @escaping (Error?) -> Void) {
+    static func setDataWithAutoId(path: String, diccionario: [String: Any], success: @escaping (DatabaseReference) -> Void, fail: @escaping (Error?) -> Void) {
         
         let ref = Database.database().reference()
         
@@ -33,6 +25,42 @@ class MLFirebaseDatabaseService {
                 fail(error)
             }
         }
+        
+        
+    }
+    
+    static func setData(path: String, diccionario: [String: Any], success: @escaping (DatabaseReference) -> Void, fail: @escaping (Error?) -> Void) {
+        
+        let ref = Database.database().reference()
+        
+        // Guardo los datos del nuevo socio en la Firebase
+        ref.child(path).setValue(diccionario) { (error, ref) -> Void in
+            if error == nil {
+                success(ref)
+            }else {
+                fail(error)
+            }
+        }
+        
+        
+    }
+    
+    static func update(path: String, diccionario: [String: Any], success: @escaping (DatabaseReference) -> Void, fail: @escaping (Error?) -> Void) {
+        
+        let ref = Database.database().reference()
+        
+        // Guardo los datos del nuevo socio en la Firebase
+        ref.child(path).updateChildValues(diccionario) { (error, ref) in
+            if error == nil {
+                success(ref)
+                return
+            }
+            
+            fail(error)
+            
+            
+        }
+      
         
         
     }

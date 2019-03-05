@@ -110,7 +110,7 @@ class IORubrosGastosAltaViewController: UIViewController, IORubrosGastosAltaView
         let path = UserID! + "/gastos/" + keyFechaString + "/" + childIDRubro
         
         
-        MLFirebaseDatabaseService.setData(path: path, diccionario: datos, success: { (ref) in
+        MLFirebaseDatabaseService.setDataWithAutoId(path: path, diccionario: datos, success: { (ref) in
             self.showSuccess("Nuevo gasto guardado.")
             
         }) { (error) in
