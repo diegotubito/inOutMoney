@@ -33,7 +33,7 @@ extension String {
 }
 
 extension Date {
-    func getMilisecondsSinceDate() -> Double {
+    func getMilisecondsFromDateUntilNow() -> Double {
         var hoy = self.toString(formato: formatoDeFecha.fecha)
         hoy.append(" 00:00:00")
         

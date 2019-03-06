@@ -11,6 +11,7 @@ import CoreData
 import Firebase
 
 var RC : RemoteConfig?
+var FechaInicial : Date?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

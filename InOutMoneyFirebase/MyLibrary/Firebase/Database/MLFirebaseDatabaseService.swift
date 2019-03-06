@@ -13,6 +13,13 @@ class MLFirebaseDatabaseService {
         observerRef.removeObserver(withHandle: observerRefHandle)
     }
     
+    static func childIDInSecondsSince(date: Date) -> String {
+        let keyInt = Int(date.getMilisecondsFromDateUntilNow())
+        let keyRoundedString = String(keyInt)
+        
+        return keyRoundedString
+    }
+    
     static func setDataWithAutoId(path: String, diccionario: [String: Any], success: @escaping (DatabaseReference) -> Void, fail: @escaping (Error?) -> Void) {
         
         let ref = Database.database().reference()
@@ -78,6 +85,33 @@ class MLFirebaseDatabaseService {
         
     }
     
+    static func delete(path: String) {
+        let ref = Database.database().reference()
+        
+        ref.child(path).removeValue() { (error, ref) -> Void in
+            
+        }
+        
+    }
+    
+    
+    static func retrieveDataWithFilter(path: String, keyName: String, value: Any, completion: @escaping ([String: Any]?, Error?) -> Void) {
+        
+        let ref = Database.database().reference()
+     
+        let query = ref.child(path).queryOrdered(byChild: keyName).queryEqual(toValue: value)
+        query.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let datosDictionary = snapshot.value as? [String : Any] {
+                completion(datosDictionary, nil)
+            } else {
+                completion(nil, nil)
+            }
+        }) {(error) in
+            print(error.localizedDescription)
+            completion(nil, error)
+        }
+    }
+    
     static func retrieveData(path: String, completion: @escaping ([String: Any]?, Error?) -> Void) {
         let ref = Database.database().reference()
         
@@ -126,6 +160,60 @@ class MLFirebaseDatabaseService {
             }
             
         })
+        
+    }
+    
+    static func setTransaction(path: String, keyName: String, incremento: Double, success: @escaping () -> Void, fail: @escaping (Error) -> Void) {
+        let ref = Database.database().reference()
+        
+        ref.child(path).runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
+            if var post = currentData.value as? [String : AnyObject] {
+                var starCount = post[keyName] as? Double ?? 0
+                starCount += incremento
+                post[keyName] = starCount as AnyObject
+                // Set value and report transaction success
+                currentData.value = post
+               
+            
+                return TransactionResult.success(withValue: currentData)
+            }
+            return TransactionResult.success(withValue: currentData)
+        }) { (error, committed, snapshot) in
+            if let error = error {
+                print(error.localizedDescription)
+                fail(error)
+            }
+            if committed {
+                success()
+            }
+        }
+
+    }
+    
+    static func setTransaction(path: String, keyName: String, incremento: Double) {
+        let ref = Database.database().reference()
+        
+        ref.child(path).runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
+            if var post = currentData.value as? [String : AnyObject] {
+                var starCount = post[keyName] as? Double ?? 0
+                starCount += incremento
+                post[keyName] = starCount as AnyObject
+                // Set value and report transaction success
+                currentData.value = post
+                
+                
+                return TransactionResult.success(withValue: currentData)
+            }
+            return TransactionResult.success(withValue: currentData)
+        }) { (error, committed, snapshot) in
+            if let error = error {
+                print(error.localizedDescription)
+             
+            }
+            if committed {
+              
+            }
+        }
         
     }
 

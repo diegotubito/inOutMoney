@@ -39,6 +39,7 @@
                     <connections>
                         <outlet property="tableView" destination="jdj-fv-jMm" id="Mu4-D6-7yi"/>
                         <segue destination="vCU-OX-0MR" kind="show" identifier="segue_to_nuevo_registro_gastos" id="A2Q-i0-X8T"/>
+                        <segue destination="tFU-FN-Dq4" kind="show" identifier="segue_to_confirmar_aliminar_rubro" id="EvP-Sh-dCT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Md-ZH-aKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -78,6 +79,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6G0-pL-P6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1582" y="8"/>
+        </scene>
+        <!--Borrar Rubro Gasto View Controller-->
+        <scene sceneID="RlK-di-6mo">
+            <objects>
+                <viewController id="tFU-FN-Dq4" customClass="IOBorrarRubroGastoViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QdV-0B-9sM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2t3-Dk-EYC">
+                                <rect key="frame" x="0.0" y="20" width="375" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Si confirmas la operación, borrarás el rubro y todos los registros en el listado que aparece debajo." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PF-74-sDT">
+                                        <rect key="frame" x="16" y="34.5" width="343" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="40C-6S-FfD"/>
+                                    <constraint firstItem="0PF-74-sDT" firstAttribute="leading" secondItem="2t3-Dk-EYC" secondAttribute="leading" constant="16" id="G0z-f4-y1b"/>
+                                    <constraint firstItem="0PF-74-sDT" firstAttribute="centerY" secondItem="2t3-Dk-EYC" secondAttribute="centerY" id="SW0-pd-4N6"/>
+                                    <constraint firstAttribute="trailing" secondItem="0PF-74-sDT" secondAttribute="trailing" constant="16" id="vXe-Kt-NVY"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oJG-Ma-XRU">
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="tFU-FN-Dq4" id="M98-de-AGx"/>
+                                    <outlet property="delegate" destination="tFU-FN-Dq4" id="NfF-n4-6eb"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gZD-mh-lIx" firstAttribute="trailing" secondItem="oJG-Ma-XRU" secondAttribute="trailing" id="Hdc-he-EJS"/>
+                            <constraint firstItem="gZD-mh-lIx" firstAttribute="trailing" secondItem="2t3-Dk-EYC" secondAttribute="trailing" id="Og9-SC-Kbt"/>
+                            <constraint firstItem="oJG-Ma-XRU" firstAttribute="top" secondItem="2t3-Dk-EYC" secondAttribute="bottom" id="ZuU-U8-2wc"/>
+                            <constraint firstItem="2t3-Dk-EYC" firstAttribute="top" secondItem="gZD-mh-lIx" secondAttribute="top" id="f5O-Wi-mcr"/>
+                            <constraint firstItem="gZD-mh-lIx" firstAttribute="bottom" secondItem="oJG-Ma-XRU" secondAttribute="bottom" id="fQU-xV-QYJ"/>
+                            <constraint firstItem="oJG-Ma-XRU" firstAttribute="leading" secondItem="gZD-mh-lIx" secondAttribute="leading" id="vwJ-ha-LQ0"/>
+                            <constraint firstItem="2t3-Dk-EYC" firstAttribute="leading" secondItem="gZD-mh-lIx" secondAttribute="leading" id="yXL-Tb-ysT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gZD-mh-lIx"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="oJG-Ma-XRU" id="Pcb-JE-c73"/>
+                        <segue destination="ZjK-DL-G0F" kind="unwind" identifier="unwindSegueToCV1" unwindAction="unwindToVC1WithSegue:" id="F63-lK-k8D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nrl-0U-uya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ZjK-DL-G0F" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1582" y="759"/>
         </scene>
     </scenes>
 </document>

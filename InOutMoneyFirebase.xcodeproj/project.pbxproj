@@ -61,6 +61,12 @@
 		849BA9722207748D00EC93A6 /* IOLoginPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA9712207748D00EC93A6 /* IOLoginPasswordModel.swift */; };
 		849BA9742207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA9732207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift */; };
 		849BA976220775FE00EC93A6 /* IOLoginPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA975220775FE00EC93A6 /* IOLoginPasswordViewModel.swift */; };
+		84BD7F95222F852200FF6A50 /* IOBorrorRubroGastoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD7F94222F852200FF6A50 /* IOBorrorRubroGastoViewController.swift */; };
+		84BD7F9A222F854700FF6A50 /* IOBorrarRubroGastoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD7F99222F854700FF6A50 /* IOBorrarRubroGastoModel.swift */; };
+		84BD7F9C222F859C00FF6A50 /* IOBorrarRubroGastoViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD7F9B222F859C00FF6A50 /* IOBorrarRubroGastoViewModelContract.swift */; };
+		84BD7F9E222F85B000FF6A50 /* IOBorrarRubroGastoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD7F9D222F85B000FF6A50 /* IOBorrarRubroGastoViewModel.swift */; };
+		84BD7FA2222F938B00FF6A50 /* IOTableViewCellBorrarRubroGasto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD7FA0222F938B00FF6A50 /* IOTableViewCellBorrarRubroGasto.swift */; };
+		84BD7FA3222F938B00FF6A50 /* IOTableViewCellBorrarRubroGasto.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BD7FA1222F938B00FF6A50 /* IOTableViewCellBorrarRubroGasto.xib */; };
 		84CA12082220FDAD0040B78B /* IOTableViewCellRegistrosGastos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA12062220FDAD0040B78B /* IOTableViewCellRegistrosGastos.swift */; };
 		84CA12092220FDAD0040B78B /* IOTableViewCellRegistrosGastos.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CA12072220FDAD0040B78B /* IOTableViewCellRegistrosGastos.xib */; };
 		84CA120F222107EC0040B78B /* IOTableViewCellBotonAgregarRegistro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA120D222107EC0040B78B /* IOTableViewCellBotonAgregarRegistro.swift */; };
@@ -170,6 +176,12 @@
 		849BA9712207748D00EC93A6 /* IOLoginPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginPasswordModel.swift; sourceTree = "<group>"; };
 		849BA9732207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginPasswordViewModelContract.swift; sourceTree = "<group>"; };
 		849BA975220775FE00EC93A6 /* IOLoginPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginPasswordViewModel.swift; sourceTree = "<group>"; };
+		84BD7F94222F852200FF6A50 /* IOBorrorRubroGastoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOBorrorRubroGastoViewController.swift; sourceTree = "<group>"; };
+		84BD7F99222F854700FF6A50 /* IOBorrarRubroGastoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOBorrarRubroGastoModel.swift; sourceTree = "<group>"; };
+		84BD7F9B222F859C00FF6A50 /* IOBorrarRubroGastoViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOBorrarRubroGastoViewModelContract.swift; sourceTree = "<group>"; };
+		84BD7F9D222F85B000FF6A50 /* IOBorrarRubroGastoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOBorrarRubroGastoViewModel.swift; sourceTree = "<group>"; };
+		84BD7FA0222F938B00FF6A50 /* IOTableViewCellBorrarRubroGasto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellBorrarRubroGasto.swift; sourceTree = "<group>"; };
+		84BD7FA1222F938B00FF6A50 /* IOTableViewCellBorrarRubroGasto.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellBorrarRubroGasto.xib; sourceTree = "<group>"; };
 		84CA12062220FDAD0040B78B /* IOTableViewCellRegistrosGastos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellRegistrosGastos.swift; sourceTree = "<group>"; };
 		84CA12072220FDAD0040B78B /* IOTableViewCellRegistrosGastos.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellRegistrosGastos.xib; sourceTree = "<group>"; };
 		84CA120D222107EC0040B78B /* IOTableViewCellBotonAgregarRegistro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellBotonAgregarRegistro.swift; sourceTree = "<group>"; };
@@ -587,6 +599,51 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		84BD7F93222F84DB00FF6A50 /* ConfirmacionEliminarRubro */ = {
+			isa = PBXGroup;
+			children = (
+				84BD7F98222F853600FF6A50 /* Model */,
+				84BD7F97222F852D00FF6A50 /* ViewModel */,
+				84BD7F96222F852700FF6A50 /* View */,
+			);
+			path = ConfirmacionEliminarRubro;
+			sourceTree = "<group>";
+		};
+		84BD7F96222F852700FF6A50 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84BD7F9F222F936200FF6A50 /* Cells */,
+				84BD7F94222F852200FF6A50 /* IOBorrorRubroGastoViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84BD7F97222F852D00FF6A50 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84BD7F9B222F859C00FF6A50 /* IOBorrarRubroGastoViewModelContract.swift */,
+				84BD7F9D222F85B000FF6A50 /* IOBorrarRubroGastoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84BD7F98222F853600FF6A50 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84BD7F99222F854700FF6A50 /* IOBorrarRubroGastoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84BD7F9F222F936200FF6A50 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84BD7FA0222F938B00FF6A50 /* IOTableViewCellBorrarRubroGasto.swift */,
+				84BD7FA1222F938B00FF6A50 /* IOTableViewCellBorrarRubroGasto.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		84CA120A222107B10040B78B /* Registros */ = {
 			isa = PBXGroup;
 			children = (
@@ -904,6 +961,7 @@
 		84EEEA33221E58D4001F98E9 /* Rubros */ = {
 			isa = PBXGroup;
 			children = (
+				84BD7F93222F84DB00FF6A50 /* ConfirmacionEliminarRubro */,
 				84CA121222221E580040B78B /* AltaGasto */,
 				84EEEA45221E63A5001F98E9 /* Profile */,
 			);
@@ -1097,6 +1155,7 @@
 				84CA1210222107EC0040B78B /* IOTableViewCellBotonAgregarRegistro.xib in Resources */,
 				84E4178D222C9DDB000214E8 /* IOTableViewCellCuentaInfo.xib in Resources */,
 				8402684C2205F87D00EF6070 /* IOLoginContraseñaCV.xib in Resources */,
+				84BD7FA3222F938B00FF6A50 /* IOTableViewCellBorrarRubroGasto.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1180,10 +1239,14 @@
 				840280FB220FB24600C85A6A /* examplesStorageFunctions.swift in Sources */,
 				84EEEA54221FAC5A001F98E9 /* IOTableViewCellHeaderInfo.swift in Sources */,
 				84CA123E222306230040B78B /* PCMensualCustomView.swift in Sources */,
+				84BD7F9A222F854700FF6A50 /* IOBorrarRubroGastoModel.swift in Sources */,
+				84BD7FA2222F938B00FF6A50 /* IOTableViewCellBorrarRubroGasto.swift in Sources */,
+				84BD7F95222F852200FF6A50 /* IOBorrorRubroGastoViewController.swift in Sources */,
 				840280FD220FB24600C85A6A /* funcionesGlobales.swift in Sources */,
 				84E41791222CA998000214E8 /* IOTableViewCellHomeRubroGasto.swift in Sources */,
 				84028101220FB24600C85A6A /* SwiftyPlistManager.swift in Sources */,
 				849BA96E2207507A00EC93A6 /* IOLoginUserModel.swift in Sources */,
+				84BD7F9E222F85B000FF6A50 /* IOBorrarRubroGastoViewModel.swift in Sources */,
 				84CFD32B222DD1F4004CE810 /* IOAltaRubroModel.swift in Sources */,
 				840FF2542217C7F4006B809A /* IOHomeModel.swift in Sources */,
 				84EEEA50221E6400001F98E9 /* IORubrosProfileViewController.swift in Sources */,
@@ -1210,6 +1273,7 @@
 				8402810C220FC36300C85A6A /* IONuevoUsuarioViewModelContract.swift in Sources */,
 				84CA1251222398EB0040B78B /* IOCuentasManager.swift in Sources */,
 				84CA1242222307320040B78B /* labelExtension.swift in Sources */,
+				84BD7F9C222F859C00FF6A50 /* IOBorrarRubroGastoViewModelContract.swift in Sources */,
 				840268552206A7BF00EF6070 /* viewExtensions.swift in Sources */,
 				84CA1240222306230040B78B /* PCMensualViewModelContract.swift in Sources */,
 				84E4178C222C9DDB000214E8 /* IOTableViewCellCuentaInfo.swift in Sources */,

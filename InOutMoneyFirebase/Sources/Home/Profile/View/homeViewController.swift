@@ -13,7 +13,7 @@ var UserID : String?
 
 class IOHomeViewController: UIViewController, IOHomeViewContract {
     
-    
+    @IBAction func unwindToVC1(segue:UIStoryboardSegue) { }
     
     @IBOutlet var tableView: UITableView!
     var service : IOLoginFirebaseService!
@@ -23,17 +23,28 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
     var authListener : AuthStateDidChangeListenerHandle!
     
     var viewModel : IOHomeViewModel!
+    private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+       
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100
+       
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        // Configure Refresh Control
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        
+        
         
         registerCells()
         
-
         viewModel = IOHomeViewModel(withView: self)
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -42,6 +53,7 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
          authListener = Auth.auth().addStateDidChangeListener() { auth, user in
           
             UserID = user?.uid
+        
             
             if user == nil {
                 print("no hay usuario autenticado")
@@ -49,7 +61,7 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
                 self.switchStoryboard()
                 
             } else {
-                print("you are logged in \(String(describing: user?.uid))")
+                 print("you are logged in \(String(describing: user?.uid))")
                 self.start()
             }
         }
@@ -57,6 +69,10 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
         
     }
     
+    @objc private func refreshData(_ sender: Any) {
+        // Fetch Weather Data
+        start()
+    }
     
     func start() {
         
@@ -72,23 +88,37 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
                     print("el total de gastos del mes de marzo es : \(total)")
                     
                     self.viewModel.crearItems()
+                    self.refreshControl.endRefreshing()
                 }, fail: { (errorString) in
+                    self.refreshControl.endRefreshing()
+                    
+                    self.toast(message: "Error al cargar registros")
                     print(errorString)
                 })
                 
             }) { (errorString) in
+                self.refreshControl.endRefreshing()
+                self.toast(message: "Error al cargar rubros")
+                
                 print(errorString)
             }
             
             
         }, fail: { (message) in
+            self.refreshControl.endRefreshing()
+            self.toast(message: "Error al cargar cuentas")
+            
             print(message)
         })
         
         
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        if UserID != nil {
+            start()
+        }
+    }
     func reloadList() {
         tableView.reloadData()
     }
@@ -113,10 +143,7 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
         
     }
 
-    @IBAction func gastosPresionado(_ sender: Any) {
-        performSegue(withIdentifier: "segue_to_gastos", sender: nil)
-    }
-    @IBAction func log_out_pressed(_ sender: Any) {
+      @IBAction func log_out_pressed(_ sender: Any) {
         
         service.signOut(success: {
             print("sign out")

@@ -16,7 +16,7 @@ class IORegistroManager {
     struct keyRegistro {
         static let childID = "childID"
         static let childIDRubro = "childIDRubro"
-        static let childIDDebito = "cuentaDebito"
+        static let childIDDebito = "childIDDebito"
         static let descripcion = "descripcion"
         static let fechaCreacion = "fechaCreacion"
         static let fechaGasto = "fechaGasto"
@@ -49,7 +49,6 @@ class IORegistroManager {
     
     private func parseRegistro(data: [String : Any]) {
         
-        
         let childID = data[keyRegistro.childID] as! String
         let childIDRubro = data[keyRegistro.childIDRubro] as! String
         let childIDCuentaDebito = data[keyRegistro.childIDDebito] as! String
@@ -61,8 +60,7 @@ class IORegistroManager {
         let importe = data[keyRegistro.importe] as! Double
         let isEnabled = data[keyRegistro.isEnabled] as! Bool
         
-        let nuevoRegistro = Registro(childID: childID,
-                                     childIDRubro: childIDRubro,
+        let nuevoRegistro = Registro(childID: childID, childIDRubro: childIDRubro,
                                      childIDCuentaDebito: childIDCuentaDebito,
                                      descripcion: descripcion,
                                      fechaCreacion: fechaCreacion!,
@@ -77,6 +75,25 @@ class IORegistroManager {
         
     }
     
+    func loadAllRegisterFromFirebase(with childIDRubro: String, success: @escaping () -> Void, fail: @escaping (String) -> Void) {
+        MLFirebaseDatabaseService.retrieveDataWithFilter(path: UserID! + "/gastos/registros", keyName: "childIDRubro", value: childIDRubro) { (response, error) in
+            if error != nil {
+                fail(error?.localizedDescription ?? "Error")
+                return
+            }
+            
+            if response != nil {
+                for (key,value) in response! {
+                    var registro = value as! [String : Any]
+                    registro["childID"] = key
+                    IORegistroManager.instance.parseRegistro(data: registro)
+                    
+                }
+            }
+            success()
+        }
+    }
+    
     static func loadRegistrosFromFirebase(mes: Int, año: Int, success: @escaping () -> Void, fail: @escaping (String) -> Void) {
         
         
@@ -84,7 +101,7 @@ class IORegistroManager {
         let añoStr = String(año)
         let periodo = nombreMes!+añoStr
         
-        MLFirebaseDatabaseService.retrieveData(path: UserID! + "/gastos/" + periodo) { (response, error) in
+        MLFirebaseDatabaseService.retrieveDataWithFilter(path: UserID! + "/gastos/registros", keyName: "queryMesAño", value: periodo) { (response, error) in
             if error != nil {
                 fail(error?.localizedDescription ?? "Error")
                 return
@@ -93,25 +110,18 @@ class IORegistroManager {
             registros.removeAll()
             if response != nil {
                 for (key,value) in response! {
-                    if let arrayRegistros = value as? [String : Any] {
-                        for i in arrayRegistros {
-                            
-                            var responseModificado = i.value as! [String : Any]
-                            responseModificado[keyRegistro.childID] = i.key
-                            responseModificado[keyRegistro.childIDRubro] = key
-                            
-                            IORegistroManager.instance.parseRegistro(data: responseModificado)
-                            
-                        }
-                    }
+                    var registro = value as! [String : Any] 
+                    registro["childID"] = key
+                    IORegistroManager.instance.parseRegistro(data: registro)
+                    
                     
                     
                 }
             }
             success()
-            
         }
         
+       
     }
     
     static func getTotalRegistros() -> Double {

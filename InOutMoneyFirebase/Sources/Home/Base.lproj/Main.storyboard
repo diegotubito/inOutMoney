@@ -35,9 +35,6 @@
                                             <constraint firstAttribute="height" constant="30" id="uVm-Yq-6ma"/>
                                         </constraints>
                                         <state key="normal" title="Gastos"/>
-                                        <connections>
-                                            <action selector="gastosPresionado:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AGg-rq-1Uz"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQZ-ub-Ws2">
                                         <rect key="frame" x="345" y="0.0" width="30" height="30"/>

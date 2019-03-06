@@ -14,12 +14,12 @@ class IOCuentaManager {
     static var cuentas = [Cuenta]()
     
     class Cuenta {
-        var codigo : String
+        var childIDCuenta : String
         var descripcion : String
         var saldo : Double
         
-        init(codigo: String, descripcion: String, saldo: Double) {
-            self.codigo = codigo
+        init(childIDCuenta: String, descripcion: String, saldo: Double) {
+            self.childIDCuenta = childIDCuenta
             self.descripcion = descripcion
             self.saldo = saldo
         }
@@ -37,11 +37,11 @@ class IOCuentaManager {
         
         for i in data! {
             if let registro = i.value as? [String : Any] {
-                let codigo = i.key
+                let childIDCuenta = i.key
                 let descripcion = registro[keyCuenta.descripcion] as! String
                 let saldo = registro[keyCuenta.saldo] as! Double
            
-                let nuevoRegistro = Cuenta(codigo: codigo,
+                let nuevoRegistro = Cuenta(childIDCuenta: childIDCuenta,
                                         descripcion: descripcion,
                                         saldo: saldo)
                 
@@ -53,6 +53,8 @@ class IOCuentaManager {
     }
     
     static func loadCuentasFromFirebase(success: @escaping () -> Void, fail: @escaping (String) -> Void) {
+        cuentas.removeAll()
+         
         MLFirebaseDatabaseService.retrieveData(path: UserID! + "/cuentas") { (response, error) in
             if error != nil {
                 fail(error?.localizedDescription ?? "Error")
@@ -79,7 +81,7 @@ class IOCuentaManager {
     }
     
     static func getCodeArray() -> [String] {
-        let array = cuentas.compactMap({ $0.codigo })
+        let array = cuentas.compactMap({ $0.childIDCuenta })
         
         return array
     }

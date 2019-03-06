@@ -21,7 +21,8 @@ class IOAltaRubroViewModel: IOAltaRubroViewModelContract {
     
     func guardarNuevoRubro(descripcion: String) {
         let dato = ["descripcion" : descripcion,
-                    "fechaCreacion" : Date().toString(formato: formatoDeFecha.fechaConHora)]
+                    "fechaCreacion" : Date().toString(formato: formatoDeFecha.fechaConHora),
+                    "isEnabled" : true ] as [String : Any]
         
         MLFirebaseDatabaseService.setDataWithAutoId(path: UserID! + "/gastos/rubros", diccionario: dato, success: { (response) in
             self._view.success()

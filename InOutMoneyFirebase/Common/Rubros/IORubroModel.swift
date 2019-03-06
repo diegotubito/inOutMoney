@@ -69,6 +69,7 @@ class IORubroManager {
    
     
     static func loadRubrosFromFirebase(success: @escaping () -> Void, fail: @escaping (String) -> Void) {
+        rubros.removeAll()
         
         MLFirebaseDatabaseService.retrieveData(path: UserID! + "/gastos/rubros") { (response, error) in
             if error != nil {

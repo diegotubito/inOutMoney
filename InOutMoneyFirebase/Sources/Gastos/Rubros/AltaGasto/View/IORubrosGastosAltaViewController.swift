@@ -94,12 +94,6 @@ class IORubrosGastosAltaViewController: UIViewController, IORubrosGastosAltaView
     func saveData() {
         
         
-         let datos = ["isEnabled" : 1,
-                      "cuentaDebito" : IOCuentaManager.cuentas[viewModel.model.codigoCuentaSeleccionada].codigo,
-                     "descripcion" : descripcionCell.textFieldCell.text!,
-                     "fechaGasto" : fechaCell.valueCell.text!,
-                     "fechaCreacion" : Date().toString(formato: formatoDeFecha.fechaConHora),
-                     "importe" : Double(importeCell.textFieldCell.text!)!] as [String : Any]
         
         
         let childIDRubro = viewModel.model.rubroSeleccionado.childID
@@ -107,11 +101,34 @@ class IORubrosGastosAltaViewController: UIViewController, IORubrosGastosAltaView
         let mes = keyFecha?.mes
         let año = keyFecha?.año
         let keyFechaString = MESES[mes!]! + String(año!)
-        let path = UserID! + "/gastos/" + keyFechaString + "/" + childIDRubro
+        let queryRubroMesAño = childIDRubro + "#" + keyFechaString
+        let queryRubroAño = childIDRubro + "#" + String(año!)
+        let queryMesAño = keyFechaString
+        let queryAño = String(año!)
+        let childIDDebito = IOCuentaManager.cuentas[viewModel.model.codigoCuentaSeleccionada].childIDCuenta
+        let importe = Double(importeCell.textFieldCell.text!)!
         
+        let path = UserID! + "/gastos/registros"
+        
+        
+        let datos = ["queryRubroMesAño" : queryRubroMesAño,
+                     "queryRubroAño" : queryRubroAño,
+                     "queryMesAño" : queryMesAño,
+                     "queryAño" : queryAño,
+                     "childIDRubro" : childIDRubro,
+                     "isEnabled" : 1,
+                     "childIDDebito" : childIDDebito,
+                     "descripcion" : descripcionCell.textFieldCell.text!,
+                     "fechaGasto" : fechaCell.valueCell.text!,
+                     "fechaCreacion" : Date().toString(formato: formatoDeFecha.fechaConHora),
+                     "importe" : importe] as [String : Any]
         
         MLFirebaseDatabaseService.setDataWithAutoId(path: path, diccionario: datos, success: { (ref) in
-            self.showSuccess("Nuevo gasto guardado.")
+             MLFirebaseDatabaseService.setTransaction(path: UserID! + "/cuentas/" + childIDDebito, keyName: "saldo", incremento: -importe, success: {
+                self.showSuccess("Nuevo gasto guardado.")
+            }, fail: { (error) in
+                self.showError("Algo salio mal.")
+            })
             
         }) { (error) in
             self.showError(error?.localizedDescription ?? "Error")

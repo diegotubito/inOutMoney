@@ -9,13 +9,6 @@
 import UIKit
 
 class IORubrosProfileViewController : UIViewController, IORubrosProfileViewContract {
-  
-    
-    
-    
-    
-    
-   
     
     @IBOutlet var tableView: UITableView!
     
@@ -50,15 +43,6 @@ class IORubrosProfileViewController : UIViewController, IORubrosProfileViewContr
     
     func showFechaSeleccionada() {
         viewModel.loadData()
-    }
-    
-    func eliminarSuccess() {
-        showToast(message: "Rubro eliminado correctamente.")
-        navigationController?.popViewController(animated: true)
-    }
-    
-    func eliminarError() {
-        showToast(message: "Error al intentar eliminar rubro.")
     }
 
 }
@@ -119,8 +103,12 @@ extension IORubrosProfileViewController: IOTableViewCellBotonAgregarRegistroDele
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? IORubrosGastosAltaViewController {
             controller.delegate = self
-            
+
             controller.viewModel = IORubrosGastosAltaViewModel(withView: controller, rubroSeleccionado: viewModel.model.rubroRecibido)
+        }
+        
+        if let controller = segue.destination as? IOBorrarRubroGastoViewController {
+            controller.viewModel = IOBorrarRubroGastoViewModel(withView: controller, rubroSeleccionado: viewModel.model.rubroRecibido)
         }
         
         
@@ -132,8 +120,13 @@ extension IORubrosProfileViewController: IOTableViewCellBotonAgregarRegistroDele
 extension IORubrosProfileViewController: IORubrosGastosAltaViewControllerDelegate {
     func nuevoGastoIngresadoDelegate() {
         showToast(message: "Nuevo gasto ingresado")
-        viewModel.loadData()
-    }
+        IORegistroManager.loadRegistrosFromFirebase(mes: viewModel.model.fechaSeleccionada.mes, año: viewModel.model.fechaSeleccionada.año, success: {
+            self.viewModel.loadData()
+
+        }) { (error) in
+            self.showToast(message: "error al cargar registros")
+        }
+        }
     
     
 }
@@ -174,7 +167,7 @@ extension IORubrosProfileViewController {
             }))
         }
         alert.addAction(UIAlertAction(title: "Eliminar rubro", style: .destructive , handler:{ (UIAlertAction)in
-            self.viewModel.eliminarRubro()
+            self.performSegue(withIdentifier: "segue_to_confirmar_aliminar_rubro", sender: nil)
         }))
         
         alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler:{ (UIAlertAction)in

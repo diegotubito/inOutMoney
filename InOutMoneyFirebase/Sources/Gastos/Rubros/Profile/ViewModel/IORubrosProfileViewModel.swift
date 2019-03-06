@@ -11,6 +11,8 @@ import UIKit
 class IORubrosProfileViewModel: IORubrosProfileViewModelContract {
     
     
+    
+    
     var _view : IORubrosProfileViewContract!
     var model : IORubrosProfileModel!
     
@@ -21,6 +23,8 @@ class IORubrosProfileViewModel: IORubrosProfileViewModelContract {
     }
     
     func loadData() {
+        model.items.removeAll()
+        
         let headerInfo = ProfileViewModelRubrosHeaderItem(mes: MESES[model.fechaSeleccionada.mes]!, total: IORegistroManager.getTotal(childIDRubro: model.rubroRecibido.childID), rubro: self.model.rubroRecibido.descripcion)
         self.model.items.append(headerInfo)
         
@@ -51,6 +55,7 @@ class IORubrosProfileViewModel: IORubrosProfileViewModelContract {
             
             fechaInicial = Calendar.current.date(byAdding: .day, value: -1, to: fechaInicial!)
         }
+        self._view.reloadList()
     }
     
   
@@ -69,19 +74,7 @@ class IORubrosProfileViewModel: IORubrosProfileViewModelContract {
         _view.showFechaSeleccionada()
     }
     
-    func eliminarRubro() {
-        let childID = model.rubroRecibido.childID
-        MLFirebaseDatabaseService.delete(path: UserID! + "/gastos/rubros/" + childID) { (deleted, error) in
-            if error != nil {
-                self._view.eliminarError()
-                return
-            }
-            if deleted {
-                self._view.eliminarSuccess()
-                return
-            }
-        }
-    }
+    
     
     func deshabilitarRubro() {
         let childID = model.rubroRecibido.childID
