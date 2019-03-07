@@ -111,6 +111,10 @@ extension IORubrosProfileViewController: IOTableViewCellBotonAgregarRegistroDele
             controller.viewModel = IOBorrarRubroGastoViewModel(withView: controller, rubroSeleccionado: viewModel.model.rubroRecibido)
         }
         
+        if let controller = segue.destination as? IOMoverRegistroGastoViewController {
+            controller.viewModel = IOMoverRegistroGastoViewModel(withView: controller, rubroSeleccionado: viewModel.model.rubroRecibido)
+        }
+        
         
     }
     
@@ -152,8 +156,8 @@ extension IORubrosProfileViewController {
     func alertActions() {
         let alert = UIAlertController(title: "Rubros", message: "Selecciona una opción", preferredStyle: .actionSheet)
        
-        alert.addAction(UIAlertAction(title: "Transferir gastos", style: .default , handler:{ (UIAlertAction)in
-            
+        alert.addAction(UIAlertAction(title: "Mover registros", style: .default , handler:{ (UIAlertAction)in
+            self.performSegue(withIdentifier: "segue_to_mover_registro_gasto", sender: nil)
         }))
 
         if viewModel.model.rubroRecibido.isEnabled {

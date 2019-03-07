@@ -40,6 +40,7 @@
                         <outlet property="tableView" destination="jdj-fv-jMm" id="Mu4-D6-7yi"/>
                         <segue destination="vCU-OX-0MR" kind="show" identifier="segue_to_nuevo_registro_gastos" id="A2Q-i0-X8T"/>
                         <segue destination="tFU-FN-Dq4" kind="show" identifier="segue_to_confirmar_aliminar_rubro" id="EvP-Sh-dCT"/>
+                        <segue destination="wus-Z7-dLZ" kind="show" identifier="segue_to_mover_registro_gasto" id="DI0-z7-j9I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Md-ZH-aKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -91,10 +92,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2t3-Dk-EYC">
                                 <rect key="frame" x="0.0" y="20" width="375" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Si confirmas la operación, borrarás el rubro y todos los registros en el listado que aparece debajo." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PF-74-sDT">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Si confirmas la operación, borrarás el rubro y todos los registros que aparecen en el listado." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PF-74-sDT">
                                         <rect key="frame" x="16" y="34.5" width="343" height="31.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.83287745710000005" green="0.1254673302" blue="0.01072406117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -106,8 +107,8 @@
                                     <constraint firstAttribute="trailing" secondItem="0PF-74-sDT" secondAttribute="trailing" constant="16" id="vXe-Kt-NVY"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oJG-Ma-XRU">
-                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oJG-Ma-XRU">
+                                <rect key="frame" x="0.0" y="121" width="375" height="546"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="tFU-FN-Dq4" id="M98-de-AGx"/>
@@ -115,11 +116,11 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gZD-mh-lIx" firstAttribute="trailing" secondItem="oJG-Ma-XRU" secondAttribute="trailing" id="Hdc-he-EJS"/>
                             <constraint firstItem="gZD-mh-lIx" firstAttribute="trailing" secondItem="2t3-Dk-EYC" secondAttribute="trailing" id="Og9-SC-Kbt"/>
-                            <constraint firstItem="oJG-Ma-XRU" firstAttribute="top" secondItem="2t3-Dk-EYC" secondAttribute="bottom" id="ZuU-U8-2wc"/>
+                            <constraint firstItem="oJG-Ma-XRU" firstAttribute="top" secondItem="2t3-Dk-EYC" secondAttribute="bottom" constant="1" id="ZuU-U8-2wc"/>
                             <constraint firstItem="2t3-Dk-EYC" firstAttribute="top" secondItem="gZD-mh-lIx" secondAttribute="top" id="f5O-Wi-mcr"/>
                             <constraint firstItem="gZD-mh-lIx" firstAttribute="bottom" secondItem="oJG-Ma-XRU" secondAttribute="bottom" id="fQU-xV-QYJ"/>
                             <constraint firstItem="oJG-Ma-XRU" firstAttribute="leading" secondItem="gZD-mh-lIx" secondAttribute="leading" id="vwJ-ha-LQ0"/>
@@ -135,7 +136,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nrl-0U-uya" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ZjK-DL-G0F" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1582" y="759"/>
+            <point key="canvasLocation" x="703" y="1012"/>
+        </scene>
+        <!--Mover Registro Gasto View Controller-->
+        <scene sceneID="Qz2-z7-2Rm">
+            <objects>
+                <viewController id="wus-Z7-dLZ" customClass="IOMoverRegistroGastoViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8ev-TG-gOX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BfP-Ac-IZj">
+                                <rect key="frame" x="0.0" y="20" width="375" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona el rubro donde quieres mover los registros." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yf2-nY-d8Z">
+                                        <rect key="frame" x="8" y="8" width="359" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="gQg-Hu-KuL">
+                                        <rect key="frame" x="8" y="32" width="359" height="60"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="wus-Z7-dLZ" id="NXB-pW-jNe"/>
+                                            <outlet property="delegate" destination="wus-Z7-dLZ" id="UK5-d9-8dr"/>
+                                        </connections>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="yf2-nY-d8Z" secondAttribute="trailing" constant="8" id="15o-tp-Phz"/>
+                                    <constraint firstAttribute="trailing" secondItem="gQg-Hu-KuL" secondAttribute="trailing" constant="8" id="8AR-2s-841"/>
+                                    <constraint firstAttribute="height" constant="100" id="9Lq-RR-M1Z"/>
+                                    <constraint firstAttribute="bottom" secondItem="gQg-Hu-KuL" secondAttribute="bottom" constant="8" id="9iy-9v-cP7"/>
+                                    <constraint firstItem="gQg-Hu-KuL" firstAttribute="top" secondItem="yf2-nY-d8Z" secondAttribute="bottom" constant="8" id="IW2-2e-LyT"/>
+                                    <constraint firstItem="yf2-nY-d8Z" firstAttribute="top" secondItem="BfP-Ac-IZj" secondAttribute="top" constant="8" id="S3u-zp-dQE"/>
+                                    <constraint firstItem="gQg-Hu-KuL" firstAttribute="leading" secondItem="BfP-Ac-IZj" secondAttribute="leading" constant="8" id="sre-fa-kZs"/>
+                                    <constraint firstItem="yf2-nY-d8Z" firstAttribute="leading" secondItem="BfP-Ac-IZj" secondAttribute="leading" constant="8" id="ywK-0U-0W3"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f5p-gO-d4s">
+                                <rect key="frame" x="0.0" y="121" width="375" height="546"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="wus-Z7-dLZ" id="NLI-zh-JGY"/>
+                                    <outlet property="delegate" destination="wus-Z7-dLZ" id="XLt-7F-SXG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MZI-dW-dCJ" firstAttribute="bottom" secondItem="f5p-gO-d4s" secondAttribute="bottom" id="ABJ-y8-UG4"/>
+                            <constraint firstItem="MZI-dW-dCJ" firstAttribute="trailing" secondItem="BfP-Ac-IZj" secondAttribute="trailing" id="C4s-ok-HLB"/>
+                            <constraint firstItem="BfP-Ac-IZj" firstAttribute="leading" secondItem="MZI-dW-dCJ" secondAttribute="leading" id="KtY-1X-XrJ"/>
+                            <constraint firstItem="BfP-Ac-IZj" firstAttribute="top" secondItem="MZI-dW-dCJ" secondAttribute="top" id="Y51-XH-KCP"/>
+                            <constraint firstItem="f5p-gO-d4s" firstAttribute="top" secondItem="BfP-Ac-IZj" secondAttribute="bottom" constant="1" id="eSD-6Y-fr1"/>
+                            <constraint firstItem="f5p-gO-d4s" firstAttribute="leading" secondItem="MZI-dW-dCJ" secondAttribute="leading" id="kan-Nz-E54"/>
+                            <constraint firstItem="MZI-dW-dCJ" firstAttribute="trailing" secondItem="f5p-gO-d4s" secondAttribute="trailing" id="sFr-gu-8kq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MZI-dW-dCJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="myPicker" destination="gQg-Hu-KuL" id="8cY-Wj-6LC"/>
+                        <outlet property="tableView" destination="f5p-gO-d4s" id="c83-In-6I0"/>
+                        <segue destination="xQS-2z-61Y" kind="unwind" identifier="unwindSegueToCV1" unwindAction="unwindToVC1WithSegue:" id="ZmN-rI-XBb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T7m-Xe-R92" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xQS-2z-61Y" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1716" y="1011.544227886057"/>
         </scene>
     </scenes>
 </document>

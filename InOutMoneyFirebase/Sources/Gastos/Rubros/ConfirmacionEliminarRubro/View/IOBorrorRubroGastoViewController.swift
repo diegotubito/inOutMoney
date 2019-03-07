@@ -25,7 +25,7 @@ class IOBorrarRubroGastoViewController: UIViewController, IOBorrarRubroGastoView
         viewModel.loadData()
         
     
-        buttonRemove = UIBarButtonItem(title: "Eliminar", style: .done, target: self, action: #selector(savePressed))
+        buttonRemove = UIBarButtonItem(title: "Confirmar", style: .done, target: self, action: #selector(savePressed))
         navigationItem.rightBarButtonItem = buttonRemove
         
     }

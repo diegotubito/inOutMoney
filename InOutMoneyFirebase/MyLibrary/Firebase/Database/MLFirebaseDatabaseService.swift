@@ -72,6 +72,18 @@ class MLFirebaseDatabaseService {
         
     }
     
+    static func update(path: String, diccionario: [String: Any]) {
+        
+        let ref = Database.database().reference()
+        
+        // Guardo los datos del nuevo socio en la Firebase
+        ref.child(path).updateChildValues(diccionario) { (error, ref) in
+        }
+        
+        
+        
+    }
+    
     static func delete(path: String,  success: @escaping (Bool, Error?) -> Void) {
         let ref = Database.database().reference()
         
