@@ -65,8 +65,7 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
                 self.start()
             }
         }
-     
-        
+
     }
     
     @objc private func refreshData(_ sender: Any) {

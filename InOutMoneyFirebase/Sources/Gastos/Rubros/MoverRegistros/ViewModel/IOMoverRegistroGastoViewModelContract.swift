@@ -12,7 +12,8 @@ protocol IOMoverRegistroGastoViewModelContract {
     init(withView view: IOMoverRegistroGastoViewContract, rubroSeleccionado: IORubroManager.Rubro)
     var model : IOMoverRegistroGastoModel! {get set}
     func loadData()
-    func moverRegistros()
+    func moverRegistrosTodos()
+    func moverRegistrosSeleccionados()
     func setRubroSeleccionado(_ valor: Int)
     func filtrarRubrosDisponibles()
     func seleccionarRubroPorDefecto()

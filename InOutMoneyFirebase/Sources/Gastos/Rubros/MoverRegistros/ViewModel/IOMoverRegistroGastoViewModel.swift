@@ -62,17 +62,36 @@ class IOMoverRegistroGastoViewModel: IOMoverRegistroGastoViewModelContract {
     
     
     
-    func moverRegistros() {
+    func moverRegistrosTodos() {
        
         
         
          let childIDNuevo = model.rubrosDisponibles[model.rubroElegido!].childID
         
-        for i in model.registros {
+        for (x,i) in model.registros.enumerated() {
+            
             let dato = [IORegistroManager.keyRegistro.childIDRubro : childIDNuevo]
             let path = UserID! + "/gastos/registros/" + i.childID
             MLFirebaseDatabaseService.update(path: path, diccionario: dato)
-           
+            
+        }
+        
+    }
+    
+    func moverRegistrosSeleccionados() {
+        
+        
+        
+        let childIDNuevo = model.rubrosDisponibles[model.rubroElegido!].childID
+        
+        for (x,i) in model.registros.enumerated() {
+            
+            if model.selectedItems.contains(where: {$0 == x}) {
+                let dato = [IORegistroManager.keyRegistro.childIDRubro : childIDNuevo]
+                let path = UserID! + "/gastos/registros/" + i.childID
+                MLFirebaseDatabaseService.update(path: path, diccionario: dato)
+            }
+            
         }
         
     }

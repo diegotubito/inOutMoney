@@ -13,6 +13,7 @@ class IOMoverRegistroGastoModel {
     var rubrosDisponibles = [IORubroManager.Rubro]()
     var rubroRecibido : IORubroManager.Rubro!
     var rubroElegido : Int?
+    var selectedItems = [Int]()
     
     init(rubroRecibido: IORubroManager.Rubro) {
         self.rubroRecibido = rubroRecibido

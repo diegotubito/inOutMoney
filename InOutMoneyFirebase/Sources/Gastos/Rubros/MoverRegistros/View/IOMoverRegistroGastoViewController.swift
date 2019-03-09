@@ -60,7 +60,7 @@ class IOMoverRegistroGastoViewController: UIViewController, IOMoverRegistroGasto
 }
 
 
-extension IOMoverRegistroGastoViewController: UITableViewDataSource {
+extension IOMoverRegistroGastoViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.model.registros.count
     }
@@ -87,7 +87,19 @@ extension IOMoverRegistroGastoViewController: UITableViewDataSource {
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        viewModel.model.selectedItems.append(indexPath.row)
+      
+        print(viewModel.model.selectedItems)
+    }
     
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        viewModel.model.selectedItems = viewModel.model.selectedItems.filter() { $0 != indexPath.row }
+        print(viewModel.model.selectedItems)
+    }
 }
 
 extension IOMoverRegistroGastoViewController: UIPickerViewDataSource, UIPickerViewDelegate {
@@ -115,8 +127,13 @@ extension IOMoverRegistroGastoViewController {
     func alertConfirmar() {
         let alert = UIAlertController(title: "Mover", message: "¿Estás seguro de mover todos los registros del rubro original al seleccionado?", preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Confirmar", style: .default , handler:{ (UIAlertAction)in
-            self.viewModel.moverRegistros()
+        alert.addAction(UIAlertAction(title: "Mover todos", style: .default , handler:{ (UIAlertAction)in
+            self.viewModel.moverRegistrosTodos()
+            self.performSegue(withIdentifier: "unwindSegueToCV1", sender: nil)
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Mover seleccionados", style: .default , handler:{ (UIAlertAction)in
+            self.viewModel.moverRegistrosSeleccionados()
             self.performSegue(withIdentifier: "unwindSegueToCV1", sender: nil)
             
         }))
