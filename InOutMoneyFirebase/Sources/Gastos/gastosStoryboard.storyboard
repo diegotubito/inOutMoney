@@ -41,11 +41,46 @@
                         <segue destination="vCU-OX-0MR" kind="show" identifier="segue_to_nuevo_registro_gastos" id="A2Q-i0-X8T"/>
                         <segue destination="tFU-FN-Dq4" kind="show" identifier="segue_to_confirmar_aliminar_rubro" id="EvP-Sh-dCT"/>
                         <segue destination="wus-Z7-dLZ" kind="show" identifier="segue_to_mover_registro_gasto" id="DI0-z7-j9I"/>
+                        <segue destination="9aH-Qo-Xkv" kind="show" identifier="segue_to_detalle_registro_gasto" id="iwO-7Y-gsG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Md-ZH-aKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="703.20000000000005" y="7.6461769115442282"/>
+        </scene>
+        <!--Detalle Registro Gasto View Controller-->
+        <scene sceneID="rAa-dU-nRg">
+            <objects>
+                <viewController id="9aH-Qo-Xkv" customClass="IODetalleRegistroGastoViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hZh-7W-UnO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="des-fO-7w4">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9aH-Qo-Xkv" id="iml-bo-jgQ"/>
+                                    <outlet property="delegate" destination="9aH-Qo-Xkv" id="N6O-Jc-pVu"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="des-fO-7w4" firstAttribute="leading" secondItem="dRo-Ba-dvW" secondAttribute="leading" id="Hee-07-ydX"/>
+                            <constraint firstItem="dRo-Ba-dvW" firstAttribute="trailing" secondItem="des-fO-7w4" secondAttribute="trailing" id="OGt-GM-aYK"/>
+                            <constraint firstItem="des-fO-7w4" firstAttribute="top" secondItem="dRo-Ba-dvW" secondAttribute="top" id="czT-cf-f60"/>
+                            <constraint firstItem="dRo-Ba-dvW" firstAttribute="bottom" secondItem="des-fO-7w4" secondAttribute="bottom" id="eAJ-IL-D9M"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dRo-Ba-dvW"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="des-fO-7w4" id="1NJ-sk-1TB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uwn-ZN-xvH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1666" y="-3"/>
         </scene>
         <!--Rubros Gastos Alta View Controller-->
         <scene sceneID="DYD-JB-5sB">
@@ -79,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6G0-pL-P6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1582" y="8"/>
+            <point key="canvasLocation" x="15" y="1012"/>
         </scene>
         <!--Borrar Rubro Gasto View Controller-->
         <scene sceneID="RlK-di-6mo">

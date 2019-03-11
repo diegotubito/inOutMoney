@@ -94,6 +94,16 @@ extension IORubrosProfileViewController: UITableViewDataSource {
     }
 }
 
+extension IORubrosProfileViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let item = viewModel.model.items[indexPath.section] as? ProfileViewModelRegistrosGastosItem {
+            let reg = item.registros[indexPath.row]
+            viewModel.model.registroSeleccionado = reg
+            performSegue(withIdentifier: "segue_to_detalle_registro_gasto", sender: nil)
+        }
+    }
+}
+
 
 extension IORubrosProfileViewController: IOTableViewCellBotonAgregarRegistroDelegate {
     func addButtonPressedDelegate() {
@@ -115,7 +125,9 @@ extension IORubrosProfileViewController: IOTableViewCellBotonAgregarRegistroDele
             controller.viewModel = IOMoverRegistroGastoViewModel(withView: controller, rubroSeleccionado: viewModel.model.rubroRecibido)
         }
         
-        
+        if let controller = segue.destination as? IODetalleRegistroGastoViewController {
+            controller.viewModel = IODetalleRegistroGastoViewModel(withView: controller, registroSeleccionado: viewModel.model.registroSeleccionado!)
+        }
     }
     
 }

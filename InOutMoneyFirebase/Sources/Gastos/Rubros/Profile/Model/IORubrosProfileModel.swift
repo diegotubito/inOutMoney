@@ -20,6 +20,7 @@ class IORubrosProfileModel {
     var rubroRecibido : IORubroManager.Rubro
     var items = [IORubrosProfileItem]()
     var fechaSeleccionada = Date()
+    var registroSeleccionado : IORegistroManager.Registro?
     
     init(rubro: IORubroManager.Rubro, fechaSeleccionada: Date) {
         self.rubroRecibido = rubro
