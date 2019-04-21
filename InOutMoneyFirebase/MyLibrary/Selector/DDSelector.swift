@@ -15,7 +15,6 @@ class DDSelector: UIView {
     var isBlurred = false
     
     private var blurEffectView : UIVisualEffectView!
-
  
     private var hiddenHeaderHeight : CGFloat = UIScreen.main.bounds.height * 0.15
     private var hiddenFooterHeight : CGFloat = UIScreen.main.bounds.height * 0.25
@@ -29,17 +28,19 @@ class DDSelector: UIView {
     private var contentView : UIView!
     private var viewButton : UIView!
     private var backgroundView : UIView!
-    
+  
     private var tableView : UITableView!
     
     var onSelectedItem: ((Int?)->Void)?
     
     private var selectedIndex : Int? {
         didSet {
-            
-            onSelectedItem?(selectedIndex)
+            tableView.reloadData()
+     
             endBackgroundAnimation {
+                self.onSelectedItem?(self.selectedIndex)
                 self.removeFromSuperview()
+                
             }
            
         }
@@ -57,6 +58,7 @@ class DDSelector: UIView {
     }
     
     private func inicializar() {
+        //the gradient is used in footer
         
         drawBackground()
         drawContentView()
@@ -67,6 +69,8 @@ class DDSelector: UIView {
         
      }
     
+  
+    
     private func addTableView() {
         tableView = UITableView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
         tableView.register(TableViewCellSelector.nib, forCellReuseIdentifier: TableViewCellSelector.identifier)
@@ -74,7 +78,8 @@ class DDSelector: UIView {
         tableView.delegate = self
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
-        tableView.alwaysBounceVertical = true
+        tableView.alwaysBounceVertical = false
+        tableView.bounces = false
     
         contentView.addSubview(tableView)
     }
@@ -98,10 +103,9 @@ class DDSelector: UIView {
     private func drawContentView() {
         self.contentView = UIView()
         self.contentView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
-        self.contentView.backgroundColor = .clear
+     //   self.contentView.backgroundColor = .clear
         
-        // to cover the whole screen, we use the following line
-        self.addSubview(contentView)
+         self.addSubview(contentView)
         
         if isBlurred {
             startBlurEffect()
@@ -149,8 +153,6 @@ class DDSelector: UIView {
         viewButton.layer.backgroundColor = UIColor.white.cgColor
         viewButton.layer.cornerRadius = buttonSize/2
         viewButton.layer.masksToBounds = true
-        viewButton.layer.borderColor = UIColor.black.cgColor
-        viewButton.layer.borderWidth = 3
         
         contentView.addSubview(viewButton)
         
@@ -212,7 +214,9 @@ extension DDSelector: UITableViewDataSource {
 
 extension DDSelector : UITableViewDelegate {
     internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         selectedIndex = indexPath.row
+        
         if let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellSelector.identifier, for: indexPath) as? TableViewCellSelector {
             cell.zoomOutWithEasing()
         }
@@ -239,11 +243,26 @@ extension DDSelector : UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: frame.width, height: hiddenFooterHeight))
-        label.text = " "
-        label.backgroundColor = .black
-        label.alpha = 0.7
-        return label
+        let footer = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: hiddenFooterHeight))
+        
+        let gradient = createGradient(topColor: .clear, bottomColor: UIColor.black.withAlphaComponent(0.7))
+        gradient.frame = footer.bounds
+        footer.layer.insertSublayer(gradient, at: 0)
+        
+        return footer
+
+     }
+    
+    private func createGradient(topColor: UIColor, bottomColor: UIColor) -> CAGradientLayer {
+        let gradient = CAGradientLayer()
+        gradient.type = .axial
+        gradient.colors = [bottomColor.cgColor, topColor.cgColor, topColor.cgColor]
+        gradient.startPoint = CGPoint(x: 0.5, y: 1.0)
+        gradient.endPoint = CGPoint(x: 0.5, y: 0.0)
+        gradient.locations = [0.2, 0.8, 0.9]
+        
+        return gradient
+        
     }
 }
 
