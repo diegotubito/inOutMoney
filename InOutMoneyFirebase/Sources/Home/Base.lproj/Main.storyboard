@@ -30,11 +30,24 @@
                                 <rect key="frame" x="0.0" y="637" width="375" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFW-Qp-CBD">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="245" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="uVm-Yq-6ma"/>
                                         </constraints>
-                                        <state key="normal" title="Gastos"/>
+                                        <state key="normal" title="Home2"/>
+                                        <connections>
+                                            <action selector="home2PRessed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wgh-Ts-jtw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FqF-0b-zpB">
+                                        <rect key="frame" x="245" y="0.0" width="100" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="XyT-An-sTN"/>
+                                        </constraints>
+                                        <state key="normal" title="Selector"/>
+                                        <connections>
+                                            <action selector="selector:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lub-XC-IvW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQZ-ub-Ws2">
                                         <rect key="frame" x="345" y="0.0" width="30" height="30"/>
@@ -79,6 +92,7 @@
                         <segue destination="7la-QV-wb7" kind="show" identifier="segue_to_login" animates="NO" id="k46-9T-Gg8"/>
                         <segue destination="eJt-BG-sIQ" kind="show" identifier="segue_to_rubro_profile" id="SiX-1S-av8"/>
                         <segue destination="yCV-C0-geK" kind="show" identifier="segue_to_alta_rubro" id="svv-u1-jeo"/>
+                        <segue destination="uog-BX-BF9" kind="show" identifier="segue_to_home2" id="BVV-yh-g86"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -92,6 +106,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qCV-Ps-Ppm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1778" y="116"/>
+        </scene>
+        <!--StoryboardHome2-->
+        <scene sceneID="ahI-7l-OcT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StoryboardHome2" id="uog-BX-BF9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ic-ZA-SKY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="253" y="870"/>
         </scene>
         <!--Alta Rubro View Controller-->
         <scene sceneID="hsm-G1-GnF">

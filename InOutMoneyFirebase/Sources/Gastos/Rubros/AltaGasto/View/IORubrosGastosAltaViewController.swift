@@ -19,23 +19,53 @@ class IORubrosGastosAltaViewController: UIViewController, IORubrosGastosAltaView
     var descripcionCell : IOTableViewCellSingleDataEntry!
     var importeCell : IOTableViewCellSingleDataEntry!
     var fechaCell : IOTableViewCellSingleDateCell!
-    var botonGuardarCell : IOTableViewCellBotonGuardar!
-    var pickerCell : IOTableViewCellSinglePicker!
+     var pickerCell : IOTableViewCellSinglePicker!
     
     var calendario : PCMensualCustomView!
     
     var viewModel : IORubrosGastosAltaViewModelContract!
+    var moreButton : UIBarButtonItem!
+    
     
     override func viewDidLoad() {
+        moreButton = UIBarButtonItem(title: "Guardar", style: .done, target: self, action: #selector(moreTapped))
+        navigationItem.rightBarButtonItem = moreButton
+        
         super.viewDidLoad()
         tableView.register(IOTableViewCellSingleDataEntry.nib, forCellReuseIdentifier: IOTableViewCellSingleDataEntry.identifier)
         tableView.register(IOTableViewCellSingleDateCell.nib, forCellReuseIdentifier: IOTableViewCellSingleDateCell.identifier)
-        tableView.register(IOTableViewCellBotonGuardar.nib, forCellReuseIdentifier: IOTableViewCellBotonGuardar.identifier)
-        tableView.register(IOTableViewCellSinglePicker.nib, forCellReuseIdentifier: IOTableViewCellSinglePicker.identifier)
+         tableView.register(IOTableViewCellSinglePicker.nib, forCellReuseIdentifier: IOTableViewCellSinglePicker.identifier)
         loadCells()
     }
     
-  
+    @objc func moreTapped() {
+        if let message = self.validateCells() {
+            self.showError(message)
+            return
+        }
+        
+        
+        // create the alert
+        let alert = UIAlertController(title: "Nuevo Registro", message: "¿Estás seguro de crear un nuevo registro?", preferredStyle: UIAlertController.Style.alert)
+        
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Guardar", style: UIAlertAction.Style.destructive, handler: { action in
+            
+            // do something like...
+            
+            
+            self.saveData()
+            
+        }))
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        
+        
+        
+    }
+    
     func loadCells() {
         descripcionCell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellSingleDataEntry.identifier) as? IOTableViewCellSingleDataEntry
         descripcionCell.titleCell.text = "Descripción"
@@ -64,14 +94,6 @@ class IORubrosGastosAltaViewController: UIViewController, IORubrosGastosAltaView
         fechaCell.valueCell.text = Date().toString(formato: "dd-MM-yyyy")
         fechaCell.delegate = self
         cells.append(fechaCell)
-        
-        botonGuardarCell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellBotonGuardar.identifier) as? IOTableViewCellBotonGuardar
-        botonGuardarCell.tag = 3
-        botonGuardarCell.titleCell.text = "Guardar gasto"
-        botonGuardarCell.delegate = self
-        botonGuardarCell.enableButton()
-        cells.append(botonGuardarCell)
-
 
     }
     
@@ -178,14 +200,25 @@ extension IORubrosGastosAltaViewController: UITableViewDataSource {
 extension IORubrosGastosAltaViewController: IOTableViewCellSingleDateCellDelegate {
     func buttonCellPressedDelegate(_ sender: UIButton) {
         print(sender.tag)
+        descripcionCell.textFieldCell.resignFirstResponder()
+        importeCell.textFieldCell.resignFirstResponder()
         
-        calendario = PCMensualCustomView(frame: CGRect(x: 16, y: 35, width: view.frame.width-32, height: 250))
+        calendario = PCMensualCustomView(frame: CGRect(x: 0, y: 100, width: view.frame.width, height: 250))
         calendario.colorLabelDia = UIColor.white
         calendario.layer.cornerRadius = 250/20
         calendario.layer.borderColor = UIColor.white.cgColor
         calendario.layer.borderWidth = 2
         view.addSubview(calendario)
         
+    /*    calendario.translatesAutoresizingMaskIntoConstraints = false
+        
+        let a = NSLayoutConstraint(item: calendario, attribute: .top, relatedBy: .equal, toItem: view.topAnchor, attribute: .topMargin, multiplier: 1, constant: 0)
+        let b = NSLayoutConstraint(item: calendario, attribute: .left, relatedBy: .equal, toItem: view.leftAnchor, attribute: .left, multiplier: 1, constant: 0)
+        let c = NSLayoutConstraint(item: calendario, attribute: .right, relatedBy: .equal, toItem: view.rightAnchor, attribute: .right, multiplier: 1, constant: 0)
+        let d = NSLayoutConstraint(item: calendario, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: view.frame.height/2.5)
+        
+        view.addConstraints([a,b,c, d])
+      */
     }
     
    
@@ -193,40 +226,6 @@ extension IORubrosGastosAltaViewController: IOTableViewCellSingleDateCellDelegat
 }
 
 
-extension IORubrosGastosAltaViewController: IOTableViewCellBotonGuardarDelegate {
-    func buttonPressedDelegate(_ sender: UIButton) {
-         if let message = self.validateCells() {
-            self.showError(message)
-            return
-        }
-        
-        
-        // create the alert
-        let alert = UIAlertController(title: "Nuevo Registro", message: "¿Estás seguro de crear un nuevo registro?", preferredStyle: UIAlertController.Style.alert)
-
-        // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
-        
-        alert.addAction(UIAlertAction(title: "Guardar", style: UIAlertAction.Style.destructive, handler: { action in
-            
-            // do something like...
-            
-            
-            self.saveData()
-            
-        }))
-        // show the alert
-        self.present(alert, animated: true, completion: nil)
-
-        
-        
-        
-     
-    }
-    
-    
-    
-}
 
 
 extension IORubrosGastosAltaViewController: IOTableViewCellSingleDataEntryDelegate {
