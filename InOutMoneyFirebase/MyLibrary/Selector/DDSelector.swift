@@ -12,15 +12,19 @@ import UIKit
 class DDSelector: UIView {
     var optionList = [String]()
     var itemAlreadySelected : Int?
+    var isBlurred = false
+    
+    private var blurEffectView : UIVisualEffectView!
+
  
-    private var hiddenHeaderHeight : CGFloat = UIScreen.main.bounds.height * 0.2
+    private var hiddenHeaderHeight : CGFloat = UIScreen.main.bounds.height * 0.15
     private var hiddenFooterHeight : CGFloat = UIScreen.main.bounds.height * 0.25
-    private var buttonSize : CGFloat = UIScreen.main.bounds.width * 0.15
-    private var buttonFontSize : CGFloat = UIScreen.main.bounds.width * 0.15 / 2
+    private var buttonSize : CGFloat = UIScreen.main.bounds.width * 0.10
+    private var buttonFontSize : CGFloat = UIScreen.main.bounds.width * 0.10 / 2
     private var selectedItemFontName = "ChalkboardSE-Regular"
     private var itemFontName = "ChalkboardSE-Light"
-    private var itemFontSize : CGFloat = UIScreen.main.bounds.width * 0.15 / 2
-    private var rowHeight : CGFloat = UIScreen.main.bounds.height / 15
+    private var itemFontSize : CGFloat = UIScreen.main.bounds.width * 0.15 / 3
+    private var rowHeight : CGFloat = UIScreen.main.bounds.height / 12
     
     private var contentView : UIView!
     private var viewButton : UIView!
@@ -99,12 +103,33 @@ class DDSelector: UIView {
         // to cover the whole screen, we use the following line
         self.addSubview(contentView)
         
+        if isBlurred {
+            startBlurEffect()
+        }
+        
         startContentViewAnimation {
             print("content view animation finished")
         }
         
     }
     
+    private func startBlurEffect() {
+        backgroundView.layer.backgroundColor = UIColor.clear.cgColor
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.effect = nil
+        blurEffectView.frame = backgroundView.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        backgroundView.addSubview(blurEffectView)
+        
+        //start blurring
+        UIView.animate(withDuration: 1) {
+            self.blurEffectView.effect = UIBlurEffect(style: .dark)
+            //stop animation at 0.5sec
+           // self.blurEffectView.pauseAnimation(delay: 0.6)
+            
+        }
+    }
     private func drawBackground() {
         backgroundView = UIView()
         backgroundView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
@@ -131,7 +156,7 @@ class DDSelector: UIView {
         
         viewButton.translatesAutoresizingMaskIntoConstraints = false
         let c1 = NSLayoutConstraint(item: viewButton, attribute: .centerX, relatedBy: .equal, toItem: contentView, attribute: .centerX, multiplier: 1, constant: 0)
-        let c2 = NSLayoutConstraint(item: viewButton, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 0.9, constant: 0)
+        let c2 = NSLayoutConstraint(item: viewButton, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 0.95, constant: 0)
         let c3 = NSLayoutConstraint(item: viewButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: buttonSize)
            let c4 = NSLayoutConstraint(item: viewButton, attribute: .height, relatedBy: .equal, toItem: viewButton, attribute: .width, multiplier: 1/1, constant: 0)
         
@@ -216,7 +241,8 @@ extension DDSelector : UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: frame.width, height: hiddenFooterHeight))
         label.text = " "
-        label.backgroundColor = .clear
+        label.backgroundColor = .black
+        label.alpha = 0.7
         return label
     }
 }
