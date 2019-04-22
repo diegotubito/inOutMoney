@@ -41,6 +41,9 @@
 		84028110220FC37B00C85A6A /* IONuevoUsuarioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402810F220FC37B00C85A6A /* IONuevoUsuarioModel.swift */; };
 		8402811C220FC81600C85A6A /* IOTableViewCellSingleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402811A220FC81600C85A6A /* IOTableViewCellSingleTextField.swift */; };
 		8402811D220FC81600C85A6A /* IOTableViewCellSingleTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8402811B220FC81600C85A6A /* IOTableViewCellSingleTextField.xib */; };
+		8402F8F3226D1312001CD037 /* HeaderHomeCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8402F8F2226D1312001CD037 /* HeaderHomeCustomView.xib */; };
+		8402F8F5226D131D001CD037 /* HeaderHomeCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402F8F4226D131D001CD037 /* HeaderHomeCustomView.swift */; };
+		8402F8FB226D36F0001CD037 /* GastoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402F8FA226D36F0001CD037 /* GastoManager.swift */; };
 		840FF2542217C7F4006B809A /* IOHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FF2532217C7F4006B809A /* IOHomeModel.swift */; };
 		840FF26222185DBD006B809A /* gastosStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840FF26122185DBD006B809A /* gastosStoryboard.storyboard */; };
 		8418F5B82230C3E400EE020E /* IOMoverRegistroGastoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418F5B72230C3E400EE020E /* IOMoverRegistroGastoViewController.swift */; };
@@ -173,6 +176,9 @@
 		8402810F220FC37B00C85A6A /* IONuevoUsuarioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IONuevoUsuarioModel.swift; path = InOutMoneyFirebase/Defaults/IONuevoUsuarioModel.swift; sourceTree = SOURCE_ROOT; };
 		8402811A220FC81600C85A6A /* IOTableViewCellSingleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IOTableViewCellSingleTextField.swift; path = InOutMoneyFirebase/Defaults/IOTableViewCellSingleTextField.swift; sourceTree = SOURCE_ROOT; };
 		8402811B220FC81600C85A6A /* IOTableViewCellSingleTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = IOTableViewCellSingleTextField.xib; path = InOutMoneyFirebase/Defaults/IOTableViewCellSingleTextField.xib; sourceTree = SOURCE_ROOT; };
+		8402F8F2226D1312001CD037 /* HeaderHomeCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderHomeCustomView.xib; sourceTree = "<group>"; };
+		8402F8F4226D131D001CD037 /* HeaderHomeCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderHomeCustomView.swift; sourceTree = "<group>"; };
+		8402F8FA226D36F0001CD037 /* GastoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GastoManager.swift; sourceTree = "<group>"; };
 		840FF2532217C7F4006B809A /* IOHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOHomeModel.swift; sourceTree = "<group>"; };
 		840FF26122185DBD006B809A /* gastosStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = gastosStoryboard.storyboard; sourceTree = "<group>"; };
 		8418F5B72230C3E400EE020E /* IOMoverRegistroGastoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOMoverRegistroGastoViewController.swift; sourceTree = "<group>"; };
@@ -554,6 +560,23 @@
 			path = SingleTextField;
 			sourceTree = "<group>";
 		};
+		8402F8F1226D12E8001CD037 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				8402F8F2226D1312001CD037 /* HeaderHomeCustomView.xib */,
+				8402F8F4226D131D001CD037 /* HeaderHomeCustomView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		8402F8F9226D36D7001CD037 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8402F8FA226D36F0001CD037 /* GastoManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		840FF2512217C7D4006B809A /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -707,6 +730,7 @@
 		8484BBFF226AE6F100C20E40 /* Home2 */ = {
 			isa = PBXGroup;
 			children = (
+				8484BC03226AE72200C20E40 /* StoryboardHome2.storyboard */,
 				8484BC02226AE70D00C20E40 /* Model */,
 				8484BC01226AE70700C20E40 /* ViewModel */,
 				8484BC00226AE6FF00C20E40 /* View */,
@@ -718,8 +742,8 @@
 		8484BC00226AE6FF00C20E40 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8484BC03226AE72200C20E40 /* StoryboardHome2.storyboard */,
 				8484BC0B226AE78700C20E40 /* HomeViewController.swift */,
+				8402F8F1226D12E8001CD037 /* CustomView */,
 				84FF634A226AEA5200FED9DA /* Cells */,
 			);
 			path = View;
@@ -728,6 +752,7 @@
 		8484BC01226AE70700C20E40 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8402F8F9226D36D7001CD037 /* Service */,
 				8484BC07226AE76F00C20E40 /* HomeViewModel.swift */,
 				8484BC09226AE77C00C20E40 /* HomeViewModelProtocol.swift */,
 			);
@@ -1315,6 +1340,7 @@
 				84CA12472223098B0040B78B /* IOTableViewCellBotonGuardar.xib in Resources */,
 				840FF26222185DBD006B809A /* gastosStoryboard.storyboard in Resources */,
 				84594EF121DC64670019C9B9 /* Assets.xcassets in Resources */,
+				8402F8F3226D1312001CD037 /* HeaderHomeCustomView.xib in Resources */,
 				84CA12092220FDAD0040B78B /* IOTableViewCellRegistrosGastos.xib in Resources */,
 				84CA12222222F2EF0040B78B /* IOTableViewCellSingleDataEntry.xib in Resources */,
 				84CA122D2222FEDC0040B78B /* IOTableViewCellSingleDateCell.xib in Resources */,
@@ -1460,6 +1486,7 @@
 				840280F5220FB24600C85A6A /* dateLibrary.swift in Sources */,
 				8402810C220FC36300C85A6A /* IONuevoUsuarioViewModelContract.swift in Sources */,
 				84CA1251222398EB0040B78B /* IOCuentasManager.swift in Sources */,
+				8402F8F5226D131D001CD037 /* HeaderHomeCustomView.swift in Sources */,
 				84CA1242222307320040B78B /* labelExtension.swift in Sources */,
 				84BD7F9C222F859C00FF6A50 /* IOBorrarRubroGastoViewModelContract.swift in Sources */,
 				84457FCB226C08380031F539 /* TableViewCellSelector.swift in Sources */,
@@ -1496,6 +1523,7 @@
 				8419E07B221536740015CC99 /* IOHomeViewModel.swift in Sources */,
 				84594EE721DC64650019C9B9 /* AppDelegate.swift in Sources */,
 				8402685222068ECC00EF6070 /* TableViewCellLoginUsuario.swift in Sources */,
+				8402F8FB226D36F0001CD037 /* GastoManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

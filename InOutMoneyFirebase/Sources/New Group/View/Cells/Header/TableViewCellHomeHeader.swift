@@ -10,6 +10,11 @@ import UIKit
 
 class TableViewCellHomeHeader: UITableViewCell {
 
+    @IBOutlet var gastoLabel: UILabel!
+    @IBOutlet var gastoMesAnteriorLabel: UILabel!
+    
+    @IBOutlet var gastoMesAntriorActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet var gastoActivityIndicator: UIActivityIndicatorView!
     @IBOutlet var plusExpenditureOutlet: UIView!
     @IBOutlet var plusIncomeOutlet: UIView!
     @IBOutlet var historyBackground: UIView!
@@ -38,6 +43,32 @@ class TableViewCellHomeHeader: UITableViewCell {
     
     static var nib: UINib {
         return UINib(nibName: identifier, bundle: nil)
+    }
+    
+    func loadGasto(mes: Int, año: Int) {
+        startAnimatingActivity(activity: &gastoActivityIndicator, label: &gastoLabel)
+        startAnimatingActivity(activity: &gastoMesAntriorActivityIndicator, label: &gastoMesAnteriorLabel)
+        
+        IOGastoManager.loadRegistersFromFirebase(mes: mes, año: año, success: {
+            self.stopAnimatingActivity(activity: &self.gastoActivityIndicator, label: &self.gastoLabel)
+            self.stopAnimatingActivity(activity: &self.gastoMesAntriorActivityIndicator, label: &self.gastoMesAnteriorLabel)
+            let totalSpendCurrentMonth = IOGastoManager.getTotalRegistros()
+            self.gastoLabel.text = totalSpendCurrentMonth.formatoMoneda(decimales: 2, simbolo: "$")
+        }) { (errorMessage) in
+            self.stopAnimatingActivity(activity: &self.gastoActivityIndicator, label: &self.gastoLabel)
+            print(errorMessage)
+            
+        }
+    }
+    
+    func stopAnimatingActivity(activity: inout UIActivityIndicatorView, label: inout UILabel) {
+        activity.stopAnimating()
+        label.isHidden = false
+    }
+    
+    func startAnimatingActivity(activity: inout UIActivityIndicatorView, label: inout UILabel) {
+        activity.startAnimating()
+        label.isHidden = true
     }
     
 }

@@ -22,12 +22,18 @@ class HomeViewController: UIViewController {
         
         tableView.register(TableViewCellHomeHeader.nib, forCellReuseIdentifier: TableViewCellHomeHeader.identifier)
         
+        
+        
         loadCells()
+        
+       
+        
     }
     
     func loadCells() {
         header = tableView.dequeueReusableCell(withIdentifier: TableViewCellHomeHeader.identifier) as? TableViewCellHomeHeader
         
+        header.loadGasto(mes: 4, año: 2019)
         cells.append(header)
     }
 }

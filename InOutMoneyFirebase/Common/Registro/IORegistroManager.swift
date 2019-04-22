@@ -101,7 +101,7 @@ class IORegistroManager {
         let añoStr = String(año)
         let periodo = nombreMes!+añoStr
         
-        MLFirebaseDatabaseService.retrieveDataWithFilter(path: UserID! + "/gastos/registros", keyName: "queryMesAño", value: periodo) { (response, error) in
+        MLFirebaseDatabaseService.retrieveDataWithFilter(path: UserID! + "/gastos/registros", keyName: "queryByMonthYear", value: periodo) { (response, error) in
             if error != nil {
                 fail(error?.localizedDescription ?? "Error")
                 return
@@ -113,9 +113,6 @@ class IORegistroManager {
                     var registro = value as! [String : Any] 
                     registro["childID"] = key
                     IORegistroManager.instance.parseRegistro(data: registro)
-                    
-                    
-                    
                 }
             }
             success()

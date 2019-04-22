@@ -123,20 +123,20 @@ class IORubrosGastosAltaViewController: UIViewController, IORubrosGastosAltaView
         let mes = keyFecha?.mes
         let año = keyFecha?.año
         let keyFechaString = MESES[mes!]! + String(año!)
-        let queryRubroMesAño = childIDRubro + "#" + keyFechaString
-        let queryRubroAño = childIDRubro + "#" + String(año!)
-        let queryMesAño = keyFechaString
-        let queryAño = String(año!)
+        let queryByTypeMonthYear = childIDRubro + "#" + keyFechaString
+        let queryByTypeYear = childIDRubro + "#" + String(año!)
+        let queryByMonthYear = keyFechaString
+        let queryByYear = String(año!)
         let childIDDebito = IOCuentaManager.cuentas[viewModel.model.codigoCuentaSeleccionada].childIDCuenta
         let importe = Double(importeCell.textFieldCell.text!)!
         
         let path = UserID! + "/gastos/registros"
         
         
-        let datos = ["queryRubroMesAño" : queryRubroMesAño,
-                     "queryRubroAño" : queryRubroAño,
-                     "queryMesAño" : queryMesAño,
-                     "queryAño" : queryAño,
+        let datos = ["queryByTypeMonthYear" : queryByTypeMonthYear,
+                     "queryByTypeYear" : queryByTypeYear,
+                     "queryByMonthYear" : queryByMonthYear,
+                     "queryByYear" : queryByYear,
                      "childIDRubro" : childIDRubro,
                      "isEnabled" : 1,
                      "childIDDebito" : childIDDebito,

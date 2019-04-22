@@ -124,6 +124,30 @@ class MLFirebaseDatabaseService {
         }
     }
     
+    static func retrieve(path: String, keyName: String, value: Any, completion: @escaping ([[String : Any]]?, Error?) -> Void) {
+        
+        let ref = Database.database().reference()
+        
+        let query = ref.child(path).queryOrdered(byChild: keyName).queryEqual(toValue: value)
+        query.observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            var dictionary = [[String:Any]]()
+        
+            if let array = snapshot.value as? [String:Any] {
+                for i in array {
+                    if let aux = i.value as? [String: Any] {
+                        dictionary.append(aux)
+                    }
+                }
+            }
+            
+            completion(dictionary, nil)
+        }) {(error) in
+            print(error.localizedDescription)
+            completion(nil, error)
+        }
+    }
+    
     static func retrieveData(path: String, completion: @escaping ([String: Any]?, Error?) -> Void) {
         let ref = Database.database().reference()
         
