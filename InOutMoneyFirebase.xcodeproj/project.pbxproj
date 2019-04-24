@@ -79,6 +79,9 @@
 		849BA9722207748D00EC93A6 /* IOLoginPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA9712207748D00EC93A6 /* IOLoginPasswordModel.swift */; };
 		849BA9742207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA9732207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift */; };
 		849BA976220775FE00EC93A6 /* IOLoginPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA975220775FE00EC93A6 /* IOLoginPasswordViewModel.swift */; };
+		849F54EE226EC65600DBAB50 /* IngresoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849F54ED226EC65600DBAB50 /* IngresoManager.swift */; };
+		849F54F4226FFFCB00DBAB50 /* TableViewCellCuentas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849F54F2226FFFCB00DBAB50 /* TableViewCellCuentas.swift */; };
+		849F54F5226FFFCB00DBAB50 /* TableViewCellCuentas.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849F54F3226FFFCB00DBAB50 /* TableViewCellCuentas.xib */; };
 		84BD7F95222F852200FF6A50 /* IOBorrorRubroGastoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD7F94222F852200FF6A50 /* IOBorrorRubroGastoViewController.swift */; };
 		84BD7F9A222F854700FF6A50 /* IOBorrarRubroGastoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD7F99222F854700FF6A50 /* IOBorrarRubroGastoModel.swift */; };
 		84BD7F9C222F859C00FF6A50 /* IOBorrarRubroGastoViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD7F9B222F859C00FF6A50 /* IOBorrarRubroGastoViewModelContract.swift */; };
@@ -215,6 +218,9 @@
 		849BA9712207748D00EC93A6 /* IOLoginPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginPasswordModel.swift; sourceTree = "<group>"; };
 		849BA9732207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginPasswordViewModelContract.swift; sourceTree = "<group>"; };
 		849BA975220775FE00EC93A6 /* IOLoginPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginPasswordViewModel.swift; sourceTree = "<group>"; };
+		849F54ED226EC65600DBAB50 /* IngresoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngresoManager.swift; sourceTree = "<group>"; };
+		849F54F2226FFFCB00DBAB50 /* TableViewCellCuentas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellCuentas.swift; sourceTree = "<group>"; };
+		849F54F3226FFFCB00DBAB50 /* TableViewCellCuentas.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellCuentas.xib; sourceTree = "<group>"; };
 		84BD7F94222F852200FF6A50 /* IOBorrorRubroGastoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOBorrorRubroGastoViewController.swift; sourceTree = "<group>"; };
 		84BD7F99222F854700FF6A50 /* IOBorrarRubroGastoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOBorrarRubroGastoModel.swift; sourceTree = "<group>"; };
 		84BD7F9B222F859C00FF6A50 /* IOBorrarRubroGastoViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOBorrarRubroGastoViewModelContract.swift; sourceTree = "<group>"; };
@@ -573,6 +579,7 @@
 			isa = PBXGroup;
 			children = (
 				8402F8FA226D36F0001CD037 /* GastoManager.swift */,
+				849F54ED226EC65600DBAB50 /* IngresoManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -781,6 +788,15 @@
 				849BA96B22074DD100EC93A6 /* IOLoginFirebaseService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		849F54F1226FFFA700DBAB50 /* Cuentas */ = {
+			isa = PBXGroup;
+			children = (
+				849F54F2226FFFCB00DBAB50 /* TableViewCellCuentas.swift */,
+				849F54F3226FFFCB00DBAB50 /* TableViewCellCuentas.xib */,
+			);
+			path = Cuentas;
 			sourceTree = "<group>";
 		};
 		84BD7F93222F84DB00FF6A50 /* ConfirmacionEliminarRubro */ = {
@@ -1250,6 +1266,7 @@
 		84FF634A226AEA5200FED9DA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				849F54F1226FFFA700DBAB50 /* Cuentas */,
 				84FF634B226AEA5B00FED9DA /* Header */,
 			);
 			path = Cells;
@@ -1352,6 +1369,7 @@
 				84594EEC21DC64650019C9B9 /* Main.storyboard in Resources */,
 				849BA9702207547A00EC93A6 /* GoogleService-Info.plist in Resources */,
 				8402685322068ECC00EF6070 /* TableViewCellLoginUsuario.xib in Resources */,
+				849F54F5226FFFCB00DBAB50 /* TableViewCellCuentas.xib in Resources */,
 				84FF634F226AEA7000FED9DA /* TableViewCellHomeHeader.xib in Resources */,
 				84E41792222CA998000214E8 /* IOTableViewCellHomeRubroGasto.xib in Resources */,
 				8402811D220FC81600C85A6A /* IOTableViewCellSingleTextField.xib in Resources */,
@@ -1497,6 +1515,7 @@
 				84CA120F222107EC0040B78B /* IOTableViewCellBotonAgregarRegistro.swift in Sources */,
 				8418F5BC2230C40A00EE020E /* IOMoverRegistroGastoViewModel.swift in Sources */,
 				840280CF220FB0A400C85A6A /* IOLoginUsuarioViewController.swift in Sources */,
+				849F54F4226FFFCB00DBAB50 /* TableViewCellCuentas.swift in Sources */,
 				84CA121722221E910040B78B /* IORubrosGastosAltaModel.swift in Sources */,
 				84CA124B22238A2D0040B78B /* IOTableViewCellSinglePicker.swift in Sources */,
 				840280FC220FB24600C85A6A /* storageManager.swift in Sources */,
@@ -1510,6 +1529,7 @@
 				849BA9742207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift in Sources */,
 				840280F9220FB24600C85A6A /* MLFirebaseDatabaseService.swift in Sources */,
 				840280F8220FB24600C85A6A /* imageFileFromLocal.swift in Sources */,
+				849F54EE226EC65600DBAB50 /* IngresoManager.swift in Sources */,
 				84027FBE220F34EF00C85A6A /* MLFirebaseRemoteConfigService.swift in Sources */,
 				840280F3220FB24600C85A6A /* coredataGeneral.swift in Sources */,
 				84CA12212222F2EF0040B78B /* IOTableViewCellSingleDataEntry.swift in Sources */,

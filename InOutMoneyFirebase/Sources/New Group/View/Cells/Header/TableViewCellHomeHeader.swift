@@ -9,12 +9,22 @@
 import UIKit
 
 class TableViewCellHomeHeader: UITableViewCell {
-
-    @IBOutlet var gastoLabel: UILabel!
-    @IBOutlet var gastoMesAnteriorLabel: UILabel!
+    @IBOutlet var totalIngresoMes: UILabel!
+    @IBOutlet var totalIngresoMesAnterior: UILabel!
+    @IBOutlet var totalIngresoMesAnteriorAnterior: UILabel!
     
-    @IBOutlet var gastoMesAntriorActivityIndicator: UIActivityIndicatorView!
-    @IBOutlet var gastoActivityIndicator: UIActivityIndicatorView!
+    
+    @IBOutlet var activityIndicatorIngresoMesAnteriorAnterior: UIActivityIndicatorView!
+    @IBOutlet var activityIndicatorIngresoMesAnterior: UIActivityIndicatorView!
+    @IBOutlet var activityIndicatorIngresoMes: UIActivityIndicatorView!
+    
+    @IBOutlet var totalGastoMes: UILabel!
+    @IBOutlet var totalGastoMesAnterior: UILabel!
+    @IBOutlet var totalGastoMesAnteriorAnterior: UILabel!
+    
+    @IBOutlet var activityIndicatorGastoMesAnteriorAnterior: UIActivityIndicatorView!
+    @IBOutlet var activityIndicatorGastoMesAnterior: UIActivityIndicatorView!
+    @IBOutlet var activityIndicatorGastoMes: UIActivityIndicatorView!
     @IBOutlet var plusExpenditureOutlet: UIView!
     @IBOutlet var plusIncomeOutlet: UIView!
     @IBOutlet var historyBackground: UIView!
@@ -45,21 +55,54 @@ class TableViewCellHomeHeader: UITableViewCell {
         return UINib(nibName: identifier, bundle: nil)
     }
     
-    func loadGasto(mes: Int, año: Int) {
-        startAnimatingActivity(activity: &gastoActivityIndicator, label: &gastoLabel)
-        startAnimatingActivity(activity: &gastoMesAntriorActivityIndicator, label: &gastoMesAnteriorLabel)
+    func showTotalGasto(date: Date) {
         
-        IOGastoManager.loadRegistersFromFirebase(mes: mes, año: año, success: {
-            self.stopAnimatingActivity(activity: &self.gastoActivityIndicator, label: &self.gastoLabel)
-            self.stopAnimatingActivity(activity: &self.gastoMesAntriorActivityIndicator, label: &self.gastoMesAnteriorLabel)
-            let totalSpendCurrentMonth = IOGastoManager.getTotalRegistros()
-            self.gastoLabel.text = totalSpendCurrentMonth.formatoMoneda(decimales: 2, simbolo: "$")
+        let mes = date.mes
+        let año = date.año
+        let restarUnMes = Calendar.current.date(byAdding: .month, value: -1, to: date)
+        let mesAnterior = restarUnMes?.mes
+        let añoAnterior = restarUnMes?.año
+        
+        let restarDosMes = Calendar.current.date(byAdding: .month, value: -2, to: date)
+        let mesAnteriorAnterior = restarDosMes?.mes
+        let añoAnteriorAnterior = restarDosMes?.año
+        
+        
+        startAnimatingActivity(activity: &activityIndicatorGastoMes, label: &totalGastoMes)
+        
+        IOGastoManager.loadGastosFromFirebase(mes: mes, año: año, success: {
+            self.stopAnimatingActivity(activity: &self.activityIndicatorGastoMes, label: &self.totalGastoMes)
+             let totalSpendCurrentMonth = IOGastoManager.getTotalRegistros()
+            self.totalGastoMes.text = totalSpendCurrentMonth.formatoMoneda(decimales: 2, simbolo: "$")
         }) { (errorMessage) in
-            self.stopAnimatingActivity(activity: &self.gastoActivityIndicator, label: &self.gastoLabel)
+            self.stopAnimatingActivity(activity: &self.activityIndicatorGastoMes, label: &self.totalGastoMes)
+            print(errorMessage)
+            
+        }
+        
+        startAnimatingActivity(activity: &activityIndicatorGastoMesAnterior, label: &totalGastoMesAnterior)
+        IOGastoManager.loadGastosFromFirebase(mes: mesAnterior!, año: añoAnterior!, success: {
+            self.stopAnimatingActivity(activity: &self.activityIndicatorGastoMesAnterior, label: &self.totalGastoMesAnterior)
+            let totalSpendCurrentMonth = IOGastoManager.getTotalRegistros()
+            self.totalGastoMesAnterior.text = totalSpendCurrentMonth.formatoMoneda(decimales: 2, simbolo: "$")
+        }) { (errorMessage) in
+            self.stopAnimatingActivity(activity: &self.activityIndicatorGastoMesAnterior, label: &self.totalGastoMesAnterior)
+            print(errorMessage)
+            
+        }
+        
+        startAnimatingActivity(activity: &activityIndicatorGastoMesAnteriorAnterior, label: &totalGastoMesAnteriorAnterior)
+        IOGastoManager.loadGastosFromFirebase(mes: mesAnteriorAnterior!, año: añoAnteriorAnterior!, success: {
+            self.stopAnimatingActivity(activity: &self.activityIndicatorGastoMesAnteriorAnterior, label: &self.totalGastoMesAnteriorAnterior)
+            let totalSpendCurrentMonth = IOGastoManager.getTotalRegistros()
+            self.totalGastoMesAnteriorAnterior.text = totalSpendCurrentMonth.formatoMoneda(decimales: 2, simbolo: "$")
+        }) { (errorMessage) in
+            self.stopAnimatingActivity(activity: &self.activityIndicatorGastoMesAnteriorAnterior, label: &self.totalGastoMesAnteriorAnterior)
             print(errorMessage)
             
         }
     }
+    
     
     func stopAnimatingActivity(activity: inout UIActivityIndicatorView, label: inout UILabel) {
         activity.stopAnimating()
@@ -71,4 +114,55 @@ class TableViewCellHomeHeader: UITableViewCell {
         label.isHidden = true
     }
     
+}
+
+
+extension TableViewCellHomeHeader {
+    func showTotalIngresos(date: Date) {
+        
+        let mes = date.mes
+        let año = date.año
+        let restarUnMes = Calendar.current.date(byAdding: .month, value: -1, to: date)
+        let mesAnterior = restarUnMes?.mes
+        let añoAnterior = restarUnMes?.año
+        
+        let restarDosMes = Calendar.current.date(byAdding: .month, value: -2, to: date)
+        let mesAnteriorAnterior = restarDosMes?.mes
+        let añoAnteriorAnterior = restarDosMes?.año
+        
+        
+        startAnimatingActivity(activity: &activityIndicatorIngresoMes, label: &totalIngresoMes)
+        
+        IOGastoManager.loadGastosFromFirebase(mes: mes, año: año, success: {
+            self.stopAnimatingActivity(activity: &self.activityIndicatorIngresoMes, label: &self.totalIngresoMes)
+            let totalSpendCurrentMonth = IOIngresoManager.getTotalRegistros()
+            self.totalIngresoMes.text = totalSpendCurrentMonth.formatoMoneda(decimales: 2, simbolo: "$")
+        }) { (errorMessage) in
+            self.stopAnimatingActivity(activity: &self.activityIndicatorIngresoMes, label: &self.totalIngresoMes)
+            print(errorMessage)
+            
+        }
+        
+        startAnimatingActivity(activity: &activityIndicatorIngresoMesAnterior, label: &totalIngresoMesAnterior)
+        IOGastoManager.loadGastosFromFirebase(mes: mesAnterior!, año: añoAnterior!, success: {
+            self.stopAnimatingActivity(activity: &self.activityIndicatorIngresoMesAnterior, label: &self.totalIngresoMesAnterior)
+            let totalSpendCurrentMonth = IOIngresoManager.getTotalRegistros()
+            self.totalIngresoMesAnterior.text = totalSpendCurrentMonth.formatoMoneda(decimales: 2, simbolo: "$")
+        }) { (errorMessage) in
+            self.stopAnimatingActivity(activity: &self.activityIndicatorIngresoMesAnterior, label: &self.totalIngresoMesAnterior)
+            print(errorMessage)
+            
+        }
+        
+        startAnimatingActivity(activity: &activityIndicatorIngresoMesAnteriorAnterior, label: &totalIngresoMesAnteriorAnterior)
+        IOGastoManager.loadGastosFromFirebase(mes: mesAnteriorAnterior!, año: añoAnteriorAnterior!, success: {
+            self.stopAnimatingActivity(activity: &self.activityIndicatorIngresoMesAnteriorAnterior, label: &self.totalIngresoMesAnteriorAnterior)
+            let totalSpendCurrentMonth = IOIngresoManager.getTotalRegistros()
+            self.totalIngresoMesAnteriorAnterior.text = totalSpendCurrentMonth.formatoMoneda(decimales: 2, simbolo: "$")
+        }) { (errorMessage) in
+            self.stopAnimatingActivity(activity: &self.activityIndicatorIngresoMesAnteriorAnterior, label: &self.totalIngresoMesAnteriorAnterior)
+            print(errorMessage)
+            
+        }
+    }
 }

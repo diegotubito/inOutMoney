@@ -1,20 +1,21 @@
 //
-//  GastoManager.swift
+//  IngresoManager.swift
 //  InOutMoneyFirebase
 //
-//  Created by David Diego Gomez on 21/4/19.
+//  Created by David Diego Gomez on 23/4/19.
 //  Copyright © 2019 Gomez David Diego. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class IOGastoManager {
-    static var instance = IOGastoManager()
+
+class IOIngresoManager {
+    static var instance = IOIngresoManager()
     
     
-    static var registros = [RegistroGasto]()
+    static var registros = [RegistroIngreso]()
     
-    struct RegistroGasto : Decodable {
+    struct RegistroIngreso : Decodable {
         var childIDDebito : String?
         var childIDRubro : String?
         var descripcion : String?
@@ -30,30 +31,11 @@ class IOGastoManager {
     }
     
     
-//    func loadRegistersFromFirebase(with childIDRubro: String, success: @escaping () -> Void, fail: @escaping (String) -> Void) {
-//        MLFirebaseDatabaseService.retrieveDataWithFilter(path: UserID! + "/gastos/registros", keyName: "childIDRubro", value: childIDRubro) { (response, error) in
-//            if error != nil {
-//                fail(error?.localizedDescription ?? "Error")
-//                return
-//            }
-//
-//            if response != nil {
-//                for (key,value) in response! {
-//                    var registro = value as! [String : Any]
-//                    registro["childID"] = key
-//                    IORegistroManager.instance.parseRegistro(data: registro)
-//
-//                }
-//            }
-//            success()
-//        }
-//    }
-    
-    static func loadGastosFromFirebase(mes: Int, año: Int, success: @escaping () -> Void, fail: @escaping (String) -> Void) {
-    
-        let path = UserID! + "/gastos/registros"
+    static func loadRegistrosFromFirebase(mes: Int, año: Int, success: @escaping () -> Void, fail: @escaping (String) -> Void) {
+        
+        let path = UserID! + "/ingresos/registros"
         let queryKeyName = "queryByMonthYear"
-    
+        
         let nombreMes = MESES[mes]
         let añoStr = String(año)
         let periodo = nombreMes!+añoStr
@@ -68,11 +50,11 @@ class IOGastoManager {
                 fail("json nil")
                 return
             }
-    
+            
             do {
-              
+                
                 let data = try JSONSerialization.data(withJSONObject: json!, options: [])
-                registros = try JSONDecoder().decode([RegistroGasto].self, from: data)
+                registros = try JSONDecoder().decode([RegistroIngreso].self, from: data)
                 success()
             } catch {
                 print("error parsing: \(error.localizedDescription)")
@@ -94,11 +76,12 @@ class IOGastoManager {
         var result : Double = 0
         for i in registros {
             if i.childIDRubro == childIDRubro {
-               result += i.importe ?? 0
-           }
+                result += i.importe ?? 0
+            }
         }
         return result
     }
     
     
 }
+
