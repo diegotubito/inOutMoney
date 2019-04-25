@@ -17,6 +17,9 @@ class TableViewCellHomeHeader: UITableViewCell {
     @IBOutlet var activityIndicatorIngresoMesAnteriorAnterior: UIActivityIndicatorView!
     @IBOutlet var activityIndicatorIngresoMesAnterior: UIActivityIndicatorView!
     @IBOutlet var activityIndicatorIngresoMes: UIActivityIndicatorView!
+    @IBOutlet var nombreMes: UILabel!
+    @IBOutlet var nombreMesAnterior: UILabel!
+    @IBOutlet var nombreMesAnteriorAnterior: UILabel!
     
     @IBOutlet var totalGastoMes: UILabel!
     @IBOutlet var totalGastoMesAnterior: UILabel!
@@ -33,12 +36,14 @@ class TableViewCellHomeHeader: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        plusExpenditureOutlet.layer.cornerRadius = 5
-        plusIncomeOutlet.layer.cornerRadius = 5
+        plusExpenditureOutlet.layer.cornerRadius = plusExpenditureOutlet.frame.height/10
+        plusIncomeOutlet.layer.cornerRadius = plusIncomeOutlet.frame.height/10
         backgroundImage.layer.masksToBounds = true
-        backgroundImage.layer.cornerRadius = historyBackground.frame.height/20
+        backgroundImage.layer.cornerRadius = backgroundImage.frame.height/10
         historyBackground.layer.masksToBounds = true
-        historyBackground.layer.cornerRadius = 5
+        historyBackground.layer.cornerRadius = historyBackground.frame.height/10
+        historyBackground.layer.borderColor = UIColor.lightGray.cgColor
+        historyBackground.layer.borderWidth = 1
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -55,6 +60,8 @@ class TableViewCellHomeHeader: UITableViewCell {
         return UINib(nibName: identifier, bundle: nil)
     }
     
+  
+    
     func showTotalGasto(date: Date) {
         
         let mes = date.mes
@@ -67,6 +74,10 @@ class TableViewCellHomeHeader: UITableViewCell {
         let mesAnteriorAnterior = restarDosMes?.mes
         let añoAnteriorAnterior = restarDosMes?.año
         
+        
+        nombreMes.text = MESES[mes]
+        nombreMesAnterior.text = MESES[mesAnterior!]
+        nombreMesAnteriorAnterior.text = MESES[mesAnteriorAnterior!]
         
         startAnimatingActivity(activity: &activityIndicatorGastoMes, label: &totalGastoMes)
         

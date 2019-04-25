@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="377" height="190.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NZs-Zl-Ic8">
+                    <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NZs-Zl-Ic8">
                         <rect key="frame" x="0.0" y="0.0" width="377" height="190.5"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
@@ -125,6 +125,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="backgroundImage" destination="NZs-Zl-Ic8" id="H29-NP-oJ2"/>
                 <outlet property="totalBancoLabel" destination="7YC-nM-4Vn" id="eTE-qR-n3r"/>
                 <outlet property="totalEfectivoLabel" destination="VyW-8S-soi" id="ayy-qL-FAb"/>
             </connections>

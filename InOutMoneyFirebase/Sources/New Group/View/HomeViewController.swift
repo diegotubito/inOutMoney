@@ -23,8 +23,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Resumen"
+        
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 100
+        tableView.estimatedRowHeight = 60
         
         tableView.register(TableViewCellHomeHeader.nib, forCellReuseIdentifier: TableViewCellHomeHeader.identifier)
         tableView.register(TableViewCellCuentas.nib, forCellReuseIdentifier: TableViewCellCuentas.identifier)
@@ -81,6 +83,7 @@ class HomeViewController: UIViewController {
         cells.append(header)
         
         cuentas = tableView.dequeueReusableCell(withIdentifier: TableViewCellCuentas.identifier) as? TableViewCellCuentas
+        cuentas.loadTotalAccountFromFirebase()
         cuentas.totalBancoLabel.text = "$ 150,00"
         cuentas.totalEfectivoLabel.text = "$ 21.562,00"
         cells.append(cuentas)
@@ -106,7 +109,7 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return UIScreen.main.bounds.height*0.4
+            return UIScreen.main.bounds.height*0.30
             
         } else {
             return UIScreen.main.bounds.height*0.2

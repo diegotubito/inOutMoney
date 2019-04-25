@@ -177,57 +177,6 @@
                                 <constraint firstItem="KTA-5E-wHn" firstAttribute="width" secondItem="kRi-aZ-Ql2" secondAttribute="width" id="pgO-Z2-5gi"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1S-p8-VZO">
-                            <rect key="frame" x="16" y="188" width="187.5" height="100"/>
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallet" translatesAutoresizingMaskIntoConstraints="NO" id="C6l-MZ-nWR">
-                                    <rect key="frame" x="8" y="8" width="30" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="C6l-MZ-nWR" secondAttribute="height" multiplier="1:1" id="PDO-W9-9Wn"/>
-                                    </constraints>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 4500.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1l-6j-abV">
-                                    <rect key="frame" x="46" y="8" width="133.5" height="30"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bank" translatesAutoresizingMaskIntoConstraints="NO" id="XJY-ih-MiG">
-                                    <rect key="frame" x="8" y="46" width="30" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="XJY-ih-MiG" secondAttribute="height" multiplier="1:1" id="ne0-dQ-o0E"/>
-                                    </constraints>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 64.500,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OqP-BB-4EX">
-                                    <rect key="frame" x="46" y="53.5" width="133.5" height="14.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="OqP-BB-4EX" secondAttribute="trailing" constant="8" id="3tm-FG-MjS"/>
-                                <constraint firstItem="y1l-6j-abV" firstAttribute="top" secondItem="M1S-p8-VZO" secondAttribute="top" constant="8" id="9l6-x7-TyC"/>
-                                <constraint firstItem="y1l-6j-abV" firstAttribute="centerY" secondItem="C6l-MZ-nWR" secondAttribute="centerY" id="BLo-p8-rh5"/>
-                                <constraint firstItem="OqP-BB-4EX" firstAttribute="leading" secondItem="XJY-ih-MiG" secondAttribute="trailing" constant="8" id="HSm-Gf-Cgu"/>
-                                <constraint firstItem="XJY-ih-MiG" firstAttribute="top" secondItem="C6l-MZ-nWR" secondAttribute="bottom" constant="8" id="Sqp-Km-WfC"/>
-                                <constraint firstItem="y1l-6j-abV" firstAttribute="leading" secondItem="C6l-MZ-nWR" secondAttribute="trailing" constant="8" id="WCU-dx-q9q"/>
-                                <constraint firstItem="C6l-MZ-nWR" firstAttribute="top" secondItem="M1S-p8-VZO" secondAttribute="top" constant="8" id="X8w-6u-UZA"/>
-                                <constraint firstItem="XJY-ih-MiG" firstAttribute="leading" secondItem="M1S-p8-VZO" secondAttribute="leading" constant="8" id="ner-Gx-ONh"/>
-                                <constraint firstItem="C6l-MZ-nWR" firstAttribute="leading" secondItem="M1S-p8-VZO" secondAttribute="leading" constant="8" id="pQ4-u0-vgg"/>
-                                <constraint firstItem="XJY-ih-MiG" firstAttribute="height" secondItem="M1S-p8-VZO" secondAttribute="height" multiplier="0.3" id="pdG-pj-sRt"/>
-                                <constraint firstItem="C6l-MZ-nWR" firstAttribute="height" secondItem="M1S-p8-VZO" secondAttribute="height" multiplier="0.3" id="vIi-21-yKU"/>
-                                <constraint firstItem="OqP-BB-4EX" firstAttribute="centerY" secondItem="XJY-ih-MiG" secondAttribute="centerY" id="ybS-1O-RcS"/>
-                                <constraint firstAttribute="trailing" secondItem="y1l-6j-abV" secondAttribute="trailing" constant="8" id="zdW-gX-xzY"/>
-                            </constraints>
-                        </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="última vez conectado : 31-12-2019 13:54:23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="hSn-cI-nX5">
-                            <rect key="frame" x="16" y="294.5" width="187.5" height="23"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -236,18 +185,12 @@
                         <constraint firstItem="kRi-aZ-Ql2" firstAttribute="width" secondItem="lgY-7x-cpn" secondAttribute="width" multiplier="0.25" id="2bf-bm-abB"/>
                         <constraint firstItem="lgY-7x-cpn" firstAttribute="leading" secondItem="FTE-a6-dg4" secondAttribute="leading" id="6TS-DR-l61"/>
                         <constraint firstItem="kRi-aZ-Ql2" firstAttribute="leading" secondItem="FTE-a6-dg4" secondAttribute="leading" constant="16" id="74Q-lD-IeS"/>
-                        <constraint firstItem="M1S-p8-VZO" firstAttribute="leading" secondItem="FTE-a6-dg4" secondAttribute="leading" constant="16" id="7TH-j0-6md"/>
-                        <constraint firstItem="M1S-p8-VZO" firstAttribute="top" secondItem="kRi-aZ-Ql2" secondAttribute="bottom" constant="16" id="8Am-G5-wA5"/>
-                        <constraint firstItem="hSn-cI-nX5" firstAttribute="leading" secondItem="FTE-a6-dg4" secondAttribute="leading" constant="16" id="BZ0-Rk-2Cw"/>
-                        <constraint firstAttribute="bottom" secondItem="hSn-cI-nX5" secondAttribute="bottom" constant="16" id="CjA-QE-DIe"/>
                         <constraint firstItem="rmN-um-x0n" firstAttribute="width" secondItem="lgY-7x-cpn" secondAttribute="width" multiplier="0.25" id="LhD-4W-oM3"/>
                         <constraint firstItem="dam-vr-5dU" firstAttribute="top" secondItem="FTE-a6-dg4" secondAttribute="top" constant="16" id="MU0-Ue-j0e"/>
                         <constraint firstItem="dam-vr-5dU" firstAttribute="leading" secondItem="FTE-a6-dg4" secondAttribute="leading" constant="16" id="UEH-Z6-WzS"/>
                         <constraint firstAttribute="trailing" secondItem="lgY-7x-cpn" secondAttribute="trailing" id="WQI-UD-MN3"/>
-                        <constraint firstItem="M1S-p8-VZO" firstAttribute="width" secondItem="lgY-7x-cpn" secondAttribute="width" multiplier="0.5" id="abt-b8-g42"/>
                         <constraint firstItem="rmN-um-x0n" firstAttribute="top" secondItem="dam-vr-5dU" secondAttribute="bottom" constant="16" id="ilN-Cx-Vel"/>
                         <constraint firstAttribute="trailing" secondItem="dam-vr-5dU" secondAttribute="trailing" constant="16" id="prr-Mu-Amf"/>
-                        <constraint firstItem="hSn-cI-nX5" firstAttribute="width" secondItem="lgY-7x-cpn" secondAttribute="width" multiplier="0.5" id="ugD-QX-v4k"/>
                         <constraint firstItem="lgY-7x-cpn" firstAttribute="top" secondItem="FTE-a6-dg4" secondAttribute="top" id="vmt-H4-YoX"/>
                         <constraint firstAttribute="bottom" secondItem="lgY-7x-cpn" secondAttribute="bottom" id="w4q-sZ-hQl"/>
                     </constraints>
@@ -256,7 +199,6 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="dam-vr-5dU" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.15" id="817-hc-J7q"/>
-                <constraint firstItem="M1S-p8-VZO" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.15" id="AQg-Bk-G4I"/>
                 <constraint firstItem="FTE-a6-dg4" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="GBh-yc-gr7"/>
                 <constraint firstItem="FTE-a6-dg4" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="GPh-gA-oPg"/>
                 <constraint firstItem="FTE-a6-dg4" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="UGQ-tl-qgK"/>
@@ -269,8 +211,6 @@
         </view>
     </objects>
     <resources>
-        <image name="bank" width="1663" height="1109"/>
         <image name="degrade" width="2244" height="2640"/>
-        <image name="wallet" width="1024" height="1024"/>
     </resources>
 </document>

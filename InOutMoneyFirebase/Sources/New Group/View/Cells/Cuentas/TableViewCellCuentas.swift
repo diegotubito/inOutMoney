@@ -9,12 +9,14 @@
 import UIKit
 
 class TableViewCellCuentas: UITableViewCell {
-
+    @IBOutlet var backgroundImage: UIImageView!
+    
     @IBOutlet var totalEfectivoLabel: UILabel!
     @IBOutlet var totalBancoLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        backgroundImage.layer.cornerRadius = backgroundImage.frame.height/10
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,6 +31,23 @@ class TableViewCellCuentas: UITableViewCell {
     
     static var nib: UINib {
         return UINib(nibName: identifier, bundle: nil)
+    }
+    
+    func loadTotalAccountFromFirebase() {
+        MLFirebaseDatabaseService.retrieveData(path: UserID! + "/cuentas") { (response, error) in
+            
+            guard error == nil else {
+                print(error?.localizedDescription)
+                return
+            }
+            
+            guard response != nil else {
+                print("vacio")
+                return
+            }
+            
+            print(response)
+        }
     }
     
 }
