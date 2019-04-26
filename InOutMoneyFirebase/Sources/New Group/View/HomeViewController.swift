@@ -84,9 +84,7 @@ class HomeViewController: UIViewController {
         
         cuentas = tableView.dequeueReusableCell(withIdentifier: TableViewCellCuentas.identifier) as? TableViewCellCuentas
         cuentas.loadTotalAccountFromFirebase()
-        cuentas.totalBancoLabel.text = "$ 150,00"
-        cuentas.totalEfectivoLabel.text = "$ 21.562,00"
-        cells.append(cuentas)
+         cells.append(cuentas)
     }
     
     func toast(message: String) {
