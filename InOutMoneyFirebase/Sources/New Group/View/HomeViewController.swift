@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     
     var authListener : AuthStateDidChangeListenerHandle!
     var service : IOLoginFirebaseService!
+
     
     
     override func viewDidLoad() {
@@ -49,10 +50,17 @@ class HomeViewController: UIViewController {
             } else {
                 print("you are logged in \(String(describing: user?.uid))")
                 
+                //check if this is the first time app execution
+                
+                do {
+                    try IORubroManager.createDefaultRubrosToFirebase(path: UserID! + "/gastos/rubros")
+                } catch {
+                    print(error.localizedDescription)
+                }
             }
         }
     }
-    
+  
     @IBAction func log_out_pressed(_ sender: Any) {
         
         service.signOut(success: {
@@ -80,10 +88,14 @@ class HomeViewController: UIViewController {
         
         header.showTotalGasto(date: Date())
         header.showTotalIngresos(date: Date())
+         header.delegate = self
         cells.append(header)
         
         cuentas = tableView.dequeueReusableCell(withIdentifier: TableViewCellCuentas.identifier) as? TableViewCellCuentas
         cuentas.loadTotalAccountFromFirebase()
+        
+       
+        
          cells.append(cuentas)
     }
     
@@ -113,4 +125,35 @@ extension HomeViewController: UITableViewDelegate {
             return UIScreen.main.bounds.height*0.2
         }
     }
+}
+
+
+extension HomeViewController: TabaleViewCellHomeHeaderDelegate {
+    func buttonPressed(sender: TableViewCellHomeHeader.ButtonType) {
+        switch sender {
+        case .gasto:
+            let frameSelector = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+            let parameters = DDSelectorParameters(isBlurred: true, bouncing: true)
+            let mySelector = DDSelector(frame: frameSelector, parameters: parameters)
+        
+            let array = IORubroManager.rubros.compactMap({ $0.descripcion })
+            mySelector.itemList = array
+            mySelector.selectedItem = nil
+//            view.addSubview(mySelector)
+
+            UIApplication.shared.keyWindow?.addSubview(mySelector)
+            
+            mySelector.onSelectedItem = ({index -> Void in
+                if index != nil {
+                    self.performSegue(withIdentifier: "segue_gasto", sender: nil)
+                }
+            })
+            
+            break
+        case .ingreso:
+            break
+        }
+    }
+    
+  
 }

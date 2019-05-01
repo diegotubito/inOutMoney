@@ -13,7 +13,7 @@
         <!--Home View Controller-->
         <scene sceneID="DFG-p9-utI">
             <objects>
-                <viewController id="sGi-w1-Siw" customClass="HomeViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sGi-w1-Siw" customClass="HomeViewController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JjW-4F-DZS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,11 +45,53 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="j48-Gp-Mk3" id="6jg-GJ-bvM"/>
+                        <segue destination="LSW-cy-oCo" kind="show" identifier="segue_gasto" id="rN3-Gn-TGZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sS7-q1-ElK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="84" y="131.78410794602701"/>
+        </scene>
+        <!--Rubros Gastos Alta View Controller-->
+        <scene sceneID="Rhq-zb-GaA">
+            <objects>
+                <viewController id="LSW-cy-oCo" customClass="IORubrosGastosAltaViewController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lTz-lf-z0I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="degrade" translatesAutoresizingMaskIntoConstraints="NO" id="Lcj-gu-4Qr">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XL8-yG-NdG">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="LSW-cy-oCo" id="0ht-A2-Qdh"/>
+                                    <outlet property="delegate" destination="LSW-cy-oCo" id="aVz-4H-hYH"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Lcj-gu-4Qr" firstAttribute="leading" secondItem="0j3-Xa-TqU" secondAttribute="leading" id="REh-ST-ZDe"/>
+                            <constraint firstItem="0j3-Xa-TqU" firstAttribute="bottom" secondItem="Lcj-gu-4Qr" secondAttribute="bottom" id="WYO-wN-FMn"/>
+                            <constraint firstItem="XL8-yG-NdG" firstAttribute="leading" secondItem="0j3-Xa-TqU" secondAttribute="leading" id="Wbg-Df-W2K"/>
+                            <constraint firstItem="XL8-yG-NdG" firstAttribute="top" secondItem="0j3-Xa-TqU" secondAttribute="top" id="dt2-pj-qns"/>
+                            <constraint firstItem="0j3-Xa-TqU" firstAttribute="trailing" secondItem="XL8-yG-NdG" secondAttribute="trailing" id="eJM-sl-1jM"/>
+                            <constraint firstItem="Lcj-gu-4Qr" firstAttribute="top" secondItem="0j3-Xa-TqU" secondAttribute="top" id="koV-ev-oW7"/>
+                            <constraint firstItem="0j3-Xa-TqU" firstAttribute="bottom" secondItem="XL8-yG-NdG" secondAttribute="bottom" id="r3E-es-dUn"/>
+                            <constraint firstItem="0j3-Xa-TqU" firstAttribute="trailing" secondItem="Lcj-gu-4Qr" secondAttribute="trailing" id="zEb-CS-Vxw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0j3-Xa-TqU"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="XL8-yG-NdG" id="Wws-rc-PC0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yCJ-6W-Z4t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="917.60000000000002" y="131.78410794602701"/>
         </scene>
     </scenes>
     <resources>

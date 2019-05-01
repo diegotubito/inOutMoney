@@ -13,7 +13,7 @@
         <!--Rubros Profile View Controller-->
         <scene sceneID="mUy-Ak-Wy4">
             <objects>
-                <viewController id="TPQ-mJ-6go" customClass="IORubrosProfileViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TPQ-mJ-6go" customClass="IORubrosProfileViewController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xwg-lV-Thp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,7 +51,7 @@
         <!--Detalle Registro Gasto View Controller-->
         <scene sceneID="rAa-dU-nRg">
             <objects>
-                <viewController id="9aH-Qo-Xkv" customClass="IODetalleRegistroGastoViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9aH-Qo-Xkv" customClass="IODetalleRegistroGastoViewController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hZh-7W-UnO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,12 +80,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uwn-ZN-xvH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1666" y="-3"/>
+            <point key="canvasLocation" x="1610" y="8"/>
         </scene>
         <!--Rubros Gastos Alta View Controller-->
         <scene sceneID="DYD-JB-5sB">
             <objects>
-                <viewController id="vCU-OX-0MR" customClass="IORubrosGastosAltaViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vCU-OX-0MR" customClass="IORubrosGastosAltaViewController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cOF-st-Jgs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,7 +119,7 @@
         <!--Borrar Rubro Gasto View Controller-->
         <scene sceneID="RlK-di-6mo">
             <objects>
-                <viewController id="tFU-FN-Dq4" customClass="IOBorrarRubroGastoViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tFU-FN-Dq4" customClass="IOBorrarRubroGastoViewController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QdV-0B-9sM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,7 +176,7 @@
         <!--Mover Registro Gasto View Controller-->
         <scene sceneID="Qz2-z7-2Rm">
             <objects>
-                <viewController id="wus-Z7-dLZ" customClass="IOMoverRegistroGastoViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wus-Z7-dLZ" customClass="IOMoverRegistroGastoViewController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8ev-TG-gOX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

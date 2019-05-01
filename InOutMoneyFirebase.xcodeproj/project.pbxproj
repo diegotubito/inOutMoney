@@ -64,7 +64,6 @@
 		840420E222729BB4007E7756 /* configEncriptar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280D4220FB24600C85A6A /* configEncriptar.swift */; };
 		840420E322729BB4007E7756 /* extensiones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280DB220FB24600C85A6A /* extensiones.swift */; };
 		840420E422729BB4007E7756 /* MLNotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84027FC2220F4A9700C85A6A /* MLNotificationNames.swift */; };
-		840420E522729BB4007E7756 /* DDSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF6351226BDB6D00FED9DA /* DDSelector.swift */; };
 		840420E622729BB4007E7756 /* IORubrosProfileViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEEA4B221E63E5001F98E9 /* IORubrosProfileViewModelContract.swift */; };
 		840420E722729BB4007E7756 /* examplesStorageFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280E4220FB24600C85A6A /* examplesStorageFunctions.swift */; };
 		840420E822729BB4007E7756 /* IOTableViewCellHeaderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEEA52221FAC5A001F98E9 /* IOTableViewCellHeaderInfo.swift */; };
@@ -112,7 +111,6 @@
 		8404211222729BB4007E7756 /* HeaderHomeCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402F8F4226D131D001CD037 /* HeaderHomeCustomView.swift */; };
 		8404211322729BB4007E7756 /* labelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA1241222307320040B78B /* labelExtension.swift */; };
 		8404211422729BB4007E7756 /* IOBorrarRubroGastoViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD7F9B222F859C00FF6A50 /* IOBorrarRubroGastoViewModelContract.swift */; };
-		8404211522729BB4007E7756 /* TableViewCellSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84457FC9226C08380031F539 /* TableViewCellSelector.swift */; };
 		8404211622729BB4007E7756 /* viewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840268542206A7BF00EF6070 /* viewExtensions.swift */; };
 		8404211722729BB4007E7756 /* PCMensualViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA123A222306230040B78B /* PCMensualViewModelContract.swift */; };
 		8404211822729BB4007E7756 /* IOTableViewCellCuentaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4178A222C9DDB000214E8 /* IOTableViewCellCuentaInfo.swift */; };
@@ -156,14 +154,12 @@
 		8404214022729BB4007E7756 /* IOTableViewCellHeaderInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EEEA53221FAC5A001F98E9 /* IOTableViewCellHeaderInfo.xib */; };
 		8404214122729BB4007E7756 /* IOTableViewCellBotonGuardar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CA12452223098B0040B78B /* IOTableViewCellBotonGuardar.xib */; };
 		8404214222729BB4007E7756 /* gastosStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840FF26122185DBD006B809A /* gastosStoryboard.storyboard */; };
-		8404214322729BB4007E7756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84594EF021DC64670019C9B9 /* Assets.xcassets */; };
 		8404214422729BB4007E7756 /* HeaderHomeCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8402F8F2226D1312001CD037 /* HeaderHomeCustomView.xib */; };
 		8404214522729BB4007E7756 /* IOTableViewCellRegistrosGastos.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CA12072220FDAD0040B78B /* IOTableViewCellRegistrosGastos.xib */; };
 		8404214622729BB4007E7756 /* IOTableViewCellSingleDataEntry.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CA12202222F2EF0040B78B /* IOTableViewCellSingleDataEntry.xib */; };
 		8404214722729BB4007E7756 /* IOTableViewCellSingleDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CA122B2222FEDC0040B78B /* IOTableViewCellSingleDateCell.xib */; };
 		8404214822729BB4007E7756 /* IOTableViewCellOwnHeaderHome.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CFD323222D85C4004CE810 /* IOTableViewCellOwnHeaderHome.xib */; };
 		8404214922729BB4007E7756 /* IOTableViewCellSinglePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CA124A22238A2D0040B78B /* IOTableViewCellSinglePicker.xib */; };
-		8404214A22729BB4007E7756 /* TableViewCellSelector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84457FCA226C08380031F539 /* TableViewCellSelector.xib */; };
 		8404214B22729BB4007E7756 /* IOTableViewCellSingleSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CA12262222FB3B0040B78B /* IOTableViewCellSingleSwitchCell.xib */; };
 		8404214C22729BB4007E7756 /* StoryboardHome2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8484BC03226AE72200C20E40 /* StoryboardHome2.storyboard */; };
 		8404214D22729BB4007E7756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84594EEA21DC64650019C9B9 /* Main.storyboard */; };
@@ -190,13 +186,10 @@
 		842EFAF0223433B400DA8104 /* IODetalleRegistroViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EFAEF223433B400DA8104 /* IODetalleRegistroViewModelContract.swift */; };
 		842EFAF2223433C100DA8104 /* IODetalleRegistroGastoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EFAF1223433C100DA8104 /* IODetalleRegistroGastoViewModel.swift */; };
 		842EFAF4223433D200DA8104 /* IODetalleRegistroGastoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EFAF3223433D200DA8104 /* IODetalleRegistroGastoViewController.swift */; };
-		84457FCB226C08380031F539 /* TableViewCellSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84457FC9226C08380031F539 /* TableViewCellSelector.swift */; };
-		84457FCC226C08380031F539 /* TableViewCellSelector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84457FCA226C08380031F539 /* TableViewCellSelector.xib */; };
 		84594EE721DC64650019C9B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84594EE621DC64650019C9B9 /* AppDelegate.swift */; };
 		84594EE921DC64650019C9B9 /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84594EE821DC64650019C9B9 /* homeViewController.swift */; };
 		84594EEC21DC64650019C9B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84594EEA21DC64650019C9B9 /* Main.storyboard */; };
 		84594EEF21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84594EED21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld */; };
-		84594EF121DC64670019C9B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84594EF021DC64670019C9B9 /* Assets.xcassets */; };
 		84594EF421DC64670019C9B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84594EF221DC64670019C9B9 /* LaunchScreen.storyboard */; };
 		8484BC04226AE72200C20E40 /* StoryboardHome2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8484BC03226AE72200C20E40 /* StoryboardHome2.storyboard */; };
 		8484BC06226AE76200C20E40 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484BC05226AE76200C20E40 /* HomeModel.swift */; };
@@ -256,6 +249,16 @@
 		84CFD331222DD24F004CE810 /* IOAltaRubroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFD330222DD24F004CE810 /* IOAltaRubroViewController.swift */; };
 		84D4E3312274D6B800CEF2BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84D4E3302274D6B800CEF2BF /* GoogleService-Info.plist */; };
 		84D4E3332274D6CD00CEF2BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84D4E3322274D6CD00CEF2BF /* GoogleService-Info.plist */; };
+		84D4E33D2274DB0800CEF2BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84594EF021DC64670019C9B9 /* Assets.xcassets */; };
+		84D4E33F2278984200CEF2BF /* cuentaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4E33E2278984200CEF2BF /* cuentaManager.swift */; };
+		84D4E34022789B3B00CEF2BF /* cuentaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4E33E2278984200CEF2BF /* cuentaManager.swift */; };
+		84D4E3412279198F00CEF2BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84594EF021DC64670019C9B9 /* Assets.xcassets */; };
+		84D4E4D82279FDD100CEF2BF /* TableViewCellSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4E4D52279FDD100CEF2BF /* TableViewCellSelector.swift */; };
+		84D4E4D92279FDD100CEF2BF /* TableViewCellSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4E4D52279FDD100CEF2BF /* TableViewCellSelector.swift */; };
+		84D4E4DA2279FDD100CEF2BF /* TableViewCellSelector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D4E4D62279FDD100CEF2BF /* TableViewCellSelector.xib */; };
+		84D4E4DB2279FDD100CEF2BF /* TableViewCellSelector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D4E4D62279FDD100CEF2BF /* TableViewCellSelector.xib */; };
+		84D4E4DC2279FDD100CEF2BF /* DDSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4E4D72279FDD100CEF2BF /* DDSelector.swift */; };
+		84D4E4DD2279FDD100CEF2BF /* DDSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4E4D72279FDD100CEF2BF /* DDSelector.swift */; };
 		84DABE162210B6C90024B112 /* toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DABE152210B6C90024B112 /* toast.swift */; };
 		84E41786222C42D0000214E8 /* IORubroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E41785222C42D0000214E8 /* IORubroModel.swift */; };
 		84E41789222C74B3000214E8 /* IORegistroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E41788222C74B3000214E8 /* IORegistroManager.swift */; };
@@ -274,7 +277,6 @@
 		84FD53842203F37500DC102A /* StoryboardLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FD53832203F37500DC102A /* StoryboardLogin.storyboard */; };
 		84FF634E226AEA7000FED9DA /* TableViewCellHomeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF634C226AEA7000FED9DA /* TableViewCellHomeHeader.swift */; };
 		84FF634F226AEA7000FED9DA /* TableViewCellHomeHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FF634D226AEA7000FED9DA /* TableViewCellHomeHeader.xib */; };
-		84FF6352226BDB6D00FED9DA /* DDSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF6351226BDB6D00FED9DA /* DDSelector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -330,14 +332,12 @@
 		842EFAEF223433B400DA8104 /* IODetalleRegistroViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IODetalleRegistroViewModelContract.swift; sourceTree = "<group>"; };
 		842EFAF1223433C100DA8104 /* IODetalleRegistroGastoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IODetalleRegistroGastoViewModel.swift; sourceTree = "<group>"; };
 		842EFAF3223433D200DA8104 /* IODetalleRegistroGastoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IODetalleRegistroGastoViewController.swift; sourceTree = "<group>"; };
-		84457FC9226C08380031F539 /* TableViewCellSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellSelector.swift; sourceTree = "<group>"; };
-		84457FCA226C08380031F539 /* TableViewCellSelector.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellSelector.xib; sourceTree = "<group>"; };
 		84594EE321DC64650019C9B9 /* ReleaseVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReleaseVersion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84594EE621DC64650019C9B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84594EE821DC64650019C9B9 /* homeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
 		84594EEB21DC64650019C9B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84594EEE21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InOutMoneyFirebase.xcdatamodel; sourceTree = "<group>"; };
-		84594EF021DC64670019C9B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84594EF021DC64670019C9B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/diegodavid_77/mis software en disco/Iphone/InOutMoneyFirebase/InOutMoneyFirebase/Assets.xcassets"; sourceTree = "<absolute>"; };
 		84594EF321DC64670019C9B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84594EF521DC64670019C9B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8484BC03226AE72200C20E40 /* StoryboardHome2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardHome2.storyboard; sourceTree = "<group>"; };
@@ -398,6 +398,10 @@
 		84CFD330222DD24F004CE810 /* IOAltaRubroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOAltaRubroViewController.swift; sourceTree = "<group>"; };
 		84D4E3302274D6B800CEF2BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84D4E3322274D6CD00CEF2BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84D4E33E2278984200CEF2BF /* cuentaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cuentaManager.swift; sourceTree = "<group>"; };
+		84D4E4D52279FDD100CEF2BF /* TableViewCellSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellSelector.swift; sourceTree = "<group>"; };
+		84D4E4D62279FDD100CEF2BF /* TableViewCellSelector.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellSelector.xib; sourceTree = "<group>"; };
+		84D4E4D72279FDD100CEF2BF /* DDSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDSelector.swift; sourceTree = "<group>"; };
 		84DABE152210B6C90024B112 /* toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = toast.swift; sourceTree = "<group>"; };
 		84E41785222C42D0000214E8 /* IORubroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubroModel.swift; sourceTree = "<group>"; };
 		84E41788222C74B3000214E8 /* IORegistroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORegistroManager.swift; sourceTree = "<group>"; };
@@ -416,7 +420,6 @@
 		84FD53832203F37500DC102A /* StoryboardLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardLogin.storyboard; sourceTree = "<group>"; };
 		84FF634C226AEA7000FED9DA /* TableViewCellHomeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellHomeHeader.swift; sourceTree = "<group>"; };
 		84FF634D226AEA7000FED9DA /* TableViewCellHomeHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellHomeHeader.xib; sourceTree = "<group>"; };
-		84FF6351226BDB6D00FED9DA /* DDSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDSelector.swift; sourceTree = "<group>"; };
 		D3C6A17853DDA48318A6E934 /* Pods-InOutMoneyFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InOutMoneyFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InOutMoneyFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -550,7 +553,7 @@
 		840280D0220FB24600C85A6A /* MyLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				84FF6350226BDACD00FED9DA /* Selector */,
+				84D4E4D32279FDD100CEF2BF /* Selector */,
 				84CA122E222306230040B78B /* PremiumCalendar */,
 				84DABE142210B6C90024B112 /* Toast */,
 				84027FC1220F4A6300C85A6A /* NotificationCenter */,
@@ -725,6 +728,7 @@
 			children = (
 				8402F8FA226D36F0001CD037 /* GastoManager.swift */,
 				849F54ED226EC65600DBAB50 /* IngresoManager.swift */,
+				84D4E33E2278984200CEF2BF /* cuentaManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -832,15 +836,6 @@
 				842EFAED2234339900DA8104 /* IODetalleRegistroGastoModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		84457FCD226C35B20031F539 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				84457FC9226C08380031F539 /* TableViewCellSelector.swift */,
-				84457FCA226C08380031F539 /* TableViewCellSelector.xib */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		84594EDA21DC64650019C9B9 = {
@@ -1255,6 +1250,24 @@
 			path = Debug;
 			sourceTree = "<group>";
 		};
+		84D4E4D32279FDD100CEF2BF /* Selector */ = {
+			isa = PBXGroup;
+			children = (
+				84D4E4D42279FDD100CEF2BF /* Cells */,
+				84D4E4D72279FDD100CEF2BF /* DDSelector.swift */,
+			);
+			path = Selector;
+			sourceTree = "<group>";
+		};
+		84D4E4D42279FDD100CEF2BF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84D4E4D52279FDD100CEF2BF /* TableViewCellSelector.swift */,
+				84D4E4D62279FDD100CEF2BF /* TableViewCellSelector.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		84DABE142210B6C90024B112 /* Toast */ = {
 			isa = PBXGroup;
 			children = (
@@ -1453,15 +1466,6 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
-		84FF6350226BDACD00FED9DA /* Selector */ = {
-			isa = PBXGroup;
-			children = (
-				84FF6351226BDB6D00FED9DA /* DDSelector.swift */,
-				84457FCD226C35B20031F539 /* Cells */,
-			);
-			path = Selector;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1548,19 +1552,19 @@
 				84D4E3312274D6B800CEF2BF /* GoogleService-Info.plist in Resources */,
 				8404214022729BB4007E7756 /* IOTableViewCellHeaderInfo.xib in Resources */,
 				8404214122729BB4007E7756 /* IOTableViewCellBotonGuardar.xib in Resources */,
+				84D4E4DB2279FDD100CEF2BF /* TableViewCellSelector.xib in Resources */,
 				8404214222729BB4007E7756 /* gastosStoryboard.storyboard in Resources */,
-				8404214322729BB4007E7756 /* Assets.xcassets in Resources */,
 				8404214422729BB4007E7756 /* HeaderHomeCustomView.xib in Resources */,
 				8404214522729BB4007E7756 /* IOTableViewCellRegistrosGastos.xib in Resources */,
 				8404214622729BB4007E7756 /* IOTableViewCellSingleDataEntry.xib in Resources */,
 				8404214722729BB4007E7756 /* IOTableViewCellSingleDateCell.xib in Resources */,
 				8404214822729BB4007E7756 /* IOTableViewCellOwnHeaderHome.xib in Resources */,
 				8404214922729BB4007E7756 /* IOTableViewCellSinglePicker.xib in Resources */,
-				8404214A22729BB4007E7756 /* TableViewCellSelector.xib in Resources */,
 				8404214B22729BB4007E7756 /* IOTableViewCellSingleSwitchCell.xib in Resources */,
 				8404214C22729BB4007E7756 /* StoryboardHome2.storyboard in Resources */,
 				8404214D22729BB4007E7756 /* Main.storyboard in Resources */,
 				8404214F22729BB4007E7756 /* TableViewCellLoginUsuario.xib in Resources */,
+				84D4E33D2274DB0800CEF2BF /* Assets.xcassets in Resources */,
 				8404215022729BB4007E7756 /* TableViewCellCuentas.xib in Resources */,
 				8404215122729BB4007E7756 /* TableViewCellHomeHeader.xib in Resources */,
 				8404215222729BB4007E7756 /* IOTableViewCellHomeRubroGasto.xib in Resources */,
@@ -1583,19 +1587,19 @@
 				84EEEA55221FAC5A001F98E9 /* IOTableViewCellHeaderInfo.xib in Resources */,
 				84CA12472223098B0040B78B /* IOTableViewCellBotonGuardar.xib in Resources */,
 				840FF26222185DBD006B809A /* gastosStoryboard.storyboard in Resources */,
-				84594EF121DC64670019C9B9 /* Assets.xcassets in Resources */,
+				84D4E4DA2279FDD100CEF2BF /* TableViewCellSelector.xib in Resources */,
 				8402F8F3226D1312001CD037 /* HeaderHomeCustomView.xib in Resources */,
 				84CA12092220FDAD0040B78B /* IOTableViewCellRegistrosGastos.xib in Resources */,
 				84CA12222222F2EF0040B78B /* IOTableViewCellSingleDataEntry.xib in Resources */,
 				84CA122D2222FEDC0040B78B /* IOTableViewCellSingleDateCell.xib in Resources */,
 				84CFD325222D85C4004CE810 /* IOTableViewCellOwnHeaderHome.xib in Resources */,
 				84CA124C22238A2D0040B78B /* IOTableViewCellSinglePicker.xib in Resources */,
-				84457FCC226C08380031F539 /* TableViewCellSelector.xib in Resources */,
 				84CA12282222FB3B0040B78B /* IOTableViewCellSingleSwitchCell.xib in Resources */,
 				8484BC04226AE72200C20E40 /* StoryboardHome2.storyboard in Resources */,
 				84594EEC21DC64650019C9B9 /* Main.storyboard in Resources */,
 				8402685322068ECC00EF6070 /* TableViewCellLoginUsuario.xib in Resources */,
 				849F54F5226FFFCB00DBAB50 /* TableViewCellCuentas.xib in Resources */,
+				84D4E3412279198F00CEF2BF /* Assets.xcassets in Resources */,
 				84FF634F226AEA7000FED9DA /* TableViewCellHomeHeader.xib in Resources */,
 				84E41792222CA998000214E8 /* IOTableViewCellHomeRubroGasto.xib in Resources */,
 				8402811D220FC81600C85A6A /* IOTableViewCellSingleTextField.xib in Resources */,
@@ -1714,6 +1718,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D4E4DD2279FDD100CEF2BF /* DDSelector.swift in Sources */,
 				840420D122729BB4007E7756 /* IORubrosProfileViewModel.swift in Sources */,
 				840420D222729BB4007E7756 /* IOTableViewCellSingleDateCell.swift in Sources */,
 				840420D322729BB4007E7756 /* IODetalleRegistroGastoModel.swift in Sources */,
@@ -1725,6 +1730,7 @@
 				840420D922729BB4007E7756 /* IOAltaRubroViewModelContract.swift in Sources */,
 				840420DA22729BB4007E7756 /* IONuevoUsuarioModel.swift in Sources */,
 				840420DB22729BB4007E7756 /* progressIndicator.swift in Sources */,
+				84D4E34022789B3B00CEF2BF /* cuentaManager.swift in Sources */,
 				840420DC22729BB4007E7756 /* IOTableViewCellOwnHeaderHome.swift in Sources */,
 				840420DD22729BB4007E7756 /* IOTableViewCellRegistrosGastos.swift in Sources */,
 				840420DE22729BB4007E7756 /* IOLoginUsuarioViewModel.swift in Sources */,
@@ -1734,7 +1740,6 @@
 				840420E222729BB4007E7756 /* configEncriptar.swift in Sources */,
 				840420E322729BB4007E7756 /* extensiones.swift in Sources */,
 				840420E422729BB4007E7756 /* MLNotificationNames.swift in Sources */,
-				840420E522729BB4007E7756 /* DDSelector.swift in Sources */,
 				840420E622729BB4007E7756 /* IORubrosProfileViewModelContract.swift in Sources */,
 				840420E722729BB4007E7756 /* examplesStorageFunctions.swift in Sources */,
 				840420E822729BB4007E7756 /* IOTableViewCellHeaderInfo.swift in Sources */,
@@ -1782,7 +1787,6 @@
 				8404211222729BB4007E7756 /* HeaderHomeCustomView.swift in Sources */,
 				8404211322729BB4007E7756 /* labelExtension.swift in Sources */,
 				8404211422729BB4007E7756 /* IOBorrarRubroGastoViewModelContract.swift in Sources */,
-				8404211522729BB4007E7756 /* TableViewCellSelector.swift in Sources */,
 				8404211622729BB4007E7756 /* viewExtensions.swift in Sources */,
 				8404211722729BB4007E7756 /* PCMensualViewModelContract.swift in Sources */,
 				8404211822729BB4007E7756 /* IOTableViewCellCuentaInfo.swift in Sources */,
@@ -1796,6 +1800,7 @@
 				8404212022729BB4007E7756 /* storageManager.swift in Sources */,
 				8404212122729BB4007E7756 /* IODetalleRegistroGastoViewModel.swift in Sources */,
 				8404212222729BB4007E7756 /* constantes.swift in Sources */,
+				84D4E4D92279FDD100CEF2BF /* TableViewCellSelector.swift in Sources */,
 				8404212322729BB4007E7756 /* IOHomeViewModelContract.swift in Sources */,
 				8404212422729BB4007E7756 /* IODefaults.swift in Sources */,
 				8404212522729BB4007E7756 /* IORubroModel.swift in Sources */,
@@ -1826,6 +1831,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D4E4DC2279FDD100CEF2BF /* DDSelector.swift in Sources */,
 				84EEEA4E221E63F3001F98E9 /* IORubrosProfileViewModel.swift in Sources */,
 				84CA122C2222FEDC0040B78B /* IOTableViewCellSingleDateCell.swift in Sources */,
 				842EFAEE2234339900DA8104 /* IODetalleRegistroGastoModel.swift in Sources */,
@@ -1837,6 +1843,7 @@
 				84CFD32D222DD234004CE810 /* IOAltaRubroViewModelContract.swift in Sources */,
 				84028110220FC37B00C85A6A /* IONuevoUsuarioModel.swift in Sources */,
 				84028102220FB24600C85A6A /* progressIndicator.swift in Sources */,
+				84D4E33F2278984200CEF2BF /* cuentaManager.swift in Sources */,
 				84CFD324222D85C4004CE810 /* IOTableViewCellOwnHeaderHome.swift in Sources */,
 				84CA12082220FDAD0040B78B /* IOTableViewCellRegistrosGastos.swift in Sources */,
 				849BA96922074C9900EC93A6 /* IOLoginUsuarioViewModel.swift in Sources */,
@@ -1846,7 +1853,6 @@
 				840280F0220FB24600C85A6A /* configEncriptar.swift in Sources */,
 				840280F6220FB24600C85A6A /* extensiones.swift in Sources */,
 				84027FC3220F4A9700C85A6A /* MLNotificationNames.swift in Sources */,
-				84FF6352226BDB6D00FED9DA /* DDSelector.swift in Sources */,
 				84EEEA4C221E63E5001F98E9 /* IORubrosProfileViewModelContract.swift in Sources */,
 				840280FB220FB24600C85A6A /* examplesStorageFunctions.swift in Sources */,
 				84EEEA54221FAC5A001F98E9 /* IOTableViewCellHeaderInfo.swift in Sources */,
@@ -1894,7 +1900,6 @@
 				8402F8F5226D131D001CD037 /* HeaderHomeCustomView.swift in Sources */,
 				84CA1242222307320040B78B /* labelExtension.swift in Sources */,
 				84BD7F9C222F859C00FF6A50 /* IOBorrarRubroGastoViewModelContract.swift in Sources */,
-				84457FCB226C08380031F539 /* TableViewCellSelector.swift in Sources */,
 				840268552206A7BF00EF6070 /* viewExtensions.swift in Sources */,
 				84CA1240222306230040B78B /* PCMensualViewModelContract.swift in Sources */,
 				84E4178C222C9DDB000214E8 /* IOTableViewCellCuentaInfo.swift in Sources */,
@@ -1908,6 +1913,7 @@
 				840280FC220FB24600C85A6A /* storageManager.swift in Sources */,
 				842EFAF2223433C100DA8104 /* IODetalleRegistroGastoViewModel.swift in Sources */,
 				840280F1220FB24600C85A6A /* constantes.swift in Sources */,
+				84D4E4D82279FDD100CEF2BF /* TableViewCellSelector.swift in Sources */,
 				8419E079221536690015CC99 /* IOHomeViewModelContract.swift in Sources */,
 				84027FC6220F4DCC00C85A6A /* IODefaults.swift in Sources */,
 				84E41786222C42D0000214E8 /* IORubroModel.swift in Sources */,
@@ -1960,9 +1966,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 62FCF3664AC9F81697006D71 /* Pods-InOutMoneyFirebase.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDebug;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S2BEC8V882;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "InOutMoneyFirebase copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1982,6 +1992,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S2BEC8V882;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "InOutMoneyFirebase copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2052,6 +2066,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -2115,8 +2130,13 @@
 			baseConfigurationReference = 62FCF3664AC9F81697006D71 /* Pods-InOutMoneyFirebase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S2BEC8V882;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = InOutMoneyFirebase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2134,8 +2154,13 @@
 			baseConfigurationReference = D3C6A17853DDA48318A6E934 /* Pods-InOutMoneyFirebase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S2BEC8V882;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = InOutMoneyFirebase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

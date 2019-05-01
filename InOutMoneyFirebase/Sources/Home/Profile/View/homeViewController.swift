@@ -68,17 +68,7 @@ class IOHomeViewController: UIViewController, IOHomeViewContract {
 
     }
     
-    @IBAction func selector(_ sender: Any) {
-        let mySelector = DDSelector(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-        let list = ["Todos los rubros seleccionados", "Quesos", "Lacteos", "Verduras", "Carnes", "Pescado", "Legumbres", "Mantecas", "Ravioles", "Guisos", "Tapioca", "Mariscos", "Asados"]
-        mySelector.optionList = list
-        UIApplication.shared.keyWindow?.addSubview(mySelector)
-        mySelector.itemAlreadySelected = 5
-        mySelector.onSelectedItem = { (index) -> Void in
-            print("Item seleccionado: \(String(describing: index))")
-        }
-    }
-    
+   
    
     @IBAction func home2PRessed(_ sender: Any) {
         performSegue(withIdentifier: "segue_to_home2", sender: nil)

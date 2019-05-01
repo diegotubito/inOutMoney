@@ -11,12 +11,22 @@ import UIKit
 class TableViewCellCuentas: UITableViewCell {
     @IBOutlet var backgroundImage: UIImageView!
     
+    @IBOutlet var imagenEfectivo: UIImageView!
     @IBOutlet var totalEfectivoLabel: UILabel!
     @IBOutlet var totalBancoLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         backgroundImage.layer.cornerRadius = backgroundImage.frame.height/10
+        
+        let tapEfectivo = UITapGestureRecognizer(target: self, action: #selector(imagenEfectivoPresionado(_:)))
+        tapEfectivo.numberOfTapsRequired = 1
+        imagenEfectivo.isUserInteractionEnabled = true
+        imagenEfectivo.addGestureRecognizer(tapEfectivo)
+    }
+    
+    @objc func imagenEfectivoPresionado(_ sender: UITapGestureRecognizer) {
+        print("toque")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -34,19 +44,16 @@ class TableViewCellCuentas: UITableViewCell {
     }
     
     func loadTotalAccountFromFirebase() {
-        MLFirebaseDatabaseService.retrieveData(path: UserID! + "/cuentas") { (response, error) in
-            
-            guard error == nil else {
-                print(error?.localizedDescription)
-                return
+        do {
+            let cuentas = try IOAccountManager.instance.retrieveAccounts()
+            print(cuentas as Any)
+        } catch {
+            let err = error as? IOAccountManager.AccountError
+            if err == IOAccountManager.AccountError.empty {
+                print("array empty")
+            } else {
+                print("standar error")
             }
-            
-            guard response != nil else {
-                print("vacio")
-                return
-            }
-            
-            print(response)
         }
     }
     

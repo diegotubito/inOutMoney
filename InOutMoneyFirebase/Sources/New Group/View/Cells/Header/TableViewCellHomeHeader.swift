@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol TabaleViewCellHomeHeaderDelegate {
+    func buttonPressed(sender: TableViewCellHomeHeader.ButtonType)
+}
+
 class TableViewCellHomeHeader: UITableViewCell {
+    
+    var delegate :TabaleViewCellHomeHeaderDelegate?
+    
     @IBOutlet var totalIngresoMes: UILabel!
     @IBOutlet var totalIngresoMesAnterior: UILabel!
     @IBOutlet var totalIngresoMesAnteriorAnterior: UILabel!
@@ -33,6 +40,11 @@ class TableViewCellHomeHeader: UITableViewCell {
     @IBOutlet var historyBackground: UIView!
     @IBOutlet var backgroundImage: UIImageView!
     
+    enum ButtonType {
+        case gasto
+        case ingreso
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -44,6 +56,34 @@ class TableViewCellHomeHeader: UITableViewCell {
         historyBackground.layer.cornerRadius = historyBackground.frame.height/10
         historyBackground.layer.borderColor = UIColor.lightGray.cgColor
         historyBackground.layer.borderWidth = 1
+        
+        setBotonGasto()
+        setBotonIngreso()
+        
+        
+    }
+ 
+    
+    func setBotonIngreso() {
+        plusIncomeOutlet.isUserInteractionEnabled = true
+        let tapIncome = UITapGestureRecognizer(target: self, action: #selector(nuevoIngresoPresionado(_:)))
+        plusIncomeOutlet.addGestureRecognizer(tapIncome)
+        
+    }
+    
+    func setBotonGasto() {
+        plusExpenditureOutlet.isUserInteractionEnabled = true
+        let tapExpense = UITapGestureRecognizer(target: self, action: #selector(nuevoGastoPresionado(_:)))
+        plusExpenditureOutlet.addGestureRecognizer(tapExpense)
+        
+    }
+   
+    @objc func nuevoGastoPresionado(_ sender: UITapGestureRecognizer) {
+        self.delegate?.buttonPressed(sender: .gasto)
+    }
+    
+    @objc func nuevoIngresoPresionado(_ sender: UITapGestureRecognizer) {
+        self.delegate?.buttonPressed(sender: .ingreso)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

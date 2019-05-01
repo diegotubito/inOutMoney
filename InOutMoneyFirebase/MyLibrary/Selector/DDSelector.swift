@@ -9,15 +9,23 @@
 import Foundation
 import UIKit
 
-class DDSelector: UIView {
-    var optionList = [String]()
-    var itemAlreadySelected : Int?
-    var isBlurred = false
+struct DDSelectorParameters {
+    var isBlurred : Bool
+    var bouncing : Bool
+ 
     
+}
+
+class DDSelector: UIView {
+    var parameters : DDSelectorParameters!
+    var selectedItem : Int?
+    var itemList = [String]()
+  
     private var blurEffectView : UIVisualEffectView!
  
     private var hiddenHeaderHeight : CGFloat = UIScreen.main.bounds.height * 0.15
-    private var hiddenFooterHeight : CGFloat = UIScreen.main.bounds.height * 0.25
+    private var hiddenFooterHeight : CGFloat = UIScreen.main.bounds.height * 0.15
+    private var magnificationSelectedFont : CGFloat = 1.25
     private var buttonSize : CGFloat = UIScreen.main.bounds.width * 0.10
     private var buttonFontSize : CGFloat = UIScreen.main.bounds.width * 0.10 / 2
     private var selectedItemFontName = "ChalkboardSE-Regular"
@@ -35,9 +43,8 @@ class DDSelector: UIView {
     
     private var selectedIndex : Int? {
         didSet {
-            tableView.reloadData()
-     
-            endBackgroundAnimation {
+       
+            backgroundFadeOutAnimation {
                 self.onSelectedItem?(self.selectedIndex)
                 self.removeFromSuperview()
                 
@@ -47,27 +54,39 @@ class DDSelector: UIView {
     }
     
     
-    override init(frame: CGRect) {
-        super .init(frame: frame)
-        inicializar()
-    }
-    
+ 
     required init?(coder aDecoder: NSCoder) {
         super .init(coder: aDecoder)
-        inicializar()
+        defaultParameters()
     }
     
-    private func inicializar() {
+    required init(frame: CGRect, parameters: DDSelectorParameters? = nil) {
+        super.init(frame: frame)
+        
+        if parameters != nil {
+            self.parameters = parameters
+        } else {
+            defaultParameters()
+        }
+        self.start()
+    }
+    
+    private func defaultParameters() {
         //the gradient is used in footer
+        parameters = DDSelectorParameters(isBlurred: true,
+                                          bouncing: false)
+     }
+    
+    func start() {
         
         drawBackground()
         drawContentView()
         addTableView()
+        addTransparentMask()
         
         drawXButton()
         addButtonHandler()
-        
-     }
+    }
     
   
     
@@ -78,8 +97,8 @@ class DDSelector: UIView {
         tableView.delegate = self
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
-        tableView.alwaysBounceVertical = false
-        tableView.bounces = false
+        tableView.alwaysBounceVertical = parameters.bouncing
+        tableView.bounces = parameters.bouncing
     
         contentView.addSubview(tableView)
     }
@@ -103,18 +122,11 @@ class DDSelector: UIView {
     private func drawContentView() {
         self.contentView = UIView()
         self.contentView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
-     //   self.contentView.backgroundColor = .clear
+        self.contentView.backgroundColor = .clear
         
-         self.addSubview(contentView)
-        
-        if isBlurred {
-            startBlurEffect()
-        }
-        
-        startContentViewAnimation {
-            print("content view animation finished")
-        }
-        
+        self.addSubview(contentView)
+     
+        contentViewFadeInAnimation {}
     }
     
     private func startBlurEffect() {
@@ -137,12 +149,25 @@ class DDSelector: UIView {
     private func drawBackground() {
         backgroundView = UIView()
         backgroundView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
-        backgroundView.backgroundColor = .black
         addSubview(backgroundView)
         
-        startBackgroundAnimation {
-            print("background animation finished")
+        if parameters.isBlurred {
+            startBlurEffect()
+        } else {
+            backgroundFadeInAnimation {}
         }
+    }
+    
+    private func addTransparentMask() {
+        let maskView = UIView(frame: CGRect(x: 0, y: frame.height - (buttonSize*3), width: frame.width, height: buttonSize*3))
+        maskView.backgroundColor = .clear
+        contentView.addSubview(maskView)
+        
+        let gradient = createGradient(topColor: .clear, bottomColor: UIColor.black.withAlphaComponent(0.7))
+        gradient.frame = maskView.frame
+        contentView.layer.insertSublayer(gradient, at: 1)
+        
+        
         
     }
     
@@ -189,7 +214,7 @@ class DDSelector: UIView {
 
 extension DDSelector: UITableViewDataSource {
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return optionList.count
+        return itemList.count
     }
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -198,11 +223,12 @@ extension DDSelector: UITableViewDataSource {
             cell.descriptionLabel.textColor = .lightGray
             cell.descriptionLabel.font = UIFont(name: itemFontName, size: itemFontSize)
             
-            if itemAlreadySelected == indexPath.row {
+            if selectedItem == indexPath.row {
                 cell.descriptionLabel.textColor = .white
-                cell.descriptionLabel.font = UIFont(name: selectedItemFontName, size: itemFontSize * 1.2)
+                cell.descriptionLabel.font = UIFont(name: selectedItemFontName, size: itemFontSize * magnificationSelectedFont)
+                cell.descriptionLabel.textColor = UIColor.white
             }
-            cell.descriptionLabel.text = optionList[indexPath.row]
+            cell.descriptionLabel.text = itemList[indexPath.row]
             
             return cell
         }
@@ -214,12 +240,14 @@ extension DDSelector: UITableViewDataSource {
 
 extension DDSelector : UITableViewDelegate {
     internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedItem = indexPath.row
+        self.tableView.reloadData()
         
-        selectedIndex = indexPath.row
-        
-        if let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellSelector.identifier, for: indexPath) as? TableViewCellSelector {
-            cell.zoomOutWithEasing()
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: {
+         }) { (result) in
+             self.selectedIndex = indexPath.row
         }
+
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -245,10 +273,7 @@ extension DDSelector : UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footer = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: hiddenFooterHeight))
         
-        let gradient = createGradient(topColor: .clear, bottomColor: UIColor.black.withAlphaComponent(0.7))
-        gradient.frame = footer.bounds
-        footer.layer.insertSublayer(gradient, at: 0)
-        
+     
         return footer
 
      }
@@ -270,17 +295,18 @@ extension DDSelector : UITableViewDelegate {
 //ANIMATION
 
 extension DDSelector {
-    func startBackgroundAnimation(finished: @escaping () -> Void) {
+    func backgroundFadeInAnimation(finished: @escaping () -> Void) {
         //animate
+        backgroundView.backgroundColor = .black
         backgroundView.alpha = 0
         UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {
-            self.backgroundView.alpha = 0.85
+            self.backgroundView.alpha = 0.75
         }) { (done) in
             finished()
         }
     }
     
-    func startContentViewAnimation(finished: @escaping () -> Void) {
+    func contentViewFadeInAnimation(finished: @escaping () -> Void) {
         //animate
         contentView.alpha = 0
         UIView.animate(withDuration: 0.6, delay: 0, options: [.curveEaseInOut], animations: {
@@ -290,7 +316,7 @@ extension DDSelector {
         }
     }
     
-    func endBackgroundAnimation(finished: @escaping () -> Void) {
+    func backgroundFadeOutAnimation(finished: @escaping () -> Void) {
         //animate
         self.alpha = 1.0
         UIView.animate(withDuration: 0.6, delay: 0, options: [.curveEaseInOut], animations: {

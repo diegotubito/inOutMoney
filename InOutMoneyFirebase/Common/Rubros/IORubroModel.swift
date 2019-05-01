@@ -83,6 +83,42 @@ class IORubroManager {
         }
     }
     
+    
+    static func createDefaultRubrosToFirebase(path: String) throws {
+        let default1 = ["descripcion" : "Servicios",
+                        "fechaCreacion" : Date().toString(formato: formatoDeFecha.fechaConHora),
+                        "isEnabled" : true] as [String : Any]
+        let default2 = ["descripcion" : "Impuestos",
+                        "fechaCreacion" : Date().toString(formato: formatoDeFecha.fechaConHora),
+                        "isEnabled" : true] as [String : Any]
+        let default3 = ["descripcion" : "Carnicería",
+                        "fechaCreacion" : Date().toString(formato: formatoDeFecha.fechaConHora),
+                        "isEnabled" : true] as [String : Any]
+            as [String : Any]
+        
+        
+        let defaultValues = ["default1" : default1,
+                             "default2" : default2,
+                             "default3" : default3]
+        
+        
+        var error : Error?
+        let semasphore = DispatchSemaphore(value: 1)
+        
+        MLFirebaseDatabaseService.setData(path: path, diccionario: defaultValues, success: { (ref) in
+            semasphore.signal()
+        }) { (err) in
+            error = err
+            semasphore.signal()
+        }
+        
+        _ = semasphore.wait(timeout: .distantFuture)
+        if error != nil {
+            throw error!
+        }
+        return
+        
+    }
    
 }
 
