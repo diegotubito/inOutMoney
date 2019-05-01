@@ -28,6 +28,7 @@ class IORubrosGastosAltaViewController: UIViewController, IORubrosGastosAltaView
     
     
     override func viewDidLoad() {
+        navigationItem.title = "Nuevo Gasto"
         moreButton = UIBarButtonItem(title: "Guardar", style: .done, target: self, action: #selector(moreTapped))
         navigationItem.rightBarButtonItem = moreButton
         
