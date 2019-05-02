@@ -24,7 +24,17 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Resumen"
+        navigationItem.title = "Home"
+        
+        //boton log out
+        let botonLogOut = UIBarButtonItem(image: #imageLiteral(resourceName: "log-out").withRenderingMode(.alwaysOriginal), style: .done, target: self, action: #selector(buttonLogOutPressed))
+        navigationItem.rightBarButtonItem = botonLogOut
+        
+        //boton nuevo rubro gasto
+        let botonNuevoRubroGasto = UIBarButtonItem(image: #imageLiteral(resourceName: "addButton").withRenderingMode(.alwaysOriginal), style: .done, target: self, action: #selector(botonNuevoRubroGastoPressed))
+        navigationItem.rightBarButtonItem = botonNuevoRubroGasto
+        
+        
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60
@@ -32,7 +42,6 @@ class HomeViewController: UIViewController {
         tableView.register(TableViewCellHomeHeader.nib, forCellReuseIdentifier: TableViewCellHomeHeader.identifier)
         tableView.register(TableViewCellCuentas.nib, forCellReuseIdentifier: TableViewCellCuentas.identifier)
         
-        loadCells()
         
         // Do any additional setup after loading the view, typically from a nib.
         service = IOLoginFirebaseService()
@@ -51,23 +60,38 @@ class HomeViewController: UIViewController {
                 print("you are logged in \(String(describing: user?.uid))")
                 
                 //check if this is the first time app execution
+                self.loadCells()
+                self.tableView.reloadData()
                 
-                do {
-                    try IORubroManager.createDefaultRubrosToFirebase(path: UserID! + "/gastos/rubros")
-                } catch {
-                    print(error.localizedDescription)
-                }
+                IORubroManager.loadRubrosFromFirebase(success: {
+                    print("tengo los rubros")
+                }, fail: { (errorMessage) in
+                    print(errorMessage)
+                })
+        
+               
+                
+//                 do {
+//                    try IOCuentaManager.createDefaultAccountsToFirebase(path: UserID! + "/cuentas")
+//                } catch {
+//                    print(error.localizedDescription)
+//                }
             }
         }
     }
   
-    @IBAction func log_out_pressed(_ sender: Any) {
+    @objc func buttonLogOutPressed() {
         
         service.signOut(success: {
             print("sign out")
         }) {
             toast(message: "Error al cerrar sesión.")
         }
+    }
+    
+    @objc func botonNuevoRubroGastoPressed() {
+        
+        performSegue(withIdentifier: "segue_rubro_gasto", sender: nil)
     }
     
     func switchStoryboard() {
@@ -92,15 +116,32 @@ class HomeViewController: UIViewController {
         cells.append(header)
         
         cuentas = tableView.dequeueReusableCell(withIdentifier: TableViewCellCuentas.identifier) as? TableViewCellCuentas
-        cuentas.loadTotalAccountFromFirebase()
-        
-       
-        
-         cells.append(cuentas)
+        cuentas.mostrarTotalCuentas()
+          cells.append(cuentas)
     }
     
     func toast(message: String) {
         Toast.show(message: message, controller: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super .prepare(for: segue, sender: sender)
+        
+        if let controller = segue.destination as? IOLoginUsuarioViewController {
+            controller.viewModel = IOLoginUsuarioViewModel(withView: controller, interactor: IOLoginFirebaseService(), user: "")
+        }
+        
+        if let controller = segue.destination as? IORubrosGastosAltaViewController {
+            if let object = sender as? IORubroManager.Rubro {
+                controller.viewModel = IORubrosGastosAltaViewModel(withView: controller, rubroSeleccionado: object)
+            }
+        
+        }
+        
+        if let controller = segue.destination as? IOAltaRubroViewController {
+            controller.viewModel = IOAltaRubroViewModel(withView: controller)
+        }
+    
     }
 }
 
@@ -145,7 +186,7 @@ extension HomeViewController: TabaleViewCellHomeHeaderDelegate {
             
             mySelector.onSelectedItem = ({index -> Void in
                 if index != nil {
-                    self.performSegue(withIdentifier: "segue_gasto", sender: nil)
+                    self.performSegue(withIdentifier: "segue_gasto", sender: IORubroManager.rubros[index!])
                 }
             })
             

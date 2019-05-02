@@ -94,4 +94,37 @@ class IOCuentaManager {
         return array
     }
     
+    static func createDefaultAccountsToFirebase(path: String) throws {
+        let default1 = ["childID" : "default1",
+                        "descripcion" : "Efectivo",
+                        "saldo" : 0] as [String : Any]
+        let default2 = ["childID" : "default2",
+                        "descripcion" : "Banco",
+                        "saldo" : 0] as [String : Any]
+            as [String : Any]
+        
+        
+        let defaultValues = ["default1" : default1,
+                             "default2" : default2]
+        
+        
+        var error : Error?
+        let semasphore = DispatchSemaphore(value: 1)
+        
+        MLFirebaseDatabaseService.setData(path: path, diccionario: defaultValues, success: { (ref) in
+            semasphore.signal()
+        }) { (err) in
+            error = err
+            semasphore.signal()
+        }
+        
+        _ = semasphore.wait(timeout: .distantFuture)
+        if error != nil {
+            throw error!
+        }
+        return
+        
+    }
+    
+    
 }
