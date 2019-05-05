@@ -647,6 +647,7 @@
 		84028116220FC76100C85A6A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8402F8F9226D36D7001CD037 /* Service */,
 				84E41787222C749D000214E8 /* Registro */,
 				84E41783222C4250000214E8 /* Rubros */,
 				848FC486222771BB00A09942 /* CircleButton */,
@@ -818,9 +819,6 @@
 			isa = PBXGroup;
 			children = (
 				8484BC03226AE72200C20E40 /* StoryboardHome2.storyboard */,
-				8484BC02226AE70D00C20E40 /* Model */,
-				8484BC01226AE70700C20E40 /* ViewModel */,
-				8484BC00226AE6FF00C20E40 /* View */,
 			);
 			name = Home2;
 			path = "New Group";
@@ -831,7 +829,6 @@
 			children = (
 				8484BC0B226AE78700C20E40 /* HomeViewController.swift */,
 				8402F8F1226D12E8001CD037 /* CustomView */,
-				84FF634A226AEA5200FED9DA /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -839,7 +836,6 @@
 		8484BC01226AE70700C20E40 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				8402F8F9226D36D7001CD037 /* Service */,
 				8484BC07226AE76F00C20E40 /* HomeViewModel.swift */,
 				8484BC09226AE77C00C20E40 /* HomeViewModelProtocol.swift */,
 			);
@@ -1122,6 +1118,7 @@
 		84CFD327222DD1D7004CE810 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84FF634A226AEA5200FED9DA /* Cells */,
 				84CFD330222DD24F004CE810 /* IOAltaRubroViewController.swift */,
 			);
 			path = View;
@@ -1217,7 +1214,6 @@
 				842EFAE92234326000DA8104 /* Detalle */,
 				8418F5B32230C3A400EE020E /* MoverRegistros */,
 				84BD7F93222F84DB00FF6A50 /* ConfirmacionEliminarRubro */,
-				84CA121222221E580040B78B /* AltaGasto */,
 				84EEEA45221E63A5001F98E9 /* Profile */,
 			);
 			path = Rubros;
@@ -1274,8 +1270,10 @@
 			isa = PBXGroup;
 			children = (
 				8484BBFF226AE6F100C20E40 /* Home2 */,
+				84CA121222221E580040B78B /* AltaGasto */,
 				840FF26022185D7D006B809A /* Gastos */,
 				84FD53822203F35000DC102A /* Login */,
+				84CFD326222DD1C7004CE810 /* AltaRubro */,
 				84FD53812203F2F800DC102A /* Home */,
 			);
 			path = Sources;
@@ -1284,8 +1282,10 @@
 		84FD53812203F2F800DC102A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8484BC02226AE70D00C20E40 /* Model */,
+				8484BC01226AE70700C20E40 /* ViewModel */,
+				8484BC00226AE6FF00C20E40 /* View */,
 				84594EEA21DC64650019C9B9 /* Main.storyboard */,
-				84CFD326222DD1C7004CE810 /* AltaRubro */,
 			);
 			path = Home;
 			sourceTree = "<group>";
