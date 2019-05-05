@@ -12,6 +12,7 @@ import Firebase
 
 var RC : RemoteConfig?
 var FechaInicial : Date?
+var UserID : String?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
