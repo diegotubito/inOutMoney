@@ -121,9 +121,9 @@ class TableViewCellHomeHeader: UITableViewCell {
         
         startAnimatingActivity(activity: &activityIndicatorGastoMes, label: &totalGastoMes)
         
-        IOGastoManager.loadGastosFromFirebase(mes: mes, año: año, success: {
+        IOGastoManager.loadRegistrosFromFirebase(mes: mes, año: año, success: {
             self.stopAnimatingActivity(activity: &self.activityIndicatorGastoMes, label: &self.totalGastoMes)
-             let totalSpendCurrentMonth = IOGastoManager.getTotalRegistros()
+             let totalSpendCurrentMonth = IOGastoManager.getTotalGasto()
             self.totalGastoMes.text = totalSpendCurrentMonth.formatoMoneda(decimales: 2, simbolo: "$")
         }) { (errorMessage) in
             self.stopAnimatingActivity(activity: &self.activityIndicatorGastoMes, label: &self.totalGastoMes)
@@ -132,9 +132,9 @@ class TableViewCellHomeHeader: UITableViewCell {
         }
         
         startAnimatingActivity(activity: &activityIndicatorGastoMesAnterior, label: &totalGastoMesAnterior)
-        IOGastoManager.loadGastosFromFirebase(mes: mesAnterior!, año: añoAnterior!, success: {
+        IOGastoManager.loadRegistrosFromFirebase(mes: mesAnterior!, año: añoAnterior!, success: {
             self.stopAnimatingActivity(activity: &self.activityIndicatorGastoMesAnterior, label: &self.totalGastoMesAnterior)
-            let totalSpendCurrentMonth = IOGastoManager.getTotalRegistros()
+            let totalSpendCurrentMonth = IOGastoManager.getTotalGasto()
             self.totalGastoMesAnterior.text = totalSpendCurrentMonth.formatoMoneda(decimales: 2, simbolo: "$")
         }) { (errorMessage) in
             self.stopAnimatingActivity(activity: &self.activityIndicatorGastoMesAnterior, label: &self.totalGastoMesAnterior)
@@ -143,9 +143,9 @@ class TableViewCellHomeHeader: UITableViewCell {
         }
         
         startAnimatingActivity(activity: &activityIndicatorGastoMesAnteriorAnterior, label: &totalGastoMesAnteriorAnterior)
-        IOGastoManager.loadGastosFromFirebase(mes: mesAnteriorAnterior!, año: añoAnteriorAnterior!, success: {
+        IOGastoManager.loadRegistrosFromFirebase(mes: mesAnteriorAnterior!, año: añoAnteriorAnterior!, success: {
             self.stopAnimatingActivity(activity: &self.activityIndicatorGastoMesAnteriorAnterior, label: &self.totalGastoMesAnteriorAnterior)
-            let totalSpendCurrentMonth = IOGastoManager.getTotalRegistros()
+            let totalSpendCurrentMonth = IOGastoManager.getTotalGasto()
             self.totalGastoMesAnteriorAnterior.text = totalSpendCurrentMonth.formatoMoneda(decimales: 2, simbolo: "$")
         }) { (errorMessage) in
             self.stopAnimatingActivity(activity: &self.activityIndicatorGastoMesAnteriorAnterior, label: &self.totalGastoMesAnteriorAnterior)
@@ -184,7 +184,7 @@ extension TableViewCellHomeHeader {
         
         startAnimatingActivity(activity: &activityIndicatorIngresoMes, label: &totalIngresoMes)
         
-        IOGastoManager.loadGastosFromFirebase(mes: mes, año: año, success: {
+        IOGastoManager.loadRegistrosFromFirebase(mes: mes, año: año, success: {
             self.stopAnimatingActivity(activity: &self.activityIndicatorIngresoMes, label: &self.totalIngresoMes)
             let totalSpendCurrentMonth = IOIngresoManager.getTotalRegistros()
             self.totalIngresoMes.text = totalSpendCurrentMonth.formatoMoneda(decimales: 2, simbolo: "$")
@@ -195,7 +195,7 @@ extension TableViewCellHomeHeader {
         }
         
         startAnimatingActivity(activity: &activityIndicatorIngresoMesAnterior, label: &totalIngresoMesAnterior)
-        IOGastoManager.loadGastosFromFirebase(mes: mesAnterior!, año: añoAnterior!, success: {
+        IOGastoManager.loadRegistrosFromFirebase(mes: mesAnterior!, año: añoAnterior!, success: {
             self.stopAnimatingActivity(activity: &self.activityIndicatorIngresoMesAnterior, label: &self.totalIngresoMesAnterior)
             let totalSpendCurrentMonth = IOIngresoManager.getTotalRegistros()
             self.totalIngresoMesAnterior.text = totalSpendCurrentMonth.formatoMoneda(decimales: 2, simbolo: "$")
@@ -206,7 +206,7 @@ extension TableViewCellHomeHeader {
         }
         
         startAnimatingActivity(activity: &activityIndicatorIngresoMesAnteriorAnterior, label: &totalIngresoMesAnteriorAnterior)
-        IOGastoManager.loadGastosFromFirebase(mes: mesAnteriorAnterior!, año: añoAnteriorAnterior!, success: {
+        IOGastoManager.loadRegistrosFromFirebase(mes: mesAnteriorAnterior!, año: añoAnteriorAnterior!, success: {
             self.stopAnimatingActivity(activity: &self.activityIndicatorIngresoMesAnteriorAnterior, label: &self.totalIngresoMesAnteriorAnterior)
             let totalSpendCurrentMonth = IOIngresoManager.getTotalRegistros()
             self.totalIngresoMesAnteriorAnterior.text = totalSpendCurrentMonth.formatoMoneda(decimales: 2, simbolo: "$")

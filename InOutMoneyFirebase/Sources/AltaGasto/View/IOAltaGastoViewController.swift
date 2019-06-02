@@ -9,11 +9,25 @@
 import Foundation
 import UIKit
 
-protocol IORubrosGastosAltaViewControllerDelegate {
+protocol IOAltaGastoViewControllerDelegate {
     func nuevoGastoIngresadoDelegate()
 }
-class IORubrosGastosAltaViewController: UIViewController, IORubrosGastosAltaViewContract {
-    var delegate : IORubrosGastosAltaViewControllerDelegate?
+class IOAltaGastoViewController: UIViewController, IORubrosGastosAltaViewContract {
+    func getFechaTextField() -> String {
+        return fechaCell.valueCell.text!
+    }
+    
+    func getDescripcionTextField() -> String {
+        return descripcionCell.textFieldCell.text!
+    }
+    
+    func getMontoTextField() -> String {
+        return importeCell.textFieldCell.text!
+    }
+    
+    
+    
+    var delegate : IOAltaGastoViewControllerDelegate?
     @IBOutlet var tableView: UITableView!
     var cells = [UITableViewCell]()
     var descripcionCell : IOTableViewCellSingleDataEntry!
@@ -29,7 +43,7 @@ class IORubrosGastosAltaViewController: UIViewController, IORubrosGastosAltaView
     
     override func viewDidLoad() {
         navigationItem.title = "Nuevo Gasto"
-        moreButton = UIBarButtonItem(title: "Guardar", style: .done, target: self, action: #selector(moreTapped))
+        moreButton = UIBarButtonItem(title: "Guardar", style: .done, target: self, action: #selector(savePressed))
         navigationItem.rightBarButtonItem = moreButton
         
         super.viewDidLoad()
@@ -37,28 +51,34 @@ class IORubrosGastosAltaViewController: UIViewController, IORubrosGastosAltaView
         tableView.register(IOTableViewCellSingleDateCell.nib, forCellReuseIdentifier: IOTableViewCellSingleDateCell.identifier)
          tableView.register(IOTableViewCellSinglePicker.nib, forCellReuseIdentifier: IOTableViewCellSinglePicker.identifier)
         loadCells()
+        
+        viewModel.check_accounts()
+        viewModel.set_cuenta_selected_index(0)
     }
     
-    @objc func moreTapped() {
+    override func viewDidAppear(_ animated: Bool) {
+        set_picker()
+        descripcionCell.textFieldCell.becomeFirstResponder()
+    }
+    
+    func set_picker() {
+        pickerCell.picker.selectRow(viewModel.model.cuenta_selected_index!, inComponent: 0, animated: true)
+    }
+    
+    @objc func savePressed() {
         if let message = self.validateCells() {
-            self.showError(message)
+            self.showWarning(message)
             return
         }
         
         
         // create the alert
         let alert = UIAlertController(title: "Nuevo Registro", message: "¿Estás seguro de crear un nuevo registro?", preferredStyle: UIAlertController.Style.alert)
-        
         // add the actions (buttons)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
-        
         alert.addAction(UIAlertAction(title: "Guardar", style: UIAlertAction.Style.destructive, handler: { action in
-            
             // do something like...
-            
-            
-            self.saveData()
-            
+            self.viewModel.saveData()
         }))
         // show the alert
         self.present(alert, animated: true, completion: nil)
@@ -109,83 +129,45 @@ class IORubrosGastosAltaViewController: UIViewController, IORubrosGastosAltaView
         } else {
             return "El formato importe es incorrecto."
         }
+
         
    
         return nil
     }
     
-    func saveData() {
-        
-        
-        
-        
-        let childIDRubro = viewModel.model.rubroSeleccionado.childID
-        let keyFecha = fechaCell.valueCell?.text!.toDate(formato: formatoDeFecha.fecha)
-        let mes = keyFecha?.mes
-        let año = keyFecha?.año
-        let keyFechaString = MESES[mes!]! + String(año!)
-        let queryByTypeMonthYear = childIDRubro + "#" + keyFechaString
-        let queryByTypeYear = childIDRubro + "#" + String(año!)
-        let queryByMonthYear = keyFechaString
-        let queryByYear = String(año!)
-        let childIDDebito = IOCuentaManager.cuentas[viewModel.model.codigoCuentaSeleccionada].childIDCuenta
-        let importe = Double(importeCell.textFieldCell.text!)!
-        
-        let path = UserID! + "/gastos/registros"
-        
-        
-        let datos = ["queryByTypeMonthYear" : queryByTypeMonthYear,
-                     "queryByTypeYear" : queryByTypeYear,
-                     "queryByMonthYear" : queryByMonthYear,
-                     "queryByYear" : queryByYear,
-                     "childIDRubro" : childIDRubro,
-                     "isEnabled" : 1,
-                     "childIDDebito" : childIDDebito,
-                     "descripcion" : descripcionCell.textFieldCell.text!,
-                     "fechaGasto" : fechaCell.valueCell.text!,
-                     "fechaCreacion" : Date().toString(formato: formatoDeFecha.fechaConHora),
-                     "importe" : importe] as [String : Any]
-        
-        MLFirebaseDatabaseService.setDataWithAutoId(path: path, diccionario: datos, success: { (ref) in
-             MLFirebaseDatabaseService.setTransaction(path: UserID! + "/cuentas/" + childIDDebito, keyName: "saldo", incremento: -importe, success: {
-                self.showSuccess("Nuevo gasto guardado.")
-            }, fail: { (error) in
-                self.showError("Algo salio mal.")
-            })
-            
-        }) { (error) in
-            self.showError(error?.localizedDescription ?? "Error")
-        }
- 
-    }
+   
     
     
     func showError(_ message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            switch action.style{
-            case .default:
-                print("default")
-                
-            case .cancel:
-                print("cancel")
-                
-            case .destructive:
-                print("destructive")
-                
-                
-            }}))
+        // create the alert
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.destructive, handler: { action in
+            // do something like...
+            self.navigationController?.popViewController(animated: true)
+        }))
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func showWarning(_ message: String) {
+        // create the alert
+        let alert = UIAlertController(title: "Atención", message: message, preferredStyle: UIAlertController.Style.alert)
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "Entendido", style: UIAlertAction.Style.cancel, handler: nil))
+        // show the alert
         self.present(alert, animated: true, completion: nil)
     }
     
     
-    func showSuccess(_ message: String) {
+    func showSuccess() {
         self.delegate?.nuevoGastoIngresadoDelegate()
         navigationController?.popViewController(animated: true)
     }
 }
 
-extension IORubrosGastosAltaViewController: UITableViewDataSource {
+extension IOAltaGastoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cells.count
     }
@@ -198,7 +180,7 @@ extension IORubrosGastosAltaViewController: UITableViewDataSource {
 }
 
 
-extension IORubrosGastosAltaViewController: IOTableViewCellSingleDateCellDelegate {
+extension IOAltaGastoViewController: IOTableViewCellSingleDateCellDelegate {
     func buttonCellPressedDelegate(_ sender: UIButton) {
         print(sender.tag)
         descripcionCell.textFieldCell.resignFirstResponder()
@@ -229,7 +211,7 @@ extension IORubrosGastosAltaViewController: IOTableViewCellSingleDateCellDelegat
 
 
 
-extension IORubrosGastosAltaViewController: IOTableViewCellSingleDataEntryDelegate {
+extension IOAltaGastoViewController: IOTableViewCellSingleDataEntryDelegate {
     func textDidChangeDelegate(tag: Int) {
     }
     
@@ -246,9 +228,9 @@ extension IORubrosGastosAltaViewController: IOTableViewCellSingleDataEntryDelega
 }
 
 
-extension IORubrosGastosAltaViewController: IOTableViewCellSinglePickerDelegate {
+extension IOAltaGastoViewController: IOTableViewCellSinglePickerDelegate {
     func pickerDidSelected(row: Int) {
-        viewModel.model.codigoCuentaSeleccionada = row
+        viewModel.set_cuenta_selected_index(row)
         descripcionCell.textFieldCell.resignFirstResponder()
         importeCell.textFieldCell.resignFirstResponder()
     }

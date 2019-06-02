@@ -11,11 +11,18 @@ import UIKit
 
 protocol IORubrosGastosAltaViewModelContract {
     init(withView view: IORubrosGastosAltaViewContract, rubroSeleccionado: IORubroManager.Rubro)
-    func loadData()
-    var model : IORubrosGastosAltaModel! {get set}
+     var model : IOAltaGastoModel! {get set}
+    
+    func saveData()
+    func set_cuenta_selected_index(_ value: Int?)
+    func check_accounts()
     
 }
 
 protocol IORubrosGastosAltaViewContract {
-    
+    func showSuccess()
+    func showError(_ messagge: String)
+    func getDescripcionTextField() -> String
+    func getMontoTextField() -> String
+    func getFechaTextField() -> String
 }

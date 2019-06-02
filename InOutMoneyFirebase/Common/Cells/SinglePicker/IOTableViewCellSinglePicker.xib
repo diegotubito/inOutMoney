@@ -12,33 +12,33 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="147" id="KGk-i7-Jjw" customClass="IOTableViewCellSinglePicker" customModule="InOutMoneyFirebase" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="147" id="KGk-i7-Jjw" customClass="IOTableViewCellSinglePicker" customModule="DebugVersion" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="461" height="147"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="461" height="146.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPR-De-PEY">
-                        <rect key="frame" x="16" y="8" width="31" height="52.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odR-O8-yz9">
-                        <rect key="frame" x="16" y="68" width="429" height="70"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="70" id="VGi-n0-JFJ"/>
-                        </constraints>
-                    </pickerView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RE4-hH-sQG">
+                        <rect key="frame" x="16" y="8" width="429" height="130.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPR-De-PEY">
+                                <rect key="frame" x="0.0" y="0.0" width="429" height="10.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odR-O8-yz9">
+                                <rect key="frame" x="0.0" y="18.5" width="429" height="112"/>
+                            </pickerView>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="dPR-De-PEY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="0HF-Ns-VMu"/>
-                    <constraint firstItem="dPR-De-PEY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="1QL-PF-0m2"/>
-                    <constraint firstAttribute="bottom" secondItem="odR-O8-yz9" secondAttribute="bottom" constant="8" id="4cU-YL-S3S"/>
-                    <constraint firstItem="odR-O8-yz9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="AaV-GE-RCf"/>
-                    <constraint firstAttribute="trailing" secondItem="odR-O8-yz9" secondAttribute="trailing" constant="16" id="if5-hL-NMG"/>
-                    <constraint firstItem="odR-O8-yz9" firstAttribute="top" secondItem="dPR-De-PEY" secondAttribute="bottom" constant="8" id="v9N-ZW-glV"/>
+                    <constraint firstAttribute="bottom" secondItem="RE4-hH-sQG" secondAttribute="bottom" constant="8" id="VyH-tt-cXh"/>
+                    <constraint firstItem="RE4-hH-sQG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="gbL-6o-sAp"/>
+                    <constraint firstItem="RE4-hH-sQG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="oMe-Y0-Wmk"/>
+                    <constraint firstAttribute="trailing" secondItem="RE4-hH-sQG" secondAttribute="trailing" constant="16" id="wh4-6y-gO6"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

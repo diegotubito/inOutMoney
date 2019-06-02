@@ -18,12 +18,14 @@ class IORubroManager {
         var descripcion : String
         var fechaCreacion : Date
         var isEnabled : Bool
+        var type : String
         
-        init(childID: String, descripcion: String, fechaCreacion: Date, isEnabled: Bool) {
+        init(childID: String, descripcion: String, fechaCreacion: Date, isEnabled: Bool, type: String) {
             self.childID = childID
             self.descripcion = descripcion
             self.fechaCreacion = fechaCreacion
             self.isEnabled = isEnabled
+            self.type = type
         }
         
         
@@ -36,6 +38,7 @@ class IORubroManager {
         static let descripcion = "descripcion"
         static let fechaCreacion = "fechaCreacion"
         static let isEnabled = "isEnabled"
+        static let type = "type"
     }
     
   
@@ -51,11 +54,13 @@ class IORubroManager {
                 let fechaStr = registro[keyRubro.fechaCreacion] as! String
                 let fecha = fechaStr.toDate(formato: formatoDeFecha.fechaConHora)
                 let isEnabled = registro[keyRubro.isEnabled] as! Bool
+                let type = registro[keyRubro.type] as! String
               
                 let nuevoRegistro = Rubro(childID: childID,
                                        descripcion: descripcion,
                                        fechaCreacion: fecha!,
-                                       isEnabled: isEnabled)
+                                       isEnabled: isEnabled,
+                                       type: type)
                 
                 IORubroManager.rubros.append(nuevoRegistro)
                 
@@ -71,7 +76,7 @@ class IORubroManager {
     static func loadRubrosFromFirebase(success: @escaping () -> Void, fail: @escaping (String) -> Void) {
         rubros.removeAll()
         
-        MLFirebaseDatabaseService.retrieveData(path: UserID! + "/gastos/rubros") { (response, error) in
+        MLFirebaseDatabaseService.retrieveData(path: UserID! + "/rubros") { (response, error) in
             if error != nil {
                 fail(error?.localizedDescription ?? "Error")
                 return

@@ -26,23 +26,13 @@ class HomeViewController: UIViewController {
         
         navigationItem.title = "Home"
         
-        //boton log out
-        let botonLogOut = UIBarButtonItem(image: #imageLiteral(resourceName: "log-out").withRenderingMode(.alwaysOriginal), style: .done, target: self, action: #selector(buttonLogOutPressed))
-        navigationItem.rightBarButtonItem = botonLogOut
-        
-        //boton nuevo rubro gasto
-        let botonNuevoRubroGasto = UIBarButtonItem(image: #imageLiteral(resourceName: "addButton").withRenderingMode(.alwaysOriginal), style: .done, target: self, action: #selector(botonNuevoRubroGastoPressed))
-        navigationItem.rightBarButtonItem = botonNuevoRubroGasto
-        
-        
-        
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60
         
         tableView.register(TableViewCellHomeHeader.nib, forCellReuseIdentifier: TableViewCellHomeHeader.identifier)
         tableView.register(TableViewCellCuentas.nib, forCellReuseIdentifier: TableViewCellCuentas.identifier)
-        
-        
+
+
         // Do any additional setup after loading the view, typically from a nib.
         service = IOLoginFirebaseService()
         
@@ -69,7 +59,7 @@ class HomeViewController: UIViewController {
                     print(errorMessage)
                 })
         
-               
+        
                 
 //                 do {
 //                    try IOCuentaManager.createDefaultAccountsToFirebase(path: UserID! + "/cuentas")
@@ -80,19 +70,27 @@ class HomeViewController: UIViewController {
         }
     }
   
-    @objc func buttonLogOutPressed() {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+    }
+    
+    @IBAction func nuewRubroPressed(_ sender: Any) {
+        performSegue(withIdentifier: "segue_rubro_gasto", sender: nil)
         
+    }
+    @IBAction func logoutPressed(_ sender: Any) {
         service.signOut(success: {
             print("sign out")
         }) {
             toast(message: "Error al cerrar sesión.")
         }
     }
-    
-    @objc func botonNuevoRubroGastoPressed() {
-        
-        performSegue(withIdentifier: "segue_rubro_gasto", sender: nil)
-    }
+   
     
     func switchStoryboard() {
         //Go to the HomeViewController if the login is sucessful
@@ -131,7 +129,7 @@ class HomeViewController: UIViewController {
             controller.viewModel = IOLoginUsuarioViewModel(withView: controller, interactor: IOLoginFirebaseService(), user: "")
         }
         
-        if let controller = segue.destination as? IORubrosGastosAltaViewController {
+        if let controller = segue.destination as? IOAltaGastoViewController {
             if let object = sender as? IORubroManager.Rubro {
                 controller.viewModel = IORubrosGastosAltaViewModel(withView: controller, rubroSeleccionado: object)
             }
@@ -177,8 +175,15 @@ extension HomeViewController: TabaleViewCellHomeHeaderDelegate {
             let parameters = DDSelectorParameters(isBlurred: true, bouncing: true)
             let mySelector = DDSelector(frame: frameSelector, parameters: parameters)
         
-            let array = IORubroManager.rubros.compactMap({ $0.descripcion })
+            //solo me quedo con los rubros de gasto
+            let fileredArray = IORubroManager.rubros.filter({$0.type == ProjectConstants.rubros.gastoKey})
+            
+            //creamos un array de String
+            let array = fileredArray.compactMap({ $0.descripcion })
+            
+            //le pasamos el array al custom view
             mySelector.itemList = array
+            
             mySelector.selectedItem = nil
 //            view.addSubview(mySelector)
 
@@ -192,7 +197,32 @@ extension HomeViewController: TabaleViewCellHomeHeaderDelegate {
             
             break
         case .ingreso:
+            let frameSelector = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+            let parameters = DDSelectorParameters(isBlurred: true, bouncing: true)
+            let mySelector = DDSelector(frame: frameSelector, parameters: parameters)
+            
+            //solo me quedo con los rubros de gasto
+            let fileredArray = IORubroManager.rubros.filter({$0.type == ProjectConstants.rubros.ingresoKey})
+            
+            //creamos un array de String
+            let array = fileredArray.compactMap({ $0.descripcion })
+            
+            //le pasamos el array al custom view
+            mySelector.itemList = array
+            
+            mySelector.selectedItem = nil
+            //            view.addSubview(mySelector)
+            
+            UIApplication.shared.keyWindow?.addSubview(mySelector)
+            
+            mySelector.onSelectedItem = ({index -> Void in
+                if index != nil {
+                    self.performSegue(withIdentifier: "segue_gasto", sender: IORubroManager.rubros[index!])
+                }
+            })
+            
             break
+            
         }
     }
     

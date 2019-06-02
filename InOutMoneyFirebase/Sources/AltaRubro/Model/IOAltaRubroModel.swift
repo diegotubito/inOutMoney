@@ -9,5 +9,13 @@
 import Foundation
 
 class IOAltaRubroModel {
+    var type_selected_index : Int?
     
+    struct KeyNames {
+        //firebase keys
+        static let descripcion = "descripcion"
+        static let fechaCreacion = "fechaCreacion"
+        static let isEnabled = "isEnabled"
+        static let type = "type"
+    }
 }

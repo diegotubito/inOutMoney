@@ -27,6 +27,8 @@ class IOGastoManager {
         var queryByTypeMonthYear : String?
         var queryByTypeYear :String?
         var queryByYear : String?
+        
+        var type : String?
     }
     
     
@@ -49,9 +51,9 @@ class IOGastoManager {
 //        }
 //    }
     
-    static func loadGastosFromFirebase(mes: Int, año: Int, success: @escaping () -> Void, fail: @escaping (String) -> Void) {
+    static func loadRegistrosFromFirebase(mes: Int, año: Int, success: @escaping () -> Void, fail: @escaping (String) -> Void) {
     
-        let path = UserID! + "/gastos/registros"
+        let path = UserID! + "/registros"
         let queryKeyName = "queryByMonthYear"
     
         let nombreMes = MESES[mes]
@@ -81,10 +83,12 @@ class IOGastoManager {
         }
     }
     
-    static func getTotalRegistros() -> Double {
+    static func getTotalGasto() -> Double {
         var result : Double = 0
         for i in registros {
-            result += i.importe ?? 0
+            if i.type == ProjectConstants.rubros.gastoKey {
+                result += i.importe ?? 0
+            }
         }
         
         return result

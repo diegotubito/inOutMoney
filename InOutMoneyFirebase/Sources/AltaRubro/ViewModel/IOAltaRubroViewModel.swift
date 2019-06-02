@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class IOAltaRubroViewModel: IOAltaRubroViewModelContract {
+  
     var _view : IOAltaRubroViewContract!
     var model: IOAltaRubroModel!
     
@@ -20,15 +21,28 @@ class IOAltaRubroViewModel: IOAltaRubroViewModelContract {
     }
     
     func guardarNuevoRubro(descripcion: String) {
-        let dato = ["descripcion" : descripcion,
-                    "fechaCreacion" : Date().toString(formato: formatoDeFecha.fechaConHora),
-                    "isEnabled" : true ] as [String : Any]
+        let dato = [IOAltaRubroModel.KeyNames.descripcion : descripcion,
+                    IOAltaRubroModel.KeyNames.fechaCreacion : Date().toString(formato: formatoDeFecha.fechaConHora),
+                    IOAltaRubroModel.KeyNames.isEnabled : true,
+                    IOAltaRubroModel.KeyNames.type : get_selected_type_code() ?? ""] as [String : Any]
         
-        MLFirebaseDatabaseService.setDataWithAutoId(path: UserID! + "/gastos/rubros", diccionario: dato, success: { (response) in
+        MLFirebaseDatabaseService.setDataWithAutoId(path: UserID! + ProjectConstants.firebaseSubPath.rubros, diccionario: dato, success: { (response) in
             self._view.success()
         }) { (error) in
-            self._view.showError(error?.localizedDescription ?? "error")
+            self._view.showError(error?.localizedDescription ?? ProjectConstants.unknownError)
         }
     }
-
+    
+    func set_type_selected_index(_ value: Int?) {
+        model.type_selected_index = value
+    }
+    
+    func get_selected_type_code() -> String? {
+        if let selected_index = model.type_selected_index {
+            let keys = ProjectConstants.rubros.getKeys()
+            return keys[selected_index]
+        }
+        return nil
+    }
+    
 }

@@ -111,7 +111,7 @@ extension IORubrosProfileViewController: IOTableViewCellBotonAgregarRegistroDele
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let controller = segue.destination as? IORubrosGastosAltaViewController {
+        if let controller = segue.destination as? IOAltaGastoViewController {
             controller.delegate = self
 
             controller.viewModel = IORubrosGastosAltaViewModel(withView: controller, rubroSeleccionado: viewModel.model.rubroRecibido)
@@ -133,7 +133,7 @@ extension IORubrosProfileViewController: IOTableViewCellBotonAgregarRegistroDele
 }
 
 
-extension IORubrosProfileViewController: IORubrosGastosAltaViewControllerDelegate {
+extension IORubrosProfileViewController: IOAltaGastoViewControllerDelegate {
     func nuevoGastoIngresadoDelegate() {
         showToast(message: "Nuevo gasto ingresado")
         IORegistroManager.loadRegistrosFromFirebase(mes: viewModel.model.fechaSeleccionada.mes, año: viewModel.model.fechaSeleccionada.año, success: {

@@ -12,6 +12,8 @@ protocol IOAltaRubroViewModelContract {
     init(withView view: IOAltaRubroViewContract)
     var model : IOAltaRubroModel! {get set}
     func guardarNuevoRubro(descripcion: String)
+    
+    func set_type_selected_index(_ value: Int?) 
    }
 
 protocol IOAltaRubroViewContract {

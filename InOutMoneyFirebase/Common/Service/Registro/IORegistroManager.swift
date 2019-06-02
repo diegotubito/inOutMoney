@@ -77,7 +77,7 @@ class IORegistroManager {
     }
     
     func loadAllRegisterFromFirebase(with childIDRubro: String, success: @escaping () -> Void, fail: @escaping (String) -> Void) {
-        MLFirebaseDatabaseService.retrieveDataWithFilter(path: UserID! + "/gastos/registros", keyName: "childIDRubro", value: childIDRubro) { (response, error) in
+        MLFirebaseDatabaseService.retrieveDataWithFilter(path: UserID! + "/registros", keyName: "childIDRubro", value: childIDRubro) { (response, error) in
             if error != nil {
                 fail(error?.localizedDescription ?? "Error")
                 return
@@ -102,7 +102,7 @@ class IORegistroManager {
         let añoStr = String(año)
         let periodo = nombreMes!+añoStr
         
-        MLFirebaseDatabaseService.retrieveDataWithFilter(path: UserID! + "/gastos/registros", keyName: "queryByMonthYear", value: periodo) { (response, error) in
+        MLFirebaseDatabaseService.retrieveDataWithFilter(path: UserID! + "/registros", keyName: "queryByMonthYear", value: periodo) { (response, error) in
             if error != nil {
                 fail(error?.localizedDescription ?? "Error")
                 return

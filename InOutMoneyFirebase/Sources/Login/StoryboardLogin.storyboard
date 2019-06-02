@@ -13,7 +13,7 @@
         <!--Nuevo Usuario View Controller-->
         <scene sceneID="nHg-io-xVb">
             <objects>
-                <viewController id="oE0-l1-0B4" customClass="IONuevoUsuarioViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oE0-l1-0B4" customClass="IONuevoUsuarioViewController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xCg-cZ-PuM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +80,7 @@
         <!--Login Usuario View Controller-->
         <scene sceneID="Y4d-9b-QCV">
             <objects>
-                <viewController storyboardIdentifier="IOLoginUsuarioViewController" id="ZWt-rT-O0Y" customClass="IOLoginUsuarioViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IOLoginUsuarioViewController" id="ZWt-rT-O0Y" customClass="IOLoginUsuarioViewController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UzJ-hP-XuN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -213,7 +213,7 @@
         <!--Login Contraseña View Controller-->
         <scene sceneID="fKn-KE-gfP">
             <objects>
-                <viewController id="H9n-1F-TtL" customClass="IOLoginContraseñaViewController" customModule="InOutMoneyFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="H9n-1F-TtL" customClass="IOLoginContraseñaViewController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xbt-GQ-x37">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

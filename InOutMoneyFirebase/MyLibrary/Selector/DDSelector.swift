@@ -139,7 +139,7 @@ class DDSelector: UIView {
         backgroundView.addSubview(blurEffectView)
         
         //start blurring
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: 0.6) {
             self.blurEffectView.effect = UIBlurEffect(style: .dark)
             //stop animation at 0.5sec
            // self.blurEffectView.pauseAnimation(delay: 0.6)
@@ -243,7 +243,7 @@ extension DDSelector : UITableViewDelegate {
         self.selectedItem = indexPath.row
         self.tableView.reloadData()
         
-        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: {
+        UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseIn, animations: {
          }) { (result) in
              self.selectedIndex = indexPath.row
         }

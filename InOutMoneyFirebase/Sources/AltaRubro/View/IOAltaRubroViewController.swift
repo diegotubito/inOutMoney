@@ -9,25 +9,42 @@
 import Foundation
 import UIKit
 
+protocol IOAltaRubroViewControllerDelegate: class {
+    func nuevoRubroIngresadoDelegate()
+}
+
 class IOAltaRubroViewController: UIViewController, IOAltaRubroViewContract {
+    weak var delegate : IOAltaRubroViewControllerDelegate?
+    
     @IBOutlet var tableView: UITableView!
     
     var cells = [UITableViewCell]()
     var descripcionCell : IOTableViewCellSingleDataEntry!
+    var typeCell : IOTableViewCellSinglePicker!
     var buttonSave : UIBarButtonItem!
     var viewModel : IOAltaRubroViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Nuevo Rubro"
         
         tableView.register(IOTableViewCellSingleDataEntry.nib, forCellReuseIdentifier: IOTableViewCellSingleDataEntry.identifier)
+        tableView.register(IOTableViewCellSinglePicker.nib, forCellReuseIdentifier: IOTableViewCellSinglePicker.identifier)
         
         loadCells()
     
         buttonSave = UIBarButtonItem(title: "Guardar", style: .done, target: self, action: #selector(saveTapped))
         buttonSave.isEnabled = false
+    
         navigationItem.rightBarButtonItem = buttonSave
         
+        viewModel.set_type_selected_index(0)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        set_picker()
+        descripcionCell.textFieldCell.becomeFirstResponder()
     }
     
     @objc func saveTapped() {
@@ -41,10 +58,22 @@ class IOAltaRubroViewController: UIViewController, IOAltaRubroViewContract {
         descripcionCell.titleCell.text = "Descripción"
         descripcionCell.delegate = self
         cells.append(descripcionCell)
+        
+        typeCell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellSinglePicker.identifier) as? IOTableViewCellSinglePicker
+        typeCell.titleCell.text = "Tipo de rubro"
+        typeCell.arrayComponets = ProjectConstants.rubros.getDescripciones()
+        typeCell.delegate = self
+        cells.append(typeCell)
     }
     
     func success() {
+        self.delegate?.nuevoRubroIngresadoDelegate()
         navigationController?.popViewController(animated: true)
+    }
+    
+    func set_picker() {
+        typeCell.picker.selectRow(viewModel.model.type_selected_index ?? 0, inComponent: 0, animated: true)
+        
     }
     
     func showError(_ message: String) {
@@ -82,7 +111,7 @@ extension IOAltaRubroViewController: UITableViewDataSource {
 
 extension IOAltaRubroViewController: IOTableViewCellSingleDataEntryDelegate {
     func textDidChangeDelegate(tag: Int) {
-        print("text changed")
+        _ = validate()
     }
     
     func textDidEndEditingDelegate(tag: Int) {
@@ -104,5 +133,14 @@ extension IOAltaRubroViewController: IOTableViewCellSingleDataEntryDelegate {
         
         return true
     }
+    
+}
+
+
+extension IOAltaRubroViewController: IOTableViewCellSinglePickerDelegate {
+    func pickerDidSelected(row: Int) {
+       viewModel.set_type_selected_index(row)
+    }
+    
     
 }
