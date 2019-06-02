@@ -8,8 +8,8 @@
 
 import Foundation
 
-class IOGastoManager {
-    static var instance = IOGastoManager()
+class IORegisterManager {
+    static var instance = IORegisterManager()
     
     
     static var registros = [RegistroGasto]()

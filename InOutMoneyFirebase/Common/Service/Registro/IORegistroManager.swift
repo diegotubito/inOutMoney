@@ -6,7 +6,7 @@
 //  Copyright © 2019 Gomez David Diego. All rights reserved.
 //
 
-
+/*
 import UIKit
 
 class IORegistroManager {
@@ -144,3 +144,4 @@ class IORegistroManager {
     
 }
 
+*/
