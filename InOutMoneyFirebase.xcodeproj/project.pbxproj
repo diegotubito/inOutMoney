@@ -158,6 +158,10 @@
 		8418F5BC2230C40A00EE020E /* IOMoverRegistroGastoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418F5BB2230C40A00EE020E /* IOMoverRegistroGastoViewModel.swift */; };
 		8418F5BE2230C41A00EE020E /* IOMoverRegistroGastoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8418F5BD2230C41A00EE020E /* IOMoverRegistroGastoModel.swift */; };
 		842227587AA8719C417032C5 /* Pods_InOutMoneyFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */; };
+		842BDBEE22A38B7400BF5273 /* IOTableViewCellSingleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDBEC22A38B7400BF5273 /* IOTableViewCellSingleTextField.swift */; };
+		842BDBEF22A38B7400BF5273 /* IOTableViewCellSingleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDBEC22A38B7400BF5273 /* IOTableViewCellSingleTextField.swift */; };
+		842BDBF022A38B7400BF5273 /* IOTableViewCellSingleTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842BDBED22A38B7400BF5273 /* IOTableViewCellSingleTextField.xib */; };
+		842BDBF122A38B7400BF5273 /* IOTableViewCellSingleTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842BDBED22A38B7400BF5273 /* IOTableViewCellSingleTextField.xib */; };
 		842EFAEE2234339900DA8104 /* IODetalleRegistroGastoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EFAED2234339900DA8104 /* IODetalleRegistroGastoModel.swift */; };
 		842EFAF0223433B400DA8104 /* IODetalleRegistroViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EFAEF223433B400DA8104 /* IODetalleRegistroViewModelContract.swift */; };
 		842EFAF2223433C100DA8104 /* IODetalleRegistroGastoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EFAF1223433C100DA8104 /* IODetalleRegistroGastoViewModel.swift */; };
@@ -231,10 +235,6 @@
 		84D4E4DB2279FDD100CEF2BF /* TableViewCellSelector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D4E4D62279FDD100CEF2BF /* TableViewCellSelector.xib */; };
 		84D4E4DC2279FDD100CEF2BF /* DDSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4E4D72279FDD100CEF2BF /* DDSelector.swift */; };
 		84D4E4DD2279FDD100CEF2BF /* DDSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4E4D72279FDD100CEF2BF /* DDSelector.swift */; };
-		84D4E4E2227F87EE00CEF2BF /* IOTableViewCellSingleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4E4E0227F87EE00CEF2BF /* IOTableViewCellSingleTextField.swift */; };
-		84D4E4E3227F87EE00CEF2BF /* IOTableViewCellSingleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4E4E0227F87EE00CEF2BF /* IOTableViewCellSingleTextField.swift */; };
-		84D4E4E4227F87EE00CEF2BF /* IOTableViewCellSingleTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D4E4E1227F87EE00CEF2BF /* IOTableViewCellSingleTextField.xib */; };
-		84D4E4E5227F87EE00CEF2BF /* IOTableViewCellSingleTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D4E4E1227F87EE00CEF2BF /* IOTableViewCellSingleTextField.xib */; };
 		84DABE162210B6C90024B112 /* toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DABE152210B6C90024B112 /* toast.swift */; };
 		84E41786222C42D0000214E8 /* IORubroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E41785222C42D0000214E8 /* IORubroModel.swift */; };
 		84E41789222C74B3000214E8 /* IORegistroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E41788222C74B3000214E8 /* IORegistroManager.swift */; };
@@ -295,6 +295,8 @@
 		8418F5B92230C3FE00EE020E /* IOMoverRegistroGastoViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOMoverRegistroGastoViewModelContract.swift; sourceTree = "<group>"; };
 		8418F5BB2230C40A00EE020E /* IOMoverRegistroGastoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOMoverRegistroGastoViewModel.swift; sourceTree = "<group>"; };
 		8418F5BD2230C41A00EE020E /* IOMoverRegistroGastoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOMoverRegistroGastoModel.swift; sourceTree = "<group>"; };
+		842BDBEC22A38B7400BF5273 /* IOTableViewCellSingleTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTableViewCellSingleTextField.swift; sourceTree = "<group>"; };
+		842BDBED22A38B7400BF5273 /* IOTableViewCellSingleTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IOTableViewCellSingleTextField.xib; sourceTree = "<group>"; };
 		842EFAED2234339900DA8104 /* IODetalleRegistroGastoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IODetalleRegistroGastoModel.swift; sourceTree = "<group>"; };
 		842EFAEF223433B400DA8104 /* IODetalleRegistroViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IODetalleRegistroViewModelContract.swift; sourceTree = "<group>"; };
 		842EFAF1223433C100DA8104 /* IODetalleRegistroGastoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IODetalleRegistroGastoViewModel.swift; sourceTree = "<group>"; };
@@ -365,8 +367,6 @@
 		84D4E4D52279FDD100CEF2BF /* TableViewCellSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellSelector.swift; sourceTree = "<group>"; };
 		84D4E4D62279FDD100CEF2BF /* TableViewCellSelector.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellSelector.xib; sourceTree = "<group>"; };
 		84D4E4D72279FDD100CEF2BF /* DDSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDSelector.swift; sourceTree = "<group>"; };
-		84D4E4E0227F87EE00CEF2BF /* IOTableViewCellSingleTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTableViewCellSingleTextField.swift; sourceTree = "<group>"; };
-		84D4E4E1227F87EE00CEF2BF /* IOTableViewCellSingleTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IOTableViewCellSingleTextField.xib; sourceTree = "<group>"; };
 		84DABE152210B6C90024B112 /* toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = toast.swift; sourceTree = "<group>"; };
 		84E41785222C42D0000214E8 /* IORubroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubroModel.swift; sourceTree = "<group>"; };
 		84E41788222C74B3000214E8 /* IORegistroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORegistroManager.swift; sourceTree = "<group>"; };
@@ -654,7 +654,7 @@
 		84028118220FC7F200C85A6A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				84D4E4DF227F87EE00CEF2BF /* SingleTextFieldCell */,
+				842BDBEB22A38B7400BF5273 /* SingleTextFieldCell */,
 				84CA1243222309690040B78B /* GuardarButtonCell */,
 				84CA12232222FAE80040B78B /* SingleDataEntryCell */,
 				84CA12242222FAF90040B78B /* SingleSwitchCell */,
@@ -719,6 +719,15 @@
 				8418F5BD2230C41A00EE020E /* IOMoverRegistroGastoModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		842BDBEB22A38B7400BF5273 /* SingleTextFieldCell */ = {
+			isa = PBXGroup;
+			children = (
+				842BDBEC22A38B7400BF5273 /* IOTableViewCellSingleTextField.swift */,
+				842BDBED22A38B7400BF5273 /* IOTableViewCellSingleTextField.xib */,
+			);
+			path = SingleTextFieldCell;
 			sourceTree = "<group>";
 		};
 		842EFAE92234326000DA8104 /* Detalle */ = {
@@ -1161,15 +1170,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		84D4E4DF227F87EE00CEF2BF /* SingleTextFieldCell */ = {
-			isa = PBXGroup;
-			children = (
-				84D4E4E0227F87EE00CEF2BF /* IOTableViewCellSingleTextField.swift */,
-				84D4E4E1227F87EE00CEF2BF /* IOTableViewCellSingleTextField.xib */,
-			);
-			path = SingleTextFieldCell;
-			sourceTree = "<group>";
-		};
 		84DABE142210B6C90024B112 /* Toast */ = {
 			isa = PBXGroup;
 			children = (
@@ -1430,6 +1430,7 @@
 				8404214222729BB4007E7756 /* gastosStoryboard.storyboard in Resources */,
 				8404214522729BB4007E7756 /* IOTableViewCellRegistrosGastos.xib in Resources */,
 				8404214622729BB4007E7756 /* IOTableViewCellSingleDataEntry.xib in Resources */,
+				842BDBF122A38B7400BF5273 /* IOTableViewCellSingleTextField.xib in Resources */,
 				8404214722729BB4007E7756 /* IOTableViewCellSingleDateCell.xib in Resources */,
 				8404214922729BB4007E7756 /* IOTableViewCellSinglePicker.xib in Resources */,
 				8404214B22729BB4007E7756 /* IOTableViewCellSingleSwitchCell.xib in Resources */,
@@ -1442,7 +1443,6 @@
 				8404215522729BB4007E7756 /* IOTableViewCellBotonAgregarRegistro.xib in Resources */,
 				8404215722729BB4007E7756 /* IOLoginContraseñaCV.xib in Resources */,
 				8404215822729BB4007E7756 /* IOTableViewCellBorrarRubroGasto.xib in Resources */,
-				84D4E4E5227F87EE00CEF2BF /* IOTableViewCellSingleTextField.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1459,6 +1459,7 @@
 				84CA12092220FDAD0040B78B /* IOTableViewCellRegistrosGastos.xib in Resources */,
 				84CA12222222F2EF0040B78B /* IOTableViewCellSingleDataEntry.xib in Resources */,
 				84CA122D2222FEDC0040B78B /* IOTableViewCellSingleDateCell.xib in Resources */,
+				842BDBF022A38B7400BF5273 /* IOTableViewCellSingleTextField.xib in Resources */,
 				84CA124C22238A2D0040B78B /* IOTableViewCellSinglePicker.xib in Resources */,
 				84CA12282222FB3B0040B78B /* IOTableViewCellSingleSwitchCell.xib in Resources */,
 				84594EEC21DC64650019C9B9 /* Main.storyboard in Resources */,
@@ -1471,7 +1472,6 @@
 				84CA1210222107EC0040B78B /* IOTableViewCellBotonAgregarRegistro.xib in Resources */,
 				8402684C2205F87D00EF6070 /* IOLoginContraseñaCV.xib in Resources */,
 				84BD7FA3222F938B00FF6A50 /* IOTableViewCellBorrarRubroGasto.xib in Resources */,
-				84D4E4E4227F87EE00CEF2BF /* IOTableViewCellSingleTextField.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1597,6 +1597,7 @@
 				840420DD22729BB4007E7756 /* IOTableViewCellRegistrosGastos.swift in Sources */,
 				840420DE22729BB4007E7756 /* IOLoginUsuarioViewModel.swift in Sources */,
 				840420DF22729BB4007E7756 /* IOTableViewCellSingleSwitchCell.swift in Sources */,
+				842BDBEF22A38B7400BF5273 /* IOTableViewCellSingleTextField.swift in Sources */,
 				840420E022729BB4007E7756 /* IOTableViewCellGastoProfileFecha.swift in Sources */,
 				840420E122729BB4007E7756 /* coreGraphycs.swift in Sources */,
 				840420E222729BB4007E7756 /* configEncriptar.swift in Sources */,
@@ -1622,7 +1623,6 @@
 				840420F822729BB4007E7756 /* IOMoverRegistroGastoViewController.swift in Sources */,
 				840420F922729BB4007E7756 /* PCMensualViewModel.swift in Sources */,
 				840420FA22729BB4007E7756 /* TableViewCellHomeHeader.swift in Sources */,
-				84D4E4E3227F87EE00CEF2BF /* IOTableViewCellSingleTextField.swift in Sources */,
 				840420FD22729BB4007E7756 /* HomeViewModelProtocol.swift in Sources */,
 				840420FE22729BB4007E7756 /* IOAltaRubroViewController.swift in Sources */,
 				840420FF22729BB4007E7756 /* InOutMoneyFirebase.xcdatamodeld in Sources */,
@@ -1703,6 +1703,7 @@
 				84CA12082220FDAD0040B78B /* IOTableViewCellRegistrosGastos.swift in Sources */,
 				849BA96922074C9900EC93A6 /* IOLoginUsuarioViewModel.swift in Sources */,
 				84CA12272222FB3B0040B78B /* IOTableViewCellSingleSwitchCell.swift in Sources */,
+				842BDBEE22A38B7400BF5273 /* IOTableViewCellSingleTextField.swift in Sources */,
 				84CA12552224EDF20040B78B /* IOTableViewCellGastoProfileFecha.swift in Sources */,
 				840280F4220FB24600C85A6A /* coreGraphycs.swift in Sources */,
 				840280F0220FB24600C85A6A /* configEncriptar.swift in Sources */,
@@ -1728,7 +1729,6 @@
 				8418F5B82230C3E400EE020E /* IOMoverRegistroGastoViewController.swift in Sources */,
 				84CA123F222306230040B78B /* PCMensualViewModel.swift in Sources */,
 				84FF634E226AEA7000FED9DA /* TableViewCellHomeHeader.swift in Sources */,
-				84D4E4E2227F87EE00CEF2BF /* IOTableViewCellSingleTextField.swift in Sources */,
 				8484BC0A226AE77C00C20E40 /* HomeViewModelProtocol.swift in Sources */,
 				84CFD331222DD24F004CE810 /* IOAltaRubroViewController.swift in Sources */,
 				84594EEF21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld in Sources */,
