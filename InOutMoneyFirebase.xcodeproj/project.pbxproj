@@ -119,7 +119,6 @@
 		8404214722729BB4007E7756 /* IOTableViewCellSingleDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CA122B2222FEDC0040B78B /* IOTableViewCellSingleDateCell.xib */; };
 		8404214922729BB4007E7756 /* IOTableViewCellSinglePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CA124A22238A2D0040B78B /* IOTableViewCellSinglePicker.xib */; };
 		8404214B22729BB4007E7756 /* IOTableViewCellSingleSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CA12262222FB3B0040B78B /* IOTableViewCellSingleSwitchCell.xib */; };
-		8404214D22729BB4007E7756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84594EEA21DC64650019C9B9 /* Main.storyboard */; };
 		8404214F22729BB4007E7756 /* TableViewCellLoginUsuario.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8402685122068ECC00EF6070 /* TableViewCellLoginUsuario.xib */; };
 		8404215022729BB4007E7756 /* TableViewCellCuentas.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849F54F3226FFFCB00DBAB50 /* TableViewCellCuentas.xib */; };
 		8404215122729BB4007E7756 /* TableViewCellHomeHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FF634D226AEA7000FED9DA /* TableViewCellHomeHeader.xib */; };
@@ -142,8 +141,9 @@
 		842BDBF822A38BFA00BF5273 /* IOTableViewCellSingleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDBF522A38BFA00BF5273 /* IOTableViewCellSingleTextField.swift */; };
 		842BDBF922A38BFA00BF5273 /* IOTableViewCellSingleTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842BDBF622A38BFA00BF5273 /* IOTableViewCellSingleTextField.xib */; };
 		842BDBFA22A38BFA00BF5273 /* IOTableViewCellSingleTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842BDBF622A38BFA00BF5273 /* IOTableViewCellSingleTextField.xib */; };
+		842BDBFD22A38DC300BF5273 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842BDBFC22A38DC300BF5273 /* Main.storyboard */; };
+		842BDBFE22A38DC300BF5273 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842BDBFC22A38DC300BF5273 /* Main.storyboard */; };
 		84594EE721DC64650019C9B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84594EE621DC64650019C9B9 /* AppDelegate.swift */; };
-		84594EEC21DC64650019C9B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84594EEA21DC64650019C9B9 /* Main.storyboard */; };
 		84594EEF21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84594EED21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld */; };
 		84594EF421DC64670019C9B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84594EF221DC64670019C9B9 /* LaunchScreen.storyboard */; };
 		8484BC06226AE76200C20E40 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484BC05226AE76200C20E40 /* HomeModel.swift */; };
@@ -256,9 +256,9 @@
 		842BDBD422A387E300BF5273 /* IOTableViewCellBorrarRubroGasto.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IOTableViewCellBorrarRubroGasto.xib; sourceTree = "<group>"; };
 		842BDBF522A38BFA00BF5273 /* IOTableViewCellSingleTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTableViewCellSingleTextField.swift; sourceTree = "<group>"; };
 		842BDBF622A38BFA00BF5273 /* IOTableViewCellSingleTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IOTableViewCellSingleTextField.xib; sourceTree = "<group>"; };
+		842BDBFC22A38DC300BF5273 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		84594EE321DC64650019C9B9 /* ReleaseVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReleaseVersion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84594EE621DC64650019C9B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84594EEB21DC64650019C9B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84594EEE21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InOutMoneyFirebase.xcdatamodel; sourceTree = "<group>"; };
 		84594EF021DC64670019C9B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/diegodavid_77/mis software en disco/Iphone/InOutMoneyFirebase/InOutMoneyFirebase/Assets.xcassets"; sourceTree = "<absolute>"; };
 		84594EF321DC64670019C9B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -668,6 +668,16 @@
 			path = SingleTextField;
 			sourceTree = "<group>";
 		};
+		842BDBFB22A38D0400BF5273 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				8484BC02226AE70D00C20E40 /* Model */,
+				8484BC01226AE70700C20E40 /* ViewModel */,
+				8484BC00226AE6FF00C20E40 /* View */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
 		84594EDA21DC64650019C9B9 = {
 			isa = PBXGroup;
 			children = (
@@ -755,14 +765,6 @@
 				849F54F3226FFFCB00DBAB50 /* TableViewCellCuentas.xib */,
 			);
 			path = Cuentas;
-			sourceTree = "<group>";
-		};
-		84BBCADD2288C9D000D0B1EF /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				84FAE43A229B06C200DF11DC /* MainTabBarController.swift */,
-			);
-			path = TabBar;
 			sourceTree = "<group>";
 		};
 		84CA121222221E580040B78B /* AltaGasto */ = {
@@ -1016,23 +1018,13 @@
 			path = Registro;
 			sourceTree = "<group>";
 		};
-		84FAE43D229B06F900DF11DC /* NavigationControllers */ = {
-			isa = PBXGroup;
-			children = (
-				84FAE43E229B071300DF11DC /* MainNavigationController.swift */,
-			);
-			path = NavigationControllers;
-			sourceTree = "<group>";
-		};
 		84FD53802203F2EB00DC102A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				84BBCADD2288C9D000D0B1EF /* TabBar */,
-				84FAE43D229B06F900DF11DC /* NavigationControllers */,
+				842BDBFC22A38DC300BF5273 /* Main.storyboard */,
+				84FAE43A229B06C200DF11DC /* MainTabBarController.swift */,
+				84FAE43E229B071300DF11DC /* MainNavigationController.swift */,
 				84FD53822203F35000DC102A /* Login */,
-				842BDBBE22A36FCC00BF5273 /* AltaIngreso */,
-				84CA121222221E580040B78B /* AltaGasto */,
-				84CFD326222DD1C7004CE810 /* AltaRubro */,
 				84FD53812203F2F800DC102A /* Home */,
 			);
 			path = Sources;
@@ -1041,10 +1033,10 @@
 		84FD53812203F2F800DC102A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				8484BC02226AE70D00C20E40 /* Model */,
-				8484BC01226AE70700C20E40 /* ViewModel */,
-				8484BC00226AE6FF00C20E40 /* View */,
-				84594EEA21DC64650019C9B9 /* Main.storyboard */,
+				842BDBFB22A38D0400BF5273 /* MainView */,
+				842BDBBE22A36FCC00BF5273 /* AltaIngreso */,
+				84CA121222221E580040B78B /* AltaGasto */,
+				84CFD326222DD1C7004CE810 /* AltaRubro */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1191,11 +1183,11 @@
 				8404214122729BB4007E7756 /* IOTableViewCellBotonGuardar.xib in Resources */,
 				84D4E4DB2279FDD100CEF2BF /* TableViewCellSelector.xib in Resources */,
 				842BDBDE22A387E400BF5273 /* IOTableViewCellBorrarRubroGasto.xib in Resources */,
+				842BDBFE22A38DC300BF5273 /* Main.storyboard in Resources */,
 				8404214622729BB4007E7756 /* IOTableViewCellSingleDataEntry.xib in Resources */,
 				8404214722729BB4007E7756 /* IOTableViewCellSingleDateCell.xib in Resources */,
 				8404214922729BB4007E7756 /* IOTableViewCellSinglePicker.xib in Resources */,
 				8404214B22729BB4007E7756 /* IOTableViewCellSingleSwitchCell.xib in Resources */,
-				8404214D22729BB4007E7756 /* Main.storyboard in Resources */,
 				8404214F22729BB4007E7756 /* TableViewCellLoginUsuario.xib in Resources */,
 				84D4E33D2274DB0800CEF2BF /* Assets.xcassets in Resources */,
 				8404215022729BB4007E7756 /* TableViewCellCuentas.xib in Resources */,
@@ -1215,10 +1207,10 @@
 				84D4E4DA2279FDD100CEF2BF /* TableViewCellSelector.xib in Resources */,
 				84CA12222222F2EF0040B78B /* IOTableViewCellSingleDataEntry.xib in Resources */,
 				842BDBDD22A387E400BF5273 /* IOTableViewCellBorrarRubroGasto.xib in Resources */,
+				842BDBFD22A38DC300BF5273 /* Main.storyboard in Resources */,
 				84CA122D2222FEDC0040B78B /* IOTableViewCellSingleDateCell.xib in Resources */,
 				84CA124C22238A2D0040B78B /* IOTableViewCellSinglePicker.xib in Resources */,
 				84CA12282222FB3B0040B78B /* IOTableViewCellSingleSwitchCell.xib in Resources */,
-				84594EEC21DC64650019C9B9 /* Main.storyboard in Resources */,
 				8402685322068ECC00EF6070 /* TableViewCellLoginUsuario.xib in Resources */,
 				849F54F5226FFFCB00DBAB50 /* TableViewCellCuentas.xib in Resources */,
 				84D4E3412279198F00CEF2BF /* Assets.xcassets in Resources */,
@@ -1514,14 +1506,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		84594EEA21DC64650019C9B9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84594EEB21DC64650019C9B9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		84594EF221DC64670019C9B9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
