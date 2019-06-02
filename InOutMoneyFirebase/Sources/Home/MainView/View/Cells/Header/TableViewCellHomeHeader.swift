@@ -77,6 +77,21 @@ class TableViewCellHomeHeader: UITableViewCell {
         plusExpenditureOutlet.addGestureRecognizer(tapExpense)
         
     }
+    
+    func enableActions() {
+        plusIncomeOutlet.isUserInteractionEnabled = true
+        plusIncomeOutlet.alpha = 1
+        plusExpenditureOutlet.isUserInteractionEnabled = true
+        plusExpenditureOutlet.alpha = 1
+    }
+    
+    func disableActions() {
+        plusIncomeOutlet.isUserInteractionEnabled = false
+        plusIncomeOutlet.alpha = 0.3
+        plusExpenditureOutlet.isUserInteractionEnabled = false
+        plusExpenditureOutlet.alpha = 0.3
+
+    }
    
     @objc func nuevoGastoPresionado(_ sender: UITapGestureRecognizer) {
         self.delegate?.buttonPressed(sender: .gasto)

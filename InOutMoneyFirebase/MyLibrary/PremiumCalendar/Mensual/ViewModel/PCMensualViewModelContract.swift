@@ -48,6 +48,8 @@ protocol PCMensualViewContract {
     func showCuerpoDerecha(completion: @escaping () -> Void)
     func hideCuerpoDerecha(completion: @escaping () -> Void)
     func showCuerpoIzquierda(completion: @escaping () -> Void)
+    
+    func selectionFinished(date: Date)
 
 }
 

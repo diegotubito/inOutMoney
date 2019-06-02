@@ -43,6 +43,10 @@ class IOAltaGastoViewController: UIViewController, IORubrosGastosAltaViewContrac
         viewModel.set_cuenta_selected_index(0)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+    }
+    
     func inicializarBotonGuardar() {
         moreButton = UIBarButtonItem(title: "Guardar", style: .done, target: self, action: #selector(savePressed))
         navigationItem.rightBarButtonItem = moreButton
@@ -57,7 +61,7 @@ class IOAltaGastoViewController: UIViewController, IORubrosGastosAltaViewContrac
     
     override func viewDidAppear(_ animated: Bool) {
         set_picker()
-        descripcionCell.textFieldCell.becomeFirstResponder()
+        descripcionCell.textField.becomeFirstResponder()
     }
     
     func set_picker() {
@@ -94,7 +98,7 @@ class IOAltaGastoViewController: UIViewController, IORubrosGastosAltaViewContrac
         cells.append(descripcionCell)
         
         importeCell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellSingleDataEntry.identifier) as? IOTableViewCellSingleDataEntry
-        importeCell.textFieldCell.keyboardType = .decimalPad
+        importeCell.textField.keyboardType = .decimalPad
         importeCell.titleCell.text = "Importe"
         importeCell.tag = 1
         importeCell.delegate = self
@@ -118,10 +122,10 @@ class IOAltaGastoViewController: UIViewController, IORubrosGastosAltaViewContrac
     }
     
     func validateCells() -> String? {
-        if (descripcionCell.textFieldCell.text?.isEmpty)! {
+        if (descripcionCell.textField.text?.isEmpty)! {
             return "El campo descripción no puede estar vacio."
         }
-        if let valorDouble = Double(importeCell.textFieldCell.text!) {
+        if let valorDouble = Double(importeCell.textField.text!) {
             if valorDouble <= 0 {
                 return "El campo importe no puede ser ser cero."
             }
@@ -170,11 +174,11 @@ class IOAltaGastoViewController: UIViewController, IORubrosGastosAltaViewContrac
     }
     
     func getDescripcionTextField() -> String {
-        return descripcionCell.textFieldCell.text!
+        return descripcionCell.textField.text!
     }
     
     func getMontoTextField() -> String {
-        return importeCell.textFieldCell.text!
+        return importeCell.textField.text!
     }
     
 }
@@ -194,26 +198,9 @@ extension IOAltaGastoViewController: UITableViewDataSource {
 
 extension IOAltaGastoViewController: IOTableViewCellSingleDateCellDelegate {
     func buttonCellPressedDelegate(_ sender: UIButton) {
-        print(sender.tag)
-        descripcionCell.textFieldCell.resignFirstResponder()
-        importeCell.textFieldCell.resignFirstResponder()
+        descripcionCell.textField.resignFirstResponder()
+        importeCell.textField.resignFirstResponder()
         
-        calendario = PCMensualCustomView(frame: CGRect(x: 0, y: 100, width: view.frame.width, height: 250))
-        calendario.colorLabelDia = UIColor.white
-        calendario.layer.cornerRadius = 250/20
-        calendario.layer.borderColor = UIColor.white.cgColor
-        calendario.layer.borderWidth = 2
-        view.addSubview(calendario)
-        
-    /*    calendario.translatesAutoresizingMaskIntoConstraints = false
-        
-        let a = NSLayoutConstraint(item: calendario, attribute: .top, relatedBy: .equal, toItem: view.topAnchor, attribute: .topMargin, multiplier: 1, constant: 0)
-        let b = NSLayoutConstraint(item: calendario, attribute: .left, relatedBy: .equal, toItem: view.leftAnchor, attribute: .left, multiplier: 1, constant: 0)
-        let c = NSLayoutConstraint(item: calendario, attribute: .right, relatedBy: .equal, toItem: view.rightAnchor, attribute: .right, multiplier: 1, constant: 0)
-        let d = NSLayoutConstraint(item: calendario, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: view.frame.height/2.5)
-        
-        view.addConstraints([a,b,c, d])
-      */
     }
     
    
@@ -230,9 +217,9 @@ extension IOAltaGastoViewController: IOTableViewCellSingleDataEntryDelegate {
     func textDidEndEditingDelegate(tag: Int) {
         
         if tag == 0 {
-            importeCell.textFieldCell.becomeFirstResponder()
+            importeCell.textField.becomeFirstResponder()
         } else if tag == 1 {
-            importeCell.textFieldCell.resignFirstResponder()
+            importeCell.textField.resignFirstResponder()
         }
     }
     
@@ -243,8 +230,8 @@ extension IOAltaGastoViewController: IOTableViewCellSingleDataEntryDelegate {
 extension IOAltaGastoViewController: IOTableViewCellSinglePickerDelegate {
     func pickerDidSelected(row: Int) {
         viewModel.set_cuenta_selected_index(row)
-        descripcionCell.textFieldCell.resignFirstResponder()
-        importeCell.textFieldCell.resignFirstResponder()
+        descripcionCell.textField.resignFirstResponder()
+        importeCell.textField.resignFirstResponder()
     }
     
     

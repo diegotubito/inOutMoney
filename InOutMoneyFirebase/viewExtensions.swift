@@ -10,6 +10,25 @@ import UIKit
 
 extension UIView {
     
+    public func startBlurEffect(duration: TimeInterval, stopAt: TimeInterval?) {
+        self.layer.backgroundColor = UIColor.clear.cgColor
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.effect = nil
+        blurEffectView.frame = self.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.addSubview(blurEffectView)
+        
+        //start blurring
+        UIView.animate(withDuration: duration) {
+            blurEffectView.effect = UIBlurEffect(style: .dark)
+            //stop animation at stopAt
+            if stopAt != nil {
+                blurEffectView.pauseAnimation(delay: stopAt!)
+            }
+        }
+    }
+    
     public func pauseAnimation(delay: Double) {
         let time = delay + CFAbsoluteTimeGetCurrent()
         let timer = CFRunLoopTimerCreateWithHandler(kCFAllocatorDefault, time, 0, 0, 0, { timer in

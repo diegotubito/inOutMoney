@@ -60,6 +60,7 @@ class PCMensualViewModel: NSObject, PCMensualViewModelContract {
             model.selectedDates.removeAll()
             model.selectedDates.append(view.fechaString)
          _view.highlightBorderForFinishedSelection()
+            _view.selectionFinished(date: view.fechaString.toDate(formato: "dd-MM-yyyy")!)
             
         } else if model.selectionMode == PCMensualSelectionMode.randomSelection {
             if let index = model.selectedDates.firstIndex(where: {$0 == view.fechaString}) {

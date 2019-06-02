@@ -161,6 +161,10 @@
 		849F54EE226EC65600DBAB50 /* IngresoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849F54ED226EC65600DBAB50 /* IngresoManager.swift */; };
 		849F54F4226FFFCB00DBAB50 /* TableViewCellCuentas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849F54F2226FFFCB00DBAB50 /* TableViewCellCuentas.swift */; };
 		849F54F5226FFFCB00DBAB50 /* TableViewCellCuentas.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849F54F3226FFFCB00DBAB50 /* TableViewCellCuentas.xib */; };
+		84B0191E22A462DB00B42B26 /* IOMovimientoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0191D22A462DB00B42B26 /* IOMovimientoViewController.swift */; };
+		84B0191F22A462DB00B42B26 /* IOMovimientoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0191D22A462DB00B42B26 /* IOMovimientoViewController.swift */; };
+		84B0192122A464E900B42B26 /* MovimientoNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0192022A464E900B42B26 /* MovimientoNavigationController.swift */; };
+		84B0192222A464E900B42B26 /* MovimientoNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0192022A464E900B42B26 /* MovimientoNavigationController.swift */; };
 		84CA121722221E910040B78B /* IOAltaGastoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA121622221E910040B78B /* IOAltaGastoModel.swift */; };
 		84CA121922221EAB0040B78B /* IORubrosGastosAltaViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA121822221EAB0040B78B /* IORubrosGastosAltaViewModelContract.swift */; };
 		84CA121B22221F230040B78B /* IORubrosGastosAltaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA121A22221F230040B78B /* IORubrosGastosAltaViewModel.swift */; };
@@ -278,6 +282,8 @@
 		849F54ED226EC65600DBAB50 /* IngresoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngresoManager.swift; sourceTree = "<group>"; };
 		849F54F2226FFFCB00DBAB50 /* TableViewCellCuentas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellCuentas.swift; sourceTree = "<group>"; };
 		849F54F3226FFFCB00DBAB50 /* TableViewCellCuentas.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellCuentas.xib; sourceTree = "<group>"; };
+		84B0191D22A462DB00B42B26 /* IOMovimientoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOMovimientoViewController.swift; sourceTree = "<group>"; };
+		84B0192022A464E900B42B26 /* MovimientoNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovimientoNavigationController.swift; sourceTree = "<group>"; };
 		84CA121622221E910040B78B /* IOAltaGastoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOAltaGastoModel.swift; sourceTree = "<group>"; };
 		84CA121822221EAB0040B78B /* IORubrosGastosAltaViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubrosGastosAltaViewModelContract.swift; sourceTree = "<group>"; };
 		84CA121A22221F230040B78B /* IORubrosGastosAltaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORubrosGastosAltaViewModel.swift; sourceTree = "<group>"; };
@@ -720,6 +726,7 @@
 			isa = PBXGroup;
 			children = (
 				84FF634A226AEA5200FED9DA /* Cells */,
+				84FAE43E229B071300DF11DC /* MainNavigationController.swift */,
 				8484BC0B226AE78700C20E40 /* HomeViewController.swift */,
 			);
 			path = View;
@@ -765,6 +772,47 @@
 				849F54F3226FFFCB00DBAB50 /* TableViewCellCuentas.xib */,
 			);
 			path = Cuentas;
+			sourceTree = "<group>";
+		};
+		84B0191822A4624C00B42B26 /* Movimiento */ = {
+			isa = PBXGroup;
+			children = (
+				84B0191922A4628300B42B26 /* MainView */,
+			);
+			path = Movimiento;
+			sourceTree = "<group>";
+		};
+		84B0191922A4628300B42B26 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				84B0191C22A4629B00B42B26 /* Model */,
+				84B0191B22A4629600B42B26 /* ViewModel */,
+				84B0191A22A4628F00B42B26 /* View */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		84B0191A22A4628F00B42B26 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84B0191D22A462DB00B42B26 /* IOMovimientoViewController.swift */,
+				84B0192022A464E900B42B26 /* MovimientoNavigationController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84B0191B22A4629600B42B26 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84B0191C22A4629B00B42B26 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		84CA121222221E580040B78B /* AltaGasto */ = {
@@ -1023,9 +1071,9 @@
 			children = (
 				842BDBFC22A38DC300BF5273 /* Main.storyboard */,
 				84FAE43A229B06C200DF11DC /* MainTabBarController.swift */,
-				84FAE43E229B071300DF11DC /* MainNavigationController.swift */,
 				84FD53822203F35000DC102A /* Login */,
 				84FD53812203F2F800DC102A /* Home */,
+				84B0191822A4624C00B42B26 /* Movimiento */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -1333,6 +1381,7 @@
 				840420D422729BB4007E7756 /* IORubrosGastosAltaViewModelContract.swift in Sources */,
 				840420D522729BB4007E7756 /* networkManager.swift in Sources */,
 				840420D722729BB4007E7756 /* IOAltaRubroViewModel.swift in Sources */,
+				84B0192222A464E900B42B26 /* MovimientoNavigationController.swift in Sources */,
 				840420D922729BB4007E7756 /* IOAltaRubroViewModelContract.swift in Sources */,
 				840420DA22729BB4007E7756 /* IONuevoUsuarioModel.swift in Sources */,
 				84FAE43C229B06C200DF11DC /* MainTabBarController.swift in Sources */,
@@ -1409,6 +1458,7 @@
 				8404213522729BB4007E7756 /* alamofireExtension.swift in Sources */,
 				8404213722729BB4007E7756 /* AppDelegate.swift in Sources */,
 				8404213822729BB4007E7756 /* TableViewCellLoginUsuario.swift in Sources */,
+				84B0191F22A462DB00B42B26 /* IOMovimientoViewController.swift in Sources */,
 				8404213922729BB4007E7756 /* GastoManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1423,6 +1473,7 @@
 				84CA121922221EAB0040B78B /* IORubrosGastosAltaViewModelContract.swift in Sources */,
 				840280FF220FB24600C85A6A /* networkManager.swift in Sources */,
 				84CFD32F222DD23F004CE810 /* IOAltaRubroViewModel.swift in Sources */,
+				84B0192122A464E900B42B26 /* MovimientoNavigationController.swift in Sources */,
 				84CFD32D222DD234004CE810 /* IOAltaRubroViewModelContract.swift in Sources */,
 				84028110220FC37B00C85A6A /* IONuevoUsuarioModel.swift in Sources */,
 				84FAE43B229B06C200DF11DC /* MainTabBarController.swift in Sources */,
@@ -1499,6 +1550,7 @@
 				840280EE220FB24600C85A6A /* alamofireExtension.swift in Sources */,
 				84594EE721DC64650019C9B9 /* AppDelegate.swift in Sources */,
 				8402685222068ECC00EF6070 /* TableViewCellLoginUsuario.swift in Sources */,
+				84B0191E22A462DB00B42B26 /* IOMovimientoViewController.swift in Sources */,
 				8402F8FB226D36F0001CD037 /* GastoManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

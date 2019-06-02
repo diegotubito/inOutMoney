@@ -42,14 +42,18 @@ class IOAltaRubroViewController: UIViewController, IOAltaRubroViewContract {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         set_picker()
-        descripcionCell.textFieldCell.becomeFirstResponder()
+        descripcionCell.textField.becomeFirstResponder()
     }
     
     @objc func saveTapped() {
         if validate() {
-            viewModel.guardarNuevoRubro(descripcion: descripcionCell.textFieldCell.text!)
+            viewModel.guardarNuevoRubro(descripcion: descripcionCell.textField.text!)
         }
     }
     
@@ -115,17 +119,17 @@ extension IOAltaRubroViewController: IOTableViewCellSingleDataEntryDelegate {
     }
     
     func textDidEndEditingDelegate(tag: Int) {
-        descripcionCell.textFieldCell.resignFirstResponder()
+        descripcionCell.textField.resignFirstResponder()
         _ = validate()
     }
     
     func validate() -> Bool {
-        if descripcionCell.textFieldCell.text?.count == 0 {
+        if descripcionCell.textField.text?.count == 0 {
              buttonSave.isEnabled = false
             return false
         }
 
-        if (descripcionCell.textFieldCell.text?.count)! > 30 {
+        if (descripcionCell.textField.text?.count)! > 30 {
              buttonSave.isEnabled = false
             return false
         }

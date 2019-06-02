@@ -129,30 +129,13 @@ class DDSelector: UIView {
         contentViewFadeInAnimation {}
     }
     
-    private func startBlurEffect() {
-        backgroundView.layer.backgroundColor = UIColor.clear.cgColor
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
-        blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.effect = nil
-        blurEffectView.frame = backgroundView.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        backgroundView.addSubview(blurEffectView)
-        
-        //start blurring
-        UIView.animate(withDuration: 0.6) {
-            self.blurEffectView.effect = UIBlurEffect(style: .dark)
-            //stop animation at 0.5sec
-           // self.blurEffectView.pauseAnimation(delay: 0.6)
-            
-        }
-    }
     private func drawBackground() {
         backgroundView = UIView()
         backgroundView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         addSubview(backgroundView)
         
         if parameters.isBlurred {
-            startBlurEffect()
+            startBlurEffect(duration: 0.6, stopAt: nil)
         } else {
             backgroundFadeInAnimation {}
         }

@@ -53,12 +53,8 @@ class HomeViewController: UIViewController {
                 self.loadCells()
                 self.tableView.reloadData()
                 
-                IORubroManager.loadRubrosFromFirebase(success: {
-                    print("tengo los rubros")
-                }, fail: { (errorMessage) in
-                    print(errorMessage)
-                })
-        
+                
+               self.loadRubros()
         
                 
 //                 do {
@@ -74,15 +70,24 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        tabBarController?.tabBar.isHidden = true
-    }
-    
+
     @IBAction func nuewRubroPressed(_ sender: Any) {
         performSegue(withIdentifier: "segue_rubro_gasto", sender: nil)
         
     }
+    
+    func loadRubros() {
+        header.disableActions()
+        IORubroManager.loadRubrosFromFirebase(success: {
+            print("tengo los rubros")
+            self.header.enableActions()
+        }, fail: { (errorMessage) in
+            self.header.enableActions()
+            print(errorMessage)
+        })
+        
+    }
+    
     @IBAction func logoutPressed(_ sender: Any) {
         service.signOut(success: {
             print("sign out")
@@ -106,6 +111,8 @@ class HomeViewController: UIViewController {
     
     
     func loadCells() {
+        cells.removeAll()
+        
         header = tableView.dequeueReusableCell(withIdentifier: TableViewCellHomeHeader.identifier) as? TableViewCellHomeHeader
         
         header.showTotalGasto(date: Date())
@@ -130,6 +137,7 @@ class HomeViewController: UIViewController {
         }
         
         if let controller = segue.destination as? IOAltaGastoViewController {
+            controller.delegate = self
             if let object = sender as? IORubroManager.Rubro {
                 controller.viewModel = IORubrosGastosAltaViewModel(withView: controller, rubroSeleccionado: object)
             }
@@ -137,6 +145,7 @@ class HomeViewController: UIViewController {
         }
         
         if let controller = segue.destination as? IOAltaIngresoViewController {
+            controller.delegate = self
             if let object = sender as? IORubroManager.Rubro {
                 controller.viewModel = IOAltaIngresoViewModel(withView: controller, rubroSeleccionado: object)
             }
@@ -144,6 +153,7 @@ class HomeViewController: UIViewController {
         }
         
         if let controller = segue.destination as? IOAltaRubroViewController {
+            controller.delegate = self
             controller.viewModel = IOAltaRubroViewModel(withView: controller)
         }
     
@@ -234,4 +244,22 @@ extension HomeViewController: TabaleViewCellHomeHeaderDelegate {
     }
     
   
+}
+
+
+extension HomeViewController: IOAltaIngresoViewControllerDelegate, IOAltaGastoViewControllerDelegate {
+    func nuevoRegistroIngresadoDelegate() {
+        header.showTotalGasto(date: Date())
+        header.showTotalIngresos(date: Date())
+        cuentas.mostrarTotalCuentas()
+    }
+}
+
+extension HomeViewController: IOAltaRubroViewControllerDelegate {
+    func nuevoRubroIngresadoDelegate() {
+        
+       self.loadRubros()
+    }
+    
+    
 }

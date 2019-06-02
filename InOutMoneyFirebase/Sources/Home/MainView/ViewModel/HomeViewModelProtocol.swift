@@ -14,5 +14,5 @@ protocol HomeViewModelProtocol {
 }
 
 protocol HomeViewProtocol {
-    
+    func reloadList()
 }

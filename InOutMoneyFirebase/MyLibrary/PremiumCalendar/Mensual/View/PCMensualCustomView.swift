@@ -8,8 +8,16 @@
 
 import UIKit
 
+protocol PCMensualCustomViewDelegate:class {
+    func didSelectDate(value: Date)
+}
+
 @IBDesignable
 class PCMensualCustomView: UIView, PCMensualViewContract {
+   
+    
+    weak var delegate : PCMensualCustomViewDelegate?
+    
     func highlightBorderForFinishedSelection() {
         self.layer.borderColor = UIColor.red.cgColor
     }
@@ -26,6 +34,11 @@ class PCMensualCustomView: UIView, PCMensualViewContract {
         }
     }
     
+    func setInitialDate(value: Date) {
+        viewModel.model.viewDate = value
+        viewModel.model.selectedDates.append(value.toString(formato: "dd-MM-yyyy"))
+        showSelectedItems()
+    }
    
     
     var COLOR_FONDO_SELECCION = UIColor.cyan.withAlphaComponent(0.4)
@@ -414,7 +427,9 @@ class PCMensualCustomView: UIView, PCMensualViewContract {
         }
     }
     
-    
+    func selectionFinished(date: Date) {
+        self.delegate?.didSelectDate(value: date)
+    }
 }
 
 
