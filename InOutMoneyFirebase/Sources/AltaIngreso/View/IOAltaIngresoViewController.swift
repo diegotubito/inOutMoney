@@ -1,58 +1,56 @@
 //
-//  IORubrosGastosAltaViewController.swift
+//  IOAltaViewController.swift
 //  InOutMoneyFirebase
 //
-//  Created by David Diego Gomez on 24/2/19.
+//  Created by David Diego Gomez on 1/6/19.
 //  Copyright © 2019 Gomez David Diego. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-protocol IOAltaGastoViewControllerDelegate {
-    func nuevoRegistroIngresadoDelegate()
+protocol IOAltaIngresoViewControllerDelegate: class {
+    func nuevoRegistrosIngresadoDelegate()
 }
-class IOAltaGastoViewController: UIViewController, IORubrosGastosAltaViewContract {
-  
+
+class IOAltaIngresoViewController : UIViewController, IOAltaIngresoViewContract {
+   
     
+    var viewModel : IOAltaIngresoViewModelContract!
     
-    var delegate : IOAltaGastoViewControllerDelegate?
-    @IBOutlet var tableView: UITableView!
+    weak var delegate : IOAltaIngresoViewControllerDelegate?
+    
+    @IBOutlet weak var tableView : UITableView!
+    
     var cells = [UITableViewCell]()
     var descripcionCell : IOTableViewCellSingleDataEntry!
     var importeCell : IOTableViewCellSingleDataEntry!
+    var pickerCell : IOTableViewCellSinglePicker!
     var fechaCell : IOTableViewCellSingleDateCell!
-     var pickerCell : IOTableViewCellSinglePicker!
     
     var calendario : PCMensualCustomView!
-    
-    var viewModel : IORubrosGastosAltaViewModelContract!
-    var moreButton : UIBarButtonItem!
+    var botonGuardar : UIBarButtonItem!
     
     
     override func viewDidLoad() {
         super .viewDidLoad()
         
-        navigationItem.title = "Nuevo Gasto"
+        navigationItem.title = "Nuevo Ingreso"
         
         inicializarBotonGuardar()
-        registerTableViewCells()
+        registerTableViewCell()
         loadCells()
         
         viewModel.check_accounts()
         viewModel.set_cuenta_selected_index(0)
-    }
-    
-    func inicializarBotonGuardar() {
-        moreButton = UIBarButtonItem(title: "Guardar", style: .done, target: self, action: #selector(savePressed))
-        navigationItem.rightBarButtonItem = moreButton
+
         
     }
     
-    func registerTableViewCells() {
-        tableView.register(IOTableViewCellSingleDataEntry.nib, forCellReuseIdentifier: IOTableViewCellSingleDataEntry.identifier)
-        tableView.register(IOTableViewCellSingleDateCell.nib, forCellReuseIdentifier: IOTableViewCellSingleDateCell.identifier)
-        tableView.register(IOTableViewCellSinglePicker.nib, forCellReuseIdentifier: IOTableViewCellSinglePicker.identifier)
+    func inicializarBotonGuardar() {
+        botonGuardar = UIBarButtonItem(title: "Guardar", style: .done, target: self, action: #selector(savePressed))
+        navigationItem.rightBarButtonItem = botonGuardar
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -86,6 +84,8 @@ class IOAltaGastoViewController: UIViewController, IORubrosGastosAltaViewContrac
         
     }
     
+    
+    
     func loadCells() {
         descripcionCell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellSingleDataEntry.identifier) as? IOTableViewCellSingleDataEntry
         descripcionCell.titleCell.text = "Descripción"
@@ -117,6 +117,12 @@ class IOAltaGastoViewController: UIViewController, IORubrosGastosAltaViewContrac
 
     }
     
+    func registerTableViewCell() {
+        tableView.register(IOTableViewCellSingleDateCell.nib, forCellReuseIdentifier: IOTableViewCellSingleDateCell.identifier)
+        tableView.register(IOTableViewCellSingleDataEntry.nib, forCellReuseIdentifier: IOTableViewCellSingleDataEntry.identifier)
+        tableView.register(IOTableViewCellSinglePicker.nib, forCellReuseIdentifier: IOTableViewCellSinglePicker.identifier)
+    }
+    
     func validateCells() -> String? {
         if (descripcionCell.textFieldCell.text?.isEmpty)! {
             return "El campo descripción no puede estar vacio."
@@ -128,13 +134,13 @@ class IOAltaGastoViewController: UIViewController, IORubrosGastosAltaViewContrac
         } else {
             return "El formato importe es incorrecto."
         }
-
         
-   
+        
+        
         return nil
     }
     
-   
+    
     
     
     func showError(_ message: String) {
@@ -161,7 +167,7 @@ class IOAltaGastoViewController: UIViewController, IORubrosGastosAltaViewContrac
     
     
     func showSuccess() {
-        self.delegate?.nuevoRegistroIngresadoDelegate()
+        self.delegate?.nuevoRegistrosIngresadoDelegate()
         navigationController?.popViewController(animated: true)
     }
     
@@ -179,7 +185,8 @@ class IOAltaGastoViewController: UIViewController, IORubrosGastosAltaViewContrac
     
 }
 
-extension IOAltaGastoViewController: UITableViewDataSource {
+
+extension IOAltaIngresoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cells.count
     }
@@ -192,7 +199,7 @@ extension IOAltaGastoViewController: UITableViewDataSource {
 }
 
 
-extension IOAltaGastoViewController: IOTableViewCellSingleDateCellDelegate {
+extension IOAltaIngresoViewController: IOTableViewCellSingleDateCellDelegate {
     func buttonCellPressedDelegate(_ sender: UIButton) {
         print(sender.tag)
         descripcionCell.textFieldCell.resignFirstResponder()
@@ -205,25 +212,25 @@ extension IOAltaGastoViewController: IOTableViewCellSingleDateCellDelegate {
         calendario.layer.borderWidth = 2
         view.addSubview(calendario)
         
-    /*    calendario.translatesAutoresizingMaskIntoConstraints = false
-        
-        let a = NSLayoutConstraint(item: calendario, attribute: .top, relatedBy: .equal, toItem: view.topAnchor, attribute: .topMargin, multiplier: 1, constant: 0)
-        let b = NSLayoutConstraint(item: calendario, attribute: .left, relatedBy: .equal, toItem: view.leftAnchor, attribute: .left, multiplier: 1, constant: 0)
-        let c = NSLayoutConstraint(item: calendario, attribute: .right, relatedBy: .equal, toItem: view.rightAnchor, attribute: .right, multiplier: 1, constant: 0)
-        let d = NSLayoutConstraint(item: calendario, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: view.frame.height/2.5)
-        
-        view.addConstraints([a,b,c, d])
-      */
+        /*    calendario.translatesAutoresizingMaskIntoConstraints = false
+         
+         let a = NSLayoutConstraint(item: calendario, attribute: .top, relatedBy: .equal, toItem: view.topAnchor, attribute: .topMargin, multiplier: 1, constant: 0)
+         let b = NSLayoutConstraint(item: calendario, attribute: .left, relatedBy: .equal, toItem: view.leftAnchor, attribute: .left, multiplier: 1, constant: 0)
+         let c = NSLayoutConstraint(item: calendario, attribute: .right, relatedBy: .equal, toItem: view.rightAnchor, attribute: .right, multiplier: 1, constant: 0)
+         let d = NSLayoutConstraint(item: calendario, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: view.frame.height/2.5)
+         
+         view.addConstraints([a,b,c, d])
+         */
     }
     
-   
+    
     
 }
 
 
 
 
-extension IOAltaGastoViewController: IOTableViewCellSingleDataEntryDelegate {
+extension IOAltaIngresoViewController: IOTableViewCellSingleDataEntryDelegate {
     func textDidChangeDelegate(tag: Int) {
     }
     
@@ -240,7 +247,7 @@ extension IOAltaGastoViewController: IOTableViewCellSingleDataEntryDelegate {
 }
 
 
-extension IOAltaGastoViewController: IOTableViewCellSinglePickerDelegate {
+extension IOAltaIngresoViewController: IOTableViewCellSinglePickerDelegate {
     func pickerDidSelected(row: Int) {
         viewModel.set_cuenta_selected_index(row)
         descripcionCell.textFieldCell.resignFirstResponder()

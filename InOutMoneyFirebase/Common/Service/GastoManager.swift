@@ -94,6 +94,17 @@ class IOGastoManager {
         return result
     }
     
+    static func getTotalIngreso() -> Double {
+        var result : Double = 0
+        for i in registros {
+            if i.type == ProjectConstants.rubros.ingresoKey {
+                result += i.importe ?? 0
+            }
+        }
+        
+        return result
+    }
+    
     static func getTotal(childIDRubro: String) -> Double {
         var result : Double = 0
         for i in registros {

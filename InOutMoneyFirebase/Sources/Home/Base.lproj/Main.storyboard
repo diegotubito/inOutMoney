@@ -50,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T8J-9d-fzX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="918" y="953"/>
+            <point key="canvasLocation" x="790" y="1051"/>
         </scene>
         <!--En construcción-->
         <scene sceneID="QwC-W2-UiW">
@@ -66,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBS-CT-kGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-815" y="1318"/>
+            <point key="canvasLocation" x="-815" y="1275"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="aJW-ck-Kax">
@@ -161,11 +161,46 @@
                         <segue destination="7ud-ek-S28" kind="show" identifier="segue_gasto" id="njX-u5-v1B"/>
                         <segue destination="7la-QV-wb7" kind="show" identifier="segue_to_login" id="bGa-7j-lDr"/>
                         <segue destination="yCV-C0-geK" kind="show" identifier="segue_rubro_gasto" id="UNg-bm-MR3"/>
+                        <segue destination="jL2-8s-sx1" kind="show" identifier="segue_ingreso" id="mFH-hx-nNx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6J3-ae-C3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="84" y="131.78410794602701"/>
+        </scene>
+        <!--Alta Ingreso View Controller-->
+        <scene sceneID="WXS-Pl-sg7">
+            <objects>
+                <viewController id="jL2-8s-sx1" customClass="IOAltaIngresoViewController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Atb-oQ-7Sx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ujl-OE-8HS">
+                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="jL2-8s-sx1" id="hyA-bR-yuC"/>
+                                    <outlet property="delegate" destination="jL2-8s-sx1" id="v1n-3y-yhf"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ujl-OE-8HS" firstAttribute="leading" secondItem="ee2-Yx-O9Q" secondAttribute="leading" id="1mi-bV-Clj"/>
+                            <constraint firstItem="ujl-OE-8HS" firstAttribute="top" secondItem="ee2-Yx-O9Q" secondAttribute="top" id="7ve-Lk-omF"/>
+                            <constraint firstItem="ee2-Yx-O9Q" firstAttribute="bottom" secondItem="ujl-OE-8HS" secondAttribute="bottom" id="E1D-zn-U3U"/>
+                            <constraint firstItem="ee2-Yx-O9Q" firstAttribute="trailing" secondItem="ujl-OE-8HS" secondAttribute="trailing" id="XqA-ai-pp2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ee2-Yx-O9Q"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="ujl-OE-8HS" id="8vp-Wa-iPc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DPE-yZ-agM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1313" y="374"/>
         </scene>
         <!--Alta Gasto View Controller-->
         <scene sceneID="BAD-x0-2cF">
@@ -206,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wDh-7u-Wuo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="917.60000000000002" y="131.78410794602701"/>
+            <point key="canvasLocation" x="1313" y="-310"/>
         </scene>
     </scenes>
     <resources>

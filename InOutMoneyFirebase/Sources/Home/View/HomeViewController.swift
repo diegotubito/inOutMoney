@@ -136,6 +136,13 @@ class HomeViewController: UIViewController {
         
         }
         
+        if let controller = segue.destination as? IOAltaIngresoViewController {
+            if let object = sender as? IORubroManager.Rubro {
+                controller.viewModel = IOAltaIngresoViewModel(withView: controller, rubroSeleccionado: object)
+            }
+            
+        }
+        
         if let controller = segue.destination as? IOAltaRubroViewController {
             controller.viewModel = IOAltaRubroViewModel(withView: controller)
         }
@@ -217,7 +224,7 @@ extension HomeViewController: TabaleViewCellHomeHeaderDelegate {
             
             mySelector.onSelectedItem = ({index -> Void in
                 if index != nil {
-                    self.performSegue(withIdentifier: "segue_gasto", sender: IORubroManager.rubros[index!])
+                    self.performSegue(withIdentifier: "segue_ingreso", sender: IORubroManager.rubros[index!])
                 }
             })
             

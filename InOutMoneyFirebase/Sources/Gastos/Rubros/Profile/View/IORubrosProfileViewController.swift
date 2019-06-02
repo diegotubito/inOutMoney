@@ -134,7 +134,8 @@ extension IORubrosProfileViewController: IOTableViewCellBotonAgregarRegistroDele
 
 
 extension IORubrosProfileViewController: IOAltaGastoViewControllerDelegate {
-    func nuevoGastoIngresadoDelegate() {
+     
+    func nuevoRegistroIngresadoDelegate() {
         showToast(message: "Nuevo gasto ingresado")
         IORegistroManager.loadRegistrosFromFirebase(mes: viewModel.model.fechaSeleccionada.mes, año: viewModel.model.fechaSeleccionada.año, success: {
             self.viewModel.loadData()
