@@ -125,6 +125,7 @@
 		8404215422729BB4007E7756 /* StoryboardLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FD53832203F37500DC102A /* StoryboardLogin.storyboard */; };
 		8404215722729BB4007E7756 /* IOLoginContraseñaCV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8402684B2205F87D00EF6070 /* IOLoginContraseñaCV.xib */; };
 		842227587AA8719C417032C5 /* Pods_InOutMoneyFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */; };
+<<<<<<< HEAD
 		842BDBC022A36FE500BF5273 /* IOAltaIngresoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDBBF22A36FE500BF5273 /* IOAltaIngresoModel.swift */; };
 		842BDBC122A36FE500BF5273 /* IOAltaIngresoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDBBF22A36FE500BF5273 /* IOAltaIngresoModel.swift */; };
 		842BDBC622A3702100BF5273 /* IOAltaIngresoViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDBC522A3702100BF5273 /* IOAltaIngresoViewModelContract.swift */; };
@@ -143,6 +144,16 @@
 		842BDBFA22A38BFA00BF5273 /* IOTableViewCellSingleTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842BDBF622A38BFA00BF5273 /* IOTableViewCellSingleTextField.xib */; };
 		842BDBFD22A38DC300BF5273 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842BDBFC22A38DC300BF5273 /* Main.storyboard */; };
 		842BDBFE22A38DC300BF5273 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842BDBFC22A38DC300BF5273 /* Main.storyboard */; };
+=======
+		842BDBEE22A38B7400BF5273 /* IOTableViewCellSingleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDBEC22A38B7400BF5273 /* IOTableViewCellSingleTextField.swift */; };
+		842BDBEF22A38B7400BF5273 /* IOTableViewCellSingleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDBEC22A38B7400BF5273 /* IOTableViewCellSingleTextField.swift */; };
+		842BDBF022A38B7400BF5273 /* IOTableViewCellSingleTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842BDBED22A38B7400BF5273 /* IOTableViewCellSingleTextField.xib */; };
+		842BDBF122A38B7400BF5273 /* IOTableViewCellSingleTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842BDBED22A38B7400BF5273 /* IOTableViewCellSingleTextField.xib */; };
+		842EFAEE2234339900DA8104 /* IODetalleRegistroGastoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EFAED2234339900DA8104 /* IODetalleRegistroGastoModel.swift */; };
+		842EFAF0223433B400DA8104 /* IODetalleRegistroViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EFAEF223433B400DA8104 /* IODetalleRegistroViewModelContract.swift */; };
+		842EFAF2223433C100DA8104 /* IODetalleRegistroGastoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EFAF1223433C100DA8104 /* IODetalleRegistroGastoViewModel.swift */; };
+		842EFAF4223433D200DA8104 /* IODetalleRegistroGastoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EFAF3223433D200DA8104 /* IODetalleRegistroGastoViewController.swift */; };
+>>>>>>> master
 		84594EE721DC64650019C9B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84594EE621DC64650019C9B9 /* AppDelegate.swift */; };
 		84594EEF21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84594EED21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld */; };
 		84594EF421DC64670019C9B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84594EF221DC64670019C9B9 /* LaunchScreen.storyboard */; };
@@ -252,6 +263,7 @@
 		8402F8FA226D36F0001CD037 /* GastoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GastoManager.swift; sourceTree = "<group>"; };
 		8404215D22729BB4007E7756 /* DebugVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DebugVersion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8404215E22729BB4007E7756 /* InOutMoneyFirebase copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "InOutMoneyFirebase copy-Info.plist"; path = "/Users/diegodavid_77/mis software en disco/Iphone/InOutMoneyFirebase/InOutMoneyFirebase copy-Info.plist"; sourceTree = "<absolute>"; };
+<<<<<<< HEAD
 		842BDBBF22A36FE500BF5273 /* IOAltaIngresoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOAltaIngresoModel.swift; sourceTree = "<group>"; };
 		842BDBC522A3702100BF5273 /* IOAltaIngresoViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOAltaIngresoViewModelContract.swift; sourceTree = "<group>"; };
 		842BDBC822A3702E00BF5273 /* IOAltaIngresoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOAltaIngresoViewModel.swift; sourceTree = "<group>"; };
@@ -261,6 +273,19 @@
 		842BDBF522A38BFA00BF5273 /* IOTableViewCellSingleTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTableViewCellSingleTextField.swift; sourceTree = "<group>"; };
 		842BDBF622A38BFA00BF5273 /* IOTableViewCellSingleTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IOTableViewCellSingleTextField.xib; sourceTree = "<group>"; };
 		842BDBFC22A38DC300BF5273 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+=======
+		840FF26122185DBD006B809A /* gastosStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = gastosStoryboard.storyboard; sourceTree = "<group>"; };
+		8418F5B72230C3E400EE020E /* IOMoverRegistroGastoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOMoverRegistroGastoViewController.swift; sourceTree = "<group>"; };
+		8418F5B92230C3FE00EE020E /* IOMoverRegistroGastoViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOMoverRegistroGastoViewModelContract.swift; sourceTree = "<group>"; };
+		8418F5BB2230C40A00EE020E /* IOMoverRegistroGastoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOMoverRegistroGastoViewModel.swift; sourceTree = "<group>"; };
+		8418F5BD2230C41A00EE020E /* IOMoverRegistroGastoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOMoverRegistroGastoModel.swift; sourceTree = "<group>"; };
+		842BDBEC22A38B7400BF5273 /* IOTableViewCellSingleTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOTableViewCellSingleTextField.swift; sourceTree = "<group>"; };
+		842BDBED22A38B7400BF5273 /* IOTableViewCellSingleTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IOTableViewCellSingleTextField.xib; sourceTree = "<group>"; };
+		842EFAED2234339900DA8104 /* IODetalleRegistroGastoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IODetalleRegistroGastoModel.swift; sourceTree = "<group>"; };
+		842EFAEF223433B400DA8104 /* IODetalleRegistroViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IODetalleRegistroViewModelContract.swift; sourceTree = "<group>"; };
+		842EFAF1223433C100DA8104 /* IODetalleRegistroGastoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IODetalleRegistroGastoViewModel.swift; sourceTree = "<group>"; };
+		842EFAF3223433D200DA8104 /* IODetalleRegistroGastoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IODetalleRegistroGastoViewController.swift; sourceTree = "<group>"; };
+>>>>>>> master
 		84594EE321DC64650019C9B9 /* ReleaseVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReleaseVersion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84594EE621DC64650019C9B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84594EEE21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InOutMoneyFirebase.xcdatamodel; sourceTree = "<group>"; };
@@ -597,8 +622,12 @@
 		84028118220FC7F200C85A6A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				842BDBF422A38BFA00BF5273 /* SingleTextField */,
 				842BDBD222A387E300BF5273 /* BorrarRubroCell */,
+=======
+				842BDBEB22A38B7400BF5273 /* SingleTextFieldCell */,
+>>>>>>> master
 				84CA1243222309690040B78B /* GuardarButtonCell */,
 				84CA12232222FAE80040B78B /* SingleDataEntryCell */,
 				84CA12242222FAF90040B78B /* SingleSwitchCell */,
@@ -656,7 +685,28 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		842BDBD222A387E300BF5273 /* BorrarRubroCell */ = {
+=======
+		8418F5B62230C3C800EE020E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8418F5BD2230C41A00EE020E /* IOMoverRegistroGastoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		842BDBEB22A38B7400BF5273 /* SingleTextFieldCell */ = {
+			isa = PBXGroup;
+			children = (
+				842BDBEC22A38B7400BF5273 /* IOTableViewCellSingleTextField.swift */,
+				842BDBED22A38B7400BF5273 /* IOTableViewCellSingleTextField.xib */,
+			);
+			path = SingleTextFieldCell;
+			sourceTree = "<group>";
+		};
+		842EFAE92234326000DA8104 /* Detalle */ = {
+>>>>>>> master
 			isa = PBXGroup;
 			children = (
 				842BDBD322A387E300BF5273 /* IOTableViewCellBorrarRubroGasto.swift */,
@@ -1233,6 +1283,7 @@
 				842BDBDE22A387E400BF5273 /* IOTableViewCellBorrarRubroGasto.xib in Resources */,
 				842BDBFE22A38DC300BF5273 /* Main.storyboard in Resources */,
 				8404214622729BB4007E7756 /* IOTableViewCellSingleDataEntry.xib in Resources */,
+				842BDBF122A38B7400BF5273 /* IOTableViewCellSingleTextField.xib in Resources */,
 				8404214722729BB4007E7756 /* IOTableViewCellSingleDateCell.xib in Resources */,
 				8404214922729BB4007E7756 /* IOTableViewCellSinglePicker.xib in Resources */,
 				8404214B22729BB4007E7756 /* IOTableViewCellSingleSwitchCell.xib in Resources */,
@@ -1242,6 +1293,10 @@
 				8404215122729BB4007E7756 /* TableViewCellHomeHeader.xib in Resources */,
 				8404215422729BB4007E7756 /* StoryboardLogin.storyboard in Resources */,
 				8404215722729BB4007E7756 /* IOLoginContraseñaCV.xib in Resources */,
+<<<<<<< HEAD
+=======
+				8404215822729BB4007E7756 /* IOTableViewCellBorrarRubroGasto.xib in Resources */,
+>>>>>>> master
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1257,6 +1312,7 @@
 				842BDBDD22A387E400BF5273 /* IOTableViewCellBorrarRubroGasto.xib in Resources */,
 				842BDBFD22A38DC300BF5273 /* Main.storyboard in Resources */,
 				84CA122D2222FEDC0040B78B /* IOTableViewCellSingleDateCell.xib in Resources */,
+				842BDBF022A38B7400BF5273 /* IOTableViewCellSingleTextField.xib in Resources */,
 				84CA124C22238A2D0040B78B /* IOTableViewCellSinglePicker.xib in Resources */,
 				84CA12282222FB3B0040B78B /* IOTableViewCellSingleSwitchCell.xib in Resources */,
 				8402685322068ECC00EF6070 /* TableViewCellLoginUsuario.xib in Resources */,
@@ -1266,6 +1322,10 @@
 				84FD53842203F37500DC102A /* StoryboardLogin.storyboard in Resources */,
 				84D4E3332274D6CD00CEF2BF /* GoogleService-Info.plist in Resources */,
 				8402684C2205F87D00EF6070 /* IOLoginContraseñaCV.xib in Resources */,
+<<<<<<< HEAD
+=======
+				84BD7FA3222F938B00FF6A50 /* IOTableViewCellBorrarRubroGasto.xib in Resources */,
+>>>>>>> master
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1389,6 +1449,11 @@
 				84D4E34022789B3B00CEF2BF /* cuentaManager.swift in Sources */,
 				840420DE22729BB4007E7756 /* IOLoginUsuarioViewModel.swift in Sources */,
 				840420DF22729BB4007E7756 /* IOTableViewCellSingleSwitchCell.swift in Sources */,
+<<<<<<< HEAD
+=======
+				842BDBEF22A38B7400BF5273 /* IOTableViewCellSingleTextField.swift in Sources */,
+				840420E022729BB4007E7756 /* IOTableViewCellGastoProfileFecha.swift in Sources */,
+>>>>>>> master
 				840420E122729BB4007E7756 /* coreGraphycs.swift in Sources */,
 				840420E222729BB4007E7756 /* configEncriptar.swift in Sources */,
 				840420E322729BB4007E7756 /* extensiones.swift in Sources */,
@@ -1481,6 +1546,11 @@
 				84D4E33F2278984200CEF2BF /* cuentaManager.swift in Sources */,
 				849BA96922074C9900EC93A6 /* IOLoginUsuarioViewModel.swift in Sources */,
 				84CA12272222FB3B0040B78B /* IOTableViewCellSingleSwitchCell.swift in Sources */,
+<<<<<<< HEAD
+=======
+				842BDBEE22A38B7400BF5273 /* IOTableViewCellSingleTextField.swift in Sources */,
+				84CA12552224EDF20040B78B /* IOTableViewCellGastoProfileFecha.swift in Sources */,
+>>>>>>> master
 				840280F4220FB24600C85A6A /* coreGraphycs.swift in Sources */,
 				840280F0220FB24600C85A6A /* configEncriptar.swift in Sources */,
 				840280F6220FB24600C85A6A /* extensiones.swift in Sources */,
