@@ -109,7 +109,7 @@ class IOAltaIngresoViewController : UIViewController, IOAltaIngresoViewContract 
         pickerCell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellSinglePicker.identifier) as? IOTableViewCellSinglePicker
         pickerCell.titleCell.text = "Cuenta afectada"
         pickerCell.delegate = self
-        pickerCell.arrayComponets = IOCuentaManager.getDescriptionAndAmountArray()
+        pickerCell.arrayComponets = viewModel.getDescriptionAndAmountArray()
         cells.append(pickerCell)
         
         

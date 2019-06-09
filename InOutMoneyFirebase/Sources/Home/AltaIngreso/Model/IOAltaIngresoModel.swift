@@ -10,26 +10,12 @@ import Foundation
 
 
 class IOAltaIngresoModel {
-    var rubroSeleccionado : IORubroManager.Rubro
+    var rubroSeleccionado : IOProjectModel.Rubro
     var cuenta_selected_index : Int?
+    var cuentas : [IOProjectModel.Cuenta]
     
-    init(rubroRecibido: IORubroManager.Rubro) {
+    init(rubroRecibido: IOProjectModel.Rubro, cuentas: [IOProjectModel.Cuenta]) {
         self.rubroSeleccionado = rubroRecibido
-    }
-    
-    struct KeyNames {
-        static let queryByTypeMonthYear = "queryByTypeMonthYear"
-        static let queryByTypeYear      = "queryByTypeYear"
-        static let queryByMonthYear     = "queryByMonthYear"
-        static let queryByYear          = "queryByYear"
-        static let childIDRubro         = "childIDRubro"
-        static let isEnabled            = "isEnabled"
-        static let childIDDebito        = "childIDDebito"
-        static let descripcion          = "descripcion"
-        static let fechaGasto           = "fechaGasto"
-        static let fechaCreacion        = "fechaCreacion"
-        static let importe              = "importe"
-        static let type                 = "type"
-        
+        self.cuentas = cuentas
     }
 }

@@ -43,19 +43,5 @@ class TableViewCellCuentas: UITableViewCell {
         return UINib(nibName: identifier, bundle: nil)
     }
     
-    func mostrarTotalCuentas() {
-        IOCuentaManager.loadCuentasFromFirebase(success: {
-            if IOCuentaManager.cuentas.count == 2 {
-                let efectivo = IOCuentaManager.cuentas[1].saldo
-                let banco = IOCuentaManager.cuentas[0].saldo
-                self.totalEfectivoLabel.text = efectivo.formatoMoneda(decimales: 2, simbolo: "$")
-                
-                self.totalBancoLabel.text = banco.formatoMoneda(decimales: 2, simbolo: "$")
-            }
-        }, fail: { (errorMessage) in
-            print(errorMessage)
-        })
-        
-    }
-    
+   
 }
