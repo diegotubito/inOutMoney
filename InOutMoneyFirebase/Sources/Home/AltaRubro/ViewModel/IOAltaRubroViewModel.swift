@@ -21,12 +21,12 @@ class IOAltaRubroViewModel: IOAltaRubroViewModelContract {
     }
     
     func guardarNuevoRubro(descripcion: String) {
-        let dato = [IOAltaRubroModel.KeyNames.descripcion : descripcion,
-                    IOAltaRubroModel.KeyNames.fechaCreacion : Date().toString(formato: formatoDeFecha.fechaConHora),
-                    IOAltaRubroModel.KeyNames.isEnabled : true,
-                    IOAltaRubroModel.KeyNames.type : get_selected_type_code() ?? ""] as [String : Any]
+        let dato = [ProjectConstants.KeyNames.Rubro.descripcion : descripcion,
+                    ProjectConstants.KeyNames.Rubro.fechaCreacion : Date().toString(formato: formatoDeFecha.fechaConHora),
+                    ProjectConstants.KeyNames.Rubro.isEnabled : true,
+                    ProjectConstants.KeyNames.Rubro.type : get_selected_type_code() ?? ""] as [String : Any]
         
-        MLFirebaseDatabaseService.setDataWithAutoId(path: UserID! + ProjectConstants.firebaseSubPath.rubros, diccionario: dato, success: { (response) in
+        MLFirebaseDatabase.setDataWithAutoId(path: UserID! + ProjectConstants.firebaseSubPath.rubros, diccionario: dato, success: { (response) in
             self._view.success()
         }) { (error) in
             self._view.showError(error?.localizedDescription ?? ProjectConstants.unknownError)

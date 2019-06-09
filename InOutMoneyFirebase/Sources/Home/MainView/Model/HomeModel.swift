@@ -9,7 +9,13 @@
 import Foundation
 
 class HomeModel {
+    var rubros : [IOProjectModel.Rubro]?
+    var cuentas : [IOProjectModel.Cuenta]?
+    var registrosMesActual : [IOProjectModel.Registro]?
+    var registrosMesAnterior : [IOProjectModel.Registro]?
+    var registrosMesAnteriorAnterior : [IOProjectModel.Registro]?
     
+    var fechaActual = Date()
 }
 
 

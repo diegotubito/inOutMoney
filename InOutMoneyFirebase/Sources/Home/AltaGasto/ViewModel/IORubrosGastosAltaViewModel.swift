@@ -14,13 +14,13 @@ class IORubrosGastosAltaViewModel: IORubrosGastosAltaViewModelContract {
     var model: IOAltaGastoModel!
     var _view : IORubrosGastosAltaViewContract!
     
-    required init(withView view: IORubrosGastosAltaViewContract, rubroSeleccionado: IORubroManager.Rubro) {
-        model = IOAltaGastoModel(rubroRecibido: rubroSeleccionado)
+    required init(withView view: IORubrosGastosAltaViewContract, rubroSeleccionado: IOProjectModel.Rubro, cuentas: [IOProjectModel.Cuenta]) {
+        model = IOAltaGastoModel(rubroRecibido: rubroSeleccionado, cuentas: cuentas)
         _view = view
     }
     
    func saveData() {
-        let childIDRubro = model.rubroSeleccionado.childID
+        let childIDRubro = model.rubroSeleccionado.key
         let keyFecha = _view.getFechaTextField().toDate(formato: formatoDeFecha.fecha)
         let mes = keyFecha?.mes
         let año = keyFecha?.año
@@ -29,27 +29,27 @@ class IORubrosGastosAltaViewModel: IORubrosGastosAltaViewModelContract {
         let queryByTypeYear = childIDRubro + "#" + String(año!)
         let queryByMonthYear = keyFechaString
         let queryByYear = String(año!)
-        let childIDDebito = IOCuentaManager.cuentas[model.cuenta_selected_index!].childIDCuenta
+        let childIDDebito = model.cuentas[model.cuenta_selected_index!].key
         let importe = Double(_view.getMontoTextField())!
         
-        let path = UserID! + ProjectConstants.firebaseSubPath.gastos
+        let path = UserID! + ProjectConstants.firebaseSubPath.registros
         
         
-        let datos = [IOAltaGastoModel.KeyNames.queryByTypeMonthYear : queryByTypeMonthYear,
-                     IOAltaGastoModel.KeyNames.queryByTypeYear : queryByTypeYear,
-                     IOAltaGastoModel.KeyNames.queryByMonthYear : queryByMonthYear,
-                     IOAltaGastoModel.KeyNames.queryByYear : queryByYear,
-                     IOAltaGastoModel.KeyNames.childIDRubro : childIDRubro,
-                     IOAltaGastoModel.KeyNames.isEnabled : 1,
-                     IOAltaGastoModel.KeyNames.childIDDebito : childIDDebito,
-                     IOAltaGastoModel.KeyNames.descripcion : _view.getDescripcionTextField(),
-                     IOAltaGastoModel.KeyNames.fechaGasto : _view.getFechaTextField(),
-                     IOAltaGastoModel.KeyNames.fechaCreacion : Date().toString(formato: formatoDeFecha.fechaConHora),
-                     IOAltaGastoModel.KeyNames.importe : importe,
-                     IOAltaGastoModel.KeyNames.type : ProjectConstants.rubros.gastoKey] as [String : Any]
+        let datos = [ProjectConstants.KeyNames.Registro.queryByTypeMonthYear : queryByTypeMonthYear,
+                     ProjectConstants.KeyNames.Registro.queryByTypeYear : queryByTypeYear,
+                     ProjectConstants.KeyNames.Registro.queryByMonthYear : queryByMonthYear,
+                     ProjectConstants.KeyNames.Registro.queryByYear : queryByYear,
+                     ProjectConstants.KeyNames.Registro.childIDRubro : childIDRubro,
+                     ProjectConstants.KeyNames.Registro.isEnabled : 1,
+                     ProjectConstants.KeyNames.Registro.childIDDebito : childIDDebito,
+                     ProjectConstants.KeyNames.Registro.descripcion : _view.getDescripcionTextField(),
+                     ProjectConstants.KeyNames.Registro.fechaGasto : _view.getFechaTextField(),
+                     ProjectConstants.KeyNames.Registro.fechaCreacion : Date().toString(formato: formatoDeFecha.fechaConHora),
+                     ProjectConstants.KeyNames.Registro.importe : importe,
+                     ProjectConstants.KeyNames.Registro.type : ProjectConstants.rubros.gastoKey] as [String : Any]
         
-        MLFirebaseDatabaseService.setDataWithAutoId(path: path, diccionario: datos, success: { (ref) in
-            MLFirebaseDatabaseService.setTransaction(path: UserID! + ProjectConstants.firebaseSubPath.cuentas + "/" + childIDDebito, keyName: "saldo", incremento: -importe, success: {
+        MLFirebaseDatabase.setDataWithAutoId(path: path, diccionario: datos, success: { (ref) in
+            MLFirebaseDatabase.setTransaction(path: UserID! + ProjectConstants.firebaseSubPath.cuentas + "/" + childIDDebito, keyName: "saldo", incremento: -importe, success: {
                 self._view.showSuccess()
             }, fail: { (error) in
                 self._view.showError(error as! String)
@@ -66,11 +66,36 @@ class IORubrosGastosAltaViewModel: IORubrosGastosAltaViewModelContract {
     }
     
     func check_accounts() {
-        let array = IOCuentaManager.getDescriptionAndAmountArray()
+        let array = getDescriptionAndAmountArray()
         if array.count == 0 {
             _view.showError("No hay cuentas")
         }
     }
     
+    func getDescriptionArray() -> [String] {
+        let array = model.cuentas.compactMap({ $0.descripcion })
+        
+        return array
+    }
+    
+    func getAmountArray() -> [Double] {
+        let array = model.cuentas.compactMap({ Double($0.saldo) })
+        
+        return array
+    }
+    
+    func getCodeArray() -> [String] {
+        let array = model.cuentas.compactMap({ $0.key })
+        
+        return array
+    }
+    
+    func getDescriptionAndAmountArray() -> [String] {
+        var array = [String]()
+        for i in model.cuentas {
+            array.append(i.descripcion + " " + i.saldo.formatoMoneda(decimales: 2, simbolo: "$"))
+        }
+        return array
+    }
     
 }
