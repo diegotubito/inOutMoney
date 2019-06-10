@@ -59,10 +59,29 @@
                     <view key="view" contentMode="scaleToFill" id="dbl-9E-BYs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Goq-GD-xF4">
+                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oNC-8G-fUc" id="Jsv-NZ-3gY"/>
+                                    <outlet property="delegate" destination="oNC-8G-fUc" id="rMN-ud-QRq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kix-xL-xLR" firstAttribute="trailing" secondItem="Goq-GD-xF4" secondAttribute="trailing" id="666-oQ-1gY"/>
+                            <constraint firstItem="Goq-GD-xF4" firstAttribute="top" secondItem="kix-xL-xLR" secondAttribute="top" id="GfG-oB-uOS"/>
+                            <constraint firstItem="kix-xL-xLR" firstAttribute="bottom" secondItem="Goq-GD-xF4" secondAttribute="bottom" id="cVa-HW-jSy"/>
+                            <constraint firstItem="Goq-GD-xF4" firstAttribute="leading" secondItem="kix-xL-xLR" secondAttribute="leading" id="xcg-su-miY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kix-xL-xLR"/>
                     </view>
                     <navigationItem key="navigationItem" id="6ec-Rn-bgk"/>
+                    <connections>
+                        <outlet property="tableView" destination="Goq-GD-xF4" id="RgV-lD-P2T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V6b-aS-sWz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

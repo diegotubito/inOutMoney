@@ -141,6 +141,16 @@
 		84594EF421DC64670019C9B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84594EF221DC64670019C9B9 /* LaunchScreen.storyboard */; };
 		847AC84822AB7BF100E726B2 /* MLFirebaseDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AC84722AB7BF100E726B2 /* MLFirebaseDatabase.swift */; };
 		847AC84922AC17F600E726B2 /* MLFirebaseDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AC84722AB7BF100E726B2 /* MLFirebaseDatabase.swift */; };
+		847AC85722ADC6D600E726B2 /* IOMovimientoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AC85622ADC6D600E726B2 /* IOMovimientoViewModel.swift */; };
+		847AC85822ADC6D600E726B2 /* IOMovimientoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AC85622ADC6D600E726B2 /* IOMovimientoViewModel.swift */; };
+		847AC85A22ADC72200E726B2 /* IOMovimientoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AC85922ADC72200E726B2 /* IOMovimientoModel.swift */; };
+		847AC85B22ADC72200E726B2 /* IOMovimientoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AC85922ADC72200E726B2 /* IOMovimientoModel.swift */; };
+		847AC85D22ADC7DF00E726B2 /* IOMovimientoViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AC85C22ADC7DF00E726B2 /* IOMovimientoViewModelContract.swift */; };
+		847AC85E22ADC7DF00E726B2 /* IOMovimientoViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AC85C22ADC7DF00E726B2 /* IOMovimientoViewModelContract.swift */; };
+		847AC86222ADCAC100E726B2 /* IOTableViewCellSingleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AC86022ADCAC100E726B2 /* IOTableViewCellSingleLabel.swift */; };
+		847AC86322ADCAC100E726B2 /* IOTableViewCellSingleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AC86022ADCAC100E726B2 /* IOTableViewCellSingleLabel.swift */; };
+		847AC86422ADCAC100E726B2 /* IOTableViewCellSingleLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847AC86122ADCAC100E726B2 /* IOTableViewCellSingleLabel.xib */; };
+		847AC86522ADCAC100E726B2 /* IOTableViewCellSingleLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847AC86122ADCAC100E726B2 /* IOTableViewCellSingleLabel.xib */; };
 		8484BC06226AE76200C20E40 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484BC05226AE76200C20E40 /* HomeModel.swift */; };
 		8484BC08226AE76F00C20E40 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484BC07226AE76F00C20E40 /* HomeViewModel.swift */; };
 		8484BC0A226AE77C00C20E40 /* HomeViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484BC09226AE77C00C20E40 /* HomeViewModelProtocol.swift */; };
@@ -256,6 +266,11 @@
 		84594EF321DC64670019C9B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84594EF521DC64670019C9B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		847AC84722AB7BF100E726B2 /* MLFirebaseDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLFirebaseDatabase.swift; sourceTree = "<group>"; };
+		847AC85622ADC6D600E726B2 /* IOMovimientoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOMovimientoViewModel.swift; sourceTree = "<group>"; };
+		847AC85922ADC72200E726B2 /* IOMovimientoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOMovimientoModel.swift; sourceTree = "<group>"; };
+		847AC85C22ADC7DF00E726B2 /* IOMovimientoViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOMovimientoViewModelContract.swift; sourceTree = "<group>"; };
+		847AC86022ADCAC100E726B2 /* IOTableViewCellSingleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellSingleLabel.swift; sourceTree = "<group>"; };
+		847AC86122ADCAC100E726B2 /* IOTableViewCellSingleLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellSingleLabel.xib; sourceTree = "<group>"; };
 		8484BC05226AE76200C20E40 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		8484BC07226AE76F00C20E40 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8484BC09226AE77C00C20E40 /* HomeViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -686,6 +701,32 @@
 			path = InOutMoneyFirebase;
 			sourceTree = "<group>";
 		};
+		847AC85422ADC6A100E726B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				847AC85922ADC72200E726B2 /* IOMovimientoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		847AC85522ADC6AA00E726B2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				847AC85622ADC6D600E726B2 /* IOMovimientoViewModel.swift */,
+				847AC85C22ADC7DF00E726B2 /* IOMovimientoViewModelContract.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		847AC85F22ADCAAB00E726B2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				847AC86022ADCAC100E726B2 /* IOTableViewCellSingleLabel.swift */,
+				847AC86122ADCAC100E726B2 /* IOTableViewCellSingleLabel.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		8484BC00226AE6FF00C20E40 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -749,8 +790,8 @@
 		84B0191922A4628300B42B26 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				84B0191C22A4629B00B42B26 /* Model */,
-				84B0191B22A4629600B42B26 /* ViewModel */,
+				847AC85422ADC6A100E726B2 /* Model */,
+				847AC85522ADC6AA00E726B2 /* ViewModel */,
 				84B0191A22A4628F00B42B26 /* View */,
 			);
 			path = MainView;
@@ -759,24 +800,11 @@
 		84B0191A22A4628F00B42B26 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				847AC85F22ADCAAB00E726B2 /* Cell */,
 				84B0191D22A462DB00B42B26 /* IOMovimientoViewController.swift */,
 				84B0192022A464E900B42B26 /* MovimientoNavigationController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		84B0191B22A4629600B42B26 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		84B0191C22A4629B00B42B26 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		84CA121222221E580040B78B /* AltaGasto */ = {
@@ -1167,6 +1195,7 @@
 			files = (
 				842BDBFA22A38BFA00BF5273 /* IOTableViewCellSingleTextField.xib in Resources */,
 				8404213E22729BB4007E7756 /* LaunchScreen.storyboard in Resources */,
+				847AC86522ADCAC100E726B2 /* IOTableViewCellSingleLabel.xib in Resources */,
 				84D4E3312274D6B800CEF2BF /* GoogleService-Info.plist in Resources */,
 				8404214122729BB4007E7756 /* IOTableViewCellBotonGuardar.xib in Resources */,
 				84D4E4DB2279FDD100CEF2BF /* TableViewCellSelector.xib in Resources */,
@@ -1191,6 +1220,7 @@
 			files = (
 				842BDBF922A38BFA00BF5273 /* IOTableViewCellSingleTextField.xib in Resources */,
 				84594EF421DC64670019C9B9 /* LaunchScreen.storyboard in Resources */,
+				847AC86422ADCAC100E726B2 /* IOTableViewCellSingleLabel.xib in Resources */,
 				84CA12472223098B0040B78B /* IOTableViewCellBotonGuardar.xib in Resources */,
 				84D4E4DA2279FDD100CEF2BF /* TableViewCellSelector.xib in Resources */,
 				84CA12222222F2EF0040B78B /* IOTableViewCellSingleDataEntry.xib in Resources */,
@@ -1340,6 +1370,7 @@
 				840420EF22729BB4007E7756 /* funcionesGlobales.swift in Sources */,
 				840420F122729BB4007E7756 /* SwiftyPlistManager.swift in Sources */,
 				840420F222729BB4007E7756 /* IOLoginUserModel.swift in Sources */,
+				847AC85822ADC6D600E726B2 /* IOMovimientoViewModel.swift in Sources */,
 				840420F422729BB4007E7756 /* IOAltaRubroModel.swift in Sources */,
 				84FAE440229B071300DF11DC /* MainNavigationController.swift in Sources */,
 				842BDBC722A3702100BF5273 /* IOAltaIngresoViewModelContract.swift in Sources */,
@@ -1354,6 +1385,7 @@
 				8404210322729BB4007E7756 /* csv.swift in Sources */,
 				8404210422729BB4007E7756 /* IOLoginFirebaseService.swift in Sources */,
 				8404210522729BB4007E7756 /* IOLoginUsuarioViewModelContract.swift in Sources */,
+				847AC86322ADCAC100E726B2 /* IOTableViewCellSingleLabel.swift in Sources */,
 				8404210622729BB4007E7756 /* _coredataManager.swift in Sources */,
 				8404210722729BB4007E7756 /* PCDiaCustomView.swift in Sources */,
 				8404210822729BB4007E7756 /* IOLoginPasswordViewModel.swift in Sources */,
@@ -1384,8 +1416,10 @@
 				8404212A22729BB4007E7756 /* imageFileFromLocal.swift in Sources */,
 				8404212C22729BB4007E7756 /* MLFirebaseRemoteConfigService.swift in Sources */,
 				8404212D22729BB4007E7756 /* coredataGeneral.swift in Sources */,
+				847AC85E22ADC7DF00E726B2 /* IOMovimientoViewModelContract.swift in Sources */,
 				8404212E22729BB4007E7756 /* IOTableViewCellSingleDataEntry.swift in Sources */,
 				8404212F22729BB4007E7756 /* IOLoginPasswordModel.swift in Sources */,
+				847AC85B22ADC72200E726B2 /* IOMovimientoModel.swift in Sources */,
 				8404213022729BB4007E7756 /* HomeViewController.swift in Sources */,
 				8404213122729BB4007E7756 /* IOLoginContraseñaCV.swift in Sources */,
 				8404213222729BB4007E7756 /* toast.swift in Sources */,
@@ -1427,6 +1461,7 @@
 				840280FD220FB24600C85A6A /* funcionesGlobales.swift in Sources */,
 				84028101220FB24600C85A6A /* SwiftyPlistManager.swift in Sources */,
 				849BA96E2207507A00EC93A6 /* IOLoginUserModel.swift in Sources */,
+				847AC85722ADC6D600E726B2 /* IOMovimientoViewModel.swift in Sources */,
 				84CFD32B222DD1F4004CE810 /* IOAltaRubroModel.swift in Sources */,
 				84FAE43F229B071300DF11DC /* MainNavigationController.swift in Sources */,
 				842BDBC622A3702100BF5273 /* IOAltaIngresoViewModelContract.swift in Sources */,
@@ -1441,6 +1476,7 @@
 				840280F7220FB24600C85A6A /* csv.swift in Sources */,
 				849BA96C22074DD100EC93A6 /* IOLoginFirebaseService.swift in Sources */,
 				849BA96722074C8A00EC93A6 /* IOLoginUsuarioViewModelContract.swift in Sources */,
+				847AC86222ADCAC100E726B2 /* IOTableViewCellSingleLabel.swift in Sources */,
 				840280F2220FB24600C85A6A /* _coredataManager.swift in Sources */,
 				84CA123C222306230040B78B /* PCDiaCustomView.swift in Sources */,
 				849BA976220775FE00EC93A6 /* IOLoginPasswordViewModel.swift in Sources */,
@@ -1471,8 +1507,10 @@
 				840280F8220FB24600C85A6A /* imageFileFromLocal.swift in Sources */,
 				84027FBE220F34EF00C85A6A /* MLFirebaseRemoteConfigService.swift in Sources */,
 				840280F3220FB24600C85A6A /* coredataGeneral.swift in Sources */,
+				847AC85D22ADC7DF00E726B2 /* IOMovimientoViewModelContract.swift in Sources */,
 				84CA12212222F2EF0040B78B /* IOTableViewCellSingleDataEntry.swift in Sources */,
 				849BA9722207748D00EC93A6 /* IOLoginPasswordModel.swift in Sources */,
+				847AC85A22ADC72200E726B2 /* IOMovimientoModel.swift in Sources */,
 				8484BC0C226AE78700C20E40 /* HomeViewController.swift in Sources */,
 				8402684E2205F8A300EF6070 /* IOLoginContraseñaCV.swift in Sources */,
 				84DABE162210B6C90024B112 /* toast.swift in Sources */,
