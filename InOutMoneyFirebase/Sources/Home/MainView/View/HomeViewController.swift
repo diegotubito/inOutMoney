@@ -21,6 +21,10 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateRegistros), name: .updateRegistros, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateCuentas), name: .updateCuentas, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateRubros), name: .updateRubros, object: nil)
         // Do any additional setup after loading the view, typically from a nib.
         viewModel = HomeViewModel(withView: self, databaseService: MLFirebaseDatabase(), authService: IOLoginFirebaseService())
         
@@ -93,7 +97,6 @@ class HomeViewController: UIViewController {
         }
         
         if let controller = segue.destination as? IOAltaGastoViewController {
-            controller.delegate = self
             if let object = sender as? IOProjectModel.Rubro, let cuentas = viewModel.model.cuentas {
                 controller.viewModel = IORubrosGastosAltaViewModel(withView: controller, rubroSeleccionado: object, cuentas: cuentas)
             }
@@ -101,16 +104,14 @@ class HomeViewController: UIViewController {
         }
         
         if let controller = segue.destination as? IOAltaIngresoViewController {
-            controller.delegate = self
-            if let object = sender as? IOProjectModel.Rubro, let cuentas = viewModel.model.cuentas {
+             if let object = sender as? IOProjectModel.Rubro, let cuentas = viewModel.model.cuentas {
                 controller.viewModel = IOAltaIngresoViewModel(withView: controller, rubroSeleccionado: object, cuentas: cuentas)
             }
             
         }
         
         if let controller = segue.destination as? IOAltaRubroViewController {
-            controller.delegate = self
-            controller.viewModel = IOAltaRubroViewModel(withView: controller)
+             controller.viewModel = IOAltaRubroViewModel(withView: controller)
         }
     
     }
@@ -302,21 +303,23 @@ extension HomeViewController: TabaleViewCellHomeHeaderDelegate {
   
 }
 
-
-extension HomeViewController: IOAltaIngresoViewControllerDelegate, IOAltaGastoViewControllerDelegate {
-    func nuevoRegistroIngresadoDelegate() {
+//notifications
+extension HomeViewController {
+    @objc func handleUpdateRegistros() {
+        print("notification REGISTROS update")
         viewModel.cargarRegistrosMesActual()
         viewModel.cargarRegistrosMesAnterior()
         viewModel.cargarRegistrosMesAnteriorAnterior()
-        viewModel.cargarCuentas()
-    }
-}
-
-extension HomeViewController: IOAltaRubroViewControllerDelegate {
-    func nuevoRubroIngresadoDelegate() {
-        
-       viewModel.cargarRubros()
     }
     
+    @objc func handleUpdateCuentas() {
+        print("notification CUENTAS update")
+        viewModel.cargarCuentas()
+    }
+    
+    @objc func handleUpdateRubros() {
+        print("notification RUBROS update")
+        viewModel.cargarRubros()
+    }
     
 }

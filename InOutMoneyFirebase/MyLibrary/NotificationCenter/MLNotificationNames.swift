@@ -9,11 +9,12 @@ import UIKit
 
 
 extension Notification.Name {
-    static let cambioFechaUltimaActualizacion = Notification.Name("cambioFechaUltimaActualizacion")
- 
     static let rcDidChanged = Notification.Name("rcDidChanged")
-    
     static let progressNotification = Notification.Name("progressNotification")
+    
+    static let updateRegistros = Notification.Name("updateRegistros")
+    static let updateCuentas = Notification.Name("updateCuentas")
+    static let updateRubros = Notification.Name("updateRubros")
     static let coredataNotification = Notification.Name("coredataNotification")
     static let didReceiveUpdate = Notification.Name("didReceiveUpdate")
     static let didReceiveData = Notification.Name("didReceiveData")

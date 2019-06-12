@@ -151,6 +151,10 @@
 		847AC86322ADCAC100E726B2 /* IOTableViewCellSingleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AC86022ADCAC100E726B2 /* IOTableViewCellSingleLabel.swift */; };
 		847AC86422ADCAC100E726B2 /* IOTableViewCellSingleLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847AC86122ADCAC100E726B2 /* IOTableViewCellSingleLabel.xib */; };
 		847AC86522ADCAC100E726B2 /* IOTableViewCellSingleLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847AC86122ADCAC100E726B2 /* IOTableViewCellSingleLabel.xib */; };
+		847AC87022AF679F00E726B2 /* IOTableViewCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AC86E22AF679F00E726B2 /* IOTableViewCellHeader.swift */; };
+		847AC87122AF679F00E726B2 /* IOTableViewCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AC86E22AF679F00E726B2 /* IOTableViewCellHeader.swift */; };
+		847AC87222AF679F00E726B2 /* IOTableViewCellHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847AC86F22AF679F00E726B2 /* IOTableViewCellHeader.xib */; };
+		847AC87322AF679F00E726B2 /* IOTableViewCellHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847AC86F22AF679F00E726B2 /* IOTableViewCellHeader.xib */; };
 		8484BC06226AE76200C20E40 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484BC05226AE76200C20E40 /* HomeModel.swift */; };
 		8484BC08226AE76F00C20E40 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484BC07226AE76F00C20E40 /* HomeViewModel.swift */; };
 		8484BC0A226AE77C00C20E40 /* HomeViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484BC09226AE77C00C20E40 /* HomeViewModelProtocol.swift */; };
@@ -271,6 +275,8 @@
 		847AC85C22ADC7DF00E726B2 /* IOMovimientoViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOMovimientoViewModelContract.swift; sourceTree = "<group>"; };
 		847AC86022ADCAC100E726B2 /* IOTableViewCellSingleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellSingleLabel.swift; sourceTree = "<group>"; };
 		847AC86122ADCAC100E726B2 /* IOTableViewCellSingleLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellSingleLabel.xib; sourceTree = "<group>"; };
+		847AC86E22AF679F00E726B2 /* IOTableViewCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellHeader.swift; sourceTree = "<group>"; };
+		847AC86F22AF679F00E726B2 /* IOTableViewCellHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellHeader.xib; sourceTree = "<group>"; };
 		8484BC05226AE76200C20E40 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		8484BC07226AE76F00C20E40 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8484BC09226AE77C00C20E40 /* HomeViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -718,13 +724,22 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		847AC85F22ADCAAB00E726B2 /* Cell */ = {
+		847AC85F22ADCAAB00E726B2 /* SingleLabel */ = {
 			isa = PBXGroup;
 			children = (
 				847AC86022ADCAC100E726B2 /* IOTableViewCellSingleLabel.swift */,
 				847AC86122ADCAC100E726B2 /* IOTableViewCellSingleLabel.xib */,
 			);
-			path = Cell;
+			path = SingleLabel;
+			sourceTree = "<group>";
+		};
+		847AC86D22AF677D00E726B2 /* HeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				847AC86E22AF679F00E726B2 /* IOTableViewCellHeader.swift */,
+				847AC86F22AF679F00E726B2 /* IOTableViewCellHeader.xib */,
+			);
+			path = HeaderCell;
 			sourceTree = "<group>";
 		};
 		8484BC00226AE6FF00C20E40 /* View */ = {
@@ -800,7 +815,8 @@
 		84B0191A22A4628F00B42B26 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				847AC85F22ADCAAB00E726B2 /* Cell */,
+				847AC85F22ADCAAB00E726B2 /* SingleLabel */,
+				847AC86D22AF677D00E726B2 /* HeaderCell */,
 				84B0191D22A462DB00B42B26 /* IOMovimientoViewController.swift */,
 				84B0192022A464E900B42B26 /* MovimientoNavigationController.swift */,
 			);
@@ -1207,6 +1223,7 @@
 				8404214B22729BB4007E7756 /* IOTableViewCellSingleSwitchCell.xib in Resources */,
 				8404214F22729BB4007E7756 /* TableViewCellLoginUsuario.xib in Resources */,
 				84D4E33D2274DB0800CEF2BF /* Assets.xcassets in Resources */,
+				847AC87322AF679F00E726B2 /* IOTableViewCellHeader.xib in Resources */,
 				8404215022729BB4007E7756 /* TableViewCellCuentas.xib in Resources */,
 				8404215122729BB4007E7756 /* TableViewCellHomeHeader.xib in Resources */,
 				8404215422729BB4007E7756 /* StoryboardLogin.storyboard in Resources */,
@@ -1232,6 +1249,7 @@
 				8402685322068ECC00EF6070 /* TableViewCellLoginUsuario.xib in Resources */,
 				849F54F5226FFFCB00DBAB50 /* TableViewCellCuentas.xib in Resources */,
 				84D4E3412279198F00CEF2BF /* Assets.xcassets in Resources */,
+				847AC87222AF679F00E726B2 /* IOTableViewCellHeader.xib in Resources */,
 				84FF634F226AEA7000FED9DA /* TableViewCellHomeHeader.xib in Resources */,
 				84FD53842203F37500DC102A /* StoryboardLogin.storyboard in Resources */,
 				84D4E3332274D6CD00CEF2BF /* GoogleService-Info.plist in Resources */,
@@ -1369,6 +1387,7 @@
 				842BDBCD22A3703A00BF5273 /* IOAltaIngresoViewController.swift in Sources */,
 				840420EF22729BB4007E7756 /* funcionesGlobales.swift in Sources */,
 				840420F122729BB4007E7756 /* SwiftyPlistManager.swift in Sources */,
+				847AC87122AF679F00E726B2 /* IOTableViewCellHeader.swift in Sources */,
 				840420F222729BB4007E7756 /* IOLoginUserModel.swift in Sources */,
 				847AC85822ADC6D600E726B2 /* IOMovimientoViewModel.swift in Sources */,
 				840420F422729BB4007E7756 /* IOAltaRubroModel.swift in Sources */,
@@ -1460,6 +1479,7 @@
 				842BDBCC22A3703A00BF5273 /* IOAltaIngresoViewController.swift in Sources */,
 				840280FD220FB24600C85A6A /* funcionesGlobales.swift in Sources */,
 				84028101220FB24600C85A6A /* SwiftyPlistManager.swift in Sources */,
+				847AC87022AF679F00E726B2 /* IOTableViewCellHeader.swift in Sources */,
 				849BA96E2207507A00EC93A6 /* IOLoginUserModel.swift in Sources */,
 				847AC85722ADC6D600E726B2 /* IOMovimientoViewModel.swift in Sources */,
 				84CFD32B222DD1F4004CE810 /* IOAltaRubroModel.swift in Sources */,

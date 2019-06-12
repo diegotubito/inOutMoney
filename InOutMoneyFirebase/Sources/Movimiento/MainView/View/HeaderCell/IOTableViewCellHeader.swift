@@ -1,23 +1,26 @@
 //
-//  IOTableViewCellSingleLabel.swift
+//  IOTableViewCellHeader.swift
 //  InOutMoneyFirebase
 //
-//  Created by David Diego Gomez on 9/6/19.
+//  Created by David Diego Gomez on 11/6/19.
 //  Copyright © 2019 Gomez David Diego. All rights reserved.
 //
 
 import UIKit
 
-class IOTableViewCellSingleLabel: UITableViewCell {
+class IOTableViewCellHeader: UITableViewCell {
 
-    @IBOutlet var leftLabel: UILabel!
-    @IBOutlet var rightLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
+    
+    var myTag : Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
-
+    
+  
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

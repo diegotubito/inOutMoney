@@ -23,6 +23,11 @@ class IOTableViewCellSingleTextField: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
+        self.isUserInteractionEnabled = true
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleLeftSwipe))
+        swipeLeft.direction = .left
+        self.addGestureRecognizer(swipeLeft)
+        
         addDoneButtonOnKeyboard()
     }
 
@@ -39,6 +44,10 @@ class IOTableViewCellSingleTextField: UITableViewCell {
     
     static var nib: UINib {
         return UINib(nibName: identifier, bundle: nil)
+    }
+    
+    @objc func handleLeftSwipe() {
+        print("swipe")
     }
     
     func addDoneButtonOnKeyboard() {

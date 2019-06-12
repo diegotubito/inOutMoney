@@ -163,7 +163,8 @@ class HomeViewModel : HomeViewModelProtocol {
     func getTotalGasto(registros: [IOProjectModel.Registro]) -> Double {
         var result : Double = 0
         for i in registros {
-            if i.type == ProjectConstants.rubros.gastoKey {
+            let isEnabled = Bool(truncating: i.isEnabled! as NSNumber)
+            if i.type == ProjectConstants.rubros.gastoKey && isEnabled{
                 result += i.importe ?? 0
             }
         }
@@ -174,7 +175,8 @@ class HomeViewModel : HomeViewModelProtocol {
     func getTotalIngreso(registros: [IOProjectModel.Registro]) -> Double {
         var result : Double = 0
         for i in registros {
-            if i.type == ProjectConstants.rubros.ingresoKey {
+            let isEnabled = Bool(truncating: i.isEnabled! as NSNumber)
+            if i.type == ProjectConstants.rubros.ingresoKey && isEnabled {
                 result += i.importe ?? 0
             }
         }
@@ -185,7 +187,9 @@ class HomeViewModel : HomeViewModelProtocol {
     func getTotal(childIDRubro: String, registros: [IOProjectModel.Registro]) -> Double {
         var result : Double = 0
         for i in registros {
-            if i.childIDRubro == childIDRubro {
+            let isEnabled = Bool(truncating: i.isEnabled! as NSNumber)
+            
+            if i.childIDRubro == childIDRubro && isEnabled {
                 result += i.importe ?? 0
             }
         }

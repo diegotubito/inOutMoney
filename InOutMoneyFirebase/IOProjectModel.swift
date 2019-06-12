@@ -24,6 +24,7 @@ struct IOProjectModel {
     }
     
     struct Registro : Decodable {
+        var key : String?
         var childIDDebito : String?
         var childIDRubro : String?
         var descripcion : String?

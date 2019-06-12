@@ -14,6 +14,8 @@ protocol IOMovimientoViewModelContract {
     var model : IOMovimientoModel! {get}
     
     func cargarRegistros()
+    func anularReestablecer(section: Int, row: Int, value: Int)
+    func eliminarRegistro(section: Int, row: Int)
 }
 
 
@@ -22,4 +24,6 @@ protocol IOMovimientoViewContract {
     func showSuccess()
     func showLoading()
     func hideLoading()
+    func realoadList()
+
 }

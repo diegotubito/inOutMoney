@@ -9,12 +9,8 @@
 import Foundation
 import UIKit
 
-protocol IOAltaRubroViewControllerDelegate: class {
-    func nuevoRubroIngresadoDelegate()
-}
 
 class IOAltaRubroViewController: UIViewController, IOAltaRubroViewContract {
-    weak var delegate : IOAltaRubroViewControllerDelegate?
     
     @IBOutlet var tableView: UITableView!
     
@@ -71,7 +67,6 @@ class IOAltaRubroViewController: UIViewController, IOAltaRubroViewContract {
     }
     
     func success() {
-        self.delegate?.nuevoRubroIngresadoDelegate()
         navigationController?.popViewController(animated: true)
     }
     

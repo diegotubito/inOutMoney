@@ -9,16 +9,10 @@
 import Foundation
 import UIKit
 
-protocol IOAltaIngresoViewControllerDelegate: class {
-    func nuevoRegistroIngresadoDelegate()
-}
-
 class IOAltaIngresoViewController : UIViewController, IOAltaIngresoViewContract {
    
     
     var viewModel : IOAltaIngresoViewModelContract!
-    
-    weak var delegate : IOAltaIngresoViewControllerDelegate?
     
     @IBOutlet weak var tableView : UITableView!
     
@@ -172,7 +166,6 @@ class IOAltaIngresoViewController : UIViewController, IOAltaIngresoViewContract 
     
     
     func showSuccess() {
-        self.delegate?.nuevoRegistroIngresadoDelegate()
         navigationController?.popViewController(animated: true)
     }
     

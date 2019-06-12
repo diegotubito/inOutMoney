@@ -17,6 +17,13 @@ class IORemoteConfigKeys {
 class ProjectConstants {
     static let instance = ProjectConstants()
     
+    struct colors {
+        static let swipeEditar = UIColor.init(red: 0.0, green: 0.7, blue: 0.0, alpha: 0.7)
+        static let swipeAnular = UIColor.init(red: 0.0, green: 0.0, blue: 1.0, alpha: 0.7)
+        static let swipeReestablecer = UIColor.init(red: 0.0, green: 0.0, blue: 1.0, alpha: 0.7)
+        static let swipeEliminar = UIColor.red
+    }
+    
     struct firebaseSubPath {
         static let registros = "/registros"
         static let rubros = "/rubros"

@@ -49,8 +49,15 @@ class IORubrosGastosAltaViewModel: IORubrosGastosAltaViewModelContract {
                      ProjectConstants.KeyNames.Registro.type : ProjectConstants.rubros.gastoKey] as [String : Any]
         
         MLFirebaseDatabase.setDataWithAutoId(path: path, diccionario: datos, success: { (ref) in
+           
+            NotificationCenter.default.post(name: .updateRegistros, object: nil)
+            
             MLFirebaseDatabase.setTransaction(path: UserID! + ProjectConstants.firebaseSubPath.cuentas + "/" + childIDDebito, keyName: "saldo", incremento: -importe, success: {
+            
+                NotificationCenter.default.post(name: .updateCuentas, object: nil)
+                
                 self._view.showSuccess()
+            
             }, fail: { (error) in
                 self._view.showError(error as! String)
             })

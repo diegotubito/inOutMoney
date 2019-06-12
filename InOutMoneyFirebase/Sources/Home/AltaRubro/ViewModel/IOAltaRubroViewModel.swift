@@ -27,6 +27,9 @@ class IOAltaRubroViewModel: IOAltaRubroViewModelContract {
                     ProjectConstants.KeyNames.Rubro.type : get_selected_type_code() ?? ""] as [String : Any]
         
         MLFirebaseDatabase.setDataWithAutoId(path: UserID! + ProjectConstants.firebaseSubPath.rubros, diccionario: dato, success: { (response) in
+            
+            NotificationCenter.default.post(name: .updateRubros, object: nil)
+            
             self._view.success()
         }) { (error) in
             self._view.showError(error?.localizedDescription ?? ProjectConstants.unknownError)
