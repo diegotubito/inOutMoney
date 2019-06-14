@@ -20,6 +20,7 @@ class DDLineChart: UIView {
     
     var myLineChart : LineChartView!
     
+    
     override init(frame: CGRect) {
         super .init(frame: frame)
         inicializar()
@@ -44,7 +45,7 @@ class DDLineChart: UIView {
         recta.nombreX = ventas1.meses
         recta.valores = ventas1.unidadesVendidas
         
-        DrawLineChart(lineChart: myLineChart, recta: recta)
+        DrawLineChart(recta: recta)
         
     }
     
@@ -57,73 +58,72 @@ class DDLineChart: UIView {
         return unidadesVendidas
     }
     
-}
-
-class YAxisValueFormatter: NSObject, IAxisValueFormatter {
-    
-    let numFormatter: NumberFormatter
-    
-    override init() {
-        numFormatter = NumberFormatter()
-        numFormatter.minimumFractionDigits = 0
-        numFormatter.maximumFractionDigits = 0
+    class YAxisValueFormatter: NSObject, IAxisValueFormatter {
         
-        // if number is less than 1 add 0 before decimal
-        numFormatter.minimumIntegerDigits = 1 // how many digits do want before decimal
-        numFormatter.paddingPosition = .afterSuffix
-        numFormatter.paddingCharacter = "M"
-    }
-    
-    /// Called when a value from an axis is formatted before being drawn.
-    ///
-    /// For performance reasons, avoid excessive calculations and memory allocations inside this method.
-    ///
-    /// - returns: The customized label that is drawn on the axis.
-    /// - parameter value:           the value that is currently being drawn
-    /// - parameter axis:            the axis that the value belongs to
-    ///
-    
-    public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        return numFormatter.string(from: NSNumber(floatLiteral: value))!
-    }
-}
-
-
-class ChartValueFormatter: NSObject, IValueFormatter {
-    fileprivate var numberFormatter: NumberFormatter?
-    
-    convenience init(numberFormatter: NumberFormatter) {
-        self.init()
-        self.numberFormatter = numberFormatter
-        self.numberFormatter?.maximumFractionDigits = 0
-    }
-    
-    func stringForValue(_ value: Double, entry: ChartDataEntry, dataSetIndex: Int, viewPortHandler: ViewPortHandler?) -> String {
-        guard let numberFormatter = numberFormatter
-            else {
-                return ""
+        let numFormatter: NumberFormatter
+        
+        override init() {
+            numFormatter = NumberFormatter()
+            numFormatter.minimumFractionDigits = 0
+            numFormatter.maximumFractionDigits = 0
+            
+            // if number is less than 1 add 0 before decimal
+            numFormatter.minimumIntegerDigits = 1 // how many digits do want before decimal
+            numFormatter.paddingPosition = .afterSuffix
+            numFormatter.paddingCharacter = "M"
         }
-        return numberFormatter.string(for: value)!
+        
+        /// Called when a value from an axis is formatted before being drawn.
+        ///
+        /// For performance reasons, avoid excessive calculations and memory allocations inside this method.
+        ///
+        /// - returns: The customized label that is drawn on the axis.
+        /// - parameter value:           the value that is currently being drawn
+        /// - parameter axis:            the axis that the value belongs to
+        ///
+        
+        public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+            return numFormatter.string(from: NSNumber(floatLiteral: value))!
+        }
     }
-}
-
-
-class LineChartModel {
-    var nombreX = [String]()
-    var valores = [Double]()
     
-    init() {
-        nombreX.removeAll()
-        valores.removeAll()
+
+    
+    class ChartValueFormatter: NSObject, IValueFormatter {
+        fileprivate var numberFormatter: NumberFormatter?
+        
+        convenience init(numberFormatter: NumberFormatter) {
+            self.init()
+            self.numberFormatter = numberFormatter
+            self.numberFormatter?.maximumFractionDigits = 0
+        }
+        
+        func stringForValue(_ value: Double, entry: ChartDataEntry, dataSetIndex: Int, viewPortHandler: ViewPortHandler?) -> String {
+            guard let numberFormatter = numberFormatter
+                else {
+                    return ""
+            }
+            return numberFormatter.string(for: value)!
+        }
     }
-}
-
-func DrawLineChart(lineChart: LineChartView, recta: LineChartModel) {
-    //use dataSets in step #3
-    var dataSets : [LineChartDataSet] = [LineChartDataSet]()
-    var data: AnyObject?
     
-         var dataEntries : [ChartDataEntry] = [ChartDataEntry]()
+    
+    class LineChartModel {
+        var nombreX = [String]()
+        var valores = [Double]()
+        
+        init() {
+            nombreX.removeAll()
+            valores.removeAll()
+        }
+    }
+    
+    func DrawLineChart(recta: LineChartModel) {
+        //use dataSets in step #3
+        var dataSets : [LineChartDataSet] = [LineChartDataSet]()
+        var data: AnyObject?
+        
+        var dataEntries : [ChartDataEntry] = [ChartDataEntry]()
         for i in 0 ..< recta.nombreX.count {
             dataEntries.append(ChartDataEntry(x: Double(i), y: recta.valores[i]))
         }
@@ -139,7 +139,7 @@ func DrawLineChart(lineChart: LineChartView, recta: LineChartModel) {
         
         //      lineChartDataSet.colors = colors
         set1.mode = .cubicBezier
-      //  set1.mode = .horizontalBezier
+        //  set1.mode = .horizontalBezier
         set1.valueFont = UIFont.systemFont(ofSize: 8)
         set1.valueTextColor = UIColor.black
         
@@ -161,50 +161,52 @@ func DrawLineChart(lineChart: LineChartView, recta: LineChartModel) {
         let valuesNumberFormatter = ChartValueFormatter(numberFormatter: numberFormatter)
         set1.valueFormatter = valuesNumberFormatter
         
-    
-    
-    //customize rect
-    
-    lineChart.legend.formSize = 0
-    lineChart.xAxis.drawGridLinesEnabled = false
-    
-    lineChart.xAxis.labelTextColor = UIColor.blue
-    lineChart.xAxis.labelFont = UIFont.systemFont(ofSize: 8)
-    //esta linea es para mostrar los labels con los string
-    lineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: recta.nombreX)
-    lineChart.xAxis.labelPosition = .bottom
-    //esta linea es para mostrar todos los labels en el eje x
-    //lineChart.xAxis.setLabelCount(rectas.nombreX.count, force: true)
-    //esta linea cambia el tamaño de los numeros a la izquierda del eje y
-    lineChart.leftAxis.labelFont = UIFont.systemFont(ofSize: 8.0, weight: UIFont.Weight.regular)
-    lineChart.leftAxis.labelTextColor = .black
-    //valor minimo, los valores menores a 0.1 no se muestran en el grafico
-    lineChart.leftAxis.axisMinimum = 0.0
-    lineChart.rightAxis.axisMinimum = 0.0
-    lineChart.rightAxis.enabled = false
-    //saca las lineas horizonatales
-    lineChart.rightAxis.drawGridLinesEnabled = false
-    //no muestra algunas lineas horizontales extras
-    lineChart.leftAxis.drawGridLinesEnabled = false
-    //description label text
-    lineChart.chartDescription?.text = "Unidades Vendidas"
-    lineChart.chartDescription?.xOffset = 45
-    lineChart.chartDescription?.yOffset = 45
-    lineChart.zoomOut()
-    
-    
-    lineChart.noDataText = "Sin Información"
-    
-    
-    //cambio el formato de los valores en el eje Y izquierdo
-    lineChart.leftAxis.valueFormatter = YAxisValueFormatter()
-    
-    //es para que no se repitan los label de los ejes X e Y
-    lineChart.xAxis.granularity = 1
-    //separacion de los valores del eje y
-    lineChart.leftAxis.granularity = 5
-    
-    lineChart.animate(yAxisDuration: 1, easingOption: .easeInOutQuart)
-    
-    lineChart.data = (data as! ChartData)
+        
+        
+        //customize rect
+        
+        myLineChart.legend.formSize = 0
+        myLineChart.xAxis.drawGridLinesEnabled = false
+        
+        myLineChart.xAxis.labelTextColor = UIColor.blue
+        myLineChart.xAxis.labelFont = UIFont.systemFont(ofSize: 8)
+        //esta linea es para mostrar los labels con los string
+        myLineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: recta.nombreX)
+        myLineChart.xAxis.labelPosition = .bottom
+        //esta linea es para mostrar todos los labels en el eje x
+        //lineChart.xAxis.setLabelCount(rectas.nombreX.count, force: true)
+        //esta linea cambia el tamaño de los numeros a la izquierda del eje y
+        myLineChart.leftAxis.labelFont = UIFont.systemFont(ofSize: 8.0, weight: UIFont.Weight.regular)
+        myLineChart.leftAxis.labelTextColor = .black
+        //valor minimo, los valores menores a 0.1 no se muestran en el grafico
+        myLineChart.leftAxis.axisMinimum = 0.0
+        myLineChart.rightAxis.axisMinimum = 0.0
+        myLineChart.rightAxis.enabled = false
+        //saca las lineas horizonatales
+        myLineChart.rightAxis.drawGridLinesEnabled = false
+        //no muestra algunas lineas horizontales extras
+        myLineChart.leftAxis.drawGridLinesEnabled = false
+        //description label text
+        myLineChart.chartDescription?.text = "Unidades Vendidas"
+        myLineChart.chartDescription?.xOffset = 45
+        myLineChart.chartDescription?.yOffset = 45
+        myLineChart.zoomOut()
+        
+        
+        myLineChart.noDataText = "Sin Información"
+        
+        
+        //cambio el formato de los valores en el eje Y izquierdo
+        myLineChart.leftAxis.valueFormatter = YAxisValueFormatter()
+        
+        //es para que no se repitan los label de los ejes X e Y
+        myLineChart.xAxis.granularity = 1
+        //separacion de los valores del eje y
+        myLineChart.leftAxis.granularity = 5
+        
+        myLineChart.animate(yAxisDuration: 1, easingOption: .easeInOutQuart)
+        
+        myLineChart.data = (data as! ChartData)
+    }
+
 }
