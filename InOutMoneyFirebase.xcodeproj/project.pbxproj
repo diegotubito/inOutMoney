@@ -139,6 +139,8 @@
 		84594EE721DC64650019C9B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84594EE621DC64650019C9B9 /* AppDelegate.swift */; };
 		84594EEF21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84594EED21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld */; };
 		84594EF421DC64670019C9B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84594EF221DC64670019C9B9 /* LaunchScreen.storyboard */; };
+		847656DC22B1C974002CBE5A /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847656DB22B1C974002CBE5A /* Loader.swift */; };
+		847656DD22B1C974002CBE5A /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847656DB22B1C974002CBE5A /* Loader.swift */; };
 		847AC84822AB7BF100E726B2 /* MLFirebaseDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AC84722AB7BF100E726B2 /* MLFirebaseDatabase.swift */; };
 		847AC84922AC17F600E726B2 /* MLFirebaseDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AC84722AB7BF100E726B2 /* MLFirebaseDatabase.swift */; };
 		847AC85722ADC6D600E726B2 /* IOMovimientoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AC85622ADC6D600E726B2 /* IOMovimientoViewModel.swift */; };
@@ -269,6 +271,7 @@
 		84594EF021DC64670019C9B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/diegodavid_77/mis software en disco/Iphone/InOutMoneyFirebase/InOutMoneyFirebase/Assets.xcassets"; sourceTree = "<absolute>"; };
 		84594EF321DC64670019C9B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84594EF521DC64670019C9B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		847656DB22B1C974002CBE5A /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		847AC84722AB7BF100E726B2 /* MLFirebaseDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLFirebaseDatabase.swift; sourceTree = "<group>"; };
 		847AC85622ADC6D600E726B2 /* IOMovimientoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOMovimientoViewModel.swift; sourceTree = "<group>"; };
 		847AC85922ADC72200E726B2 /* IOMovimientoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOMovimientoModel.swift; sourceTree = "<group>"; };
@@ -455,6 +458,7 @@
 		840280D0220FB24600C85A6A /* MyLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				847656DA22B1C95E002CBE5A /* Loader */,
 				84D4E4D32279FDD100CEF2BF /* Selector */,
 				84CA122E222306230040B78B /* PremiumCalendar */,
 				84DABE142210B6C90024B112 /* Toast */,
@@ -705,6 +709,14 @@
 				84594EED21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodeld */,
 			);
 			path = InOutMoneyFirebase;
+			sourceTree = "<group>";
+		};
+		847656DA22B1C95E002CBE5A /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				847656DB22B1C974002CBE5A /* Loader.swift */,
+			);
+			path = Loader;
 			sourceTree = "<group>";
 		};
 		847AC85422ADC6A100E726B2 /* Model */ = {
@@ -1405,6 +1417,7 @@
 				8404210422729BB4007E7756 /* IOLoginFirebaseService.swift in Sources */,
 				8404210522729BB4007E7756 /* IOLoginUsuarioViewModelContract.swift in Sources */,
 				847AC86322ADCAC100E726B2 /* IOTableViewCellSingleLabel.swift in Sources */,
+				847656DD22B1C974002CBE5A /* Loader.swift in Sources */,
 				8404210622729BB4007E7756 /* _coredataManager.swift in Sources */,
 				8404210722729BB4007E7756 /* PCDiaCustomView.swift in Sources */,
 				8404210822729BB4007E7756 /* IOLoginPasswordViewModel.swift in Sources */,
@@ -1497,6 +1510,7 @@
 				849BA96C22074DD100EC93A6 /* IOLoginFirebaseService.swift in Sources */,
 				849BA96722074C8A00EC93A6 /* IOLoginUsuarioViewModelContract.swift in Sources */,
 				847AC86222ADCAC100E726B2 /* IOTableViewCellSingleLabel.swift in Sources */,
+				847656DC22B1C974002CBE5A /* Loader.swift in Sources */,
 				840280F2220FB24600C85A6A /* _coredataManager.swift in Sources */,
 				84CA123C222306230040B78B /* PCDiaCustomView.swift in Sources */,
 				849BA976220775FE00EC93A6 /* IOLoginPasswordViewModel.swift in Sources */,

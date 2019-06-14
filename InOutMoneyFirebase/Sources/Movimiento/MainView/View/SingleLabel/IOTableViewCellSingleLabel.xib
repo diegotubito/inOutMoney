@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ma-LU-Uht">
-                        <rect key="frame" x="16" y="43" width="42" height="20.5"/>
+                        <rect key="frame" x="32" y="43" width="42" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -31,18 +31,29 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jGd-Tw-23R">
+                        <rect key="frame" x="16" y="49.5" width="8" height="8"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="8" id="Avj-DW-nfe"/>
+                            <constraint firstAttribute="width" constant="8" id="Lgp-14-rdU"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="8Ma-LU-Uht" secondAttribute="bottom" constant="8" id="Atg-W6-40K"/>
+                    <constraint firstItem="8Ma-LU-Uht" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" priority="750" constant="8" id="C1R-1T-ovW"/>
                     <constraint firstAttribute="trailing" secondItem="w3C-Z0-EHa" secondAttribute="trailing" constant="16" id="DeH-op-Hih"/>
-                    <constraint firstItem="8Ma-LU-Uht" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="YGp-ze-Ain"/>
+                    <constraint firstItem="jGd-Tw-23R" firstAttribute="centerY" secondItem="8Ma-LU-Uht" secondAttribute="centerY" id="XOB-38-Ori"/>
                     <constraint firstItem="w3C-Z0-EHa" firstAttribute="centerY" secondItem="8Ma-LU-Uht" secondAttribute="centerY" id="daT-cA-frd"/>
+                    <constraint firstItem="8Ma-LU-Uht" firstAttribute="leading" secondItem="jGd-Tw-23R" secondAttribute="trailing" constant="8" id="tso-2Y-3PF"/>
+                    <constraint firstItem="jGd-Tw-23R" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="x4D-O1-X27"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="leftImage" destination="jGd-Tw-23R" id="Rua-e6-JR6"/>
                 <outlet property="leftLabel" destination="8Ma-LU-Uht" id="hww-hX-MHy"/>
                 <outlet property="rightLabel" destination="w3C-Z0-EHa" id="3lt-UC-alu"/>
             </connections>

@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 
 class IOMovimientoViewModel: IOMovimientoViewModelContract {
+    
     
     
     var _view : IOMovimientoViewContract!
@@ -21,6 +23,48 @@ class IOMovimientoViewModel: IOMovimientoViewModelContract {
         self.model = IOMovimientoModel()
         self._service = service
     }
+    
+    func setColor(registro: IOProjectModel.Registro, cell: IOTableViewCellSingleLabel) {
+        cell.leftImage.alpha = 1
+        if registro.type == ProjectConstants.rubros.gastoKey {
+            cell.leftImage.backgroundColor = .red
+        } else {
+            cell.leftImage.backgroundColor = .blue
+        }
+        cell.leftLabel.textColor = UIColor.lightGray
+        cell.rightLabel.textColor = UIColor.lightGray
+        if registro.isEnabled! == 0 {
+            cell.leftImage.alpha = 0.3
+            cell.leftLabel.textColor = UIColor.lightGray.withAlphaComponent(0.3)
+            cell.rightLabel.textColor = UIColor.lightGray.withAlphaComponent(0.3)
+        }
+    }
+  
+    
+    func getFecha(section: Int) -> String {
+        var title = ""
+        if !model.registros[section].isEmpty {
+            title = model.registros[section][0].fechaCreacion ?? "sin fecha"
+        }
+        
+        title = String(title.prefix(10))
+        let fecha = title.toDate(formato: "dd-MM-yyyy")
+        let dia = Calendar.current.component(.weekday, from: fecha!)
+        let nombreDelDia = NombreDias[dia-1]
+        let hoy = Date().toString(formato: "dd-MM-yyyy")
+        let ayerDate = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+        let ayer = ayerDate?.toString(formato: "dd-MM-yyyy")
+        if hoy == title {
+            title = "Hoy"
+        } else if title == ayer {
+            title = "Ayer"
+        } else {
+            title = nombreDelDia + " " + title
+        }
+        
+        return title
+    }
+    
     
     func cargarRegistros() {
         model.registros.removeAll()

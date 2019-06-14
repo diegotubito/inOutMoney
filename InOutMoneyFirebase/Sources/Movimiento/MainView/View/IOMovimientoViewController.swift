@@ -20,6 +20,7 @@ class IOMovimientoViewController: UIViewController, IOMovimientoViewContract {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         NotificationCenter.default.addObserver(self, selector: #selector(handleActualizarRegistros), name: .updateRegistros, object: nil)
           
         viewModel = IOMovimientoViewModel(withView: self, service: MLFirebaseDatabase())
@@ -148,29 +149,11 @@ extension IOMovimientoViewController: UITableViewDataSource {
         header?.contentView.backgroundColor = UIColor.black
         header?.myTag = section
         
-        var title = ""
-        if !viewModel.model.registros[section].isEmpty {
-            title = viewModel.model.registros[section][0].fechaCreacion ?? "sin fecha"
-        }
-        
-        title = String(title.prefix(10))
-        let fecha = title.toDate(formato: "dd-MM-yyyy")
-        let dia = Calendar.current.component(.weekday, from: fecha!)
-        let nombreDelDia = NombreDias[dia-1]
-        let hoy = Date().toString(formato: "dd-MM-yyyy")
-        let ayerDate = Calendar.current.date(byAdding: .day, value: -1, to: Date())
-        let ayer = ayerDate?.toString(formato: "dd-MM-yyyy")
-        if hoy == title {
-            title = "Hoy"
-        } else if title == ayer {
-            title = "Ayer"
-        } else {
-            title = nombreDelDia + " " + title
-        }
-        header?.titleLabel.text = title
+        header?.titleLabel.text = viewModel.getFecha(section: section)
         header?.titleLabel.textColor = UIColor.lightGray.withAlphaComponent(0.5)
         return header
     }
+    
     
     
     
@@ -179,13 +162,8 @@ extension IOMovimientoViewController: UITableViewDataSource {
             
             let registro = viewModel.model.registros[indexPath.section][indexPath.row]
             
-            cell.leftLabel.textColor = UIColor.lightGray
-            cell.rightLabel.textColor = UIColor.lightGray
-            if registro.isEnabled! == 0 {
-                cell.leftLabel.textColor = UIColor.lightGray.withAlphaComponent(0.3)
-                cell.rightLabel.textColor = UIColor.lightGray.withAlphaComponent(0.3)
-            }
-            
+            viewModel.setColor(registro: registro, cell: cell)
+             
             let descripcion = registro.descripcion
             let descripcionCapitalized = descripcion?.capitalized
             cell.leftLabel.text = descripcionCapitalized
@@ -210,11 +188,11 @@ extension IOMovimientoViewController {
     }
     
     func showLoading() {
-        
+        DDBarLoader.showLoading(controller: self, message: ProjectConstants.loadingText)
     }
     
     func hideLoading() {
-        
+        DDBarLoader.hideLoading()
     }
     
     func realoadList() {

@@ -95,4 +95,5 @@ class ProjectConstants {
     
     
     static let unknownError = "Error desconocido"
+    static let loadingText = "Cargado"
 }

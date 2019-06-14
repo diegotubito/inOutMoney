@@ -10,6 +10,7 @@ import UIKit
 
 class IOTableViewCellSingleLabel: UITableViewCell {
 
+    @IBOutlet var leftImage: UIImageView!
     @IBOutlet var leftLabel: UILabel!
     @IBOutlet var rightLabel: UILabel!
     
@@ -17,6 +18,9 @@ class IOTableViewCellSingleLabel: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         selectionStyle = .none
+        
+        leftImage.layer.cornerRadius = leftImage.frame.width/2
+
     }
   
     override func setSelected(_ selected: Bool, animated: Bool) {

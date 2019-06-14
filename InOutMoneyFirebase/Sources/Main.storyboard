@@ -111,9 +111,7 @@
         <scene sceneID="GaT-PT-eFS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nSa-uK-hgQ" customClass="MainNavigationController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="HrQ-Vu-DxC">
-                        <color key="badgeColor" red="0.21618740889999999" green="0.65513959389999998" blue="0.22872777420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="HrQ-Vu-DxC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="bee-TU-sHK">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>

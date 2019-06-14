@@ -16,6 +16,7 @@ target 'InOutMoneyFirebase' do
 
   pod 'ReachabilitySwift'
   pod 'Alamofire'
+  pod 'Charts'
 
 
 end
