@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     var cells = [UITableViewCell]()
     var header : TableViewCellHomeHeader!
     var cuentaCell : TableViewCellCuentas!
+    var graficoCell : IOTableViewCellChart!
     
     var viewModel : HomeViewModelProtocol!
 
@@ -36,6 +37,8 @@ class HomeViewController: UIViewController {
         registerCells()
         loadCells()
         viewModel.listenAuth()
+        
+
     }
   
     
@@ -50,6 +53,7 @@ class HomeViewController: UIViewController {
     func registerCells() {
         tableView.register(TableViewCellHomeHeader.nib, forCellReuseIdentifier: TableViewCellHomeHeader.identifier)
         tableView.register(TableViewCellCuentas.nib, forCellReuseIdentifier: TableViewCellCuentas.identifier)
+        tableView.register(IOTableViewCellChart.nib, forCellReuseIdentifier: IOTableViewCellChart.identifier)
     }
     
 
@@ -81,6 +85,10 @@ class HomeViewController: UIViewController {
         
         cuentaCell = tableView.dequeueReusableCell(withIdentifier: TableViewCellCuentas.identifier) as? TableViewCellCuentas
         cells.append(cuentaCell)
+        
+        graficoCell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellChart.identifier) as? IOTableViewCellChart
+        cells.append(graficoCell)
+     
         
         tableView.reloadData()
     }

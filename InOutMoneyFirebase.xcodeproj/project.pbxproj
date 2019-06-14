@@ -212,6 +212,12 @@
 		84D4E4DD2279FDD100CEF2BF /* DDSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4E4D72279FDD100CEF2BF /* DDSelector.swift */; };
 		84DABE162210B6C90024B112 /* toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DABE152210B6C90024B112 /* toast.swift */; };
 		84E41786222C42D0000214E8 /* IOProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E41785222C42D0000214E8 /* IOProjectModel.swift */; };
+		84F1F70F22B34807001D9940 /* DDLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1F70E22B34807001D9940 /* DDLineChart.swift */; };
+		84F1F71022B34807001D9940 /* DDLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1F70E22B34807001D9940 /* DDLineChart.swift */; };
+		84F1F71322B34FC9001D9940 /* IOTableViewCellChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1F71122B34FC9001D9940 /* IOTableViewCellChart.swift */; };
+		84F1F71422B34FC9001D9940 /* IOTableViewCellChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1F71122B34FC9001D9940 /* IOTableViewCellChart.swift */; };
+		84F1F71522B34FC9001D9940 /* IOTableViewCellChart.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F1F71222B34FC9001D9940 /* IOTableViewCellChart.xib */; };
+		84F1F71622B34FC9001D9940 /* IOTableViewCellChart.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F1F71222B34FC9001D9940 /* IOTableViewCellChart.xib */; };
 		84FAE43B229B06C200DF11DC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE43A229B06C200DF11DC /* MainTabBarController.swift */; };
 		84FAE43C229B06C200DF11DC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE43A229B06C200DF11DC /* MainTabBarController.swift */; };
 		84FAE43F229B071300DF11DC /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE43E229B071300DF11DC /* MainNavigationController.swift */; };
@@ -219,10 +225,16 @@
 		84FD53842203F37500DC102A /* StoryboardLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FD53832203F37500DC102A /* StoryboardLogin.storyboard */; };
 		84FF634E226AEA7000FED9DA /* TableViewCellHomeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF634C226AEA7000FED9DA /* TableViewCellHomeHeader.swift */; };
 		84FF634F226AEA7000FED9DA /* TableViewCellHomeHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FF634D226AEA7000FED9DA /* TableViewCellHomeHeader.xib */; };
+		A39DD53C73368B79AE4649B3 /* Pods_DebugVersion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDB85E05E9210DD3A7D23F9 /* Pods_DebugVersion.framework */; };
+		A6E8DFC457DDDE216915693D /* Pods_ReleaseVersion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1094BCC52B111AA8043E7D84 /* Pods_ReleaseVersion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1094BCC52B111AA8043E7D84 /* Pods_ReleaseVersion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReleaseVersion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E07E4F1817F215E8DEE716E /* Pods-DebugVersion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DebugVersion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DebugVersion/Pods-DebugVersion.debug.xcconfig"; sourceTree = "<group>"; };
+		5EDB85E05E9210DD3A7D23F9 /* Pods_DebugVersion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DebugVersion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62FCF3664AC9F81697006D71 /* Pods-InOutMoneyFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InOutMoneyFirebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase.debug.xcconfig"; sourceTree = "<group>"; };
+		7AB741C1F0FA56F73EAA1DD8 /* Pods-DebugVersion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DebugVersion.release.xcconfig"; path = "Pods/Target Support Files/Pods-DebugVersion/Pods-DebugVersion.release.xcconfig"; sourceTree = "<group>"; };
 		840268482205F31000EF6070 /* IOLoginContraseñaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IOLoginContraseñaViewController.swift"; sourceTree = "<group>"; };
 		8402684B2205F87D00EF6070 /* IOLoginContraseñaCV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "IOLoginContraseñaCV.xib"; sourceTree = "<group>"; };
 		8402684D2205F8A300EF6070 /* IOLoginContraseñaCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IOLoginContraseñaCV.swift"; sourceTree = "<group>"; };
@@ -328,11 +340,16 @@
 		84D4E4D72279FDD100CEF2BF /* DDSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDSelector.swift; sourceTree = "<group>"; };
 		84DABE152210B6C90024B112 /* toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = toast.swift; sourceTree = "<group>"; };
 		84E41785222C42D0000214E8 /* IOProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOProjectModel.swift; sourceTree = "<group>"; };
+		84F1F70E22B34807001D9940 /* DDLineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLineChart.swift; sourceTree = "<group>"; };
+		84F1F71122B34FC9001D9940 /* IOTableViewCellChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellChart.swift; sourceTree = "<group>"; };
+		84F1F71222B34FC9001D9940 /* IOTableViewCellChart.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellChart.xib; sourceTree = "<group>"; };
 		84FAE43A229B06C200DF11DC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		84FAE43E229B071300DF11DC /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		84FD53832203F37500DC102A /* StoryboardLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardLogin.storyboard; sourceTree = "<group>"; };
 		84FF634C226AEA7000FED9DA /* TableViewCellHomeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellHomeHeader.swift; sourceTree = "<group>"; };
 		84FF634D226AEA7000FED9DA /* TableViewCellHomeHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellHomeHeader.xib; sourceTree = "<group>"; };
+		A6BA18932D5338E57EFCACCE /* Pods-ReleaseVersion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReleaseVersion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReleaseVersion/Pods-ReleaseVersion.debug.xcconfig"; sourceTree = "<group>"; };
+		C8AF13104E54651EE7A29B9F /* Pods-ReleaseVersion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReleaseVersion.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReleaseVersion/Pods-ReleaseVersion.release.xcconfig"; sourceTree = "<group>"; };
 		D3C6A17853DDA48318A6E934 /* Pods-InOutMoneyFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InOutMoneyFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InOutMoneyFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -343,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8404213B22729BB4007E7756 /* Pods_InOutMoneyFirebase.framework in Frameworks */,
+				A39DD53C73368B79AE4649B3 /* Pods_DebugVersion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				842227587AA8719C417032C5 /* Pods_InOutMoneyFirebase.framework in Frameworks */,
+				A6E8DFC457DDDE216915693D /* Pods_ReleaseVersion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +381,10 @@
 			children = (
 				62FCF3664AC9F81697006D71 /* Pods-InOutMoneyFirebase.debug.xcconfig */,
 				D3C6A17853DDA48318A6E934 /* Pods-InOutMoneyFirebase.release.xcconfig */,
+				5E07E4F1817F215E8DEE716E /* Pods-DebugVersion.debug.xcconfig */,
+				7AB741C1F0FA56F73EAA1DD8 /* Pods-DebugVersion.release.xcconfig */,
+				A6BA18932D5338E57EFCACCE /* Pods-ReleaseVersion.debug.xcconfig */,
+				C8AF13104E54651EE7A29B9F /* Pods-ReleaseVersion.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -370,6 +393,8 @@
 			isa = PBXGroup;
 			children = (
 				DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */,
+				5EDB85E05E9210DD3A7D23F9 /* Pods_DebugVersion.framework */,
+				1094BCC52B111AA8043E7D84 /* Pods_ReleaseVersion.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -458,6 +483,7 @@
 		840280D0220FB24600C85A6A /* MyLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				84F1F70D22B347F1001D9940 /* LineChart */,
 				847656DA22B1C95E002CBE5A /* Loader */,
 				84D4E4D32279FDD100CEF2BF /* Selector */,
 				84CA122E222306230040B78B /* PremiumCalendar */,
@@ -1062,6 +1088,23 @@
 			path = Toast;
 			sourceTree = "<group>";
 		};
+		84F1F70D22B347F1001D9940 /* LineChart */ = {
+			isa = PBXGroup;
+			children = (
+				84F1F70E22B34807001D9940 /* DDLineChart.swift */,
+			);
+			path = LineChart;
+			sourceTree = "<group>";
+		};
+		84F1F71722B34FDF001D9940 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				84F1F71122B34FC9001D9940 /* IOTableViewCellChart.swift */,
+				84F1F71222B34FC9001D9940 /* IOTableViewCellChart.xib */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
 		84FD53802203F2EB00DC102A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1128,6 +1171,7 @@
 			children = (
 				849F54F1226FFFA700DBAB50 /* Cuentas */,
 				84FF634B226AEA5B00FED9DA /* Header */,
+				84F1F71722B34FDF001D9940 /* Charts */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1223,6 +1267,7 @@
 			files = (
 				842BDBFA22A38BFA00BF5273 /* IOTableViewCellSingleTextField.xib in Resources */,
 				8404213E22729BB4007E7756 /* LaunchScreen.storyboard in Resources */,
+				84F1F71622B34FC9001D9940 /* IOTableViewCellChart.xib in Resources */,
 				847AC86522ADCAC100E726B2 /* IOTableViewCellSingleLabel.xib in Resources */,
 				84D4E3312274D6B800CEF2BF /* GoogleService-Info.plist in Resources */,
 				8404214122729BB4007E7756 /* IOTableViewCellBotonGuardar.xib in Resources */,
@@ -1249,6 +1294,7 @@
 			files = (
 				842BDBF922A38BFA00BF5273 /* IOTableViewCellSingleTextField.xib in Resources */,
 				84594EF421DC64670019C9B9 /* LaunchScreen.storyboard in Resources */,
+				84F1F71522B34FC9001D9940 /* IOTableViewCellChart.xib in Resources */,
 				847AC86422ADCAC100E726B2 /* IOTableViewCellSingleLabel.xib in Resources */,
 				84CA12472223098B0040B78B /* IOTableViewCellBotonGuardar.xib in Resources */,
 				84D4E4DA2279FDD100CEF2BF /* TableViewCellSelector.xib in Resources */,
@@ -1278,8 +1324,9 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-ReleaseVersion/Pods-ReleaseVersion-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
@@ -1290,6 +1337,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
@@ -1299,7 +1347,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReleaseVersion/Pods-ReleaseVersion-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		840420CF22729BB4007E7756 /* [CP] Check Pods Manifest.lock */ = {
@@ -1313,7 +1361,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-InOutMoneyFirebase-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-DebugVersion-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1326,8 +1374,9 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-DebugVersion/Pods-DebugVersion-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
@@ -1338,6 +1387,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
@@ -1347,7 +1397,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DebugVersion/Pods-DebugVersion-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D167874E553E8B40F84D03B1 /* [CP] Check Pods Manifest.lock */ = {
@@ -1361,7 +1411,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-InOutMoneyFirebase-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ReleaseVersion-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1377,9 +1427,11 @@
 			files = (
 				84D4E4DD2279FDD100CEF2BF /* DDSelector.swift in Sources */,
 				842BDBC122A36FE500BF5273 /* IOAltaIngresoModel.swift in Sources */,
+				84F1F71422B34FC9001D9940 /* IOTableViewCellChart.swift in Sources */,
 				840420D222729BB4007E7756 /* IOTableViewCellSingleDateCell.swift in Sources */,
 				840420D422729BB4007E7756 /* IORubrosGastosAltaViewModelContract.swift in Sources */,
 				840420D522729BB4007E7756 /* networkManager.swift in Sources */,
+				84F1F71022B34807001D9940 /* DDLineChart.swift in Sources */,
 				840420D722729BB4007E7756 /* IOAltaRubroViewModel.swift in Sources */,
 				84B0192222A464E900B42B26 /* MovimientoNavigationController.swift in Sources */,
 				840420D922729BB4007E7756 /* IOAltaRubroViewModelContract.swift in Sources */,
@@ -1470,9 +1522,11 @@
 			files = (
 				84D4E4DC2279FDD100CEF2BF /* DDSelector.swift in Sources */,
 				842BDBC022A36FE500BF5273 /* IOAltaIngresoModel.swift in Sources */,
+				84F1F71322B34FC9001D9940 /* IOTableViewCellChart.swift in Sources */,
 				84CA122C2222FEDC0040B78B /* IOTableViewCellSingleDateCell.swift in Sources */,
 				84CA121922221EAB0040B78B /* IORubrosGastosAltaViewModelContract.swift in Sources */,
 				840280FF220FB24600C85A6A /* networkManager.swift in Sources */,
+				84F1F70F22B34807001D9940 /* DDLineChart.swift in Sources */,
 				84CFD32F222DD23F004CE810 /* IOAltaRubroViewModel.swift in Sources */,
 				84B0192122A464E900B42B26 /* MovimientoNavigationController.swift in Sources */,
 				84CFD32D222DD234004CE810 /* IOAltaRubroViewModelContract.swift in Sources */,
@@ -1573,7 +1627,7 @@
 /* Begin XCBuildConfiguration section */
 		8404215B22729BB4007E7756 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62FCF3664AC9F81697006D71 /* Pods-InOutMoneyFirebase.debug.xcconfig */;
+			baseConfigurationReference = 5E07E4F1817F215E8DEE716E /* Pods-DebugVersion.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDebug;
 				CODE_SIGN_STYLE = Automatic;
@@ -1596,7 +1650,7 @@
 		};
 		8404215C22729BB4007E7756 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3C6A17853DDA48318A6E934 /* Pods-InOutMoneyFirebase.release.xcconfig */;
+			baseConfigurationReference = 7AB741C1F0FA56F73EAA1DD8 /* Pods-DebugVersion.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1736,7 +1790,7 @@
 		};
 		84594EF921DC64670019C9B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62FCF3664AC9F81697006D71 /* Pods-InOutMoneyFirebase.debug.xcconfig */;
+			baseConfigurationReference = A6BA18932D5338E57EFCACCE /* Pods-ReleaseVersion.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1760,7 +1814,7 @@
 		};
 		84594EFA21DC64670019C9B9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3C6A17853DDA48318A6E934 /* Pods-InOutMoneyFirebase.release.xcconfig */;
+			baseConfigurationReference = C8AF13104E54651EE7A29B9F /* Pods-ReleaseVersion.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
