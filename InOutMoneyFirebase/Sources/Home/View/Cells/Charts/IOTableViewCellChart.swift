@@ -15,12 +15,32 @@ class IOTableViewCellChart: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        let width = myView.bounds.width*0.7
-        let height = myView.bounds.height*0.7
-        let grafico = DDLineChart(frame: CGRect(x: 0, y: 0, width: width, height: height))
-        myView.addSubview(grafico)
         
       }
+    
+    func drawChart(values: _unidadesVendidas?) {
+        if myView == nil {return}
+        
+        for i in myView.subviews {
+            i.removeFromSuperview()
+        }
+        
+        if values == nil {
+            showEmptyValue()
+            return
+        }
+        
+        let width = myView.frame.width
+        let height = myView.frame.height
+        let grafico = DDLineChart(frame: CGRect(x: 0, y: 0, width: width, height: height))
+        grafico.mostrarLineChart(labels: values!.meses, values: values!.unidadesVendidas)
+        myView.addSubview(grafico)
+        
+    }
+ 
+    func showEmptyValue() {
+        myView.backgroundColor = .red
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

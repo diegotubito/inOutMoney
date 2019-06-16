@@ -20,17 +20,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZd-cY-e1M">
-                        <rect key="frame" x="16" y="16" width="394" height="166.5"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <rect key="frame" x="8" y="0.0" width="410" height="198.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="VZd-cY-e1M" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="5yJ-5b-2EK"/>
-                    <constraint firstAttribute="bottom" secondItem="VZd-cY-e1M" secondAttribute="bottom" constant="16" id="pud-Xl-a6D"/>
-                    <constraint firstItem="VZd-cY-e1M" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="zVK-ff-aOU"/>
-                    <constraint firstAttribute="trailing" secondItem="VZd-cY-e1M" secondAttribute="trailing" constant="16" id="zoi-3Q-bPG"/>
+                    <constraint firstItem="VZd-cY-e1M" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="5yJ-5b-2EK"/>
+                    <constraint firstAttribute="bottom" secondItem="VZd-cY-e1M" secondAttribute="bottom" id="pud-Xl-a6D"/>
+                    <constraint firstItem="VZd-cY-e1M" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="zVK-ff-aOU"/>
+                    <constraint firstAttribute="trailing" secondItem="VZd-cY-e1M" secondAttribute="trailing" constant="8" id="zoi-3Q-bPG"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="myView" destination="VZd-cY-e1M" id="iof-t9-J7z"/>

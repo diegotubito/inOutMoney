@@ -87,7 +87,7 @@ class HomeViewController: UIViewController {
         cells.append(cuentaCell)
         
         graficoCell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellChart.identifier) as? IOTableViewCellChart
-        cells.append(graficoCell)
+         cells.append(graficoCell)
      
         
         tableView.reloadData()
@@ -142,6 +142,14 @@ extension HomeViewController: HomeViewProtocol{
         self.viewModel.cargarRegistrosMesActual()
         self.viewModel.cargarRegistrosMesAnterior()
         self.viewModel.cargarRegistrosMesAnteriorAnterior()
+       self.viewModel.cargarTodosLosRegistrosBeta(success: {
+            let values = self.viewModel.getValuesForLineChart(cantidadDeMeses: 13, from: Date())
+            self.graficoCell.drawChart(values: values)
+            
+        }) {
+            print("error al cargar todos los registros")
+        }
+ 
     }
     
     func showError(_ message: String) {
