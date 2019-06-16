@@ -99,7 +99,6 @@
 		8404213522729BB4007E7756 /* alamofireExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840280D1220FB24600C85A6A /* alamofireExtension.swift */; };
 		8404213722729BB4007E7756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84594EE621DC64650019C9B9 /* AppDelegate.swift */; };
 		8404213822729BB4007E7756 /* TableViewCellLoginUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402685022068ECC00EF6070 /* TableViewCellLoginUsuario.swift */; };
-		8404213B22729BB4007E7756 /* Pods_InOutMoneyFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */; };
 		8404213E22729BB4007E7756 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84594EF221DC64670019C9B9 /* LaunchScreen.storyboard */; };
 		8404214122729BB4007E7756 /* IOTableViewCellBotonGuardar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CA12452223098B0040B78B /* IOTableViewCellBotonGuardar.xib */; };
 		8404214622729BB4007E7756 /* IOTableViewCellSingleDataEntry.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CA12202222F2EF0040B78B /* IOTableViewCellSingleDataEntry.xib */; };
@@ -367,7 +366,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8404213B22729BB4007E7756 /* Pods_InOutMoneyFirebase.framework in Frameworks */,
 				A39DD53C73368B79AE4649B3 /* Pods_DebugVersion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
