@@ -33,8 +33,7 @@ class IORubrosGastosAltaViewModel: IORubrosGastosAltaViewModelContract {
         let importe = Double(_view.getMontoTextField())!
         
         let path = UserID! + ProjectConstants.firebaseSubPath.registros
-        
-        
+    
         let datos = [ProjectConstants.KeyNames.Registro.queryByTypeMonthYear : queryByTypeMonthYear,
                      ProjectConstants.KeyNames.Registro.queryByTypeYear : queryByTypeYear,
                      ProjectConstants.KeyNames.Registro.queryByMonthYear : queryByMonthYear,
@@ -51,7 +50,12 @@ class IORubrosGastosAltaViewModel: IORubrosGastosAltaViewModelContract {
         MLFirebaseDatabase.setDataWithAutoId(path: path, diccionario: datos, success: { (ref) in
            
             NotificationCenter.default.post(name: .updateRegistros, object: nil)
+         
+            //aumento contador de transacciones en rubro
+            let pathRubro = UserID! + ProjectConstants.firebaseSubPath.rubros + "/" + childIDRubro
+            MLFirebaseDatabase.setTransaction(path: pathRubro, keyName: "counter", incremento: 1)
             
+            //actualizo saldo en cuenta
             MLFirebaseDatabase.setTransaction(path: UserID! + ProjectConstants.firebaseSubPath.cuentas + "/" + childIDDebito, keyName: "saldo", incremento: -importe, success: {
             
                 NotificationCenter.default.post(name: .updateCuentas, object: nil)
@@ -67,6 +71,7 @@ class IORubrosGastosAltaViewModel: IORubrosGastosAltaViewModelContract {
         }
         
     }
+    
     
     func set_cuenta_selected_index(_ value: Int?) {
         model.cuenta_selected_index = value

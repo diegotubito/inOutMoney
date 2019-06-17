@@ -50,9 +50,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T8J-9d-fzX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1393" y="908"/>
+            <point key="canvasLocation" x="1079" y="2729"/>
         </scene>
-        <!--Movimiento View Controller-->
+        <!--Movimientos-->
         <scene sceneID="1jx-pi-lYY">
             <objects>
                 <viewController id="oNC-8G-fUc" customClass="IOMovimientoViewController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
@@ -78,7 +78,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kix-xL-xLR"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6ec-Rn-bgk"/>
+                    <navigationItem key="navigationItem" title="Movimientos" id="6ec-Rn-bgk"/>
                     <connections>
                         <outlet property="tableView" destination="Goq-GD-xF4" id="RgV-lD-P2T"/>
                     </connections>
@@ -101,6 +101,7 @@
                     <connections>
                         <segue destination="nSa-uK-hgQ" kind="relationship" relationship="viewControllers" id="h7h-0z-POZ"/>
                         <segue destination="N49-tp-rwS" kind="relationship" relationship="viewControllers" id="Zrq-dD-lUQ"/>
+                        <segue destination="nza-o1-hXS" kind="relationship" relationship="viewControllers" id="D4b-Ev-meT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OK1-Um-aik" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -126,7 +127,7 @@
             </objects>
             <point key="canvasLocation" x="-814" y="132"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Inicio-->
         <scene sceneID="5th-e9-3IT">
             <objects>
                 <viewController id="JfW-68-yaz" customClass="HomeViewController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
@@ -159,25 +160,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zLM-oa-zge"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6Dz-do-YEX">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Logout" id="VlY-fI-HiJ">
-                                <connections>
-                                    <action selector="logoutPressed:" destination="JfW-68-yaz" id="D2l-q3-oFe"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="New" id="CAn-En-40K">
-                                <connections>
-                                    <action selector="nuewRubroPressed:" destination="JfW-68-yaz" id="pR0-vD-Wsq"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                    <navigationItem key="navigationItem" title="Inicio" id="6Dz-do-YEX">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="VlY-fI-HiJ">
+                            <connections>
+                                <action selector="logoutPressed:" destination="JfW-68-yaz" id="D2l-q3-oFe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="waD-Ep-cAG" id="1Kp-Mm-VfR"/>
                         <segue destination="7ud-ek-S28" kind="show" identifier="segue_gasto" id="njX-u5-v1B"/>
                         <segue destination="7la-QV-wb7" kind="show" identifier="segue_to_login" id="bGa-7j-lDr"/>
-                        <segue destination="yCV-C0-geK" kind="show" identifier="segue_rubro_gasto" id="UNg-bm-MR3"/>
                         <segue destination="jL2-8s-sx1" kind="show" identifier="segue_ingreso" id="mFH-hx-nNx"/>
                     </connections>
                 </viewController>
@@ -271,6 +264,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U31-Wa-EWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1010" y="1682"/>
+        </scene>
+        <!--Rubros y Cuentas-->
+        <scene sceneID="u5n-jY-jOB">
+            <objects>
+                <viewController id="ec5-xQ-URD" customClass="IOPersonalizarViewController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JZX-kV-QFa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TtD-wm-hh7">
+                                <rect key="frame" x="228" y="116" width="131" height="29"/>
+                                <segments>
+                                    <segment title="Rubros"/>
+                                    <segment title="Cuentas"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YhM-Un-NC6">
+                                <rect key="frame" x="0.0" y="160" width="375" height="458"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ec5-xQ-URD" id="5HP-c2-Zz0"/>
+                                    <outlet property="delegate" destination="ec5-xQ-URD" id="AuE-mw-lSE"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="T3d-Ml-uZe" firstAttribute="trailing" secondItem="YhM-Un-NC6" secondAttribute="trailing" id="2cx-oc-SgG"/>
+                            <constraint firstItem="T3d-Ml-uZe" firstAttribute="bottom" secondItem="YhM-Un-NC6" secondAttribute="bottom" id="Gye-43-1yz"/>
+                            <constraint firstItem="YhM-Un-NC6" firstAttribute="leading" secondItem="T3d-Ml-uZe" secondAttribute="leading" id="OEx-kx-SNA"/>
+                            <constraint firstItem="YhM-Un-NC6" firstAttribute="top" secondItem="TtD-wm-hh7" secondAttribute="bottom" constant="16" id="YGa-zC-TI9"/>
+                            <constraint firstItem="TtD-wm-hh7" firstAttribute="top" secondItem="T3d-Ml-uZe" secondAttribute="top" id="jKW-Ri-4nD"/>
+                            <constraint firstItem="T3d-Ml-uZe" firstAttribute="trailing" secondItem="TtD-wm-hh7" secondAttribute="trailing" constant="16" id="ncM-HA-FaP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="T3d-Ml-uZe"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Rubros y Cuentas" id="Tss-k8-8XE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wNj-fB-n8i">
+                            <connections>
+                                <action selector="nuewRubroPressed:" destination="ec5-xQ-URD" id="VRE-td-rNt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="YhM-Un-NC6" id="vnb-j4-Cco"/>
+                        <segue destination="yCV-C0-geK" kind="show" identifier="segue_rubro_gasto" id="QGj-fV-BmO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jzY-eo-5Zg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.80000000000000004" y="2728.785607196402"/>
+        </scene>
+        <!--Personalizar Navigation Controller-->
+        <scene sceneID="HeZ-KZ-BRb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nza-o1-hXS" customClass="IOPersonalizarNavigationController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="downloads" id="HUt-Gq-DPf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="Gtn-uk-Lgh">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ec5-xQ-URD" kind="relationship" relationship="rootViewController" id="Khh-qJ-YrB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hsy-by-JjW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1010" y="2729"/>
         </scene>
     </scenes>
     <resources>

@@ -15,6 +15,7 @@ struct IOProjectModel {
         var fechaCreacion : String
         var isEnabled : Bool
         var type : String
+        var counter : Int?
     }
     
     struct Cuenta : Decodable {

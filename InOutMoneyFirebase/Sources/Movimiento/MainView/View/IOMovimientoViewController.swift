@@ -24,7 +24,6 @@ class IOMovimientoViewController: UIViewController, IOMovimientoViewContract {
         NotificationCenter.default.addObserver(self, selector: #selector(handleActualizarRegistros), name: .updateRegistros, object: nil)
           
         viewModel = IOMovimientoViewModel(withView: self, service: MLFirebaseDatabase())
-        navigationItem.title = "Movimientos"
         
         registerCell()
         

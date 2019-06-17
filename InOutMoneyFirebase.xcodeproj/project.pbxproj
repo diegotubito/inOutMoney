@@ -149,6 +149,10 @@
 		847AC87222AF679F00E726B2 /* IOTableViewCellHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847AC86F22AF679F00E726B2 /* IOTableViewCellHeader.xib */; };
 		847AC87322AF679F00E726B2 /* IOTableViewCellHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847AC86F22AF679F00E726B2 /* IOTableViewCellHeader.xib */; };
 		848FC488222771DA00A09942 /* MLButtonCircleCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FC487222771DA00A09942 /* MLButtonCircleCustomView.swift */; };
+		849B8EDE22B720C8004F1C9F /* IOPersonalizarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B8EDD22B720C8004F1C9F /* IOPersonalizarViewController.swift */; };
+		849B8EDF22B720C8004F1C9F /* IOPersonalizarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B8EDD22B720C8004F1C9F /* IOPersonalizarViewController.swift */; };
+		849B8EE122B721C4004F1C9F /* IOPersonalizarNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B8EE022B721C4004F1C9F /* IOPersonalizarNavigationController.swift */; };
+		849B8EE222B721C4004F1C9F /* IOPersonalizarNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B8EE022B721C4004F1C9F /* IOPersonalizarNavigationController.swift */; };
 		849BA96722074C8A00EC93A6 /* IOLoginUsuarioViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA96622074C8A00EC93A6 /* IOLoginUsuarioViewModelContract.swift */; };
 		849BA96922074C9900EC93A6 /* IOLoginUsuarioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA96822074C9900EC93A6 /* IOLoginUsuarioViewModel.swift */; };
 		849BA96C22074DD100EC93A6 /* IOLoginFirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BA96B22074DD100EC93A6 /* IOLoginFirebaseService.swift */; };
@@ -223,6 +227,16 @@
 		84E41786222C42D0000214E8 /* IOProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E41785222C42D0000214E8 /* IOProjectModel.swift */; };
 		84FAE43B229B06C200DF11DC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE43A229B06C200DF11DC /* MainTabBarController.swift */; };
 		84FAE43C229B06C200DF11DC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FAE43A229B06C200DF11DC /* MainTabBarController.swift */; };
+		84FCB3B022B7477800AEA86E /* IOTableViewCellRubro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCB3AE22B7477800AEA86E /* IOTableViewCellRubro.swift */; };
+		84FCB3B122B7477800AEA86E /* IOTableViewCellRubro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCB3AE22B7477800AEA86E /* IOTableViewCellRubro.swift */; };
+		84FCB3B222B7477800AEA86E /* IOTableViewCellRubro.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FCB3AF22B7477800AEA86E /* IOTableViewCellRubro.xib */; };
+		84FCB3B322B7477800AEA86E /* IOTableViewCellRubro.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FCB3AF22B7477800AEA86E /* IOTableViewCellRubro.xib */; };
+		84FCB3B722B74E9D00AEA86E /* IOPersonalizacionRubroViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCB3B622B74E9D00AEA86E /* IOPersonalizacionRubroViewModelContract.swift */; };
+		84FCB3B822B74E9D00AEA86E /* IOPersonalizacionRubroViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCB3B622B74E9D00AEA86E /* IOPersonalizacionRubroViewModelContract.swift */; };
+		84FCB3BA22B74EAB00AEA86E /* IOPersonalizacionRubroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCB3B922B74EAB00AEA86E /* IOPersonalizacionRubroViewModel.swift */; };
+		84FCB3BB22B74EAB00AEA86E /* IOPersonalizacionRubroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCB3B922B74EAB00AEA86E /* IOPersonalizacionRubroViewModel.swift */; };
+		84FCB3BD22B750EF00AEA86E /* IOPersonalizacionRubroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCB3BC22B750EF00AEA86E /* IOPersonalizacionRubroModel.swift */; };
+		84FCB3BE22B750EF00AEA86E /* IOPersonalizacionRubroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCB3BC22B750EF00AEA86E /* IOPersonalizacionRubroModel.swift */; };
 		84FD53842203F37500DC102A /* StoryboardLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FD53832203F37500DC102A /* StoryboardLogin.storyboard */; };
 		A39DD53C73368B79AE4649B3 /* Pods_DebugVersion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDB85E05E9210DD3A7D23F9 /* Pods_DebugVersion.framework */; };
 		A6E8DFC457DDDE216915693D /* Pods_ReleaseVersion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1094BCC52B111AA8043E7D84 /* Pods_ReleaseVersion.framework */; };
@@ -292,6 +306,8 @@
 		847AC86E22AF679F00E726B2 /* IOTableViewCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellHeader.swift; sourceTree = "<group>"; };
 		847AC86F22AF679F00E726B2 /* IOTableViewCellHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellHeader.xib; sourceTree = "<group>"; };
 		848FC487222771DA00A09942 /* MLButtonCircleCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLButtonCircleCustomView.swift; sourceTree = "<group>"; };
+		849B8EDD22B720C8004F1C9F /* IOPersonalizarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOPersonalizarViewController.swift; sourceTree = "<group>"; };
+		849B8EE022B721C4004F1C9F /* IOPersonalizarNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOPersonalizarNavigationController.swift; sourceTree = "<group>"; };
 		849BA96622074C8A00EC93A6 /* IOLoginUsuarioViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginUsuarioViewModelContract.swift; sourceTree = "<group>"; };
 		849BA96822074C9900EC93A6 /* IOLoginUsuarioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginUsuarioViewModel.swift; sourceTree = "<group>"; };
 		849BA96B22074DD100EC93A6 /* IOLoginFirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOLoginFirebaseService.swift; sourceTree = "<group>"; };
@@ -354,6 +370,11 @@
 		84DABE152210B6C90024B112 /* toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = toast.swift; sourceTree = "<group>"; };
 		84E41785222C42D0000214E8 /* IOProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOProjectModel.swift; sourceTree = "<group>"; };
 		84FAE43A229B06C200DF11DC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		84FCB3AE22B7477800AEA86E /* IOTableViewCellRubro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellRubro.swift; sourceTree = "<group>"; };
+		84FCB3AF22B7477800AEA86E /* IOTableViewCellRubro.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellRubro.xib; sourceTree = "<group>"; };
+		84FCB3B622B74E9D00AEA86E /* IOPersonalizacionRubroViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOPersonalizacionRubroViewModelContract.swift; sourceTree = "<group>"; };
+		84FCB3B922B74EAB00AEA86E /* IOPersonalizacionRubroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOPersonalizacionRubroViewModel.swift; sourceTree = "<group>"; };
+		84FCB3BC22B750EF00AEA86E /* IOPersonalizacionRubroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOPersonalizacionRubroModel.swift; sourceTree = "<group>"; };
 		84FD53832203F37500DC102A /* StoryboardLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardLogin.storyboard; sourceTree = "<group>"; };
 		A6BA18932D5338E57EFCACCE /* Pods-ReleaseVersion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReleaseVersion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReleaseVersion/Pods-ReleaseVersion.debug.xcconfig"; sourceTree = "<group>"; };
 		C8AF13104E54651EE7A29B9F /* Pods-ReleaseVersion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReleaseVersion.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReleaseVersion/Pods-ReleaseVersion.release.xcconfig"; sourceTree = "<group>"; };
@@ -784,6 +805,34 @@
 			path = CircleButton;
 			sourceTree = "<group>";
 		};
+		849B8EDA22B72072004F1C9F /* Personalizar */ = {
+			isa = PBXGroup;
+			children = (
+				849B8EDB22B720A1004F1C9F /* MainView */,
+			);
+			path = Personalizar;
+			sourceTree = "<group>";
+		};
+		849B8EDB22B720A1004F1C9F /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				84FCB3B522B74E8500AEA86E /* Model */,
+				84FCB3B422B74E7E00AEA86E /* ViewModel */,
+				849B8EDC22B720B1004F1C9F /* View */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		849B8EDC22B720B1004F1C9F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84FCB3AB22B7474500AEA86E /* Cells */,
+				849B8EDD22B720C8004F1C9F /* IOPersonalizarViewController.swift */,
+				849B8EE022B721C4004F1C9F /* IOPersonalizarNavigationController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		849BA96A22074DB600EC93A6 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -1179,6 +1228,48 @@
 			path = Toast;
 			sourceTree = "<group>";
 		};
+		84FCB3AB22B7474500AEA86E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84FCB3AD22B7475B00AEA86E /* Cuenta */,
+				84FCB3AC22B7475200AEA86E /* Rubro */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		84FCB3AC22B7475200AEA86E /* Rubro */ = {
+			isa = PBXGroup;
+			children = (
+				84FCB3AE22B7477800AEA86E /* IOTableViewCellRubro.swift */,
+				84FCB3AF22B7477800AEA86E /* IOTableViewCellRubro.xib */,
+			);
+			path = Rubro;
+			sourceTree = "<group>";
+		};
+		84FCB3AD22B7475B00AEA86E /* Cuenta */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cuenta;
+			sourceTree = "<group>";
+		};
+		84FCB3B422B74E7E00AEA86E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84FCB3B622B74E9D00AEA86E /* IOPersonalizacionRubroViewModelContract.swift */,
+				84FCB3B922B74EAB00AEA86E /* IOPersonalizacionRubroViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84FCB3B522B74E8500AEA86E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84FCB3BC22B750EF00AEA86E /* IOPersonalizacionRubroModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		84FD53802203F2EB00DC102A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1187,6 +1278,7 @@
 				84FD53822203F35000DC102A /* Login */,
 				84FD53812203F2F800DC102A /* Home */,
 				84B0191822A4624C00B42B26 /* Movimiento */,
+				849B8EDA22B72072004F1C9F /* Personalizar */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -1328,6 +1420,7 @@
 				8404214122729BB4007E7756 /* IOTableViewCellBotonGuardar.xib in Resources */,
 				84D4E4DB2279FDD100CEF2BF /* TableViewCellSelector.xib in Resources */,
 				849D1ED622B603A000E67DF9 /* IOTableViewCellChart.xib in Resources */,
+				84FCB3B322B7477800AEA86E /* IOTableViewCellRubro.xib in Resources */,
 				842BDBDE22A387E400BF5273 /* IOTableViewCellBorrarRubroGasto.xib in Resources */,
 				842BDBFE22A38DC300BF5273 /* Main.storyboard in Resources */,
 				8404214622729BB4007E7756 /* IOTableViewCellSingleDataEntry.xib in Resources */,
@@ -1355,6 +1448,7 @@
 				84D4E4DA2279FDD100CEF2BF /* TableViewCellSelector.xib in Resources */,
 				84CA12222222F2EF0040B78B /* IOTableViewCellSingleDataEntry.xib in Resources */,
 				849D1ED522B603A000E67DF9 /* IOTableViewCellChart.xib in Resources */,
+				84FCB3B222B7477800AEA86E /* IOTableViewCellRubro.xib in Resources */,
 				842BDBDD22A387E400BF5273 /* IOTableViewCellBorrarRubroGasto.xib in Resources */,
 				842BDBFD22A38DC300BF5273 /* Main.storyboard in Resources */,
 				84CA122D2222FEDC0040B78B /* IOTableViewCellSingleDateCell.xib in Resources */,
@@ -1497,6 +1591,7 @@
 				840420DB22729BB4007E7756 /* progressIndicator.swift in Sources */,
 				847AC84922AC17F600E726B2 /* MLFirebaseDatabase.swift in Sources */,
 				840420DE22729BB4007E7756 /* IOLoginUsuarioViewModel.swift in Sources */,
+				84FCB3BE22B750EF00AEA86E /* IOPersonalizacionRubroModel.swift in Sources */,
 				840420DF22729BB4007E7756 /* IOTableViewCellSingleSwitchCell.swift in Sources */,
 				840420E122729BB4007E7756 /* coreGraphycs.swift in Sources */,
 				840420E222729BB4007E7756 /* configEncriptar.swift in Sources */,
@@ -1505,6 +1600,7 @@
 				840420E422729BB4007E7756 /* MLNotificationNames.swift in Sources */,
 				840420E722729BB4007E7756 /* examplesStorageFunctions.swift in Sources */,
 				840420EA22729BB4007E7756 /* PCMensualCustomView.swift in Sources */,
+				84FCB3B122B7477800AEA86E /* IOTableViewCellRubro.swift in Sources */,
 				842BDBCD22A3703A00BF5273 /* IOAltaIngresoViewController.swift in Sources */,
 				840420EF22729BB4007E7756 /* funcionesGlobales.swift in Sources */,
 				840420F122729BB4007E7756 /* SwiftyPlistManager.swift in Sources */,
@@ -1530,6 +1626,7 @@
 				849D1EF722B603F500E67DF9 /* DDLineChart.swift in Sources */,
 				8404210722729BB4007E7756 /* PCDiaCustomView.swift in Sources */,
 				8404210822729BB4007E7756 /* IOLoginPasswordViewModel.swift in Sources */,
+				84FCB3B822B74E9D00AEA86E /* IOPersonalizacionRubroViewModelContract.swift in Sources */,
 				842BDBCA22A3702E00BF5273 /* IOAltaIngresoViewModel.swift in Sources */,
 				8404210922729BB4007E7756 /* MLButtonCircleCustomView.swift in Sources */,
 				8404210A22729BB4007E7756 /* IOAltaGastoViewController.swift in Sources */,
@@ -1543,6 +1640,7 @@
 				8404211622729BB4007E7756 /* viewExtensions.swift in Sources */,
 				8404211722729BB4007E7756 /* PCMensualViewModelContract.swift in Sources */,
 				8404211C22729BB4007E7756 /* IOLoginUsuarioViewController.swift in Sources */,
+				849B8EDF22B720C8004F1C9F /* IOPersonalizarViewController.swift in Sources */,
 				8404211E22729BB4007E7756 /* IOAltaGastoModel.swift in Sources */,
 				8404211F22729BB4007E7756 /* IOTableViewCellSinglePicker.swift in Sources */,
 				8404212022729BB4007E7756 /* storageManager.swift in Sources */,
@@ -1555,6 +1653,7 @@
 				8404212822729BB4007E7756 /* IOLoginPasswordViewModelContract.swift in Sources */,
 				8404212A22729BB4007E7756 /* imageFileFromLocal.swift in Sources */,
 				8404212C22729BB4007E7756 /* MLFirebaseRemoteConfigService.swift in Sources */,
+				849B8EE222B721C4004F1C9F /* IOPersonalizarNavigationController.swift in Sources */,
 				849D1EE422B603A000E67DF9 /* HomeViewModel.swift in Sources */,
 				8404212D22729BB4007E7756 /* coredataGeneral.swift in Sources */,
 				847AC85E22ADC7DF00E726B2 /* IOMovimientoViewModelContract.swift in Sources */,
@@ -1562,6 +1661,7 @@
 				8404212F22729BB4007E7756 /* IOLoginPasswordModel.swift in Sources */,
 				847AC85B22ADC72200E726B2 /* IOMovimientoModel.swift in Sources */,
 				8404213122729BB4007E7756 /* IOLoginContraseñaCV.swift in Sources */,
+				84FCB3BB22B74EAB00AEA86E /* IOPersonalizacionRubroViewModel.swift in Sources */,
 				8404213222729BB4007E7756 /* toast.swift in Sources */,
 				8404213422729BB4007E7756 /* IOLoginContraseñaViewController.swift in Sources */,
 				842BDBDC22A387E400BF5273 /* IOTableViewCellBorrarRubroGasto.swift in Sources */,
@@ -1592,6 +1692,7 @@
 				84028102220FB24600C85A6A /* progressIndicator.swift in Sources */,
 				847AC84822AB7BF100E726B2 /* MLFirebaseDatabase.swift in Sources */,
 				849BA96922074C9900EC93A6 /* IOLoginUsuarioViewModel.swift in Sources */,
+				84FCB3BD22B750EF00AEA86E /* IOPersonalizacionRubroModel.swift in Sources */,
 				84CA12272222FB3B0040B78B /* IOTableViewCellSingleSwitchCell.swift in Sources */,
 				840280F4220FB24600C85A6A /* coreGraphycs.swift in Sources */,
 				840280F0220FB24600C85A6A /* configEncriptar.swift in Sources */,
@@ -1600,6 +1701,7 @@
 				84027FC3220F4A9700C85A6A /* MLNotificationNames.swift in Sources */,
 				840280FB220FB24600C85A6A /* examplesStorageFunctions.swift in Sources */,
 				84CA123E222306230040B78B /* PCMensualCustomView.swift in Sources */,
+				84FCB3B022B7477800AEA86E /* IOTableViewCellRubro.swift in Sources */,
 				842BDBCC22A3703A00BF5273 /* IOAltaIngresoViewController.swift in Sources */,
 				840280FD220FB24600C85A6A /* funcionesGlobales.swift in Sources */,
 				84028101220FB24600C85A6A /* SwiftyPlistManager.swift in Sources */,
@@ -1625,6 +1727,7 @@
 				849D1EF622B603F500E67DF9 /* DDLineChart.swift in Sources */,
 				84CA123C222306230040B78B /* PCDiaCustomView.swift in Sources */,
 				849BA976220775FE00EC93A6 /* IOLoginPasswordViewModel.swift in Sources */,
+				84FCB3B722B74E9D00AEA86E /* IOPersonalizacionRubroViewModelContract.swift in Sources */,
 				842BDBC922A3702E00BF5273 /* IOAltaIngresoViewModel.swift in Sources */,
 				848FC488222771DA00A09942 /* MLButtonCircleCustomView.swift in Sources */,
 				84CA121D2222F21A0040B78B /* IOAltaGastoViewController.swift in Sources */,
@@ -1638,6 +1741,7 @@
 				840268552206A7BF00EF6070 /* viewExtensions.swift in Sources */,
 				84CA1240222306230040B78B /* PCMensualViewModelContract.swift in Sources */,
 				840280CF220FB0A400C85A6A /* IOLoginUsuarioViewController.swift in Sources */,
+				849B8EDE22B720C8004F1C9F /* IOPersonalizarViewController.swift in Sources */,
 				84CA121722221E910040B78B /* IOAltaGastoModel.swift in Sources */,
 				84CA124B22238A2D0040B78B /* IOTableViewCellSinglePicker.swift in Sources */,
 				840280FC220FB24600C85A6A /* storageManager.swift in Sources */,
@@ -1650,6 +1754,7 @@
 				849BA9742207755A00EC93A6 /* IOLoginPasswordViewModelContract.swift in Sources */,
 				840280F8220FB24600C85A6A /* imageFileFromLocal.swift in Sources */,
 				84027FBE220F34EF00C85A6A /* MLFirebaseRemoteConfigService.swift in Sources */,
+				849B8EE122B721C4004F1C9F /* IOPersonalizarNavigationController.swift in Sources */,
 				849D1EE322B603A000E67DF9 /* HomeViewModel.swift in Sources */,
 				840280F3220FB24600C85A6A /* coredataGeneral.swift in Sources */,
 				847AC85D22ADC7DF00E726B2 /* IOMovimientoViewModelContract.swift in Sources */,
@@ -1657,6 +1762,7 @@
 				849BA9722207748D00EC93A6 /* IOLoginPasswordModel.swift in Sources */,
 				847AC85A22ADC72200E726B2 /* IOMovimientoModel.swift in Sources */,
 				8402684E2205F8A300EF6070 /* IOLoginContraseñaCV.swift in Sources */,
+				84FCB3BA22B74EAB00AEA86E /* IOPersonalizacionRubroViewModel.swift in Sources */,
 				84DABE162210B6C90024B112 /* toast.swift in Sources */,
 				840268492205F31000EF6070 /* IOLoginContraseñaViewController.swift in Sources */,
 				842BDBDB22A387E400BF5273 /* IOTableViewCellBorrarRubroGasto.swift in Sources */,

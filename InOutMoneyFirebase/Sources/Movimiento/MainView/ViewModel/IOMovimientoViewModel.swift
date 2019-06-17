@@ -74,7 +74,7 @@ class IOMovimientoViewModel: IOMovimientoViewModelContract {
         _service.fetch(path: path, completion: { (registros: [IOProjectModel.Registro]?) in
             self._view.hideLoading()
             if registros != nil {
-                let sortedArray = registros!.sorted(by: { $0.fechaCreacion! > $1.fechaCreacion! })
+                let sortedArray = registros!.sorted(by: { $0.fechaCreacion! < $1.fechaCreacion! })
                 
                 self.transformToSections(registros: sortedArray)
             }
@@ -163,6 +163,11 @@ class IOMovimientoViewModel: IOMovimientoViewModelContract {
                     self._view.showError(error?.localizedDescription ?? ProjectConstants.unknownError)
                     return
                 }
+                
+                //disminuyo contador de transacciones en rubro
+                let pathRubro = UserID! + ProjectConstants.firebaseSubPath.rubros + "/" + registro.childIDRubro!
+                MLFirebaseDatabase.setTransaction(path: pathRubro, keyName: "counter", incremento: -1)
+                
                 
                 self.cargarRegistros()
                 

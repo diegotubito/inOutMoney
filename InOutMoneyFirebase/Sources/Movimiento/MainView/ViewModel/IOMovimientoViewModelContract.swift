@@ -17,7 +17,7 @@ protocol IOMovimientoViewModelContract {
     func anularReestablecer(section: Int, row: Int, value: Int)
     func eliminarRegistro(section: Int, row: Int)
     func getFecha(section: Int) -> String
-    func setColor(registro: IOProjectModel.Registro, cell: IOTableViewCellSingleLabel) 
+    func setColor(registro: IOProjectModel.Registro, cell: IOTableViewCellSingleLabel)
 }
 
 
