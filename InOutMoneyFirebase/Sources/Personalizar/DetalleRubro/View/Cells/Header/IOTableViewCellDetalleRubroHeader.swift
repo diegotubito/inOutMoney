@@ -1,20 +1,15 @@
 //
-//  IOTableViewCellRubro.swift
+//  IOTableViewCellDetalleRubro.swift
 //  InOutMoneyFirebase
 //
-//  Created by David Diego Gomez on 17/6/19.
+//  Created by David Diego Gomez on 18/6/19.
 //  Copyright © 2019 Gomez David Diego. All rights reserved.
 //
 
 import UIKit
 
-class IOTableViewCellRubro: UITableViewCell {
+class IOTableViewCellDetalleRubroHeader: UITableViewCell {
 
-    @IBOutlet var title: UILabel!
-    @IBOutlet var registros: UILabel!
-    @IBOutlet var creacion: UILabel!
-    @IBOutlet var tipo: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,7 +17,7 @@ class IOTableViewCellRubro: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        selectionStyle = .none
+
         // Configure the view for the selected state
     }
     

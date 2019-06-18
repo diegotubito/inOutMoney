@@ -15,16 +15,20 @@ class IOPersonalizarViewController: UIViewController, IOPersonalizacionRubroView
     
     var viewModel : IOPersonalizacionRubroViewModelContract!
     
-    override func viewDidLoad
-        () {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateRubro), name: .updateRubros, object: nil)
         viewModel = IOPersonalizacionRubroViewModel(withView: self, service: MLFirebaseDatabase())
         
         registerCells()
         
         viewModel.cargarRubros()
         
+    }
+    
+    @objc func handleUpdateRubro() {
+        viewModel.cargarRubros()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,7 +76,11 @@ class IOPersonalizarViewController: UIViewController, IOPersonalizacionRubroView
             controller.viewModel = IOAltaRubroViewModel(withView: controller)
         }
         
-
+        if let controller = segue.destination as? IODetalleRubroViewController {
+            if let rubroSeleccionado = sender as? IOProjectModel.Rubro {
+                controller.viewModel = IODetalleRubroViewModel(withView: controller, service: MLFirebaseDatabase(), rubroSeleccionado: rubroSeleccionado)
+            }
+        }
     }
 }
 
@@ -113,6 +121,14 @@ extension IOPersonalizarViewController: UITableViewDataSource {
 
 
 extension IOPersonalizarViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let rubroSeleccionado = viewModel.model.rubros[indexPath.row]
+        
+        performSegue(withIdentifier: "segue_detalle_rubro", sender: rubroSeleccionado)
+    }
+    
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let editAction = UIContextualAction(style: .destructive, title: "Editar") { (action, view, handler) in

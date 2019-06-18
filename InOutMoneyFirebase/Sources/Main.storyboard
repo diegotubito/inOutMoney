@@ -52,6 +52,40 @@
             </objects>
             <point key="canvasLocation" x="1079" y="2729"/>
         </scene>
+        <!--Detalle Rubro View Controller-->
+        <scene sceneID="ejO-De-pO1">
+            <objects>
+                <viewController id="Xbf-uI-rmg" customClass="IODetalleRubroViewController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IOV-EU-WjE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0tV-a7-SSk">
+                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Xbf-uI-rmg" id="Uyf-Fj-Aqa"/>
+                                    <outlet property="delegate" destination="Xbf-uI-rmg" id="Yr7-sJ-Yti"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5i6-ag-haB" firstAttribute="bottom" secondItem="0tV-a7-SSk" secondAttribute="bottom" id="5PJ-qc-TFC"/>
+                            <constraint firstItem="0tV-a7-SSk" firstAttribute="leading" secondItem="5i6-ag-haB" secondAttribute="leading" id="H7p-nD-bbw"/>
+                            <constraint firstItem="0tV-a7-SSk" firstAttribute="top" secondItem="5i6-ag-haB" secondAttribute="top" id="OSr-GP-oL0"/>
+                            <constraint firstItem="5i6-ag-haB" firstAttribute="trailing" secondItem="0tV-a7-SSk" secondAttribute="trailing" id="eVr-to-e6F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5i6-ag-haB"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="0tV-a7-SSk" id="MB4-5K-EMj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6dH-Yi-2eA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1078" y="3524"/>
+        </scene>
         <!--Movimientos-->
         <scene sceneID="1jx-pi-lYY">
             <objects>
@@ -310,6 +344,7 @@
                     <connections>
                         <outlet property="tableView" destination="YhM-Un-NC6" id="vnb-j4-Cco"/>
                         <segue destination="yCV-C0-geK" kind="show" identifier="segue_rubro_gasto" id="QGj-fV-BmO"/>
+                        <segue destination="Xbf-uI-rmg" kind="show" identifier="segue_detalle_rubro" id="Rb5-iE-ojn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzY-eo-5Zg" userLabel="First Responder" sceneMemberID="firstResponder"/>

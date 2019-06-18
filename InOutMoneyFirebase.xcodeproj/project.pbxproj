@@ -109,6 +109,10 @@
 		8404215422729BB4007E7756 /* StoryboardLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FD53832203F37500DC102A /* StoryboardLogin.storyboard */; };
 		8404215722729BB4007E7756 /* IOLoginContraseñaCV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8402684B2205F87D00EF6070 /* IOLoginContraseñaCV.xib */; };
 		842227587AA8719C417032C5 /* Pods_InOutMoneyFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */; };
+		8422AADC22B8944C0011CF38 /* IOTableViewCellDetalleRubroHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422AADA22B8944C0011CF38 /* IOTableViewCellDetalleRubroHeader.swift */; };
+		8422AADD22B8944C0011CF38 /* IOTableViewCellDetalleRubroHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422AADA22B8944C0011CF38 /* IOTableViewCellDetalleRubroHeader.swift */; };
+		8422AADE22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8422AADB22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib */; };
+		8422AADF22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8422AADB22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib */; };
 		842BDBC022A36FE500BF5273 /* IOAltaIngresoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDBBF22A36FE500BF5273 /* IOAltaIngresoModel.swift */; };
 		842BDBC122A36FE500BF5273 /* IOAltaIngresoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDBBF22A36FE500BF5273 /* IOAltaIngresoModel.swift */; };
 		842BDBC622A3702100BF5273 /* IOAltaIngresoViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDBC522A3702100BF5273 /* IOAltaIngresoViewModelContract.swift */; };
@@ -237,6 +241,14 @@
 		84FCB3BB22B74EAB00AEA86E /* IOPersonalizacionRubroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCB3B922B74EAB00AEA86E /* IOPersonalizacionRubroViewModel.swift */; };
 		84FCB3BD22B750EF00AEA86E /* IOPersonalizacionRubroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCB3BC22B750EF00AEA86E /* IOPersonalizacionRubroModel.swift */; };
 		84FCB3BE22B750EF00AEA86E /* IOPersonalizacionRubroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCB3BC22B750EF00AEA86E /* IOPersonalizacionRubroModel.swift */; };
+		84FCB3C122B8721900AEA86E /* IODetalleRubroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCB3C022B8721900AEA86E /* IODetalleRubroViewController.swift */; };
+		84FCB3C222B8721900AEA86E /* IODetalleRubroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCB3C022B8721900AEA86E /* IODetalleRubroViewController.swift */; };
+		84FCB3C722B872B600AEA86E /* IODetalleRubroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCB3C622B872B600AEA86E /* IODetalleRubroModel.swift */; };
+		84FCB3C822B872B600AEA86E /* IODetalleRubroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCB3C622B872B600AEA86E /* IODetalleRubroModel.swift */; };
+		84FCB3CA22B872C600AEA86E /* IODetalleRubroViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCB3C922B872C600AEA86E /* IODetalleRubroViewModelContract.swift */; };
+		84FCB3CB22B872C600AEA86E /* IODetalleRubroViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCB3C922B872C600AEA86E /* IODetalleRubroViewModelContract.swift */; };
+		84FCB3CD22B874CA00AEA86E /* IODetalleRubroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCB3CC22B874CA00AEA86E /* IODetalleRubroViewModel.swift */; };
+		84FCB3CE22B874CA00AEA86E /* IODetalleRubroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCB3CC22B874CA00AEA86E /* IODetalleRubroViewModel.swift */; };
 		84FD53842203F37500DC102A /* StoryboardLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FD53832203F37500DC102A /* StoryboardLogin.storyboard */; };
 		A39DD53C73368B79AE4649B3 /* Pods_DebugVersion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDB85E05E9210DD3A7D23F9 /* Pods_DebugVersion.framework */; };
 		A6E8DFC457DDDE216915693D /* Pods_ReleaseVersion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1094BCC52B111AA8043E7D84 /* Pods_ReleaseVersion.framework */; };
@@ -281,6 +293,8 @@
 		8402810F220FC37B00C85A6A /* IONuevoUsuarioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IONuevoUsuarioModel.swift; path = InOutMoneyFirebase/Defaults/IONuevoUsuarioModel.swift; sourceTree = SOURCE_ROOT; };
 		8404215D22729BB4007E7756 /* DebugVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DebugVersion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8404215E22729BB4007E7756 /* InOutMoneyFirebase copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "InOutMoneyFirebase copy-Info.plist"; path = "/Users/diegodavid_77/mis software en disco/Iphone/InOutMoneyFirebase/InOutMoneyFirebase copy-Info.plist"; sourceTree = "<absolute>"; };
+		8422AADA22B8944C0011CF38 /* IOTableViewCellDetalleRubroHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellDetalleRubroHeader.swift; sourceTree = "<group>"; };
+		8422AADB22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellDetalleRubro.xib; sourceTree = "<group>"; };
 		842BDBBF22A36FE500BF5273 /* IOAltaIngresoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOAltaIngresoModel.swift; sourceTree = "<group>"; };
 		842BDBC522A3702100BF5273 /* IOAltaIngresoViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOAltaIngresoViewModelContract.swift; sourceTree = "<group>"; };
 		842BDBC822A3702E00BF5273 /* IOAltaIngresoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOAltaIngresoViewModel.swift; sourceTree = "<group>"; };
@@ -375,6 +389,10 @@
 		84FCB3B622B74E9D00AEA86E /* IOPersonalizacionRubroViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOPersonalizacionRubroViewModelContract.swift; sourceTree = "<group>"; };
 		84FCB3B922B74EAB00AEA86E /* IOPersonalizacionRubroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOPersonalizacionRubroViewModel.swift; sourceTree = "<group>"; };
 		84FCB3BC22B750EF00AEA86E /* IOPersonalizacionRubroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOPersonalizacionRubroModel.swift; sourceTree = "<group>"; };
+		84FCB3C022B8721900AEA86E /* IODetalleRubroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IODetalleRubroViewController.swift; sourceTree = "<group>"; };
+		84FCB3C622B872B600AEA86E /* IODetalleRubroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IODetalleRubroModel.swift; sourceTree = "<group>"; };
+		84FCB3C922B872C600AEA86E /* IODetalleRubroViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IODetalleRubroViewModelContract.swift; sourceTree = "<group>"; };
+		84FCB3CC22B874CA00AEA86E /* IODetalleRubroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IODetalleRubroViewModel.swift; sourceTree = "<group>"; };
 		84FD53832203F37500DC102A /* StoryboardLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardLogin.storyboard; sourceTree = "<group>"; };
 		A6BA18932D5338E57EFCACCE /* Pods-ReleaseVersion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReleaseVersion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReleaseVersion/Pods-ReleaseVersion.debug.xcconfig"; sourceTree = "<group>"; };
 		C8AF13104E54651EE7A29B9F /* Pods-ReleaseVersion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReleaseVersion.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReleaseVersion/Pods-ReleaseVersion.release.xcconfig"; sourceTree = "<group>"; };
@@ -662,6 +680,23 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		8422AAD822B8941C0011CF38 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8422AAD922B894240011CF38 /* Header */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8422AAD922B894240011CF38 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				8422AADA22B8944C0011CF38 /* IOTableViewCellDetalleRubroHeader.swift */,
+				8422AADB22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		842BDBBE22A36FCC00BF5273 /* AltaIngreso */ = {
 			isa = PBXGroup;
 			children = (
@@ -808,6 +843,8 @@
 		849B8EDA22B72072004F1C9F /* Personalizar */ = {
 			isa = PBXGroup;
 			children = (
+				84FCB3BF22B871F500AEA86E /* DetalleRubro */,
+				84CFD326222DD1C7004CE810 /* AltaRubro */,
 				849B8EDB22B720A1004F1C9F /* MainView */,
 			);
 			path = Personalizar;
@@ -1270,6 +1307,42 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		84FCB3BF22B871F500AEA86E /* DetalleRubro */ = {
+			isa = PBXGroup;
+			children = (
+				84FCB3C522B8728D00AEA86E /* Model */,
+				84FCB3C422B8728600AEA86E /* ViewModel */,
+				84FCB3C322B8727D00AEA86E /* View */,
+			);
+			path = DetalleRubro;
+			sourceTree = "<group>";
+		};
+		84FCB3C322B8727D00AEA86E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8422AAD822B8941C0011CF38 /* Cells */,
+				84FCB3C022B8721900AEA86E /* IODetalleRubroViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84FCB3C422B8728600AEA86E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84FCB3C922B872C600AEA86E /* IODetalleRubroViewModelContract.swift */,
+				84FCB3CC22B874CA00AEA86E /* IODetalleRubroViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84FCB3C522B8728D00AEA86E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84FCB3C622B872B600AEA86E /* IODetalleRubroModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		84FD53802203F2EB00DC102A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1290,7 +1363,6 @@
 				849D1EE722B603D000E67DF9 /* View */,
 				842BDBBE22A36FCC00BF5273 /* AltaIngreso */,
 				84CA121222221E580040B78B /* AltaGasto */,
-				84CFD326222DD1C7004CE810 /* AltaRubro */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1427,6 +1499,7 @@
 				8404214722729BB4007E7756 /* IOTableViewCellSingleDateCell.xib in Resources */,
 				8404214922729BB4007E7756 /* IOTableViewCellSinglePicker.xib in Resources */,
 				8404214B22729BB4007E7756 /* IOTableViewCellSingleSwitchCell.xib in Resources */,
+				8422AADF22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib in Resources */,
 				8404214F22729BB4007E7756 /* TableViewCellLoginUsuario.xib in Resources */,
 				84D4E33D2274DB0800CEF2BF /* Assets.xcassets in Resources */,
 				849D1EDA22B603A000E67DF9 /* TableViewCellCuentas.xib in Resources */,
@@ -1455,6 +1528,7 @@
 				84CA124C22238A2D0040B78B /* IOTableViewCellSinglePicker.xib in Resources */,
 				84CA12282222FB3B0040B78B /* IOTableViewCellSingleSwitchCell.xib in Resources */,
 				8402685322068ECC00EF6070 /* TableViewCellLoginUsuario.xib in Resources */,
+				8422AADE22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib in Resources */,
 				84D4E3412279198F00CEF2BF /* Assets.xcassets in Resources */,
 				847AC87222AF679F00E726B2 /* IOTableViewCellHeader.xib in Resources */,
 				849D1ED922B603A000E67DF9 /* TableViewCellCuentas.xib in Resources */,
@@ -1634,6 +1708,7 @@
 				8404210D22729BB4007E7756 /* IONuevoUsuarioViewModel.swift in Sources */,
 				849D1ED822B603A000E67DF9 /* TableViewCellCuentas.swift in Sources */,
 				8404210E22729BB4007E7756 /* IONuevoUsuarioViewController.swift in Sources */,
+				8422AADD22B8944C0011CF38 /* IOTableViewCellDetalleRubroHeader.swift in Sources */,
 				8404210F22729BB4007E7756 /* dateLibrary.swift in Sources */,
 				8404211022729BB4007E7756 /* IONuevoUsuarioViewModelContract.swift in Sources */,
 				8404211322729BB4007E7756 /* labelExtension.swift in Sources */,
@@ -1641,6 +1716,7 @@
 				8404211722729BB4007E7756 /* PCMensualViewModelContract.swift in Sources */,
 				8404211C22729BB4007E7756 /* IOLoginUsuarioViewController.swift in Sources */,
 				849B8EDF22B720C8004F1C9F /* IOPersonalizarViewController.swift in Sources */,
+				84FCB3C822B872B600AEA86E /* IODetalleRubroModel.swift in Sources */,
 				8404211E22729BB4007E7756 /* IOAltaGastoModel.swift in Sources */,
 				8404211F22729BB4007E7756 /* IOTableViewCellSinglePicker.swift in Sources */,
 				8404212022729BB4007E7756 /* storageManager.swift in Sources */,
@@ -1655,7 +1731,9 @@
 				8404212C22729BB4007E7756 /* MLFirebaseRemoteConfigService.swift in Sources */,
 				849B8EE222B721C4004F1C9F /* IOPersonalizarNavigationController.swift in Sources */,
 				849D1EE422B603A000E67DF9 /* HomeViewModel.swift in Sources */,
+				84FCB3C222B8721900AEA86E /* IODetalleRubroViewController.swift in Sources */,
 				8404212D22729BB4007E7756 /* coredataGeneral.swift in Sources */,
+				84FCB3CB22B872C600AEA86E /* IODetalleRubroViewModelContract.swift in Sources */,
 				847AC85E22ADC7DF00E726B2 /* IOMovimientoViewModelContract.swift in Sources */,
 				8404212E22729BB4007E7756 /* IOTableViewCellSingleDataEntry.swift in Sources */,
 				8404212F22729BB4007E7756 /* IOLoginPasswordModel.swift in Sources */,
@@ -1663,6 +1741,7 @@
 				8404213122729BB4007E7756 /* IOLoginContraseñaCV.swift in Sources */,
 				84FCB3BB22B74EAB00AEA86E /* IOPersonalizacionRubroViewModel.swift in Sources */,
 				8404213222729BB4007E7756 /* toast.swift in Sources */,
+				84FCB3CE22B874CA00AEA86E /* IODetalleRubroViewModel.swift in Sources */,
 				8404213422729BB4007E7756 /* IOLoginContraseñaViewController.swift in Sources */,
 				842BDBDC22A387E400BF5273 /* IOTableViewCellBorrarRubroGasto.swift in Sources */,
 				8404213522729BB4007E7756 /* alamofireExtension.swift in Sources */,
@@ -1735,6 +1814,7 @@
 				8402810E220FC37100C85A6A /* IONuevoUsuarioViewModel.swift in Sources */,
 				849D1ED722B603A000E67DF9 /* TableViewCellCuentas.swift in Sources */,
 				84028107220FC34000C85A6A /* IONuevoUsuarioViewController.swift in Sources */,
+				8422AADC22B8944C0011CF38 /* IOTableViewCellDetalleRubroHeader.swift in Sources */,
 				840280F5220FB24600C85A6A /* dateLibrary.swift in Sources */,
 				8402810C220FC36300C85A6A /* IONuevoUsuarioViewModelContract.swift in Sources */,
 				84CA1242222307320040B78B /* labelExtension.swift in Sources */,
@@ -1742,6 +1822,7 @@
 				84CA1240222306230040B78B /* PCMensualViewModelContract.swift in Sources */,
 				840280CF220FB0A400C85A6A /* IOLoginUsuarioViewController.swift in Sources */,
 				849B8EDE22B720C8004F1C9F /* IOPersonalizarViewController.swift in Sources */,
+				84FCB3C722B872B600AEA86E /* IODetalleRubroModel.swift in Sources */,
 				84CA121722221E910040B78B /* IOAltaGastoModel.swift in Sources */,
 				84CA124B22238A2D0040B78B /* IOTableViewCellSinglePicker.swift in Sources */,
 				840280FC220FB24600C85A6A /* storageManager.swift in Sources */,
@@ -1756,7 +1837,9 @@
 				84027FBE220F34EF00C85A6A /* MLFirebaseRemoteConfigService.swift in Sources */,
 				849B8EE122B721C4004F1C9F /* IOPersonalizarNavigationController.swift in Sources */,
 				849D1EE322B603A000E67DF9 /* HomeViewModel.swift in Sources */,
+				84FCB3C122B8721900AEA86E /* IODetalleRubroViewController.swift in Sources */,
 				840280F3220FB24600C85A6A /* coredataGeneral.swift in Sources */,
+				84FCB3CA22B872C600AEA86E /* IODetalleRubroViewModelContract.swift in Sources */,
 				847AC85D22ADC7DF00E726B2 /* IOMovimientoViewModelContract.swift in Sources */,
 				84CA12212222F2EF0040B78B /* IOTableViewCellSingleDataEntry.swift in Sources */,
 				849BA9722207748D00EC93A6 /* IOLoginPasswordModel.swift in Sources */,
@@ -1764,6 +1847,7 @@
 				8402684E2205F8A300EF6070 /* IOLoginContraseñaCV.swift in Sources */,
 				84FCB3BA22B74EAB00AEA86E /* IOPersonalizacionRubroViewModel.swift in Sources */,
 				84DABE162210B6C90024B112 /* toast.swift in Sources */,
+				84FCB3CD22B874CA00AEA86E /* IODetalleRubroViewModel.swift in Sources */,
 				840268492205F31000EF6070 /* IOLoginContraseñaViewController.swift in Sources */,
 				842BDBDB22A387E400BF5273 /* IOTableViewCellBorrarRubroGasto.swift in Sources */,
 				840280EE220FB24600C85A6A /* alamofireExtension.swift in Sources */,
