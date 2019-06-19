@@ -31,7 +31,7 @@ class IODetalleRubroViewController: UIViewController, IODetalleRubroViewContract
     
     func registerCells() {
         tableView.register(IOTableViewCellSingleLabel.nib, forCellReuseIdentifier: IOTableViewCellSingleLabel.identifier)
-        
+        tableView.register(IOTableViewCellDetalleRubroHeader.nib, forCellReuseIdentifier: IOTableViewCellDetalleRubroHeader.identifier)
     }
     func showLoading() {
         DDBarLoader.showLoading(controller: self, message: ProjectConstants.loadingText)
@@ -61,6 +61,10 @@ extension IODetalleRubroViewController: UITableViewDataSource {
         return viewModel!.model.registros[section].count
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellSingleLabel.identifier, for: indexPath) as? IOTableViewCellSingleLabel {
             
@@ -82,23 +86,40 @@ extension IODetalleRubroViewController: UITableViewDataSource {
         return UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellDetalleRubroHeader.identifier) as? IOTableViewCellDetalleRubroHeader
+        header?.contentView.backgroundColor = UIColor.black
+        
+        header?.leftLabel.text = getFechaForHeader(section: section)
+        header?.rightLabel.text = getTotalByMonth(section: section)
+        
+        header?.leftLabel.textColor = UIColor.lightGray
+        header?.rightLabel.textColor = UIColor.lightGray
+        return header
+    }
+    
+    func getFechaForHeader(section: Int) -> String {
         let fechaGasto = viewModel.model.registros[section][0].fechaGasto
         let fecha = fechaGasto?.toDate(formato: formatoDeFecha.fecha)
         let mes = fecha?.mes
         let año = (fecha?.año)!
         let result = MESES[mes!]! + " " + String(año)
         
-        var total : Double = 0
+        return result
+    }
+    
+    func getTotalByMonth(section: Int) -> String {
+        var result : Double = 0
         for i in viewModel.model.registros[section] {
             if i.isEnabled! == 1 {
-                total += i.importe!
+                result += i.importe!
             }
         }
-        return result + " " + total.formatoMoneda(decimales: 2)
+        return result.formatoMoneda(decimales: 2, simbolo: "$")
     }
+   
 }
 
 extension IODetalleRubroViewController: UITableViewDelegate {
-    
+ 
 }

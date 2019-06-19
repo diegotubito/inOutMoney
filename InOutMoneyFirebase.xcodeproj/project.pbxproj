@@ -109,12 +109,12 @@
 		8404215422729BB4007E7756 /* StoryboardLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FD53832203F37500DC102A /* StoryboardLogin.storyboard */; };
 		8404215722729BB4007E7756 /* IOLoginContraseñaCV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8402684B2205F87D00EF6070 /* IOLoginContraseñaCV.xib */; };
 		842227587AA8719C417032C5 /* Pods_InOutMoneyFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */; };
-		8422AADC22B8944C0011CF38 /* IOTableViewCellDetalleRubroHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422AADA22B8944C0011CF38 /* IOTableViewCellDetalleRubroHeader.swift */; };
-		8422AADD22B8944C0011CF38 /* IOTableViewCellDetalleRubroHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422AADA22B8944C0011CF38 /* IOTableViewCellDetalleRubroHeader.swift */; };
-		8422AADE22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8422AADB22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib */; };
-		8422AADF22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8422AADB22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib */; };
 		8422AAE222B9DBE20011CF38 /* DDLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422AAE122B9DBE20011CF38 /* DDLineChart.swift */; };
 		8422AAE322B9DBE20011CF38 /* DDLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422AAE122B9DBE20011CF38 /* DDLineChart.swift */; };
+		8422AAE722B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422AAE522B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.swift */; };
+		8422AAE822B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422AAE522B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.swift */; };
+		8422AAE922B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8422AAE622B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.xib */; };
+		8422AAEA22B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8422AAE622B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.xib */; };
 		842BDBC022A36FE500BF5273 /* IOAltaIngresoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDBBF22A36FE500BF5273 /* IOAltaIngresoModel.swift */; };
 		842BDBC122A36FE500BF5273 /* IOAltaIngresoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDBBF22A36FE500BF5273 /* IOAltaIngresoModel.swift */; };
 		842BDBC622A3702100BF5273 /* IOAltaIngresoViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDBC522A3702100BF5273 /* IOAltaIngresoViewModelContract.swift */; };
@@ -293,9 +293,9 @@
 		8402810F220FC37B00C85A6A /* IONuevoUsuarioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IONuevoUsuarioModel.swift; path = InOutMoneyFirebase/Defaults/IONuevoUsuarioModel.swift; sourceTree = SOURCE_ROOT; };
 		8404215D22729BB4007E7756 /* DebugVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DebugVersion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8404215E22729BB4007E7756 /* InOutMoneyFirebase copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "InOutMoneyFirebase copy-Info.plist"; path = "/Users/diegodavid_77/mis software en disco/Iphone/InOutMoneyFirebase/InOutMoneyFirebase copy-Info.plist"; sourceTree = "<absolute>"; };
-		8422AADA22B8944C0011CF38 /* IOTableViewCellDetalleRubroHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellDetalleRubroHeader.swift; sourceTree = "<group>"; };
-		8422AADB22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellDetalleRubro.xib; sourceTree = "<group>"; };
 		8422AAE122B9DBE20011CF38 /* DDLineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDLineChart.swift; sourceTree = "<group>"; };
+		8422AAE522B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellDetalleRubroHeader.swift; sourceTree = "<group>"; };
+		8422AAE622B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellDetalleRubroHeader.xib; sourceTree = "<group>"; };
 		842BDBBF22A36FE500BF5273 /* IOAltaIngresoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOAltaIngresoModel.swift; sourceTree = "<group>"; };
 		842BDBC522A3702100BF5273 /* IOAltaIngresoViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOAltaIngresoViewModelContract.swift; sourceTree = "<group>"; };
 		842BDBC822A3702E00BF5273 /* IOAltaIngresoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOAltaIngresoViewModel.swift; sourceTree = "<group>"; };
@@ -683,18 +683,9 @@
 		8422AAD822B8941C0011CF38 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				8422AAD922B894240011CF38 /* Header */,
+				8422AAE422B9F56A0011CF38 /* Header */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		8422AAD922B894240011CF38 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				8422AADA22B8944C0011CF38 /* IOTableViewCellDetalleRubroHeader.swift */,
-				8422AADB22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib */,
-			);
-			path = Header;
 			sourceTree = "<group>";
 		};
 		8422AAE022B9DBE10011CF38 /* LineChart */ = {
@@ -703,6 +694,15 @@
 				8422AAE122B9DBE20011CF38 /* DDLineChart.swift */,
 			);
 			path = LineChart;
+			sourceTree = "<group>";
+		};
+		8422AAE422B9F56A0011CF38 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				8422AAE522B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.swift */,
+				8422AAE622B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.xib */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		842BDBBE22A36FCC00BF5273 /* AltaIngreso */ = {
@@ -1485,6 +1485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				842BDBFA22A38BFA00BF5273 /* IOTableViewCellSingleTextField.xib in Resources */,
+				8422AAEA22B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.xib in Resources */,
 				8404213E22729BB4007E7756 /* LaunchScreen.storyboard in Resources */,
 				847AC86522ADCAC100E726B2 /* IOTableViewCellSingleLabel.xib in Resources */,
 				84D4E3312274D6B800CEF2BF /* GoogleService-Info.plist in Resources */,
@@ -1498,7 +1499,6 @@
 				8404214722729BB4007E7756 /* IOTableViewCellSingleDateCell.xib in Resources */,
 				8404214922729BB4007E7756 /* IOTableViewCellSinglePicker.xib in Resources */,
 				8404214B22729BB4007E7756 /* IOTableViewCellSingleSwitchCell.xib in Resources */,
-				8422AADF22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib in Resources */,
 				8404214F22729BB4007E7756 /* TableViewCellLoginUsuario.xib in Resources */,
 				84D4E33D2274DB0800CEF2BF /* Assets.xcassets in Resources */,
 				849D1EDA22B603A000E67DF9 /* TableViewCellCuentas.xib in Resources */,
@@ -1514,6 +1514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				842BDBF922A38BFA00BF5273 /* IOTableViewCellSingleTextField.xib in Resources */,
+				8422AAE922B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.xib in Resources */,
 				84594EF421DC64670019C9B9 /* LaunchScreen.storyboard in Resources */,
 				847AC86422ADCAC100E726B2 /* IOTableViewCellSingleLabel.xib in Resources */,
 				84CA12472223098B0040B78B /* IOTableViewCellBotonGuardar.xib in Resources */,
@@ -1527,7 +1528,6 @@
 				84CA124C22238A2D0040B78B /* IOTableViewCellSinglePicker.xib in Resources */,
 				84CA12282222FB3B0040B78B /* IOTableViewCellSingleSwitchCell.xib in Resources */,
 				8402685322068ECC00EF6070 /* TableViewCellLoginUsuario.xib in Resources */,
-				8422AADE22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib in Resources */,
 				84D4E3412279198F00CEF2BF /* Assets.xcassets in Resources */,
 				847AC87222AF679F00E726B2 /* IOTableViewCellHeader.xib in Resources */,
 				849D1ED922B603A000E67DF9 /* TableViewCellCuentas.xib in Resources */,
@@ -1707,11 +1707,11 @@
 				8404210D22729BB4007E7756 /* IONuevoUsuarioViewModel.swift in Sources */,
 				849D1ED822B603A000E67DF9 /* TableViewCellCuentas.swift in Sources */,
 				8404210E22729BB4007E7756 /* IONuevoUsuarioViewController.swift in Sources */,
-				8422AADD22B8944C0011CF38 /* IOTableViewCellDetalleRubroHeader.swift in Sources */,
 				8404210F22729BB4007E7756 /* dateLibrary.swift in Sources */,
 				8404211022729BB4007E7756 /* IONuevoUsuarioViewModelContract.swift in Sources */,
 				8404211322729BB4007E7756 /* labelExtension.swift in Sources */,
 				8404211622729BB4007E7756 /* viewExtensions.swift in Sources */,
+				8422AAE822B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.swift in Sources */,
 				8404211722729BB4007E7756 /* PCMensualViewModelContract.swift in Sources */,
 				8404211C22729BB4007E7756 /* IOLoginUsuarioViewController.swift in Sources */,
 				849B8EDF22B720C8004F1C9F /* IOPersonalizarViewController.swift in Sources */,
@@ -1813,11 +1813,11 @@
 				8402810E220FC37100C85A6A /* IONuevoUsuarioViewModel.swift in Sources */,
 				849D1ED722B603A000E67DF9 /* TableViewCellCuentas.swift in Sources */,
 				84028107220FC34000C85A6A /* IONuevoUsuarioViewController.swift in Sources */,
-				8422AADC22B8944C0011CF38 /* IOTableViewCellDetalleRubroHeader.swift in Sources */,
 				840280F5220FB24600C85A6A /* dateLibrary.swift in Sources */,
 				8402810C220FC36300C85A6A /* IONuevoUsuarioViewModelContract.swift in Sources */,
 				84CA1242222307320040B78B /* labelExtension.swift in Sources */,
 				840268552206A7BF00EF6070 /* viewExtensions.swift in Sources */,
+				8422AAE722B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.swift in Sources */,
 				84CA1240222306230040B78B /* PCMensualViewModelContract.swift in Sources */,
 				840280CF220FB0A400C85A6A /* IOLoginUsuarioViewController.swift in Sources */,
 				849B8EDE22B720C8004F1C9F /* IOPersonalizarViewController.swift in Sources */,
