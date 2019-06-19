@@ -113,6 +113,8 @@
 		8422AADD22B8944C0011CF38 /* IOTableViewCellDetalleRubroHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422AADA22B8944C0011CF38 /* IOTableViewCellDetalleRubroHeader.swift */; };
 		8422AADE22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8422AADB22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib */; };
 		8422AADF22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8422AADB22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib */; };
+		8422AAE222B9DBE20011CF38 /* DDLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422AAE122B9DBE20011CF38 /* DDLineChart.swift */; };
+		8422AAE322B9DBE20011CF38 /* DDLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422AAE122B9DBE20011CF38 /* DDLineChart.swift */; };
 		842BDBC022A36FE500BF5273 /* IOAltaIngresoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDBBF22A36FE500BF5273 /* IOAltaIngresoModel.swift */; };
 		842BDBC122A36FE500BF5273 /* IOAltaIngresoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDBBF22A36FE500BF5273 /* IOAltaIngresoModel.swift */; };
 		842BDBC622A3702100BF5273 /* IOAltaIngresoViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDBC522A3702100BF5273 /* IOAltaIngresoViewModelContract.swift */; };
@@ -186,8 +188,6 @@
 		849D1EE422B603A000E67DF9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D1ECF22B603A000E67DF9 /* HomeViewModel.swift */; };
 		849D1EE522B603A000E67DF9 /* HomeViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D1ED022B603A000E67DF9 /* HomeViewModelProtocol.swift */; };
 		849D1EE622B603A000E67DF9 /* HomeViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D1ED022B603A000E67DF9 /* HomeViewModelProtocol.swift */; };
-		849D1EF622B603F500E67DF9 /* DDLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D1EF522B603F500E67DF9 /* DDLineChart.swift */; };
-		849D1EF722B603F500E67DF9 /* DDLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D1EF522B603F500E67DF9 /* DDLineChart.swift */; };
 		84B0191E22A462DB00B42B26 /* IOMovimientoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0191D22A462DB00B42B26 /* IOMovimientoViewController.swift */; };
 		84B0191F22A462DB00B42B26 /* IOMovimientoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0191D22A462DB00B42B26 /* IOMovimientoViewController.swift */; };
 		84B0192122A464E900B42B26 /* MovimientoNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0192022A464E900B42B26 /* MovimientoNavigationController.swift */; };
@@ -295,6 +295,7 @@
 		8404215E22729BB4007E7756 /* InOutMoneyFirebase copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "InOutMoneyFirebase copy-Info.plist"; path = "/Users/diegodavid_77/mis software en disco/Iphone/InOutMoneyFirebase/InOutMoneyFirebase copy-Info.plist"; sourceTree = "<absolute>"; };
 		8422AADA22B8944C0011CF38 /* IOTableViewCellDetalleRubroHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellDetalleRubroHeader.swift; sourceTree = "<group>"; };
 		8422AADB22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellDetalleRubro.xib; sourceTree = "<group>"; };
+		8422AAE122B9DBE20011CF38 /* DDLineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDLineChart.swift; sourceTree = "<group>"; };
 		842BDBBF22A36FE500BF5273 /* IOAltaIngresoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOAltaIngresoModel.swift; sourceTree = "<group>"; };
 		842BDBC522A3702100BF5273 /* IOAltaIngresoViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOAltaIngresoViewModelContract.swift; sourceTree = "<group>"; };
 		842BDBC822A3702E00BF5273 /* IOAltaIngresoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOAltaIngresoViewModel.swift; sourceTree = "<group>"; };
@@ -348,7 +349,6 @@
 		849D1EF122B603D000E67DF9 /* TableViewCellHomeHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellHomeHeader.xib; sourceTree = "<group>"; };
 		849D1EF222B603D000E67DF9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		849D1EF322B603D000E67DF9 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
-		849D1EF522B603F500E67DF9 /* DDLineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDLineChart.swift; sourceTree = "<group>"; };
 		84B0191D22A462DB00B42B26 /* IOMovimientoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOMovimientoViewController.swift; sourceTree = "<group>"; };
 		84B0192022A464E900B42B26 /* MovimientoNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovimientoNavigationController.swift; sourceTree = "<group>"; };
 		84CA121622221E910040B78B /* IOAltaGastoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOAltaGastoModel.swift; sourceTree = "<group>"; };
@@ -528,7 +528,7 @@
 		840280D0220FB24600C85A6A /* MyLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				849D1EF422B603F500E67DF9 /* LineChart */,
+				8422AAE022B9DBE10011CF38 /* LineChart */,
 				847656DA22B1C95E002CBE5A /* Loader */,
 				84D4E4D32279FDD100CEF2BF /* Selector */,
 				84CA122E222306230040B78B /* PremiumCalendar */,
@@ -695,6 +695,14 @@
 				8422AADB22B8944C0011CF38 /* IOTableViewCellDetalleRubro.xib */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		8422AAE022B9DBE10011CF38 /* LineChart */ = {
+			isa = PBXGroup;
+			children = (
+				8422AAE122B9DBE20011CF38 /* DDLineChart.swift */,
+			);
+			path = LineChart;
 			sourceTree = "<group>";
 		};
 		842BDBBE22A36FCC00BF5273 /* AltaIngreso */ = {
@@ -998,15 +1006,6 @@
 				849D1EF122B603D000E67DF9 /* TableViewCellHomeHeader.xib */,
 			);
 			path = Header;
-			sourceTree = "<group>";
-		};
-		849D1EF422B603F500E67DF9 /* LineChart */ = {
-			isa = PBXGroup;
-			children = (
-				849D1EF522B603F500E67DF9 /* DDLineChart.swift */,
-			);
-			name = LineChart;
-			path = ../../../../../Desktop/aux/LineChart;
 			sourceTree = "<group>";
 		};
 		84B0191822A4624C00B42B26 /* Movimiento */ = {
@@ -1695,9 +1694,9 @@
 				8404210522729BB4007E7756 /* IOLoginUsuarioViewModelContract.swift in Sources */,
 				849D1EE222B603A000E67DF9 /* MainNavigationController.swift in Sources */,
 				847AC86322ADCAC100E726B2 /* IOTableViewCellSingleLabel.swift in Sources */,
+				8422AAE322B9DBE20011CF38 /* DDLineChart.swift in Sources */,
 				847656DD22B1C974002CBE5A /* Loader.swift in Sources */,
 				8404210622729BB4007E7756 /* _coredataManager.swift in Sources */,
-				849D1EF722B603F500E67DF9 /* DDLineChart.swift in Sources */,
 				8404210722729BB4007E7756 /* PCDiaCustomView.swift in Sources */,
 				8404210822729BB4007E7756 /* IOLoginPasswordViewModel.swift in Sources */,
 				84FCB3B822B74E9D00AEA86E /* IOPersonalizacionRubroViewModelContract.swift in Sources */,
@@ -1801,9 +1800,9 @@
 				849BA96722074C8A00EC93A6 /* IOLoginUsuarioViewModelContract.swift in Sources */,
 				849D1EE122B603A000E67DF9 /* MainNavigationController.swift in Sources */,
 				847AC86222ADCAC100E726B2 /* IOTableViewCellSingleLabel.swift in Sources */,
+				8422AAE222B9DBE20011CF38 /* DDLineChart.swift in Sources */,
 				847656DC22B1C974002CBE5A /* Loader.swift in Sources */,
 				840280F2220FB24600C85A6A /* _coredataManager.swift in Sources */,
-				849D1EF622B603F500E67DF9 /* DDLineChart.swift in Sources */,
 				84CA123C222306230040B78B /* PCDiaCustomView.swift in Sources */,
 				849BA976220775FE00EC93A6 /* IOLoginPasswordViewModel.swift in Sources */,
 				84FCB3B722B74E9D00AEA86E /* IOPersonalizacionRubroViewModelContract.swift in Sources */,
