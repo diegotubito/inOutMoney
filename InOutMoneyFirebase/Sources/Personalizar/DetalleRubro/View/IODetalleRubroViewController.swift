@@ -21,6 +21,7 @@ class IODetalleRubroViewController: UIViewController, IODetalleRubroViewContract
         registerCells()
         viewModel.cargarRegistros()
     
+        view.layer.backgroundColor = UIColor.darkGray.withAlphaComponent(0.4).cgColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,7 +68,7 @@ extension IODetalleRubroViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellSingleLabel.identifier, for: indexPath) as? IOTableViewCellSingleLabel {
-            
+        
             let registro = viewModel.model.registros[indexPath.section][indexPath.row]
              cell.leftLabel.textColor = .lightGray
             cell.rightLabel.textColor = .lightGray

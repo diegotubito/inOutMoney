@@ -37,12 +37,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="zeE-nT-yBE" firstAttribute="bottom" secondItem="NFP-5g-xxn" secondAttribute="bottom" id="41K-4D-gsf"/>
-                            <constraint firstItem="NFP-5g-xxn" firstAttribute="leading" secondItem="zeE-nT-yBE" secondAttribute="leading" id="Tkz-Yn-bNv"/>
-                            <constraint firstItem="zeE-nT-yBE" firstAttribute="trailing" secondItem="NFP-5g-xxn" secondAttribute="trailing" id="mWE-eu-GNA"/>
-                            <constraint firstItem="NFP-5g-xxn" firstAttribute="top" secondItem="zeE-nT-yBE" secondAttribute="top" id="yfQ-V4-Tp3"/>
+                            <constraint firstItem="xeX-hh-tm3" firstAttribute="bottom" secondItem="NFP-5g-xxn" secondAttribute="bottom" id="41K-4D-gsf"/>
+                            <constraint firstItem="NFP-5g-xxn" firstAttribute="leading" secondItem="xeX-hh-tm3" secondAttribute="leading" id="Tkz-Yn-bNv"/>
+                            <constraint firstItem="xeX-hh-tm3" firstAttribute="trailing" secondItem="NFP-5g-xxn" secondAttribute="trailing" id="mWE-eu-GNA"/>
+                            <constraint firstItem="NFP-5g-xxn" firstAttribute="top" secondItem="xeX-hh-tm3" secondAttribute="top" id="yfQ-V4-Tp3"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="zeE-nT-yBE"/>
+                        <viewLayoutGuide key="safeArea" id="xeX-hh-tm3"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="NFP-5g-xxn" id="jQo-a2-XXb"/>
@@ -50,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T8J-9d-fzX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079" y="2729"/>
+            <point key="canvasLocation" x="1130" y="2461"/>
         </scene>
         <!--Detalle Rubro View Controller-->
         <scene sceneID="ejO-De-pO1">
@@ -71,12 +71,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5i6-ag-haB" firstAttribute="bottom" secondItem="0tV-a7-SSk" secondAttribute="bottom" id="5PJ-qc-TFC"/>
-                            <constraint firstItem="0tV-a7-SSk" firstAttribute="leading" secondItem="5i6-ag-haB" secondAttribute="leading" id="H7p-nD-bbw"/>
-                            <constraint firstItem="0tV-a7-SSk" firstAttribute="top" secondItem="5i6-ag-haB" secondAttribute="top" id="OSr-GP-oL0"/>
-                            <constraint firstItem="5i6-ag-haB" firstAttribute="trailing" secondItem="0tV-a7-SSk" secondAttribute="trailing" id="eVr-to-e6F"/>
+                            <constraint firstItem="GIr-5Y-FWh" firstAttribute="bottom" secondItem="0tV-a7-SSk" secondAttribute="bottom" id="5PJ-qc-TFC"/>
+                            <constraint firstItem="0tV-a7-SSk" firstAttribute="leading" secondItem="GIr-5Y-FWh" secondAttribute="leading" id="H7p-nD-bbw"/>
+                            <constraint firstItem="0tV-a7-SSk" firstAttribute="top" secondItem="GIr-5Y-FWh" secondAttribute="top" id="OSr-GP-oL0"/>
+                            <constraint firstItem="GIr-5Y-FWh" firstAttribute="trailing" secondItem="0tV-a7-SSk" secondAttribute="trailing" id="eVr-to-e6F"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="5i6-ag-haB"/>
+                        <viewLayoutGuide key="safeArea" id="GIr-5Y-FWh"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="0tV-a7-SSk" id="MB4-5K-EMj"/>
@@ -84,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dH-Yi-2eA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1078" y="3524"/>
+            <point key="canvasLocation" x="84" y="3328"/>
         </scene>
         <!--Movimientos-->
         <scene sceneID="1jx-pi-lYY">
@@ -105,12 +105,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kix-xL-xLR" firstAttribute="trailing" secondItem="Goq-GD-xF4" secondAttribute="trailing" id="666-oQ-1gY"/>
-                            <constraint firstItem="Goq-GD-xF4" firstAttribute="top" secondItem="kix-xL-xLR" secondAttribute="top" id="GfG-oB-uOS"/>
-                            <constraint firstItem="kix-xL-xLR" firstAttribute="bottom" secondItem="Goq-GD-xF4" secondAttribute="bottom" id="cVa-HW-jSy"/>
-                            <constraint firstItem="Goq-GD-xF4" firstAttribute="leading" secondItem="kix-xL-xLR" secondAttribute="leading" id="xcg-su-miY"/>
+                            <constraint firstItem="tdq-qv-p1q" firstAttribute="trailing" secondItem="Goq-GD-xF4" secondAttribute="trailing" id="666-oQ-1gY"/>
+                            <constraint firstItem="Goq-GD-xF4" firstAttribute="top" secondItem="tdq-qv-p1q" secondAttribute="top" id="GfG-oB-uOS"/>
+                            <constraint firstItem="tdq-qv-p1q" firstAttribute="bottom" secondItem="Goq-GD-xF4" secondAttribute="bottom" id="cVa-HW-jSy"/>
+                            <constraint firstItem="Goq-GD-xF4" firstAttribute="leading" secondItem="tdq-qv-p1q" secondAttribute="leading" id="xcg-su-miY"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="kix-xL-xLR"/>
+                        <viewLayoutGuide key="safeArea" id="tdq-qv-p1q"/>
                     </view>
                     <navigationItem key="navigationItem" title="Movimientos" id="6ec-Rn-bgk"/>
                     <connections>
@@ -119,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V6b-aS-sWz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1" y="1682"/>
+            <point key="canvasLocation" x="84" y="1306"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="aJW-ck-Kax">
@@ -130,7 +130,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="nSa-uK-hgQ" kind="relationship" relationship="viewControllers" id="h7h-0z-POZ"/>
@@ -140,13 +139,13 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OK1-Um-aik" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2796" y="1109"/>
+            <point key="canvasLocation" x="-2582" y="1306"/>
         </scene>
-        <!--Main Navigation Controller-->
+        <!--Inicio-->
         <scene sceneID="GaT-PT-eFS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nSa-uK-hgQ" customClass="MainNavigationController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="HrQ-Vu-DxC"/>
+                    <tabBarItem key="tabBarItem" title="Inicio" image="Home" id="HrQ-Vu-DxC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="bee-TU-sHK">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -183,19 +182,19 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7dD-5T-SyH" firstAttribute="leading" secondItem="zLM-oa-zge" secondAttribute="leading" id="3ZH-3s-P8T"/>
-                            <constraint firstItem="waD-Ep-cAG" firstAttribute="bottom" secondItem="zLM-oa-zge" secondAttribute="bottom" id="66d-cv-8a5"/>
-                            <constraint firstItem="7dD-5T-SyH" firstAttribute="top" secondItem="zLM-oa-zge" secondAttribute="top" id="N98-TO-Fvb"/>
-                            <constraint firstItem="waD-Ep-cAG" firstAttribute="trailing" secondItem="zLM-oa-zge" secondAttribute="trailing" id="U1a-TK-hdq"/>
-                            <constraint firstItem="zLM-oa-zge" firstAttribute="bottom" secondItem="7dD-5T-SyH" secondAttribute="bottom" id="an2-EN-qIC"/>
-                            <constraint firstItem="waD-Ep-cAG" firstAttribute="top" secondItem="zLM-oa-zge" secondAttribute="top" id="wxz-La-3Dg"/>
-                            <constraint firstItem="waD-Ep-cAG" firstAttribute="leading" secondItem="zLM-oa-zge" secondAttribute="leading" id="xhJ-3a-WKT"/>
-                            <constraint firstItem="zLM-oa-zge" firstAttribute="trailing" secondItem="7dD-5T-SyH" secondAttribute="trailing" id="zJb-e7-cvy"/>
+                            <constraint firstItem="7dD-5T-SyH" firstAttribute="leading" secondItem="pWu-Vr-ZPS" secondAttribute="leading" id="3ZH-3s-P8T"/>
+                            <constraint firstItem="waD-Ep-cAG" firstAttribute="bottom" secondItem="pWu-Vr-ZPS" secondAttribute="bottom" id="66d-cv-8a5"/>
+                            <constraint firstItem="7dD-5T-SyH" firstAttribute="top" secondItem="pWu-Vr-ZPS" secondAttribute="top" id="N98-TO-Fvb"/>
+                            <constraint firstItem="waD-Ep-cAG" firstAttribute="trailing" secondItem="pWu-Vr-ZPS" secondAttribute="trailing" id="U1a-TK-hdq"/>
+                            <constraint firstItem="pWu-Vr-ZPS" firstAttribute="bottom" secondItem="7dD-5T-SyH" secondAttribute="bottom" id="an2-EN-qIC"/>
+                            <constraint firstItem="waD-Ep-cAG" firstAttribute="top" secondItem="pWu-Vr-ZPS" secondAttribute="top" id="wxz-La-3Dg"/>
+                            <constraint firstItem="waD-Ep-cAG" firstAttribute="leading" secondItem="pWu-Vr-ZPS" secondAttribute="leading" id="xhJ-3a-WKT"/>
+                            <constraint firstItem="pWu-Vr-ZPS" firstAttribute="trailing" secondItem="7dD-5T-SyH" secondAttribute="trailing" id="zJb-e7-cvy"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="zLM-oa-zge"/>
+                        <viewLayoutGuide key="safeArea" id="pWu-Vr-ZPS"/>
                     </view>
                     <navigationItem key="navigationItem" title="Inicio" id="6Dz-do-YEX">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="VlY-fI-HiJ">
+                        <barButtonItem key="rightBarButtonItem" title="Cerrar Sesión" image="log-out-1" springLoaded="YES" style="plain" id="VlY-fI-HiJ">
                             <connections>
                                 <action selector="logoutPressed:" destination="JfW-68-yaz" id="D2l-q3-oFe"/>
                             </connections>
@@ -231,12 +230,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ujl-OE-8HS" firstAttribute="leading" secondItem="ee2-Yx-O9Q" secondAttribute="leading" id="1mi-bV-Clj"/>
-                            <constraint firstItem="ujl-OE-8HS" firstAttribute="top" secondItem="ee2-Yx-O9Q" secondAttribute="top" id="7ve-Lk-omF"/>
-                            <constraint firstItem="ee2-Yx-O9Q" firstAttribute="bottom" secondItem="ujl-OE-8HS" secondAttribute="bottom" id="E1D-zn-U3U"/>
-                            <constraint firstItem="ee2-Yx-O9Q" firstAttribute="trailing" secondItem="ujl-OE-8HS" secondAttribute="trailing" id="XqA-ai-pp2"/>
+                            <constraint firstItem="ujl-OE-8HS" firstAttribute="leading" secondItem="jew-qM-fG9" secondAttribute="leading" id="1mi-bV-Clj"/>
+                            <constraint firstItem="ujl-OE-8HS" firstAttribute="top" secondItem="jew-qM-fG9" secondAttribute="top" id="7ve-Lk-omF"/>
+                            <constraint firstItem="jew-qM-fG9" firstAttribute="bottom" secondItem="ujl-OE-8HS" secondAttribute="bottom" id="E1D-zn-U3U"/>
+                            <constraint firstItem="jew-qM-fG9" firstAttribute="trailing" secondItem="ujl-OE-8HS" secondAttribute="trailing" id="XqA-ai-pp2"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ee2-Yx-O9Q"/>
+                        <viewLayoutGuide key="safeArea" id="jew-qM-fG9"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="ujl-OE-8HS" id="8vp-Wa-iPc"/>
@@ -265,12 +264,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hYm-P2-s6j" firstAttribute="leading" secondItem="Hzc-LJ-YKm" secondAttribute="leading" id="8ga-Be-lXq"/>
-                            <constraint firstItem="Hzc-LJ-YKm" firstAttribute="bottom" secondItem="hYm-P2-s6j" secondAttribute="bottom" id="Czb-WM-oCn"/>
-                            <constraint firstItem="hYm-P2-s6j" firstAttribute="top" secondItem="Hzc-LJ-YKm" secondAttribute="top" id="V2E-CP-xyw"/>
-                            <constraint firstItem="Hzc-LJ-YKm" firstAttribute="trailing" secondItem="hYm-P2-s6j" secondAttribute="trailing" id="qdy-Bj-MPU"/>
+                            <constraint firstItem="hYm-P2-s6j" firstAttribute="leading" secondItem="8ai-Ds-kQJ" secondAttribute="leading" id="8ga-Be-lXq"/>
+                            <constraint firstItem="8ai-Ds-kQJ" firstAttribute="bottom" secondItem="hYm-P2-s6j" secondAttribute="bottom" id="Czb-WM-oCn"/>
+                            <constraint firstItem="hYm-P2-s6j" firstAttribute="top" secondItem="8ai-Ds-kQJ" secondAttribute="top" id="V2E-CP-xyw"/>
+                            <constraint firstItem="8ai-Ds-kQJ" firstAttribute="trailing" secondItem="hYm-P2-s6j" secondAttribute="trailing" id="qdy-Bj-MPU"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Hzc-LJ-YKm"/>
+                        <viewLayoutGuide key="safeArea" id="8ai-Ds-kQJ"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="hYm-P2-s6j" id="UOa-a9-Rug"/>
@@ -280,11 +279,11 @@
             </objects>
             <point key="canvasLocation" x="1394" y="-576"/>
         </scene>
-        <!--Movimiento Navigation Controller-->
+        <!--Movimientos-->
         <scene sceneID="F2E-ZI-0LG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N49-tp-rwS" customClass="MovimientoNavigationController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="history" id="8u5-pB-dbt"/>
+                    <tabBarItem key="tabBarItem" title="Movimientos" image="Paper" id="8u5-pB-dbt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="puP-QF-LSd">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -297,9 +296,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U31-Wa-EWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1010" y="1682"/>
+            <point key="canvasLocation" x="-815" y="1306"/>
         </scene>
-        <!--Rubros y Cuentas-->
+        <!--Rubros-->
         <scene sceneID="u5n-jY-jOB">
             <objects>
                 <viewController id="ec5-xQ-URD" customClass="IOPersonalizarViewController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
@@ -318,19 +317,24 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="T3d-Ml-uZe" firstAttribute="trailing" secondItem="YhM-Un-NC6" secondAttribute="trailing" id="2cx-oc-SgG"/>
-                            <constraint firstItem="T3d-Ml-uZe" firstAttribute="bottom" secondItem="YhM-Un-NC6" secondAttribute="bottom" id="Gye-43-1yz"/>
-                            <constraint firstItem="YhM-Un-NC6" firstAttribute="leading" secondItem="T3d-Ml-uZe" secondAttribute="leading" id="OEx-kx-SNA"/>
-                            <constraint firstItem="YhM-Un-NC6" firstAttribute="top" secondItem="T3d-Ml-uZe" secondAttribute="top" id="Z1R-HV-uoZ"/>
+                            <constraint firstItem="Ph9-e7-gxc" firstAttribute="trailing" secondItem="YhM-Un-NC6" secondAttribute="trailing" id="2cx-oc-SgG"/>
+                            <constraint firstItem="Ph9-e7-gxc" firstAttribute="bottom" secondItem="YhM-Un-NC6" secondAttribute="bottom" id="Gye-43-1yz"/>
+                            <constraint firstItem="YhM-Un-NC6" firstAttribute="leading" secondItem="Ph9-e7-gxc" secondAttribute="leading" id="OEx-kx-SNA"/>
+                            <constraint firstItem="YhM-Un-NC6" firstAttribute="top" secondItem="Ph9-e7-gxc" secondAttribute="top" id="Z1R-HV-uoZ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="T3d-Ml-uZe"/>
+                        <viewLayoutGuide key="safeArea" id="Ph9-e7-gxc"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Rubros y Cuentas" id="Tss-k8-8XE">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wNj-fB-n8i">
-                            <connections>
-                                <action selector="nuewRubroPressed:" destination="ec5-xQ-URD" id="VRE-td-rNt"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" title="Rubros" id="Tss-k8-8XE">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="wNj-fB-n8i">
+                                <connections>
+                                    <action selector="nuewRubroPressed:" destination="ec5-xQ-URD" id="VRE-td-rNt"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="Recurso 97" id="84i-lD-CFv">
+                                <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="YhM-Un-NC6" id="vnb-j4-Cco"/>
@@ -340,13 +344,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzY-eo-5Zg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.80000000000000004" y="2728.785607196402"/>
+            <point key="canvasLocation" x="84" y="2461"/>
         </scene>
         <!--Personalizar Navigation Controller-->
         <scene sceneID="HeZ-KZ-BRb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nza-o1-hXS" customClass="IOPersonalizarNavigationController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="HUt-Gq-DPf"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="HUt-Gq-DPf">
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="Gtn-uk-Lgh">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -359,10 +366,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hsy-by-JjW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1010" y="2729"/>
+            <point key="canvasLocation" x="-815" y="2461"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Home" width="30" height="25"/>
+        <image name="Paper" width="25" height="25"/>
+        <image name="Recurso 97" width="25" height="25"/>
         <image name="degrade" width="2244" height="2640"/>
+        <image name="log-out-1" width="19" height="25"/>
     </resources>
 </document>
