@@ -69,14 +69,15 @@ extension IODetalleRubroViewController: UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellSingleLabel.identifier, for: indexPath) as? IOTableViewCellSingleLabel {
             
             let registro = viewModel.model.registros[indexPath.section][indexPath.row]
-            
-            cell.leftLabel.textColor = .black
-            cell.rightLabel.textColor = .black
+             cell.leftLabel.textColor = .lightGray
+            cell.rightLabel.textColor = .lightGray
             if registro.isEnabled! == 0 {
-                cell.leftLabel.textColor = .lightGray
-                cell.rightLabel.textColor = .lightGray
+                cell.leftLabel.textColor = .darkGray
+                cell.rightLabel.textColor = .darkGray
             }
-  
+        
+            cell.leftImage.isHidden = true
+            cell.spaceBetween.isHidden = true
             cell.leftLabel.text = registro.descripcion
             cell.rightLabel.text = registro.importe?.formatoMoneda(decimales: 2, simbolo: "$")
             

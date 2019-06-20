@@ -13,6 +13,7 @@ class IOTableViewCellSingleLabel: UITableViewCell {
     @IBOutlet var leftImage: UIImageView!
     @IBOutlet var leftLabel: UILabel!
     @IBOutlet var rightLabel: UILabel!
+    @IBOutlet var spaceBetween: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

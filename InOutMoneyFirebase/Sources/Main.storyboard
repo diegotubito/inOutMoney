@@ -60,9 +60,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0tV-a7-SSk">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0tV-a7-SSk">
                                 <rect key="frame" x="0.0" y="116" width="375" height="502"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Xbf-uI-rmg" id="Uyf-Fj-Aqa"/>
                                     <outlet property="delegate" destination="Xbf-uI-rmg" id="Yr7-sJ-Yti"/>
@@ -307,15 +307,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TtD-wm-hh7">
-                                <rect key="frame" x="228" y="116" width="131" height="29"/>
-                                <segments>
-                                    <segment title="Rubros"/>
-                                    <segment title="Cuentas"/>
-                                </segments>
-                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YhM-Un-NC6">
-                                <rect key="frame" x="0.0" y="160" width="375" height="458"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="ec5-xQ-URD" id="5HP-c2-Zz0"/>
@@ -323,14 +316,12 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="T3d-Ml-uZe" firstAttribute="trailing" secondItem="YhM-Un-NC6" secondAttribute="trailing" id="2cx-oc-SgG"/>
                             <constraint firstItem="T3d-Ml-uZe" firstAttribute="bottom" secondItem="YhM-Un-NC6" secondAttribute="bottom" id="Gye-43-1yz"/>
                             <constraint firstItem="YhM-Un-NC6" firstAttribute="leading" secondItem="T3d-Ml-uZe" secondAttribute="leading" id="OEx-kx-SNA"/>
-                            <constraint firstItem="YhM-Un-NC6" firstAttribute="top" secondItem="TtD-wm-hh7" secondAttribute="bottom" constant="16" id="YGa-zC-TI9"/>
-                            <constraint firstItem="TtD-wm-hh7" firstAttribute="top" secondItem="T3d-Ml-uZe" secondAttribute="top" id="jKW-Ri-4nD"/>
-                            <constraint firstItem="T3d-Ml-uZe" firstAttribute="trailing" secondItem="TtD-wm-hh7" secondAttribute="trailing" constant="16" id="ncM-HA-FaP"/>
+                            <constraint firstItem="YhM-Un-NC6" firstAttribute="top" secondItem="T3d-Ml-uZe" secondAttribute="top" id="Z1R-HV-uoZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="T3d-Ml-uZe"/>
                     </view>
