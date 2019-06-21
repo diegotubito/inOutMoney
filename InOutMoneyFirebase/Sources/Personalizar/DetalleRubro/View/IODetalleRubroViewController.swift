@@ -18,17 +18,29 @@ class IODetalleRubroViewController: UIViewController, IODetalleRubroViewContract
     
     override func viewDidLoad() {
         super .viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleActualizarRubros), name: .updateRubros, object: nil)
+        
+        
         registerCells()
         viewModel.cargarRegistros()
     
-        view.layer.backgroundColor = UIColor.darkGray.withAlphaComponent(0.4).cgColor
-    }
+     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = true
         navigationItem.title = viewModel.model.rubroSeleccionado.descripcion
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super .viewDidAppear(animated)
+        view.layer.backgroundColor = UIColor.darkGray.withAlphaComponent(0.4).cgColor
+    }
 
+    @objc func handleActualizarRubros() {
+        viewModel.cargarRegistros()
+    }
     
     func registerCells() {
         tableView.register(IOTableViewCellSingleLabel.nib, forCellReuseIdentifier: IOTableViewCellSingleLabel.identifier)
@@ -95,8 +107,8 @@ extension IODetalleRubroViewController: UITableViewDataSource {
         header?.leftLabel.text = getFechaForHeader(section: section)
         header?.rightLabel.text = getTotalByMonth(section: section)
         
-        header?.leftLabel.textColor = UIColor.lightGray
-        header?.rightLabel.textColor = UIColor.lightGray
+        header?.leftLabel.textColor = UIColor.lightGray.withAlphaComponent(0.5)
+        header?.rightLabel.textColor = UIColor.lightGray.withAlphaComponent(0.5)
         return header
     }
     

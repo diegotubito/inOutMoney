@@ -91,8 +91,12 @@ extension IOPersonalizarViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellRubro.identifier, for: indexPath) as? IOTableViewCellRubro {
+            
+            let fecha = (viewModel.model.rubros[indexPath.row].fechaCreacion).prefix(10)
+            let fechaStr = String(fecha)
+            
             cell.title.text = viewModel.model.rubros[indexPath.row].descripcion
-            cell.creacion.text = viewModel.model.rubros[indexPath.row].fechaCreacion
+            cell.creacion.text = fechaStr
             
             var tipo = viewModel.model.rubros[indexPath.row].type
             if tipo == ProjectConstants.rubros.gastoKey {

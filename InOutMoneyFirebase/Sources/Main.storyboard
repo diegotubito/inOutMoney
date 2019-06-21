@@ -346,11 +346,11 @@
             </objects>
             <point key="canvasLocation" x="84" y="2461"/>
         </scene>
-        <!--Personalizar Navigation Controller-->
+        <!--Rubros-->
         <scene sceneID="HeZ-KZ-BRb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nza-o1-hXS" customClass="IOPersonalizarNavigationController" customModule="DebugVersion" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="HUt-Gq-DPf">
+                    <tabBarItem key="tabBarItem" title="Rubros" image="Bank-1" id="HUt-Gq-DPf">
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
@@ -370,6 +370,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Bank-1" width="27" height="25"/>
         <image name="Home" width="30" height="25"/>
         <image name="Paper" width="25" height="25"/>
         <image name="Recurso 97" width="25" height="25"/>
