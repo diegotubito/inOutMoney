@@ -35,8 +35,7 @@ class IODetalleRubroViewController: UIViewController, IODetalleRubroViewContract
     
     override func viewDidAppear(_ animated: Bool) {
         super .viewDidAppear(animated)
-        view.layer.backgroundColor = UIColor.darkGray.withAlphaComponent(0.4).cgColor
-    }
+     }
 
     @objc func handleActualizarRubros() {
         viewModel.cargarRegistros()
@@ -93,6 +92,8 @@ extension IODetalleRubroViewController: UITableViewDataSource {
             cell.spaceBetween.isHidden = true
             cell.leftLabel.text = registro.descripcion
             cell.rightLabel.text = registro.importe?.formatoMoneda(decimales: 2, simbolo: "$")
+            
+            cell.backgroundColor = UIColor.darkGray.withAlphaComponent(0.4)
             
             return cell
         }

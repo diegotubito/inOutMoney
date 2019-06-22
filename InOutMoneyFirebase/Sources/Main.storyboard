@@ -69,7 +69,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="GIr-5Y-FWh" firstAttribute="bottom" secondItem="0tV-a7-SSk" secondAttribute="bottom" id="5PJ-qc-TFC"/>
                             <constraint firstItem="0tV-a7-SSk" firstAttribute="leading" secondItem="GIr-5Y-FWh" secondAttribute="leading" id="H7p-nD-bbw"/>
