@@ -11,16 +11,25 @@ import UIKit
 
 import Charts
 
-class LineChartModel {
+class DDLineChartModel {
     var labels = [String]()
     var values = [Double]()
     
 }
 
+struct DDLineChartParameters {
+    var isAnimated = true
+    var gradientColorLocation : [CGFloat] = [0.0, 0.5]
+    
+    //
+     var gradientColors : CFArray = [UIColor(red: 255.0/255.0, green: 94.0/255.0, blue: 58.0/255.0, alpha: 1.0).cgColor,
+                                     UIColor(red: 255.0/255.0, green: 149.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor] as CFArray
+}
+
 class DDLineChart: UIView {
     
     var myLineChart : LineChartView!
-    
+    var parametros = DDLineChartParameters()
     
     override init(frame: CGRect) {
         super .init(frame: frame)
@@ -87,7 +96,7 @@ class DDLineChart: UIView {
         }
     }
     
-    func DrawLineChart(recta: LineChartModel) {
+    func DrawLineChart(recta: DDLineChartModel) {
         //use dataSets in step #3
         var dataSets : [LineChartDataSet] = [LineChartDataSet]()
         var data: AnyObject?
@@ -126,12 +135,10 @@ class DDLineChart: UIView {
         //gradiente
         set1.drawFilledEnabled = true
         set1.fillAlpha = 0.5
-        let colorTop =  UIColor(red: 255.0/255.0, green: 149.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
-        let colorBottom = UIColor(red: 255.0/255.0, green: 94.0/255.0, blue: 58.0/255.0, alpha: 1.0).cgColor
         
-        let gradientColors = [colorTop, colorBottom] as CFArray
-        let colorLocations:[CGFloat] = [0.0, 0.5]
-        let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColors, locations: colorLocations) // Gradient Object
+         let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(),
+                                        colors: parametros.gradientColors,
+                                        locations: parametros.gradientColorLocation) // Gradient Object
         set1.fill = Fill.fillWithLinearGradient(gradient!, angle: 90.0)
         
         
@@ -194,7 +201,9 @@ class DDLineChart: UIView {
         //separacion de los valores del eje y
         myLineChart.leftAxis.granularity = 1
         
-        myLineChart.animate(yAxisDuration: 1, easingOption: .easeInOutQuart)
+        if parametros.isAnimated {
+            myLineChart.animate(yAxisDuration: 1, easingOption: .easeInOutQuart)
+        }
         
         myLineChart.data = (data as! ChartData)
     }

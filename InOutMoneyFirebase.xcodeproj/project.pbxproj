@@ -341,14 +341,6 @@
 		849D1ECD22B603A000E67DF9 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		849D1ECF22B603A000E67DF9 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		849D1ED022B603A000E67DF9 /* HomeViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModelProtocol.swift; sourceTree = "<group>"; };
-		849D1EEA22B603D000E67DF9 /* IOTableViewCellChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTableViewCellChart.swift; sourceTree = "<group>"; };
-		849D1EEB22B603D000E67DF9 /* IOTableViewCellChart.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IOTableViewCellChart.xib; sourceTree = "<group>"; };
-		849D1EED22B603D000E67DF9 /* TableViewCellCuentas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellCuentas.swift; sourceTree = "<group>"; };
-		849D1EEE22B603D000E67DF9 /* TableViewCellCuentas.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellCuentas.xib; sourceTree = "<group>"; };
-		849D1EF022B603D000E67DF9 /* TableViewCellHomeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellHomeHeader.swift; sourceTree = "<group>"; };
-		849D1EF122B603D000E67DF9 /* TableViewCellHomeHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellHomeHeader.xib; sourceTree = "<group>"; };
-		849D1EF222B603D000E67DF9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		849D1EF322B603D000E67DF9 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		84B0191D22A462DB00B42B26 /* IOMovimientoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOMovimientoViewController.swift; sourceTree = "<group>"; };
 		84B0192022A464E900B42B26 /* MovimientoNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovimientoNavigationController.swift; sourceTree = "<group>"; };
 		84CA121622221E910040B78B /* IOAltaGastoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOAltaGastoModel.swift; sourceTree = "<group>"; };
@@ -961,53 +953,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		849D1EE722B603D000E67DF9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				849D1EE822B603D000E67DF9 /* Cells */,
-				849D1EF222B603D000E67DF9 /* HomeViewController.swift */,
-				849D1EF322B603D000E67DF9 /* MainNavigationController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		849D1EE822B603D000E67DF9 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				849D1EE922B603D000E67DF9 /* Charts */,
-				849D1EEC22B603D000E67DF9 /* Cuentas */,
-				849D1EEF22B603D000E67DF9 /* Header */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		849D1EE922B603D000E67DF9 /* Charts */ = {
-			isa = PBXGroup;
-			children = (
-				849D1EEA22B603D000E67DF9 /* IOTableViewCellChart.swift */,
-				849D1EEB22B603D000E67DF9 /* IOTableViewCellChart.xib */,
-			);
-			path = Charts;
-			sourceTree = "<group>";
-		};
-		849D1EEC22B603D000E67DF9 /* Cuentas */ = {
-			isa = PBXGroup;
-			children = (
-				849D1EED22B603D000E67DF9 /* TableViewCellCuentas.swift */,
-				849D1EEE22B603D000E67DF9 /* TableViewCellCuentas.xib */,
-			);
-			path = Cuentas;
-			sourceTree = "<group>";
-		};
-		849D1EEF22B603D000E67DF9 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				849D1EF022B603D000E67DF9 /* TableViewCellHomeHeader.swift */,
-				849D1EF122B603D000E67DF9 /* TableViewCellHomeHeader.xib */,
-			);
-			path = Header;
-			sourceTree = "<group>";
-		};
 		84B0191822A4624C00B42B26 /* Movimiento */ = {
 			isa = PBXGroup;
 			children = (
@@ -1359,7 +1304,6 @@
 			isa = PBXGroup;
 			children = (
 				849D1EBE22B603A000E67DF9 /* MainView */,
-				849D1EE722B603D000E67DF9 /* View */,
 				842BDBBE22A36FCC00BF5273 /* AltaIngreso */,
 				84CA121222221E580040B78B /* AltaGasto */,
 			);
