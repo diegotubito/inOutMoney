@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65065E43233FBFD50041F623 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65065E42233FBFD50041F623 /* Assets.xcassets */; };
+		65065E44233FBFDC0041F623 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65065E42233FBFD50041F623 /* Assets.xcassets */; };
 		840268492205F31000EF6070 /* IOLoginContraseñaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840268482205F31000EF6070 /* IOLoginContraseñaViewController.swift */; };
 		8402684C2205F87D00EF6070 /* IOLoginContraseñaCV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8402684B2205F87D00EF6070 /* IOLoginContraseñaCV.xib */; };
 		8402684E2205F8A300EF6070 /* IOLoginContraseñaCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402684D2205F8A300EF6070 /* IOLoginContraseñaCV.swift */; };
@@ -219,8 +221,6 @@
 		84CFD331222DD24F004CE810 /* IOAltaRubroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFD330222DD24F004CE810 /* IOAltaRubroViewController.swift */; };
 		84D4E3312274D6B800CEF2BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84D4E3302274D6B800CEF2BF /* GoogleService-Info.plist */; };
 		84D4E3332274D6CD00CEF2BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84D4E3322274D6CD00CEF2BF /* GoogleService-Info.plist */; };
-		84D4E33D2274DB0800CEF2BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84594EF021DC64670019C9B9 /* Assets.xcassets */; };
-		84D4E3412279198F00CEF2BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84594EF021DC64670019C9B9 /* Assets.xcassets */; };
 		84D4E4D82279FDD100CEF2BF /* TableViewCellSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4E4D52279FDD100CEF2BF /* TableViewCellSelector.swift */; };
 		84D4E4D92279FDD100CEF2BF /* TableViewCellSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4E4D52279FDD100CEF2BF /* TableViewCellSelector.swift */; };
 		84D4E4DA2279FDD100CEF2BF /* TableViewCellSelector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D4E4D62279FDD100CEF2BF /* TableViewCellSelector.xib */; };
@@ -259,6 +259,7 @@
 		5E07E4F1817F215E8DEE716E /* Pods-DebugVersion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DebugVersion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DebugVersion/Pods-DebugVersion.debug.xcconfig"; sourceTree = "<group>"; };
 		5EDB85E05E9210DD3A7D23F9 /* Pods_DebugVersion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DebugVersion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62FCF3664AC9F81697006D71 /* Pods-InOutMoneyFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InOutMoneyFirebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase.debug.xcconfig"; sourceTree = "<group>"; };
+		65065E42233FBFD50041F623 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AB741C1F0FA56F73EAA1DD8 /* Pods-DebugVersion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DebugVersion.release.xcconfig"; path = "Pods/Target Support Files/Pods-DebugVersion/Pods-DebugVersion.release.xcconfig"; sourceTree = "<group>"; };
 		840268482205F31000EF6070 /* IOLoginContraseñaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IOLoginContraseñaViewController.swift"; sourceTree = "<group>"; };
 		8402684B2205F87D00EF6070 /* IOLoginContraseñaCV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "IOLoginContraseñaCV.xib"; sourceTree = "<group>"; };
@@ -308,7 +309,6 @@
 		84594EE321DC64650019C9B9 /* ReleaseVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReleaseVersion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84594EE621DC64650019C9B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84594EEE21DC64650019C9B9 /* InOutMoneyFirebase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InOutMoneyFirebase.xcdatamodel; sourceTree = "<group>"; };
-		84594EF021DC64670019C9B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/diegodavid_77/mis software en disco/Iphone/InOutMoneyFirebase/InOutMoneyFirebase/Assets.xcassets"; sourceTree = "<absolute>"; };
 		84594EF321DC64670019C9B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84594EF521DC64670019C9B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		847656DB22B1C974002CBE5A /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
@@ -777,10 +777,10 @@
 				840268542206A7BF00EF6070 /* viewExtensions.swift */,
 				84E41785222C42D0000214E8 /* IOProjectModel.swift */,
 				84027FC5220F4DCC00C85A6A /* IODefaults.swift */,
+				65065E42233FBFD50041F623 /* Assets.xcassets */,
 				84028116220FC76100C85A6A /* Common */,
 				840280D0220FB24600C85A6A /* MyLibrary */,
 				84FD53802203F2EB00DC102A /* Sources */,
-				84594EF021DC64670019C9B9 /* Assets.xcassets */,
 				84594EF221DC64670019C9B9 /* LaunchScreen.storyboard */,
 				84D4E32D2274D68500CEF2BF /* GoogleService */,
 				84594EF521DC64670019C9B9 /* Info.plist */,
@@ -1430,6 +1430,7 @@
 			files = (
 				842BDBFA22A38BFA00BF5273 /* IOTableViewCellSingleTextField.xib in Resources */,
 				8422AAEA22B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.xib in Resources */,
+				65065E44233FBFDC0041F623 /* Assets.xcassets in Resources */,
 				8404213E22729BB4007E7756 /* LaunchScreen.storyboard in Resources */,
 				847AC86522ADCAC100E726B2 /* IOTableViewCellSingleLabel.xib in Resources */,
 				84D4E3312274D6B800CEF2BF /* GoogleService-Info.plist in Resources */,
@@ -1444,7 +1445,6 @@
 				8404214922729BB4007E7756 /* IOTableViewCellSinglePicker.xib in Resources */,
 				8404214B22729BB4007E7756 /* IOTableViewCellSingleSwitchCell.xib in Resources */,
 				8404214F22729BB4007E7756 /* TableViewCellLoginUsuario.xib in Resources */,
-				84D4E33D2274DB0800CEF2BF /* Assets.xcassets in Resources */,
 				849D1EDA22B603A000E67DF9 /* TableViewCellCuentas.xib in Resources */,
 				847AC87322AF679F00E726B2 /* IOTableViewCellHeader.xib in Resources */,
 				849D1EDE22B603A000E67DF9 /* TableViewCellHomeHeader.xib in Resources */,
@@ -1459,6 +1459,7 @@
 			files = (
 				842BDBF922A38BFA00BF5273 /* IOTableViewCellSingleTextField.xib in Resources */,
 				8422AAE922B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.xib in Resources */,
+				65065E43233FBFD50041F623 /* Assets.xcassets in Resources */,
 				84594EF421DC64670019C9B9 /* LaunchScreen.storyboard in Resources */,
 				847AC86422ADCAC100E726B2 /* IOTableViewCellSingleLabel.xib in Resources */,
 				84CA12472223098B0040B78B /* IOTableViewCellBotonGuardar.xib in Resources */,
@@ -1472,7 +1473,6 @@
 				84CA124C22238A2D0040B78B /* IOTableViewCellSinglePicker.xib in Resources */,
 				84CA12282222FB3B0040B78B /* IOTableViewCellSingleSwitchCell.xib in Resources */,
 				8402685322068ECC00EF6070 /* TableViewCellLoginUsuario.xib in Resources */,
-				84D4E3412279198F00CEF2BF /* Assets.xcassets in Resources */,
 				847AC87222AF679F00E726B2 /* IOTableViewCellHeader.xib in Resources */,
 				849D1ED922B603A000E67DF9 /* TableViewCellCuentas.xib in Resources */,
 				84FD53842203F37500DC102A /* StoryboardLogin.storyboard in Resources */,
