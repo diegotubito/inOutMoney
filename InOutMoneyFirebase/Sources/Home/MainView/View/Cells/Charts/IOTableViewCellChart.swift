@@ -18,7 +18,7 @@ class IOTableViewCellChart: UITableViewCell {
         
       }
     
-    func drawChart(values: _unidadesVendidas?) {
+    func drawChart(values: DDLineChartModel?) {
         if myView == nil {return}
         
         for i in myView.subviews {
@@ -33,7 +33,10 @@ class IOTableViewCellChart: UITableViewCell {
         let width = myView.frame.width
         let height = myView.frame.height
         let grafico = DDLineChart(frame: CGRect(x: 0, y: 0, width: width, height: height))
-        grafico.mostrarLineChart(labels: values!.meses, values: values!.unidadesVendidas)
+        grafico.parametros.isAnimated = true
+        grafico.parametros.gradientColors = [UIColor.blue.cgColor, UIColor.red.cgColor, UIColor.clear.cgColor] as CFArray
+        grafico.parametros.gradientColorLocation = [0.0, 0.25, 0.50]
+        grafico.DrawLineChart(recta: values!)
         myView.addSubview(grafico)
         
     }

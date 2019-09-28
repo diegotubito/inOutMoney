@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZd-cY-e1M">
-                        <rect key="frame" x="8" y="0.0" width="410" height="198.5"/>
+                        <rect key="frame" x="3" y="0.0" width="420" height="198.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </subviews>
@@ -28,8 +28,8 @@
                 <constraints>
                     <constraint firstItem="VZd-cY-e1M" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="5yJ-5b-2EK"/>
                     <constraint firstAttribute="bottom" secondItem="VZd-cY-e1M" secondAttribute="bottom" id="pud-Xl-a6D"/>
-                    <constraint firstItem="VZd-cY-e1M" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="zVK-ff-aOU"/>
-                    <constraint firstAttribute="trailing" secondItem="VZd-cY-e1M" secondAttribute="trailing" constant="8" id="zoi-3Q-bPG"/>
+                    <constraint firstItem="VZd-cY-e1M" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="zVK-ff-aOU"/>
+                    <constraint firstAttribute="trailing" secondItem="VZd-cY-e1M" secondAttribute="trailing" constant="3" id="zoi-3Q-bPG"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
