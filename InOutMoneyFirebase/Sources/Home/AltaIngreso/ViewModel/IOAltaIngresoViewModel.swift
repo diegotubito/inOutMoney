@@ -52,15 +52,6 @@ class IOAltaIngresoViewModel: IOAltaIngresoViewModelContract {
             
             NotificationCenter.default.post(name: .updateRegistros, object: nil)
             
-            //aumento contador de transacciones en rubro
-            let pathRubro = UserID! + ProjectConstants.firebaseSubPath.rubros + "/" + childIDRubro
-            MLFirebaseDatabase.setTransaction(path: pathRubro, keyName: "counter", incremento: 1, success: {
-                NotificationCenter.default.post(name: .updateRubros, object: nil)
-            }, fail: { (error) in
-                print("error al intentar actualizar counter en rubros.")
-            })
-            
-            //actualizo saldo en cuenta
             MLFirebaseDatabase.setTransaction(path: UserID! + ProjectConstants.firebaseSubPath.cuentas + "/" + childIDDebito, keyName: "saldo", incremento: importe, success: {
                 
                 NotificationCenter.default.post(name: .updateCuentas, object: nil)

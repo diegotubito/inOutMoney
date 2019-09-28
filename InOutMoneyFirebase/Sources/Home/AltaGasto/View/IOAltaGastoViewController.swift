@@ -9,9 +9,14 @@
 import Foundation
 import UIKit
 
-
+protocol IOAltaGastoViewControllerDelegate {
+    func nuevoRegistroIngresadoDelegate()
+}
 class IOAltaGastoViewController: UIViewController, IORubrosGastosAltaViewContract {
   
+    
+    
+    var delegate : IOAltaGastoViewControllerDelegate?
     @IBOutlet var tableView: UITableView!
     var cells = [UITableViewCell]()
     var descripcionCell : IOTableViewCellSingleDataEntry!
@@ -160,6 +165,7 @@ class IOAltaGastoViewController: UIViewController, IORubrosGastosAltaViewContrac
     
     
     func showSuccess() {
+        self.delegate?.nuevoRegistroIngresadoDelegate()
         navigationController?.popViewController(animated: true)
     }
     

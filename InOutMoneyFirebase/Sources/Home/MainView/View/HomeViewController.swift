@@ -29,8 +29,6 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         viewModel = HomeViewModel(withView: self, databaseService: MLFirebaseDatabase(), authService: IOLoginFirebaseService())
         
-        navigationItem.title = "Home"
-        
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60
         
@@ -46,9 +44,7 @@ class HomeViewController: UIViewController {
         tabBarController?.tabBar.isHidden = false
     }
 
-    @IBAction func nuewRubroPressed(_ sender: Any) {
-        performSegue(withIdentifier: "segue_rubro_gasto", sender: nil)
-    }
+   
     
     func registerCells() {
         tableView.register(TableViewCellHomeHeader.nib, forCellReuseIdentifier: TableViewCellHomeHeader.identifier)
@@ -117,16 +113,22 @@ class HomeViewController: UIViewController {
             }
             
         }
-        
-        if let controller = segue.destination as? IOAltaRubroViewController {
-             controller.viewModel = IOAltaRubroViewModel(withView: controller)
-        }
-    
-    }
+     }
 }
 
 //conform protocol HomeViewModelProtocol
 extension HomeViewController: HomeViewProtocol{
+    func mostrarNombreMesActual() {
+        header.nombreMes.text = viewModel.model.nombreMesActual
+    }
+    
+    func mostrarNombreMesAnterior() {
+        header.nombreMesAnterior.text = viewModel.model.nombreMesAnterior
+    }
+    
+    func mostrarNombreMesAnteriorAnterior() {
+        header.nombreMesAnteriorAnterior.text = viewModel.model.nombreMesAnteriorAnterior
+    }
 
     func disabledButtons() {
         header.disableActions()
@@ -142,8 +144,9 @@ extension HomeViewController: HomeViewProtocol{
         self.viewModel.cargarRegistrosMesActual()
         self.viewModel.cargarRegistrosMesAnterior()
         self.viewModel.cargarRegistrosMesAnteriorAnterior()
-       self.viewModel.cargarTodosLosRegistrosBeta(success: {
-            let values = self.viewModel.getValuesForLineChart(cantidadDeMeses: 13, from: Date())
+        
+        self.viewModel.cargarTodosLosRegistrosBeta(success: {
+            let values = self.viewModel.convertDataForDDLineChart(cantidadDeMeses: 13, from: Date())
             self.graficoCell.drawChart(values: values)
             
         }) {
@@ -182,6 +185,9 @@ extension HomeViewController: HomeViewProtocol{
     }
     
     func updateRegistrosMesAnterior(registros: [IOProjectModel.Registro]) {
+        let mes = viewModel.model.fechaActual.mes
+        header.nombreMes.text = MESES[mes]
+        
         let totalGasto = viewModel.getTotalGasto(registros: registros)
         header.totalGastoMesAnterior.text = totalGasto.formatoMoneda(decimales: 2, simbolo: "$")
         
@@ -247,12 +253,15 @@ extension HomeViewController: UITableViewDataSource {
 //Tableview Delegates
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
+        if indexPath.row == 0 {//header height
             return UIScreen.main.bounds.height*0.30
             
-        } else {
-            return UIScreen.main.bounds.height*0.2
+        } else if indexPath.row == 1 {//cuentas height
+            return UIScreen.main.bounds.height*0.20
+        } else if indexPath.row == 2 {//Line chart height
+            return UIScreen.main.bounds.height*0.25
         }
+        return 100
     }
 }
 
@@ -266,7 +275,8 @@ extension HomeViewController: TabaleViewCellHomeHeaderDelegate {
             let mySelector = DDSelector(frame: frameSelector, parameters: parameters)
         
             //solo me quedo con los rubros de gasto
-            let fileredArray = viewModel.model.rubros?.filter({$0.type == ProjectConstants.rubros.gastoKey})
+            var fileredArray = viewModel.getRubrosGastos()
+            fileredArray = fileredArray!.sorted(by: { $0.descripcion > $1.descripcion })
             
             //creamos un array de String
             let array = fileredArray?.compactMap({ $0.descripcion })
@@ -281,21 +291,22 @@ extension HomeViewController: TabaleViewCellHomeHeaderDelegate {
             
             mySelector.onSelectedItem = ({index -> Void in
                 if index != nil {
-                    self.performSegue(withIdentifier: "segue_gasto", sender: self.viewModel.model.rubros?[index!])
+                    self.performSegue(withIdentifier: "segue_gasto", sender: fileredArray![index!])
                 }
             })
             
             break
         case .ingreso:
-            let frameSelector = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+            let frameSelector = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
             let parameters = DDSelectorParameters(isBlurred: true, bouncing: true)
             let mySelector = DDSelector(frame: frameSelector, parameters: parameters)
             
             //solo me quedo con los rubros de gasto
-            let fileredArray = viewModel.model.rubros?.filter({$0.type == ProjectConstants.rubros.ingresoKey})
+            var fileredArray = viewModel.getRubrosIngresos()
+            fileredArray = fileredArray!.sorted(by: { $0.descripcion > $1.descripcion })
             
             //creamos un array de String
-            let array = fileredArray?.compactMap({ $0.descripcion })
+            let array = fileredArray?.map({ $0.descripcion })
             
             //le pasamos el array al custom view
             mySelector.itemList = array ?? []
@@ -307,7 +318,7 @@ extension HomeViewController: TabaleViewCellHomeHeaderDelegate {
             
             mySelector.onSelectedItem = ({index -> Void in
                 if index != nil {
-                    self.performSegue(withIdentifier: "segue_ingreso", sender: self.viewModel.model.rubros?[index!])
+                    self.performSegue(withIdentifier: "segue_ingreso", sender: fileredArray![index!])
                 }
             })
             
@@ -323,14 +334,13 @@ extension HomeViewController: TabaleViewCellHomeHeaderDelegate {
 extension HomeViewController {
     @objc func handleUpdateRegistros() {
         print("notification REGISTROS update")
-        viewModel.cargarRegistrosMesActual()
-        viewModel.cargarRegistrosMesAnterior()
-        viewModel.cargarRegistrosMesAnteriorAnterior()
+        reloadList()
     }
     
     @objc func handleUpdateCuentas() {
         print("notification CUENTAS update")
         viewModel.cargarCuentas()
+        viewModel.cargarRubros()
     }
     
     @objc func handleUpdateRubros() {
