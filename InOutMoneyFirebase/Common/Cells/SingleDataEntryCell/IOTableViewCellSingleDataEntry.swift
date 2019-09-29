@@ -83,4 +83,5 @@ extension IOTableViewCellSingleDataEntry: UITextFieldDelegate {
         delegate?.textDidEndEditingDelegate(tag: tag)
         
     }
+
 }

@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 
-class IOAltaRubroViewController: UIViewController, IOAltaRubroViewContract {
+class IOAltaEdicionRubroViewController: UIViewController, IOAltaEdicionRubroViewContract {
+   
+    
     
     @IBOutlet var tableView: UITableView!
     
@@ -18,24 +20,15 @@ class IOAltaRubroViewController: UIViewController, IOAltaRubroViewContract {
     var descripcionCell : IOTableViewCellSingleDataEntry!
     var typeCell : IOTableViewCellSinglePicker!
     var buttonSave : UIBarButtonItem!
-    var viewModel : IOAltaRubroViewModel!
+    var viewModel : IOAltaEdicionRubroViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Nuevo Rubro"
-        
+        viewModel.getTitle()
         tableView.register(IOTableViewCellSingleDataEntry.nib, forCellReuseIdentifier: IOTableViewCellSingleDataEntry.identifier)
         tableView.register(IOTableViewCellSinglePicker.nib, forCellReuseIdentifier: IOTableViewCellSinglePicker.identifier)
-        
         loadCells()
-    
-        buttonSave = UIBarButtonItem(title: "Guardar", style: .done, target: self, action: #selector(saveTapped))
-        buttonSave.isEnabled = false
-    
-        navigationItem.rightBarButtonItem = buttonSave
-        
-        viewModel.set_type_selected_index(0)
-        
+        buttonSaveSetup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,10 +40,25 @@ class IOAltaRubroViewController: UIViewController, IOAltaRubroViewContract {
         descripcionCell.textField.becomeFirstResponder()
     }
     
+    func buttonSaveSetup() {
+        buttonSave = UIBarButtonItem(title: "Guardar", style: .done, target: self, action: #selector(saveTapped))
+  
+        navigationItem.rightBarButtonItem = buttonSave
+     
+        viewModel.set_type_selected_index(0)
+    }
+    
+    func showWarning(_ message: String) {
+           // create the alert
+           let alert = UIAlertController(title: "Atención", message: message, preferredStyle: UIAlertController.Style.alert)
+           // add the actions (buttons)
+           alert.addAction(UIAlertAction(title: "Entendido", style: UIAlertAction.Style.cancel, handler: nil))
+           // show the alert
+           self.present(alert, animated: true, completion: nil)
+    }
+    
     @objc func saveTapped() {
-        if validate() {
-            viewModel.guardarNuevoRubro(descripcion: descripcionCell.textField.text!)
-        }
+        viewModel.guardarNuevoRubro(descripcion: descripcionCell.textField.text!)
     }
     
     func loadCells() {
@@ -92,10 +100,18 @@ class IOAltaRubroViewController: UIViewController, IOAltaRubroViewContract {
             }}))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func showTitle(title: String) {
+        navigationItem.title = title
+    }
+    
+    func getDescriptionCell() -> String {
+        return descripcionCell.textField.text ?? ""
+    }
 }
 
 
-extension IOAltaRubroViewController: UITableViewDataSource {
+extension IOAltaEdicionRubroViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cells.count
     }
@@ -103,43 +119,23 @@ extension IOAltaRubroViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return cells[indexPath.row]
     }
-    
-    
 }
 
 
-extension IOAltaRubroViewController: IOTableViewCellSingleDataEntryDelegate {
+extension IOAltaEdicionRubroViewController: IOTableViewCellSingleDataEntryDelegate {
     func textDidChangeDelegate(tag: Int) {
-        _ = validate()
+        _ = viewModel.validate()
     }
     
     func textDidEndEditingDelegate(tag: Int) {
         descripcionCell.textField.resignFirstResponder()
-        _ = validate()
+        _ = viewModel.validate()
     }
-    
-    func validate() -> Bool {
-        if descripcionCell.textField.text?.count == 0 {
-             buttonSave.isEnabled = false
-            return false
-        }
-
-        if (descripcionCell.textField.text?.count)! > 30 {
-             buttonSave.isEnabled = false
-            return false
-        }
-        buttonSave.isEnabled = true
-        
-        return true
-    }
-    
 }
 
 
-extension IOAltaRubroViewController: IOTableViewCellSinglePickerDelegate {
+extension IOAltaEdicionRubroViewController: IOTableViewCellSinglePickerDelegate {
     func pickerDidSelected(row: Int) {
        viewModel.set_type_selected_index(row)
     }
-    
-    
 }

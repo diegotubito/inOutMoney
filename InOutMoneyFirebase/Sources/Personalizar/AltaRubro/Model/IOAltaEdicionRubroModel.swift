@@ -8,8 +8,8 @@
 
 import Foundation
 
-class IOAltaRubroModel {
+class IOAltaEdicionRubroModel {
     var type_selected_index : Int?
-    
+    var isEdition : Bool!
     
 }

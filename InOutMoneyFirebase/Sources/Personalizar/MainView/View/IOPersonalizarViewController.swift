@@ -14,6 +14,7 @@ class IOPersonalizarViewController: UIViewController, IOPersonalizacionRubroView
     @IBOutlet weak var tableView : UITableView!
     
     var viewModel : IOPersonalizacionRubroViewModelContract!
+    var isForEdition = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,8 @@ class IOPersonalizarViewController: UIViewController, IOPersonalizacionRubroView
 
     
     @IBAction func nuewRubroPressed(_ sender: Any) {
-        performSegue(withIdentifier: "segue_rubro_gasto", sender: nil)
+        isForEdition = false
+        performSegue(withIdentifier: "segue_alta_o_edicion_rubro", sender: nil)
     }
     
     func registerCells() {
@@ -72,15 +74,14 @@ class IOPersonalizarViewController: UIViewController, IOPersonalizacionRubroView
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let controller = segue.destination as? IOAltaRubroViewController {
-            controller.viewModel = IOAltaRubroViewModel(withView: controller)
-        }
-        
-        if let controller = segue.destination as? IODetalleRubroViewController {
+        if let controller = segue.destination as? IOAltaEdicionRubroViewController {
+            controller.viewModel = IOAltaEdicionRubroViewModel(withView: controller, isEdition: isForEdition)
+        } else if let controller = segue.destination as? IODetalleRubroViewController {
             if let rubroSeleccionado = sender as? IOProjectModel.Rubro {
                 controller.viewModel = IODetalleRubroViewModel(withView: controller, service: MLFirebaseDatabase(), rubroSeleccionado: rubroSeleccionado)
             }
         }
+        
     }
 }
 
@@ -136,7 +137,8 @@ extension IOPersonalizarViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let editAction = UIContextualAction(style: .destructive, title: "Editar") { (action, view, handler) in
-            print("editar")
+            self.isForEdition = true
+            self.performSegue(withIdentifier: "segue_alta_o_edicion_rubro", sender: nil)
         }
         editAction.backgroundColor = UIColor.green.withAlphaComponent(0.5)
         

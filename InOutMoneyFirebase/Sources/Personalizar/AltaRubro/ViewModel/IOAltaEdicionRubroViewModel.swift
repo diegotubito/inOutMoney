@@ -9,18 +9,24 @@
 import Foundation
 import UIKit
 
-class IOAltaRubroViewModel: IOAltaRubroViewModelContract {
+class IOAltaEdicionRubroViewModel: IOAltaEdicionRubroViewModelContract {
   
-    var _view : IOAltaRubroViewContract!
-    var model: IOAltaRubroModel!
+    var _view : IOAltaEdicionRubroViewContract!
+    var model: IOAltaEdicionRubroModel!
     
     
-    required init(withView view: IOAltaRubroViewContract) {
+    required init(withView view: IOAltaEdicionRubroViewContract, isEdition: Bool) {
         _view = view
-        model = IOAltaRubroModel()
+        model = IOAltaEdicionRubroModel()
+        model.isEdition = isEdition
     }
     
     func guardarNuevoRubro(descripcion: String) {
+        if !validate(){
+            _view.showWarning("El campo Descripción no puede estar vacío.")
+            return
+        }
+        
         let dato = [ProjectConstants.KeyNames.Rubro.descripcion : descripcion,
                     ProjectConstants.KeyNames.Rubro.fechaCreacion : Date().toString(formato: formatoDeFecha.fechaConHora),
                     ProjectConstants.KeyNames.Rubro.isEnabled : true,
@@ -46,6 +52,27 @@ class IOAltaRubroViewModel: IOAltaRubroViewModelContract {
             return keys[selected_index]
         }
         return nil
+    }
+    
+    func getTitle() {
+        if model.isEdition {
+            _view.showTitle(title: "Editar Rubro")
+        } else {
+            _view.showTitle(title: "Nuevo Rubro")
+        }
+    }
+    
+    func validate() -> Bool {
+        let descripcionText = _view.getDescriptionCell()
+        
+        if descripcionText.count == 0 {
+            return false
+        }
+
+        if descripcionText.count > 30 {
+            return false
+        }
+        return true
     }
     
 }
