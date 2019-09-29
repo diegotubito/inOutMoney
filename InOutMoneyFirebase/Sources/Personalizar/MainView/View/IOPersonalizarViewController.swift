@@ -133,28 +133,31 @@ extension IOPersonalizarViewController: UITableViewDelegate {
         performSegue(withIdentifier: "segue_detalle_rubro", sender: rubroSeleccionado)
     }
     
-    
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+  
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
+    {
+        var firstAction : UITableViewRowAction?
+        var secondAction : UITableViewRowAction?
+        var arrayActions = [UITableViewRowAction]()
         
-        let editAction = UIContextualAction(style: .destructive, title: "Editar") { (action, view, handler) in
-            self.isForEdition = true
-            self.performSegue(withIdentifier: "segue_alta_o_edicion_rubro", sender: nil)
-        }
-        editAction.backgroundColor = UIColor.green.withAlphaComponent(0.5)
+            firstAction = UITableViewRowAction(style: .default, title: "Editar", handler: { (action, indexpath) in
+                self.isForEdition = true
+                self.performSegue(withIdentifier: "segue_alta_o_edicion_rubro", sender: nil)
+                
+            })
+            firstAction?.backgroundColor = ProjectConstants.colors.swipeEditar
+            arrayActions.append(firstAction!)
+            
+            secondAction = UITableViewRowAction(style: .destructive, title: "Borrar") { (action, indexpath) in
+
+                self.alertMessage(title: "Eliminar", message: "El rubro se eliminará de forma permanente", indexPath: indexPath)
+                
+            }
+            secondAction?.backgroundColor = ProjectConstants.colors.swipeAnular
+            arrayActions.append(secondAction!)
+            
         
-        let deleteAction = UIContextualAction(style: .destructive, title: "Borrar") { (action, view, handler) in
-            self.alertMessage(title: "Eliminar", message: "El rubro se eliminará de forma permanente", indexPath: indexPath)
-        }
-        deleteAction.backgroundColor = .red
-        
-        
-        
-        
-        
-        let configuration = UISwipeActionsConfiguration(actions: [editAction, deleteAction])
-        configuration.performsFirstActionWithFullSwipe = false
-        return configuration
-        
+        return arrayActions
     }
     
 }
