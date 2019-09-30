@@ -42,7 +42,7 @@ class IODetalleRubroViewController: UIViewController, IODetalleRubroViewContract
     }
     
     func registerCells() {
-        tableView.register(IOTableViewCellSingleLabel.nib, forCellReuseIdentifier: IOTableViewCellSingleLabel.identifier)
+        tableView.register(IODetalleRubroCell.nib, forCellReuseIdentifier: IODetalleRubroCell.identifier)
         tableView.register(IOTableViewCellDetalleRubroHeader.nib, forCellReuseIdentifier: IOTableViewCellDetalleRubroHeader.identifier)
     }
     func showLoading() {
@@ -78,7 +78,7 @@ extension IODetalleRubroViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellSingleLabel.identifier, for: indexPath) as? IOTableViewCellSingleLabel {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: IODetalleRubroCell.identifier, for: indexPath) as? IODetalleRubroCell {
         
             let registro = viewModel.model.registros[indexPath.section][indexPath.row]
              cell.leftLabel.textColor = .lightGray
@@ -88,9 +88,10 @@ extension IODetalleRubroViewController: UITableViewDataSource {
                 cell.rightLabel.textColor = .darkGray
             }
         
-            cell.leftImage.isHidden = true
-            cell.spaceBetween.isHidden = true
-            cell.leftLabel.text = registro.descripcion
+            cell.leftLabel.text = "No hay descripción."
+            if let descripcion = registro.descripcion, !descripcion.isEmpty {
+                cell.leftLabel.text = descripcion
+            }
             cell.rightLabel.text = registro.importe?.formatoMoneda(decimales: 2, simbolo: "$")
             
             cell.backgroundColor = UIColor.darkGray.withAlphaComponent(0.4)

@@ -61,7 +61,7 @@ class IOAltaGastoViewController: UIViewController, IORubrosGastosAltaViewContrac
     
     override func viewDidAppear(_ animated: Bool) {
         set_picker()
-        descripcionCell.textField.becomeFirstResponder()
+        importeCell.textField.becomeFirstResponder()
     }
     
     func set_picker() {
@@ -91,19 +91,20 @@ class IOAltaGastoViewController: UIViewController, IORubrosGastosAltaViewContrac
     }
     
     func loadCells() {
-        descripcionCell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellSingleDataEntry.identifier) as? IOTableViewCellSingleDataEntry
-        descripcionCell.titleCell.text = "Descripción"
-        descripcionCell.tag = 0
-        descripcionCell.delegate = self
-        cells.append(descripcionCell)
-        
         importeCell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellSingleDataEntry.identifier) as? IOTableViewCellSingleDataEntry
         importeCell.textField.keyboardType = .decimalPad
         importeCell.titleCell.text = "Importe"
         importeCell.tag = 1
         importeCell.delegate = self
-        
         cells.append(importeCell)
+        
+          descripcionCell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellSingleDataEntry.identifier) as? IOTableViewCellSingleDataEntry
+             descripcionCell.titleCell.text = "Descripción"
+             descripcionCell.tag = 0
+             descripcionCell.delegate = self
+             cells.append(descripcionCell)
+             
+        
         
         pickerCell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellSinglePicker.identifier) as? IOTableViewCellSinglePicker
         pickerCell.titleCell.text = "Cuenta afectada"
@@ -122,19 +123,13 @@ class IOAltaGastoViewController: UIViewController, IORubrosGastosAltaViewContrac
     }
     
     func validateCells() -> String? {
-        if (descripcionCell.textField.text?.isEmpty)! {
-            return "El campo descripción no puede estar vacio."
-        }
         if let valorDouble = Double(importeCell.textField.text!) {
             if valorDouble <= 0 {
-                return "El campo importe no puede ser ser cero."
+                return "El campo importe no puede ser cero"
             }
         } else {
             return "El formato importe es incorrecto."
         }
-
-        
-   
         return nil
     }
     

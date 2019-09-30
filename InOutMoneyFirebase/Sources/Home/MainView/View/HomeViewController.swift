@@ -276,7 +276,7 @@ extension HomeViewController: TabaleViewCellHomeHeaderDelegate {
         
             //solo me quedo con los rubros de gasto
             var fileredArray = viewModel.getRubrosGastos()
-            fileredArray = fileredArray!.sorted(by: { $0.descripcion > $1.descripcion })
+            fileredArray = fileredArray?.sorted(by: { $0.descripcion > $1.descripcion })
             
             //creamos un array de String
             let array = fileredArray?.compactMap({ $0.descripcion })
@@ -303,7 +303,7 @@ extension HomeViewController: TabaleViewCellHomeHeaderDelegate {
             
             //solo me quedo con los rubros de gasto
             var fileredArray = viewModel.getRubrosIngresos()
-            fileredArray = fileredArray!.sorted(by: { $0.descripcion > $1.descripcion })
+            fileredArray = fileredArray?.sorted(by: { $0.descripcion > $1.descripcion })
             
             //creamos un array de String
             let array = fileredArray?.map({ $0.descripcion })

@@ -45,6 +45,7 @@ class IORubrosGastosAltaViewModel: IORubrosGastosAltaViewModelContract {
                      ProjectConstants.KeyNames.Registro.descripcion : _view.getDescripcionTextField(),
                      ProjectConstants.KeyNames.Registro.fechaGasto : _view.getFechaTextField(),
                      ProjectConstants.KeyNames.Registro.fechaCreacion : Date().toString(formato: formatoDeFecha.fechaConHora),
+                     ProjectConstants.KeyNames.Registro.descripcionRubro : model.rubroSeleccionado.descripcion,
                      ProjectConstants.KeyNames.Registro.importe : importe,
                      ProjectConstants.KeyNames.Registro.type : ProjectConstants.rubros.gastoKey] as [String : Any]
         

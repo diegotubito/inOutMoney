@@ -33,6 +33,7 @@ struct IOProjectModel {
         var fechaGasto : String?
         var importe : Double?
         var isEnabled : Int?
+        var descripcionRubro : String?
         
         var queryByMonthYear : String?
         var queryByTypeMonthYear : String?

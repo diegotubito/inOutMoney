@@ -178,7 +178,7 @@ class IOAltaIngresoViewController : UIViewController, IOAltaIngresoViewContract 
     }
     
     func getMontoTextField() -> String {
-        return importeCell.textField.text!
+        return importeCell.textField.text ?? ""
     }
     
 }

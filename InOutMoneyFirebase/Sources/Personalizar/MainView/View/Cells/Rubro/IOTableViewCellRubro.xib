@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,20 +14,20 @@
             <rect key="frame" x="0.0" y="0.0" width="280" height="139"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="280" height="138.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="280" height="139"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nEV-bO-lry">
-                        <rect key="frame" x="3" y="8" width="274" height="122.5"/>
+                        <rect key="frame" x="16" y="8" width="248" height="123"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Panaderia y verduleria con mas de un" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ju-PC-861">
-                                <rect key="frame" x="0.0" y="31" width="133" height="61"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Panaderia y verduleria con mas de un" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ju-PC-861">
+                                <rect key="frame" x="0.0" y="31" width="120" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0ZX-lk-Ngy">
-                                <rect key="frame" x="141.5" y="36.5" width="132.5" height="49.5"/>
+                                <rect key="frame" x="115.5" y="37" width="132.5" height="49.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Vrr-gU-KjC">
                                         <rect key="frame" x="0.0" y="0.0" width="57" height="49.5"/>
@@ -47,7 +45,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMC-iP-hqm">
-                                                <rect key="frame" x="28.5" y="35" width="28.5" height="14.5"/>
+                                                <rect key="frame" x="28" y="35" width="29" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -88,11 +86,11 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="nEV-bO-lry" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="3GN-FQ-jXD"/>
+                    <constraint firstItem="nEV-bO-lry" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="3GN-FQ-jXD"/>
                     <constraint firstItem="nEV-bO-lry" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="akH-RK-m7k"/>
                     <constraint firstAttribute="bottom" secondItem="nEV-bO-lry" secondAttribute="bottom" constant="8" id="grK-Ww-Z9Q"/>
                     <constraint firstItem="nEV-bO-lry" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="rv3-bm-Le3"/>
-                    <constraint firstAttribute="trailing" secondItem="nEV-bO-lry" secondAttribute="trailing" constant="3" id="wkX-6R-3z4"/>
+                    <constraint firstAttribute="trailing" secondItem="nEV-bO-lry" secondAttribute="trailing" constant="16" id="wkX-6R-3z4"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

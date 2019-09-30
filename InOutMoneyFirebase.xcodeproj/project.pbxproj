@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -47,6 +47,10 @@
 		6506A16D23400D6900C76D21 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6506A14023400D6900C76D21 /* MainNavigationController.swift */; };
 		6506A16E23400D6900C76D21 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6506A14023400D6900C76D21 /* MainNavigationController.swift */; };
 		6506A16F23400FF100C76D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6506A11023400B9F00C76D21 /* Assets.xcassets */; };
+		6586B4A823423EFF001710B4 /* IODetalleRubroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586B4A623423EFF001710B4 /* IODetalleRubroCell.swift */; };
+		6586B4A923423EFF001710B4 /* IODetalleRubroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586B4A623423EFF001710B4 /* IODetalleRubroCell.swift */; };
+		6586B4AA23423EFF001710B4 /* IODetalleRubroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6586B4A723423EFF001710B4 /* IODetalleRubroCell.xib */; };
+		6586B4AB23423EFF001710B4 /* IODetalleRubroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6586B4A723423EFF001710B4 /* IODetalleRubroCell.xib */; };
 		840268492205F31000EF6070 /* IOLoginContraseñaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840268482205F31000EF6070 /* IOLoginContraseñaViewController.swift */; };
 		8402684C2205F87D00EF6070 /* IOLoginContraseñaCV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8402684B2205F87D00EF6070 /* IOLoginContraseñaCV.xib */; };
 		8402684E2205F8A300EF6070 /* IOLoginContraseñaCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402684D2205F8A300EF6070 /* IOLoginContraseñaCV.swift */; };
@@ -144,7 +148,6 @@
 		8404214F22729BB4007E7756 /* TableViewCellLoginUsuario.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8402685122068ECC00EF6070 /* TableViewCellLoginUsuario.xib */; };
 		8404215422729BB4007E7756 /* StoryboardLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FD53832203F37500DC102A /* StoryboardLogin.storyboard */; };
 		8404215722729BB4007E7756 /* IOLoginContraseñaCV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8402684B2205F87D00EF6070 /* IOLoginContraseñaCV.xib */; };
-		842227587AA8719C417032C5 /* Pods_InOutMoneyFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */; };
 		8422AAE222B9DBE20011CF38 /* DDLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422AAE122B9DBE20011CF38 /* DDLineChart.swift */; };
 		8422AAE322B9DBE20011CF38 /* DDLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422AAE122B9DBE20011CF38 /* DDLineChart.swift */; };
 		8422AAE722B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422AAE522B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.swift */; };
@@ -279,6 +282,8 @@
 		6506A13E23400D6900C76D21 /* TableViewCellHomeHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellHomeHeader.swift; sourceTree = "<group>"; };
 		6506A13F23400D6900C76D21 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6506A14023400D6900C76D21 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		6586B4A623423EFF001710B4 /* IODetalleRubroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IODetalleRubroCell.swift; sourceTree = "<group>"; };
+		6586B4A723423EFF001710B4 /* IODetalleRubroCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IODetalleRubroCell.xib; sourceTree = "<group>"; };
 		7AB741C1F0FA56F73EAA1DD8 /* Pods-DebugVersion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DebugVersion.release.xcconfig"; path = "Pods/Target Support Files/Pods-DebugVersion/Pods-DebugVersion.release.xcconfig"; sourceTree = "<group>"; };
 		840268482205F31000EF6070 /* IOLoginContraseñaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IOLoginContraseñaViewController.swift"; sourceTree = "<group>"; };
 		8402684B2205F87D00EF6070 /* IOLoginContraseñaCV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "IOLoginContraseñaCV.xib"; sourceTree = "<group>"; };
@@ -389,7 +394,6 @@
 		A6BA18932D5338E57EFCACCE /* Pods-ReleaseVersion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReleaseVersion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReleaseVersion/Pods-ReleaseVersion.debug.xcconfig"; sourceTree = "<group>"; };
 		C8AF13104E54651EE7A29B9F /* Pods-ReleaseVersion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReleaseVersion.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReleaseVersion/Pods-ReleaseVersion.release.xcconfig"; sourceTree = "<group>"; };
 		D3C6A17853DDA48318A6E934 /* Pods-InOutMoneyFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InOutMoneyFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-InOutMoneyFirebase/Pods-InOutMoneyFirebase.release.xcconfig"; sourceTree = "<group>"; };
-		DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InOutMoneyFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,7 +409,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				842227587AA8719C417032C5 /* Pods_InOutMoneyFirebase.framework in Frameworks */,
 				A6E8DFC457DDDE216915693D /* Pods_ReleaseVersion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,10 +583,18 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		6586B4A523423EAC001710B4 /* Row */ = {
+			isa = PBXGroup;
+			children = (
+				6586B4A623423EFF001710B4 /* IODetalleRubroCell.swift */,
+				6586B4A723423EFF001710B4 /* IODetalleRubroCell.xib */,
+			);
+			path = Row;
+			sourceTree = "<group>";
+		};
 		7091CE198096826F44C20E94 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DE817C3F9978772BA4FC0806 /* Pods_InOutMoneyFirebase.framework */,
 				5EDB85E05E9210DD3A7D23F9 /* Pods_DebugVersion.framework */,
 				1094BCC52B111AA8043E7D84 /* Pods_ReleaseVersion.framework */,
 			);
@@ -829,6 +840,7 @@
 		8422AAD822B8941C0011CF38 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				6586B4A523423EAC001710B4 /* Row */,
 				8422AAE422B9F56A0011CF38 /* Header */,
 			);
 			path = Cells;
@@ -1427,6 +1439,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6586B4AB23423EFF001710B4 /* IODetalleRubroCell.xib in Resources */,
 				842BDBFA22A38BFA00BF5273 /* IOTableViewCellSingleTextField.xib in Resources */,
 				8422AAEA22B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.xib in Resources */,
 				6506A16F23400FF100C76D21 /* Assets.xcassets in Resources */,
@@ -1456,6 +1469,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6586B4AA23423EFF001710B4 /* IODetalleRubroCell.xib in Resources */,
 				842BDBF922A38BFA00BF5273 /* IOTableViewCellSingleTextField.xib in Resources */,
 				8422AAE922B9F5900011CF38 /* IOTableViewCellDetalleRubroHeader.xib in Resources */,
 				6506A16123400D6900C76D21 /* IOTableViewCellChart.xib in Resources */,
@@ -1489,31 +1503,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ReleaseVersion/Pods-ReleaseVersion-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReleaseVersion/Pods-ReleaseVersion-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReleaseVersion/Pods-ReleaseVersion-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReleaseVersion/Pods-ReleaseVersion-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReleaseVersion/Pods-ReleaseVersion-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		840420CF22729BB4007E7756 /* [CP] Check Pods Manifest.lock */ = {
@@ -1539,31 +1538,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DebugVersion/Pods-DebugVersion-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DebugVersion/Pods-DebugVersion-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DebugVersion/Pods-DebugVersion-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DebugVersion/Pods-DebugVersion-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DebugVersion/Pods-DebugVersion-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D167874E553E8B40F84D03B1 /* [CP] Check Pods Manifest.lock */ = {
@@ -1615,6 +1599,7 @@
 				84FCB3B122B7477800AEA86E /* IOTableViewCellRubro.swift in Sources */,
 				840420EF22729BB4007E7756 /* funcionesGlobales.swift in Sources */,
 				840420F122729BB4007E7756 /* SwiftyPlistManager.swift in Sources */,
+				6586B4A923423EFF001710B4 /* IODetalleRubroCell.swift in Sources */,
 				847AC87122AF679F00E726B2 /* IOTableViewCellHeader.swift in Sources */,
 				840420F222729BB4007E7756 /* IOLoginUserModel.swift in Sources */,
 				847AC85822ADC6D600E726B2 /* IOMovimientoViewModel.swift in Sources */,
@@ -1721,6 +1706,7 @@
 				84FCB3B022B7477800AEA86E /* IOTableViewCellRubro.swift in Sources */,
 				840280FD220FB24600C85A6A /* funcionesGlobales.swift in Sources */,
 				84028101220FB24600C85A6A /* SwiftyPlistManager.swift in Sources */,
+				6586B4A823423EFF001710B4 /* IODetalleRubroCell.swift in Sources */,
 				847AC87022AF679F00E726B2 /* IOTableViewCellHeader.swift in Sources */,
 				849BA96E2207507A00EC93A6 /* IOLoginUserModel.swift in Sources */,
 				847AC85722ADC6D600E726B2 /* IOMovimientoViewModel.swift in Sources */,

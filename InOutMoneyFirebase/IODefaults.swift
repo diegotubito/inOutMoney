@@ -80,6 +80,7 @@ class ProjectConstants {
             static let fechaCreacion        = "fechaCreacion"
             static let importe              = "importe"
             static let type                 = "type"
+            static let descripcionRubro     = "descripcionRubro"
             
         }
         

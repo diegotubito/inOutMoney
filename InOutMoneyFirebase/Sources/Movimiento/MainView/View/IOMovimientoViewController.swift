@@ -11,8 +11,6 @@ import UIKit
 
 class IOMovimientoViewController: UIViewController, IOMovimientoViewContract {
     
-    
-    
     @IBOutlet var tableView: UITableView!
     
     var viewModel : IOMovimientoViewModelContract!
@@ -24,6 +22,9 @@ class IOMovimientoViewController: UIViewController, IOMovimientoViewContract {
         NotificationCenter.default.addObserver(self, selector: #selector(handleActualizarRegistros), name: .updateRegistros, object: nil)
           
         viewModel = IOMovimientoViewModel(withView: self, service: MLFirebaseDatabase())
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 60
         
         registerCell()
         
@@ -68,12 +69,7 @@ extension IOMovimientoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
-    }
-   
-    
+
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
     {
         var firstAction : UITableViewRowAction?
@@ -111,26 +107,10 @@ extension IOMovimientoViewController: UITableViewDelegate {
             }
             secondAction?.backgroundColor = ProjectConstants.colors.swipeEliminar
             arrayActions.append(secondAction!)
-            
-            
         }
         
         return arrayActions
     }
-//
-//    @available(iOS 11.0, *)
-//    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
-//    {
-//        let deleteAction = UIContextualAction(style: .destructive, title: "Add") { (action, view, handler) in
-//            print("Add Action Tapped")
-//        }
-//        deleteAction.backgroundColor = .green
-//        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
-//        configuration.performsFirstActionWithFullSwipe = false
-//        return configuration
-//    }
-    
- 
 }
 
 extension IOMovimientoViewController: UITableViewDataSource {
@@ -153,19 +133,23 @@ extension IOMovimientoViewController: UITableViewDataSource {
         return header
     }
     
-    
-    
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: IOTableViewCellSingleLabel.identifier, for: indexPath) as? IOTableViewCellSingleLabel {
             
             let registro = viewModel.model.registros[indexPath.section][indexPath.row]
             
             viewModel.setColor(registro: registro, cell: cell)
-             
+            
             let descripcion = registro.descripcion
-            let descripcionCapitalized = descripcion?.capitalized
-            cell.leftLabel.text = descripcionCapitalized
+            let descripcionRubro = registro.descripcionRubro ?? ""
+            var leftLabel : String = descripcionRubro
+            if let des = descripcion, !des.isEmpty {
+                leftLabel += " - \(des)"
+            }
+            
+            
+            let dleftLabelCapitalized = leftLabel.capitalized
+            cell.leftLabel.text = dleftLabelCapitalized
             cell.rightLabel.text = viewModel.model.registros[indexPath.section][indexPath.row].importe?.formatoMoneda(decimales: 2, simbolo: "$")
             
             return cell
