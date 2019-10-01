@@ -15,6 +15,7 @@ class IOAltaIngresoViewController : UIViewController, IOAltaIngresoViewContract 
     var viewModel : IOAltaIngresoViewModelContract!
     
     @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var rubroLabel : UILabel!
     
     var cells = [UITableViewCell]()
     var descripcionCell : IOTableViewCellSingleDataEntry!
@@ -43,6 +44,7 @@ class IOAltaIngresoViewController : UIViewController, IOAltaIngresoViewContract 
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
+        rubroLabel.text = viewModel.model.rubroSeleccionado.descripcion
     }
 
     

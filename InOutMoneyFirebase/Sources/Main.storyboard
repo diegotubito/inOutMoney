@@ -218,30 +218,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ujl-OE-8HS">
-                                <rect key="frame" x="0.0" y="96" width="375" height="522"/>
+                                <rect key="frame" x="0.0" y="125" width="375" height="493"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="jL2-8s-sx1" id="hyA-bR-yuC"/>
                                     <outlet property="delegate" destination="jL2-8s-sx1" id="v1n-3y-yhf"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeX-dl-NAx">
+                                <rect key="frame" x="16" y="96" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ujl-OE-8HS" firstAttribute="leading" secondItem="jew-qM-fG9" secondAttribute="leading" id="1mi-bV-Clj"/>
-                            <constraint firstItem="ujl-OE-8HS" firstAttribute="top" secondItem="jew-qM-fG9" secondAttribute="top" id="7ve-Lk-omF"/>
                             <constraint firstItem="jew-qM-fG9" firstAttribute="bottom" secondItem="ujl-OE-8HS" secondAttribute="bottom" id="E1D-zn-U3U"/>
+                            <constraint firstItem="jew-qM-fG9" firstAttribute="trailing" secondItem="IeX-dl-NAx" secondAttribute="trailing" constant="16" id="Sul-fc-DMt"/>
                             <constraint firstItem="jew-qM-fG9" firstAttribute="trailing" secondItem="ujl-OE-8HS" secondAttribute="trailing" id="XqA-ai-pp2"/>
+                            <constraint firstItem="IeX-dl-NAx" firstAttribute="leading" secondItem="jew-qM-fG9" secondAttribute="leading" constant="16" id="fS6-Y0-UHK"/>
+                            <constraint firstItem="IeX-dl-NAx" firstAttribute="top" secondItem="jew-qM-fG9" secondAttribute="top" id="s89-xd-PRr"/>
+                            <constraint firstItem="ujl-OE-8HS" firstAttribute="top" secondItem="IeX-dl-NAx" secondAttribute="bottom" constant="8" id="trW-ft-EcG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jew-qM-fG9"/>
                     </view>
                     <connections>
+                        <outlet property="rubroLabel" destination="IeX-dl-NAx" id="cmM-qD-BDr"/>
                         <outlet property="tableView" destination="ujl-OE-8HS" id="8vp-Wa-iPc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DPE-yZ-agM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1393" y="132"/>
+            <point key="canvasLocation" x="1392.8" y="131.78410794602701"/>
         </scene>
         <!--Alta Gasto View Controller-->
         <scene sceneID="BAD-x0-2cF">
@@ -252,30 +262,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hYm-P2-s6j">
-                                <rect key="frame" x="0.0" y="96" width="375" height="522"/>
+                                <rect key="frame" x="0.0" y="125" width="375" height="493"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="7ud-ek-S28" id="EIT-dI-ceP"/>
                                     <outlet property="delegate" destination="7ud-ek-S28" id="sOh-rD-2cF"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NC9-Ra-4bu">
+                                <rect key="frame" x="16" y="96" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="hYm-P2-s6j" firstAttribute="top" secondItem="NC9-Ra-4bu" secondAttribute="bottom" constant="8" id="7Xf-OG-zGq"/>
                             <constraint firstItem="hYm-P2-s6j" firstAttribute="leading" secondItem="8ai-Ds-kQJ" secondAttribute="leading" id="8ga-Be-lXq"/>
                             <constraint firstItem="8ai-Ds-kQJ" firstAttribute="bottom" secondItem="hYm-P2-s6j" secondAttribute="bottom" id="Czb-WM-oCn"/>
-                            <constraint firstItem="hYm-P2-s6j" firstAttribute="top" secondItem="8ai-Ds-kQJ" secondAttribute="top" id="V2E-CP-xyw"/>
+                            <constraint firstItem="8ai-Ds-kQJ" firstAttribute="trailing" secondItem="NC9-Ra-4bu" secondAttribute="trailing" constant="16" id="LAz-j4-Lfe"/>
+                            <constraint firstItem="NC9-Ra-4bu" firstAttribute="top" secondItem="8ai-Ds-kQJ" secondAttribute="top" id="ZWr-Ha-kX7"/>
+                            <constraint firstItem="NC9-Ra-4bu" firstAttribute="leading" secondItem="8ai-Ds-kQJ" secondAttribute="leading" constant="16" id="mnF-8z-5X1"/>
                             <constraint firstItem="8ai-Ds-kQJ" firstAttribute="trailing" secondItem="hYm-P2-s6j" secondAttribute="trailing" id="qdy-Bj-MPU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8ai-Ds-kQJ"/>
                     </view>
                     <connections>
+                        <outlet property="rubroLabel" destination="NC9-Ra-4bu" id="QNz-uz-RXa"/>
                         <outlet property="tableView" destination="hYm-P2-s6j" id="UOa-a9-Rug"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wDh-7u-Wuo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1394" y="-576"/>
+            <point key="canvasLocation" x="1393" y="-569"/>
         </scene>
         <!--Movimientos-->
         <scene sceneID="F2E-ZI-0LG">

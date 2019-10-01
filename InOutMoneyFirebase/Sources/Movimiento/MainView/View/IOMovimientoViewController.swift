@@ -143,8 +143,16 @@ extension IOMovimientoViewController: UITableViewDataSource {
             let descripcion = registro.descripcion
             let descripcionRubro = registro.descripcionRubro ?? ""
             var leftLabel : String = descripcionRubro
-            if let des = descripcion, !des.isEmpty {
-                leftLabel += " - \(des)"
+            if !descripcionRubro.isEmpty {
+                if let des = descripcion, !des.isEmpty {
+                    leftLabel += " - "
+                    leftLabel += des
+                } else if let des = descripcion, des.isEmpty {
+                    leftLabel += des
+                }
+                
+            } else {
+                    leftLabel = descripcion ?? "sin descripción."
             }
             
             

@@ -18,6 +18,8 @@ class IOAltaGastoViewController: UIViewController, IORubrosGastosAltaViewContrac
     
     var delegate : IOAltaGastoViewControllerDelegate?
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var rubroLabel : UILabel!
+    
     var cells = [UITableViewCell]()
     var descripcionCell : IOTableViewCellSingleDataEntry!
     var importeCell : IOTableViewCellSingleDataEntry!
@@ -45,6 +47,8 @@ class IOAltaGastoViewController: UIViewController, IORubrosGastosAltaViewContrac
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
+        rubroLabel.text = viewModel.model.rubroSeleccionado.descripcion
+        
     }
     
     func inicializarBotonGuardar() {

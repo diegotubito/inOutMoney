@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     
    
     @IBOutlet weak var tableView : UITableView!
+    
     var cells = [UITableViewCell]()
     var header : TableViewCellHomeHeader!
     var cuentaCell : TableViewCellCuentas!

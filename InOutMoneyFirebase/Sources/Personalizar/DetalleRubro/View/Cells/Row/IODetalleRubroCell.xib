@@ -24,7 +24,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100.000,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXZ-r6-nFU">
-                        <rect key="frame" x="217" y="8" width="87" height="98"/>
+                        <rect key="frame" x="225" y="8" width="87" height="98"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -33,7 +33,7 @@
                 <constraints>
                     <constraint firstItem="hXZ-r6-nFU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="4AH-1u-2Rx"/>
                     <constraint firstItem="hXZ-r6-nFU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HuK-KP-7DH" secondAttribute="trailing" constant="8" id="8Wk-4e-CMo"/>
-                    <constraint firstAttribute="trailing" secondItem="hXZ-r6-nFU" secondAttribute="trailing" constant="16" id="AWj-j5-bOR"/>
+                    <constraint firstAttribute="trailing" secondItem="hXZ-r6-nFU" secondAttribute="trailing" constant="8" id="AWj-j5-bOR"/>
                     <constraint firstItem="HuK-KP-7DH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="GWL-We-nd2"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HuK-KP-7DH" secondAttribute="trailing" constant="8" id="LtB-lT-zjh"/>
                     <constraint firstItem="HuK-KP-7DH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="N8e-BQ-k3p"/>
