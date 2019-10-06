@@ -45,6 +45,7 @@ class IOAltaIngresoViewModel: IOAltaIngresoViewModelContract {
                      ProjectConstants.KeyNames.Registro.descripcion : _view.getDescripcionTextField(),
                      ProjectConstants.KeyNames.Registro.fechaGasto : _view.getFechaTextField(),
                      ProjectConstants.KeyNames.Registro.fechaCreacion : Date().toString(formato: formatoDeFecha.fechaConHora),
+                     ProjectConstants.KeyNames.Registro.fechaCreacionDouble : Date().timeIntervalSince1970,
                      ProjectConstants.KeyNames.Registro.importe : importe,
                      ProjectConstants.KeyNames.Registro.type : ProjectConstants.rubros.ingresoKey] as [String : Any]
         

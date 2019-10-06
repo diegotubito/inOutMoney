@@ -10,6 +10,6 @@ import Foundation
 
 class IOAltaEdicionRubroModel {
     var type_selected_index : Int?
-    var isEdition : Bool!
+    var receivedRegister : IOProjectModel.Rubro?
     
 }

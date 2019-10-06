@@ -11,4 +11,5 @@ import Foundation
 class IOPersonalizacionRubroModel {
     var rubros = [IOProjectModel.Rubro]()
     var cuentas = [IOProjectModel.Cuenta]()
+    var selectedRegister : IOProjectModel.Rubro?
 }

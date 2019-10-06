@@ -11,6 +11,7 @@ import UIKit
 
 
 class IOAltaEdicionRubroViewController: UIViewController, IOAltaEdicionRubroViewContract {
+    
    
     
     
@@ -24,11 +25,15 @@ class IOAltaEdicionRubroViewController: UIViewController, IOAltaEdicionRubroView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerCells()
         viewModel.getTitle()
-        tableView.register(IOTableViewCellSingleDataEntry.nib, forCellReuseIdentifier: IOTableViewCellSingleDataEntry.identifier)
-        tableView.register(IOTableViewCellSinglePicker.nib, forCellReuseIdentifier: IOTableViewCellSinglePicker.identifier)
         loadCells()
         buttonSaveSetup()
+    }
+    
+    func registerCells() {
+          tableView.register(IOTableViewCellSingleDataEntry.nib, forCellReuseIdentifier: IOTableViewCellSingleDataEntry.identifier)
+             tableView.register(IOTableViewCellSinglePicker.nib, forCellReuseIdentifier: IOTableViewCellSinglePicker.identifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,7 +41,9 @@ class IOAltaEdicionRubroViewController: UIViewController, IOAltaEdicionRubroView
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        set_picker()
+        if viewModel.isForEdition() {
+            viewModel.getDataForEdition()
+        }
         descripcionCell.textField.becomeFirstResponder()
     }
     
@@ -58,7 +65,11 @@ class IOAltaEdicionRubroViewController: UIViewController, IOAltaEdicionRubroView
     }
     
     @objc func saveTapped() {
-        viewModel.guardarNuevoRubro(descripcion: descripcionCell.textField.text!)
+        if viewModel.isForEdition() {
+            viewModel.editarRubro(descripcion: descripcionCell.textField.text!)
+        } else {
+            viewModel.guardarNuevoRubro(descripcion: descripcionCell.textField.text!)
+        }
     }
     
     func loadCells() {
@@ -79,7 +90,8 @@ class IOAltaEdicionRubroViewController: UIViewController, IOAltaEdicionRubroView
     }
     
     func set_picker() {
-        typeCell.picker.selectRow(viewModel.model.type_selected_index ?? 0, inComponent: 0, animated: true)
+        typeCell.picker.selectRow(self.viewModel.model.type_selected_index ?? 0, inComponent: 0, animated: false)
+            
         
     }
     
@@ -108,6 +120,15 @@ class IOAltaEdicionRubroViewController: UIViewController, IOAltaEdicionRubroView
     func getDescriptionCell() -> String {
         return descripcionCell.textField.text ?? ""
     }
+    
+    func showDescription(_ message: String) {
+        descripcionCell.textField.text = message
+    }
+    
+    func showPickerSelection() {
+        set_picker()
+    }
+    
 }
 
 
@@ -124,13 +145,13 @@ extension IOAltaEdicionRubroViewController: UITableViewDataSource {
 
 extension IOAltaEdicionRubroViewController: IOTableViewCellSingleDataEntryDelegate {
     func textDidChangeDelegate(tag: Int) {
-        _ = viewModel.validate()
+        
     }
     
     func textDidEndEditingDelegate(tag: Int) {
-        descripcionCell.textField.resignFirstResponder()
-        _ = viewModel.validate()
+        
     }
+    
 }
 
 

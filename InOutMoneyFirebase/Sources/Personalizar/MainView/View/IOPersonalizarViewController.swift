@@ -14,7 +14,6 @@ class IOPersonalizarViewController: UIViewController, IOPersonalizacionRubroView
     @IBOutlet weak var tableView : UITableView!
     
     var viewModel : IOPersonalizacionRubroViewModelContract!
-    var isForEdition = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +37,7 @@ class IOPersonalizarViewController: UIViewController, IOPersonalizacionRubroView
 
     
     @IBAction func nuewRubroPressed(_ sender: Any) {
-        isForEdition = false
+        viewModel.model.selectedRegister = nil
         performSegue(withIdentifier: "segue_alta_o_edicion_rubro", sender: nil)
     }
     
@@ -75,7 +74,7 @@ class IOPersonalizarViewController: UIViewController, IOPersonalizacionRubroView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let controller = segue.destination as? IOAltaEdicionRubroViewController {
-            controller.viewModel = IOAltaEdicionRubroViewModel(withView: controller, isEdition: isForEdition)
+            controller.viewModel = IOAltaEdicionRubroViewModel(withView: controller, selectedRegister: viewModel.model.selectedRegister)
         } else if let controller = segue.destination as? IODetalleRubroViewController {
             if let rubroSeleccionado = sender as? IOProjectModel.Rubro {
                 controller.viewModel = IODetalleRubroViewModel(withView: controller, service: MLFirebaseDatabase(), rubroSeleccionado: rubroSeleccionado)
@@ -113,6 +112,11 @@ extension IOPersonalizarViewController: UITableViewDataSource {
             let counter = viewModel.model.rubros[indexPath.row].counter ?? 0
             cell.registros.text = String(counter)
     
+            if viewModel.model.rubros[indexPath.row].isEnabled {
+                cell.title.textColor = UIColor.lightGray
+            } else {
+                cell.title.textColor = UIColor.darkGray
+            }
             
           
             return cell
@@ -140,23 +144,37 @@ extension IOPersonalizarViewController: UITableViewDelegate {
         var secondAction : UITableViewRowAction?
         var arrayActions = [UITableViewRowAction]()
         
-            firstAction = UITableViewRowAction(style: .default, title: "Editar", handler: { (action, indexpath) in
-                self.isForEdition = true
-                self.performSegue(withIdentifier: "segue_alta_o_edicion_rubro", sender: nil)
-                
-            })
+        let registro = viewModel.model.rubros[indexPath.row]
+              
+        if registro.isEnabled {
+            firstAction = UITableViewRowAction(style: .default, title: " Editar ", handler: { (action, indexpath) in
+                    self.viewModel.model.selectedRegister = self.viewModel.model.rubros[indexPath.row]
+                    self.performSegue(withIdentifier: "segue_alta_o_edicion_rubro", sender: nil)
+                      
+                })
             firstAction?.backgroundColor = ProjectConstants.colors.swipeEditar
             arrayActions.append(firstAction!)
+                  
+            secondAction = UITableViewRowAction(style: .destructive, title: " Deshabilitar ") { (action, indexpath) in
+                self.viewModel.deshabilitarRubro(key: registro.key)
+                NotificationCenter.default.post(name: .updateRubros, object: nil)
+                
+                
+            }
+            secondAction?.backgroundColor = ProjectConstants.colors.swipeAnular
+                  arrayActions.append(secondAction!)
             
-            secondAction = UITableViewRowAction(style: .destructive, title: "Borrar") { (action, indexpath) in
-
-                self.alertMessage(title: "Eliminar", message: "El rubro se eliminará de forma permanente", indexPath: indexPath)
+        } else {
+            secondAction = UITableViewRowAction(style: .destructive, title: " Habilitar ") { (action, indexpath) in
+                self.viewModel.habilitarRubro(key: registro.key)
+                NotificationCenter.default.post(name: .updateRubros, object: nil)
+                
                 
             }
             secondAction?.backgroundColor = ProjectConstants.colors.swipeAnular
             arrayActions.append(secondAction!)
             
-        
+        }
         return arrayActions
     }
     

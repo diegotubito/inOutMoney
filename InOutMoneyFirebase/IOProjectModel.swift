@@ -13,6 +13,7 @@ struct IOProjectModel {
         var key : String
         var descripcion : String
         var fechaCreacion : String
+        var fechaCreacionDouble : Double?
         var isEnabled : Bool
         var type : String
         var counter : Int?
@@ -30,6 +31,7 @@ struct IOProjectModel {
         var childIDRubro : String?
         var descripcion : String?
         var fechaCreacion : String?
+        var fechaCreacionDouble : Double?
         var fechaGasto : String?
         var importe : Double?
         var isEnabled : Int?

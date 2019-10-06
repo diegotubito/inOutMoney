@@ -15,22 +15,57 @@ class IOAltaEdicionRubroViewModel: IOAltaEdicionRubroViewModelContract {
     var model: IOAltaEdicionRubroModel!
     
     
-    required init(withView view: IOAltaEdicionRubroViewContract, isEdition: Bool) {
+    required init(withView view: IOAltaEdicionRubroViewContract, selectedRegister: IOProjectModel.Rubro?) {
         _view = view
         model = IOAltaEdicionRubroModel()
-        model.isEdition = isEdition
+        model.receivedRegister = selectedRegister
     }
     
-    func guardarNuevoRubro(descripcion: String) {
-        if !validate(){
-            _view.showWarning("El campo Descripción no puede estar vacío.")
+    func editarRubro(descripcion: String) {
+        if let errorMessage = validationErrorMessage() {
+            _view.showWarning(errorMessage)
             return
         }
         
+        var dato = parseData(descripcion: descripcion)
+        dato.removeValue(forKey: ProjectConstants.KeyNames.Rubro.fechaCreacion)
+        dato.removeValue(forKey: ProjectConstants.KeyNames.Rubro.isEnabled)
+        
+        let path = UserID! + ProjectConstants.firebaseSubPath.rubros + "/" + model.receivedRegister!.key
+        
+        MLFirebaseDatabase.update(path: path, diccionario: dato, success: { (ref) in
+            NotificationCenter.default.post(name: .updateRubros, object: nil)
+            self._view.success()
+            
+        }) { (error) in
+             self._view.showError(error?.localizedDescription ?? ProjectConstants.unknownError)
+        }
+    }
+    
+    func isForEdition() -> Bool {
+        if model.receivedRegister == nil {
+            return false
+        }
+        return true
+    }
+    
+    func parseData(descripcion: String) -> [String : Any] {
         let dato = [ProjectConstants.KeyNames.Rubro.descripcion : descripcion,
-                    ProjectConstants.KeyNames.Rubro.fechaCreacion : Date().toString(formato: formatoDeFecha.fechaConHora),
-                    ProjectConstants.KeyNames.Rubro.isEnabled : true,
-                    ProjectConstants.KeyNames.Rubro.type : get_selected_type_code() ?? ""] as [String : Any]
+                        ProjectConstants.KeyNames.Rubro.fechaCreacion : Date().toString(formato: formatoDeFecha.fechaConHora),
+                        ProjectConstants.KeyNames.Rubro.fechaCreacionDouble : Date().timeIntervalSince1970,
+                        ProjectConstants.KeyNames.Rubro.isEnabled : true,
+                        ProjectConstants.KeyNames.Rubro.type : get_selected_type_code() ?? ""] as [String : Any]
+        
+        return dato
+    }
+    
+    func guardarNuevoRubro(descripcion: String) {
+        if let errorMessage = validationErrorMessage() {
+            _view.showWarning(errorMessage)
+            return
+        }
+        
+        let dato = parseData(descripcion: descripcion)
         
         MLFirebaseDatabase.setDataWithAutoId(path: UserID! + ProjectConstants.firebaseSubPath.rubros, diccionario: dato, success: { (response) in
             
@@ -55,24 +90,35 @@ class IOAltaEdicionRubroViewModel: IOAltaEdicionRubroViewModelContract {
     }
     
     func getTitle() {
-        if model.isEdition {
+        if model.receivedRegister != nil {
             _view.showTitle(title: "Editar Rubro")
         } else {
             _view.showTitle(title: "Nuevo Rubro")
         }
     }
     
-    func validate() -> Bool {
+    func getDataForEdition() {
+        _view.showDescription(model.receivedRegister?.descripcion ?? "")
+        let type = (model.receivedRegister?.type)!.uppercased()
+        if  type == "_GAS" {
+            model.type_selected_index = 0
+        } else {
+            model.type_selected_index = 1
+        }
+        _view.showPickerSelection()
+    }
+    
+    func validationErrorMessage() -> String? {
         let descripcionText = _view.getDescriptionCell()
         
         if descripcionText.count == 0 {
-            return false
+            return "El campo Descripción no puede estar vacío."
         }
 
         if descripcionText.count > 30 {
-            return false
+            return "El campo Descripción no puede superar los 30 caracteres."
         }
-        return true
+        return nil
     }
     
 }

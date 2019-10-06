@@ -74,7 +74,7 @@ class IOMovimientoViewModel: IOMovimientoViewModelContract {
         _service.fetch(path: path, completion: { (registros: [IOProjectModel.Registro]?) in
             self._view.hideLoading()
             if registros != nil {
-                let sortedArray = registros!.sorted(by: { $0.fechaCreacion! > $1.fechaCreacion! })
+                let sortedArray = registros!.sorted(by: { $0.fechaCreacionDouble ?? 0.0 > $1.fechaCreacionDouble ?? 0.0 })
                 
                 self.transformToSections(registros: sortedArray)
             }

@@ -48,9 +48,9 @@ class ProjectConstants {
         
         static func getDescripciones() -> [String] {
             var result = [String]()
-            for (_, value) in ProjectConstants.rubros.codigo_descripcion {
-                result.append(value)
-            }
+      
+            result.append("Gasto")
+            result.append("Ingreso")
             
             return result
         }
@@ -78,6 +78,7 @@ class ProjectConstants {
             static let descripcion          = "descripcion"
             static let fechaGasto           = "fechaGasto"
             static let fechaCreacion        = "fechaCreacion"
+            static let fechaCreacionDouble  = "fechaCreacionDouble"
             static let importe              = "importe"
             static let type                 = "type"
             static let descripcionRubro     = "descripcionRubro"
@@ -88,6 +89,7 @@ class ProjectConstants {
             //firebase keys
             static let descripcion = "descripcion"
             static let fechaCreacion = "fechaCreacion"
+            static let fechaCreacionDouble = "fechaCreacionDouble"
             static let isEnabled = "isEnabled"
             static let type = "type"
         }

@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 class IOPersonalizacionRubroViewModel: IOPersonalizacionRubroViewModelContract {
+   
+    
     var _service : MLFirebaseDatabase!
     var _view : IOPersonalizacionRubroViewContract!
     var model : IOPersonalizacionRubroModel!
@@ -30,7 +32,7 @@ class IOPersonalizacionRubroViewModel: IOPersonalizacionRubroViewModelContract {
         _view.showLoading()
         _service.fetch(path: path, completion: { (rubros: [IOProjectModel.Rubro]?) in
             if rubros != nil {
-                let rubrosOrdenados = rubros?.sorted(by: {$0.descripcion < $1.descripcion})
+                let rubrosOrdenados = rubros?.sorted(by: {$0.fechaCreacionDouble ?? 0.0 > $1.fechaCreacionDouble ?? 0.0})
                 self.model.rubros = rubrosOrdenados!
                 self._view.updateTableView()
             }
@@ -53,6 +55,32 @@ class IOPersonalizacionRubroViewModel: IOPersonalizacionRubroViewModelContract {
             
             NotificationCenter.default.post(name: .updateRubros, object: nil)
             self.cargarRubros()
+        }
+    }
+    
+    func deshabilitarRubro(key: String) {
+        let dato = ["isEnabled" : false]
+        
+        let path = UserID! + ProjectConstants.firebaseSubPath.rubros + "/" + key
+        _view.showLoading()
+        MLFirebaseDatabase.update(path: path, diccionario: dato, success: { (ref) in
+            self._view.hideLoading()
+            self.cargarRubros()
+        }) { (error) in
+            self._view.hideLoading()
+        }
+    }
+       
+    func habilitarRubro(key: String) {
+        let dato = ["isEnabled" : true]
+                 
+        let path = UserID! + ProjectConstants.firebaseSubPath.rubros + "/" + key
+                 _view.showLoading()
+        MLFirebaseDatabase.update(path: path, diccionario: dato, success: { (ref) in
+            self._view.hideLoading()
+            self.cargarRubros()
+        }) { (error) in
+            self._view.hideLoading()
         }
     }
 }

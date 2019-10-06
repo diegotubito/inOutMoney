@@ -277,10 +277,14 @@ extension HomeViewController: TabaleViewCellHomeHeaderDelegate {
         
             //solo me quedo con los rubros de gasto
             var fileredArray = viewModel.getRubrosGastos()
-            fileredArray = fileredArray?.sorted(by: { $0.descripcion > $1.descripcion })
-            
+            //filtramos los habilitados
+            let habilitados = viewModel.getEnabled(rubros: fileredArray ?? [IOProjectModel.Rubro]())
+         
+            fileredArray = habilitados.sorted(by: { $0.descripcion > $1.descripcion })
+     
             //creamos un array de String
             let array = fileredArray?.compactMap({ $0.descripcion })
+            
             
             //le pasamos el array al custom view
             mySelector.itemList = array ?? []
@@ -304,7 +308,10 @@ extension HomeViewController: TabaleViewCellHomeHeaderDelegate {
             
             //solo me quedo con los rubros de gasto
             var fileredArray = viewModel.getRubrosIngresos()
-            fileredArray = fileredArray?.sorted(by: { $0.descripcion > $1.descripcion })
+            //filtramos los habilitados
+            let habilitados = viewModel.getEnabled(rubros: fileredArray ?? [IOProjectModel.Rubro]())
+              
+            fileredArray = habilitados.sorted(by: { $0.descripcion > $1.descripcion })
             
             //creamos un array de String
             let array = fileredArray?.map({ $0.descripcion })

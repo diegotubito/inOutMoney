@@ -14,6 +14,8 @@ protocol IOPersonalizacionRubroViewModelContract {
     var model : IOPersonalizacionRubroModel! {get}
     func cargarRubros()
     func eliminarRubro(row: Int)
+    func deshabilitarRubro(key: String)
+    func habilitarRubro(key: String)
 
 }
 

@@ -29,7 +29,7 @@ class IODetalleRubroViewModel: IODetalleRubroViewModelContract {
         _view.showLoading()
         _service.fetchWithQuery(path: path, keyName: queryKey, value: queryValue, completion: { (registros: [IOProjectModel.Registro]?) in
             if registros != nil {
-                let sortedArray = registros!.sorted(by: { $0.fechaCreacion! < $1.fechaCreacion! })
+                let sortedArray = registros!.sorted(by: { $0.fechaCreacionDouble ?? 0.0 > $1.fechaCreacionDouble ?? 0.0 })
                 
                 self.transformToSections(registros: sortedArray)
                 self._view.updateTableView()

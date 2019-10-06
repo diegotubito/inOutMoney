@@ -27,6 +27,7 @@ protocol HomeViewModelProtocol {
     
     func convertDataForDDLineChart(cantidadDeMeses: Int, from: Date) -> DDLineChartModel
     func getRubrosGastos() -> [IOProjectModel.Rubro]?
+    func getEnabled(rubros: [IOProjectModel.Rubro]) -> [IOProjectModel.Rubro]
     func getRubrosIngresos() -> [IOProjectModel.Rubro]?
 
  

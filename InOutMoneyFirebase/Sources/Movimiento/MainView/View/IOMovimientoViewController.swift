@@ -152,7 +152,11 @@ extension IOMovimientoViewController: UITableViewDataSource {
                 }
                 
             } else {
+                if (descripcion?.isEmpty)! {
+                    leftLabel = "sin descripción."
+                } else {
                     leftLabel = descripcion ?? "sin descripción."
+                }
             }
             
             

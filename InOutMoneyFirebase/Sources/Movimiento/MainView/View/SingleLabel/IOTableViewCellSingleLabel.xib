@@ -25,13 +25,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 100.000.100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3C-Z0-EHa">
-                        <rect key="frame" x="290" y="8" width="98" height="178"/>
+                        <rect key="frame" x="290" y="16" width="98" height="162"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Probando un texto largo para ver como reacciona" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ma-LU-Uht">
-                        <rect key="frame" x="32" y="8" width="228.5" height="178"/>
+                        <rect key="frame" x="32" y="16" width="228.5" height="162"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -39,13 +39,13 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="w3C-Z0-EHa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="1VB-s5-ihZ"/>
-                    <constraint firstAttribute="bottom" secondItem="8Ma-LU-Uht" secondAttribute="bottom" constant="8" id="7LI-bQ-B7Z"/>
+                    <constraint firstItem="w3C-Z0-EHa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="1VB-s5-ihZ"/>
+                    <constraint firstAttribute="bottom" secondItem="8Ma-LU-Uht" secondAttribute="bottom" constant="16" id="7LI-bQ-B7Z"/>
                     <constraint firstItem="jGd-Tw-23R" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="E8a-iZ-Ebz"/>
-                    <constraint firstItem="8Ma-LU-Uht" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Gml-kL-H7I"/>
+                    <constraint firstItem="8Ma-LU-Uht" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Gml-kL-H7I"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8Ma-LU-Uht" secondAttribute="trailing" constant="8" id="WtH-z8-Kpt"/>
                     <constraint firstAttribute="trailing" secondItem="w3C-Z0-EHa" secondAttribute="trailing" constant="16" id="ar3-pa-fwo"/>
-                    <constraint firstAttribute="bottom" secondItem="w3C-Z0-EHa" secondAttribute="bottom" constant="8" id="hdZ-Uj-YIt"/>
+                    <constraint firstAttribute="bottom" secondItem="w3C-Z0-EHa" secondAttribute="bottom" constant="16" id="hdZ-Uj-YIt"/>
                     <constraint firstItem="jGd-Tw-23R" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="hqT-BC-Kf4"/>
                     <constraint firstItem="w3C-Z0-EHa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8Ma-LU-Uht" secondAttribute="trailing" constant="8" id="rNB-bg-cBN"/>
                     <constraint firstItem="8Ma-LU-Uht" firstAttribute="leading" secondItem="jGd-Tw-23R" secondAttribute="trailing" constant="8" id="wFT-3J-0tF"/>

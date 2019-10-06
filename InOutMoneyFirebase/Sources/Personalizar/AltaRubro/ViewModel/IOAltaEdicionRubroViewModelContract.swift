@@ -9,12 +9,14 @@
 import Foundation
 
 protocol IOAltaEdicionRubroViewModelContract {
-    init(withView view: IOAltaEdicionRubroViewContract, isEdition: Bool)
+    init(withView view: IOAltaEdicionRubroViewContract, selectedRegister: IOProjectModel.Rubro?)
     var model : IOAltaEdicionRubroModel! {get set}
     func guardarNuevoRubro(descripcion: String)
+    func editarRubro(descripcion: String)
+    func isForEdition() -> Bool
     func getTitle()
     func set_type_selected_index(_ value: Int?)
-    func validate() -> Bool
+    func getDataForEdition() 
    }
 
 protocol IOAltaEdicionRubroViewContract {
@@ -23,4 +25,6 @@ protocol IOAltaEdicionRubroViewContract {
     func showTitle(title: String)
     func getDescriptionCell() -> String
     func showWarning(_ message: String)
+    func showDescription(_ message: String)
+    func showPickerSelection()
 }

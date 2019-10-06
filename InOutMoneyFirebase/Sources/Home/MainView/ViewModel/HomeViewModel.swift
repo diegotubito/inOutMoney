@@ -271,6 +271,11 @@ class HomeViewModel : HomeViewModelProtocol {
         return model.rubros?.filter({$0.type == ProjectConstants.rubros.gastoKey})
     }
     
+    func getEnabled(rubros: [IOProjectModel.Rubro]) -> [IOProjectModel.Rubro] {
+        return rubros.filter({$0.isEnabled == true})
+        
+    }
+    
     func getRubrosIngresos() -> [IOProjectModel.Rubro]? {
         return model.rubros?.filter({$0.type == ProjectConstants.rubros.ingresoKey})
     }
