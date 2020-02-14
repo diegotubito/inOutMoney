@@ -14,11 +14,12 @@ protocol IOPersonalizacionRubroViewModelContract {
     var model : IOPersonalizacionRubroModel! {get}
     func cargarRubros()
     func eliminarRubro(row: Int)
-
+    func anularReestablecer(section: Int, row: Int, value: Bool) 
 }
 
 protocol IOPersonalizacionRubroViewContract {
     func updateTableView()
     func showLoading()
     func hideLoading()
+    func showError(_ errorMessage: String)
 }

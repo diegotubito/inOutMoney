@@ -41,7 +41,7 @@ class IOPersonalizacionRubroViewModel: IOPersonalizacionRubroViewModelContract {
         }
         
     }
-  
+    
     func eliminarRubro(row: Int) {
         let rubro = model.rubros[row]
         let path = UserID! + ProjectConstants.firebaseSubPath.rubros + "/" + rubro.key
@@ -54,5 +54,21 @@ class IOPersonalizacionRubroViewModel: IOPersonalizacionRubroViewModelContract {
             NotificationCenter.default.post(name: .updateRubros, object: nil)
             self.cargarRubros()
         }
+    }
+    
+    func anularReestablecer(section: Int, row: Int, value: Bool) {
+        let registro = model.rubros[row]
+        let path = UserID! + ProjectConstants.firebaseSubPath.rubros + "/" + registro.key
+        let diccionario = ["isEnabled" : value] as [String : Any]
+        
+        MLFirebaseDatabase.update(path: path, diccionario: diccionario, success: { (response) in
+            
+            NotificationCenter.default.post(name: .updateRubros, object: nil)
+            
+            
+        }) { (error) in
+            self._view.showError(error?.localizedDescription ?? ProjectConstants.unknownError)
+        }
+        
     }
 }
